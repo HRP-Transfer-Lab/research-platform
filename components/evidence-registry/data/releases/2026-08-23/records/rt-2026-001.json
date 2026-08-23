@@ -1,0 +1,47 @@
+{
+  "record_id": "rt-2026-001",
+  "release_id": "2026-08-23",
+  "review_bucket": "A_direct_intervention",
+  "bibliography": {
+    "title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+    "authors": ["Rudy Purkart","Gloria Leblond-Baccichet","Samira Mellah","Amelie Jägersberg","Sylvie Belleville"],
+    "year": 2026,
+    "publication_date": "2026-06-05",
+    "venue": "Memory",
+    "source_kind": "journal_article",
+    "peer_review_status": "peer_reviewed",
+    "doi": "10.1080/09658211.2026.2672008",
+    "pmid": "42246234",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1080/09658211.2026.2672008"
+  },
+  "review": {
+    "primary_classification": "develop_train",
+    "secondary_component": "possible_equip",
+    "evidence_rungs": ["practice_effect","separate_measure"],
+    "route_rationale": "Repeated episodic-specificity reconstruction develops retrieval/specificity. Social problem solving is a separate outcome; the intervention did not explicitly train real-world cue-policy recovery.",
+    "review_status": "approved_seed",
+    "method_extraction_status": "route_review_plus_public_source",
+    "taxonomy_version": "iqm-route-v0.2",
+    "source_review_document": "Mindware-Lab/trident-g-ground-truth/July_2026/TRANSFER_ROUTE_FRAMEWORK.md",
+    "source_review_section": "19. Recent evidence classification radar: May–August 2026"
+  },
+  "study": {
+    "design": "double-blind randomized active-control pre/post trial",
+    "population": {"summary":"Healthy older adults","age_mean":72.6,"age_sd":6.6,"tags":["older_adults","healthy"]},
+    "sample": {"randomized":54,"analysed":51},
+    "setting": "research intervention",
+    "comparator": "Six-session active associative-memory control"
+  },
+  "protocol": {"component":"SPECTRA episodic-specificity training","sessions":6,"delivery_mode":"guided cognitive training","active_control":"ASSO associative word-picture recall training"},
+  "outcomes": [
+    {"name":"free recall","rung":"practice_or_nearest_transfer","timepoint":"post","direction":"positive","objective":true},
+    {"name":"spatial recognition","rung":"separate_measure","timepoint":"post","direction":"positive","objective":true},
+    {"name":"social problem solving","rung":"separate_measure","timepoint":"post","direction":"positive","objective":true,"boundary":"No delayed or naturalistic cue-triggered use test in the rapid review."}
+  ],
+  "product_relevance": [
+    {"product":"reasoning_coach","scope":"training_design","match":"indirect","direction":"supportive","claim_status":"design_informing"},
+    {"product":"h_agi","scope":"problem_solving_transfer","match":"indirect","direction":"supportive","claim_status":"design_informing"}
+  ],
+  "tags": ["episodic_memory","retrieval","older_adults","transfer"]
+}
