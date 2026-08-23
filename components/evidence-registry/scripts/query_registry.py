@@ -2,24 +2,24 @@
 import argparse, json, pathlib
 
 def records(path):
-    for line in pathlib.Path(path).read_text(encoding="utf-8").splitlines():
+    path=pathlib.Path(path)
+    if path.is_dir():
+        for f in sorted(path.glob("*.json")):
+            yield json.loads(f.read_text(encoding="utf-8"))
+        return
+    for line in path.read_text(encoding="utf-8").splitlines():
         if line.strip(): yield json.loads(line)
 
 def contains_ci(value, needle):
     return needle.lower() in json.dumps(value, ensure_ascii=False).lower()
 
 def main():
-    p=argparse.ArgumentParser(description="Query a versioned HRP Transfer Evidence Registry JSONL release.")
+    p=argparse.ArgumentParser(description="Query a versioned HRP Transfer Evidence Registry release.")
     p.add_argument("records")
-    p.add_argument("--route")
-    p.add_argument("--bucket")
-    p.add_argument("--product")
-    p.add_argument("--tag")
-    p.add_argument("--population")
-    p.add_argument("--text")
+    p.add_argument("--route"); p.add_argument("--bucket"); p.add_argument("--product")
+    p.add_argument("--tag"); p.add_argument("--population"); p.add_argument("--text")
     p.add_argument("--compact", action="store_true")
-    a=p.parse_args()
-    out=[]
+    a=p.parse_args(); out=[]
     for r in records(a.records):
         if a.route and r["review"]["primary_classification"] != a.route: continue
         if a.bucket and r["review_bucket"] != a.bucket: continue
