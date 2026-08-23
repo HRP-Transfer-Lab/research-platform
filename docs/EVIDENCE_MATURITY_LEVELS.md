@@ -61,12 +61,17 @@ RoB 2 / ROBINS-I / reporting and other design-specific appraisal
 BODY-LEVEL CERTAINTY
 GRADE or another justified synthesis-level certainty framework
 
++
+
+EFFECT DIRECTION / MAGNITUDE
+supportive, null, harmful, mixed; effect size and precision where available
+
 =
 
 DECISION SUPPORT
 ```
 
-A high EML does not rescue a low-quality evidence body. Conversely, a rigorous mechanistic study may be high quality while remaining EML1 for an intervention claim.
+A high EML does not rescue a low-quality evidence body. Conversely, a rigorous mechanistic study may be high quality while remaining EML1 for an intervention claim. EML also does not imply that the effect is positive: a mature body of evidence can establish a null effect, a boundary condition or harm.
 
 ## The scale
 
@@ -75,11 +80,48 @@ A high EML does not rescue a low-quality evidence body. Conversely, a rigorous m
 | **EML0** | Rationale only | Theory, mechanism or logic-model rationale; no direct empirical support for the target proposition. |
 | **EML1** | Mechanism / paradigm support | Empirical mechanism, construct, measurement or adjacent-paradigm support, but no credible direct demonstration of the target proposition. |
 | **EML2** | Initial direct demonstration | At least one credible direct empirical test demonstrates the target intervention, mapping or activity-system effect under defined conditions. |
-| **EML3** | Replicated efficacy | The direct effect has been reproduced across at least two rigorous studies with consistent direction; independent replication is preferred and must be recorded where present. |
+| **EML3** | Replicated direct evidence | The direct effect has been reproduced across at least two rigorous direct studies with consistent direction, including at least one genuine replication designed to reproduce the effect. |
 | **EML4** | Convergent body | A systematic synthesis or equivalent reviewed multi-study body supports the proposition; body-level quality/certainty is still separately appraised. |
 | **EML5** | Transfer & durability | The convergent body also demonstrates cumulative portability beyond the practised format and/or durability after delay for the target claim. |
 | **EML6** | Real-world effectiveness | Useful outcomes are demonstrated under authentic/routine conditions with appropriate fidelity and functional outcomes. |
 | **EML7** | Generalised / scale-ready | Evidence supports relevant multi-setting/population generalisation and implementation/scale decisions, with boundary conditions, fidelity, harms and important cost/implementation considerations sufficiently characterised. |
+
+## Replication rule for EML3
+
+EML3 requires more than repeated positive studies from one development programme.
+
+At minimum, the proposition must have:
+
+```text
+EML2
++
+at least two rigorous direct studies overall
++
+at least one genuine replication designed to reproduce the effect
+```
+
+The replication should preferably be conducted by an **independent research team**. A prospectively registered or multisite replication explicitly designed to reproduce the original effect may also satisfy this requirement when independence is limited, but that fact must be recorded.
+
+Repeated exploratory demonstrations, secondary analyses or closely related same-team variants do **not** by themselves advance a proposition from EML2 to EML3.
+
+This rule reflects the replication emphasis in empirically supported treatment standards and prevention-science standards while remaining usable beyond clinical interventions.
+
+## Approximate crosswalk to established frameworks
+
+The crosswalk below is explanatory, **not an equivalence table**. Established systems answer different questions and should retain their own labels when formally applied.
+
+| EML | Closest established ideas |
+| --- | --- |
+| **0** | ESSA “demonstrates a rationale”; mechanism-based reasoning at the low end of OCEBM; NIH Stage 0/basic-science rationale. |
+| **1** | Empirical mechanism/construct or adjacent-paradigm support; NIH Stage 0–I developmental evidence. |
+| **2** | First direct efficacy/demonstration study; roughly the point at which direct experimental or strong quasi-experimental evidence exists, depending on the claim. |
+| **3** | Replication/convergence criterion familiar from empirically supported treatment and prevention-science standards. |
+| **4** | Systematic multi-study synthesis; the stage at which GRADE-style body-level certainty appraisal becomes especially informative. |
+| **5** | HRP/IQM-specific maturity requirement for demonstrated transfer/generalisation beyond the practised format and/or durability, built on an already convergent body. |
+| **6** | NIH Stage III–IV / prevention-science effectiveness: authentic or routine settings and functional outcomes. |
+| **7** | NIH Stage V / prevention-science scale-up and implementation evidence across relevant settings/populations. |
+
+Study-design hierarchies such as OCEBM and ESSA still inform the credibility of the evidence contributing to a level. They are not replaced by EML.
 
 ## Cumulative rule
 
@@ -95,7 +137,7 @@ one direct experiment
 
 does **not** automatically equal EML5.
 
-If the proposition has not yet been replicated and synthesised, it remains EML2 while receiving separate transfer/delayed evidence tags.
+If the proposition has not yet been genuinely replicated and synthesised, it remains EML2 while receiving separate transfer/delayed evidence tags.
 
 This prevents a single exciting far-transfer result from appearing more mature than a replicated but narrower literature.
 
@@ -113,6 +155,7 @@ Examples:
 
 - mechanistic fMRI study → often EML1 contribution;
 - direct randomized intervention trial → often EML2 contribution;
+- genuine replication study → potentially EML3 contribution when considered against the prior direct study;
 - systematic review/meta-analysis → potentially EML4 contribution.
 
 It does **not** mean the entire intervention or product has that maturity.
