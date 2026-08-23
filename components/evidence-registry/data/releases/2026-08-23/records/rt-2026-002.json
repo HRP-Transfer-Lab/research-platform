@@ -1,0 +1,46 @@
+{
+  "record_id": "rt-2026-002",
+  "release_id": "2026-08-23",
+  "review_bucket": "A_direct_intervention",
+  "bibliography": {
+    "title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+    "authors": ["Chen Cai","Xin Fang","Zihan Quan","Huizhuo Liang"],
+    "year": 2026,
+    "publication_date": "2026-07-01",
+    "venue": "BMC Psychology",
+    "source_kind": "journal_article",
+    "peer_review_status": "peer_reviewed",
+    "doi": "10.1186/s40359-026-05089-x",
+    "pmid": "42387621",
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1186/s40359-026-05089-x"
+  },
+  "review": {
+    "primary_classification": "develop_train",
+    "secondary_component": null,
+    "evidence_rungs": ["separate_measure","delayed"],
+    "route_rationale": "Progressive EF practice targets working memory, inhibition and flexibility. Prospective-memory improvement and six-month retention are outcome evidence; no explicit Bridge component was reported.",
+    "review_status": "approved_seed",
+    "method_extraction_status": "route_review_plus_public_source",
+    "taxonomy_version": "iqm-route-v0.2",
+    "source_review_document": "Mindware-Lab/trident-g-ground-truth/July_2026/TRANSFER_ROUTE_FRAMEWORK.md",
+    "source_review_section": "19. Recent evidence classification radar: May–August 2026"
+  },
+  "study": {
+    "design": "randomized three-group longitudinal training study",
+    "population": {"summary":"Children with learning difficulties","age_min":10,"age_max":12,"tags":["children","learning_difficulties"]},
+    "sample": {"randomized":93},
+    "setting": "educational training",
+    "comparator": "Behavioral-training group and control"
+  },
+  "protocol": {"component":"comprehensive executive-function training","sessions":12,"targets":["working_memory","inhibitory_control","cognitive_flexibility"]},
+  "outcomes": [
+    {"name":"prospective memory","rung":"separate_measure","timepoint":"post","direction":"positive","objective":true},
+    {"name":"prospective memory","rung":"delayed","timepoint":"6_months","direction":"positive","objective":true}
+  ],
+  "product_relevance": [
+    {"product":"cognitive_control_coach","scope":"executive_control_transfer","match":"indirect","direction":"supportive","claim_status":"design_informing"},
+    {"product":"g_track","scope":"delayed_measurement","match":"conceptual","direction":"supportive","claim_status":"design_informing"}
+  ],
+  "tags": ["executive_function","prospective_memory","children","delayed_transfer"]
+}
