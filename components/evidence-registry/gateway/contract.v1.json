@@ -1,0 +1,52 @@
+{
+  "contract_version": "csi-evidence-v1",
+  "schema_version": "1.0.0",
+  "status": "active",
+  "purpose": "Read-only, release-pinned scientific evidence for Personal, Work, Health and future CSI applications.",
+  "views": {
+    "contract": "v_csi_gateway_contract_v1",
+    "release": "v_csi_gateway_release_v1",
+    "evidence": "v_csi_gateway_evidence_v1",
+    "claim": "v_csi_gateway_claim_v1"
+  },
+  "filters": {
+    "evidence_release_id": ["eq"],
+    "evidence_class": ["eq", "in"],
+    "primary_classification": ["eq", "in"],
+    "route_classes": ["overlap"],
+    "population_tags": ["overlap"],
+    "topic_tags": ["overlap"],
+    "functional_domains": ["overlap"],
+    "product_ids": ["overlap"],
+    "evidence_rungs": ["overlap"],
+    "peer_review_status": ["eq", "in"]
+  },
+  "recommended_order": ["publication_date.desc", "card_id.asc"],
+  "evidence_classes": [
+    "direct_intervention",
+    "measurement_mechanism",
+    "human_ai_activity_system",
+    "other"
+  ],
+  "claim_levels": [
+    "study_level_only",
+    "approved_synthesis_available"
+  ],
+  "guarantees": [
+    "read_only",
+    "approved_release_only",
+    "release_pinned",
+    "no_person_data",
+    "no_workbench_or_audit_data",
+    "no_raw_extraction_json",
+    "study_level_claim_boundary_until_approved_synthesis"
+  ],
+  "consumer_rule": "CSI applications may read approved evidence from the Registry, but they never write user/person data back into the scientific Evidence Registry.",
+  "current_release": {
+    "evidence_release_id": "2026-08-23",
+    "taxonomy_version": "iqm-route-v0.2",
+    "source_record_count": 18,
+    "approved_claim_count": 0,
+    "claim_boundary": "study_level_only"
+  }
+}

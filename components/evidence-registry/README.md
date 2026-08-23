@@ -1,6 +1,6 @@
 # HRP Transfer Evidence Registry
 
-A versioned, provenance-aware evidence layer for **Explorer → IQ Coach → H-AGI / CSI**.
+A versioned, provenance-aware evidence layer for **CSI / Explorer → IQ Coach → H-AGI**.
 
 This component converts reviewed intervention literature into structured records that keep separate:
 
@@ -14,7 +14,7 @@ This component converts reviewed intervention literature into structured records
 
 ## Hosted backend status
 
-The operational PostgreSQL backend is now provisioned in the dedicated Supabase project **HRP-Transfer-Evidence**.
+The operational PostgreSQL backend is provisioned in the dedicated Supabase project **HRP-Transfer-Evidence**.
 
 Current hosted release:
 
@@ -33,9 +33,52 @@ The source buckets remain exactly:
 - **B — measurement / mechanism:** 6;
 - **C — human-AI / activity system:** 5.
 
-Raw reviewer/scientific tables have RLS enabled and no `anon` or `authenticated` grants at bootstrap. Approved read views are `security_invoker` views and are currently service-side only. Browser-facing reviewer and Explorer policies must be added deliberately as part of the Evidence Workbench/API implementation.
+Raw reviewer/scientific tables have RLS enabled and are protected by the Workbench `viewer` / `editor` / `owner` role model. Browser-facing CSI applications do **not** read those tables directly.
 
 The deployed database migration history is mirrored in `supabase/migrations/`. No credentials, database password, service-role key or other project secret belongs in Git.
+
+## Evidence Workbench
+
+The live Evidence Workbench is the reviewer/maintenance surface for the operational Registry. It supports study inspection/editing, route/outcome/product relevance, quality appraisal, release controls, reviewer access and mutation auditing.
+
+Workbench edits affect the operational scientific database; versioned Git releases remain explicit release/audit snapshots rather than being silently rewritten.
+
+## CSI Evidence Gateway
+
+The CSI Evidence Gateway is the public/read-only publication boundary for Personal CSI, Work CSI, Cognitive Support / Health CSI and future CSI verticals.
+
+Core rule:
+
+> **CSI applications may read approved evidence from the Registry, but they never write user/person data back into the scientific Evidence Registry.**
+
+Current contract:
+
+```text
+contract_version: csi-evidence-v1
+evidence_release_id: 2026-08-23
+taxonomy_version: iqm-route-v0.2
+evidence cards: 18
+approved body-level claims: 0
+```
+
+Stable read views:
+
+```text
+v_csi_gateway_contract_v1
+v_csi_gateway_release_v1
+v_csi_gateway_evidence_v1
+v_csi_gateway_claim_v1
+```
+
+The Gateway is release-pinned, read-only and claims-safe. It exposes no raw extraction JSON, Workbench membership, audit records or person/session data. The initial release is explicitly `study_level_only` until human-reviewed syntheses and approved claims exist.
+
+See:
+
+```text
+components/evidence-registry/gateway/README.md
+components/evidence-registry/gateway/contract.v1.json
+docs/CSI_EVIDENCE_GATEWAY.md
+```
 
 ## Seed release
 
@@ -67,11 +110,15 @@ components/evidence-registry/
   schema/
     001_evidence_registry.sql
     taxonomy.v1.json
+  gateway/
+    README.md
+    contract.v1.json
   data/releases/2026-08-23/
     manifest.json
     records/
   scripts/
     validate_registry.py
+    validate_csi_gateway.py
     query_registry.py
 
 supabase/
@@ -81,6 +128,11 @@ supabase/
     20260823174605_add_evidence_registry_importer.sql
     20260823174724_fix_evidence_registry_importer_targets.sql
     20260823175100_add_evidence_registry_fk_indexes.sql
+    20260823181717_add_evidence_workbench_access.sql
+    20260823181810_add_evidence_workbench_audit_log.sql
+    20260823182520_add_evidence_workbench_fk_indexes.sql
+    20260823201955_add_csi_evidence_gateway_v1.sql
+    20260823202036_add_csi_gateway_fk_indexes.sql
 ```
 
 Each reviewed source has its own JSON file so scientific corrections and re-classifications receive an independent Git diff/history.
@@ -92,6 +144,8 @@ python components/evidence-registry/scripts/validate_registry.py \
   components/evidence-registry/data/releases/2026-08-23/records \
   --taxonomy components/evidence-registry/schema/taxonomy.v1.json \
   --manifest components/evidence-registry/data/releases/2026-08-23/manifest.json
+
+python components/evidence-registry/scripts/validate_csi_gateway.py
 ```
 
 ## Query examples
@@ -132,15 +186,12 @@ DISCOVER
 → APPROVE
 → SYNTHESISE
 → RELEASE
+→ CSI-SAFE PUBLICATION
 ```
 
-Production Explorer/IQ Coach/H-AGI systems should query **approved release/read views**, not raw newly discovered papers.
+Production CSI/IQ Coach/H-AGI systems should query **approved Gateway release/read views**, not raw newly discovered papers or reviewer tables.
 
 ## Operational authority model
-
-During bootstrap, Git contains the approved scientific seed release and the migration history; Supabase contains the operational normalized database.
-
-The intended Workbench-era flow is:
 
 ```text
 Evidence Workbench
@@ -148,12 +199,12 @@ Evidence Workbench
 → human review / approval
 → versioned evidence release
 → Git release snapshot
-→ approved read model
-→ Explorer / IQ Coach / H-AGI / CSI
+→ CSI Evidence Gateway publication
+→ Personal / Work / Health CSI
 ```
 
-Git remains the immutable audit/release record. Postgres becomes the working scientific database once the Workbench is live.
+Git remains the immutable audit/release record. Postgres is the working scientific database. The Gateway is the downstream publication boundary.
 
 ## Next implementation layer
 
-Build the **Evidence Workbench** directly on the hosted backend. The first version should add authenticated reviewer access, Evidence Library and Study Record screens, component/outcome/product-relevance editing, review/approval status, and release management. Explorer-facing read access should remain separate from reviewer write access.
+Build **`csi-core`**: shared TypeScript evidence/query/result types and a deterministic `EvidenceClient` that consumes `csi-evidence-v1`, pins an evidence release per CSI result and keeps evidence retrieval separate from domain-specific recommendation rules.

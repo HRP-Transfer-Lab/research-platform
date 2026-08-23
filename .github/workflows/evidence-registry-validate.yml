@@ -4,11 +4,13 @@ on:
   pull_request:
     paths:
       - 'components/evidence-registry/**'
+      - 'supabase/migrations/**'
       - '.github/workflows/evidence-registry-validate.yml'
   push:
     branches: [main]
     paths:
       - 'components/evidence-registry/**'
+      - 'supabase/migrations/**'
       - '.github/workflows/evidence-registry-validate.yml'
 
 permissions:
@@ -28,6 +30,8 @@ jobs:
             components/evidence-registry/data/releases/2026-08-23/records \
             --taxonomy components/evidence-registry/schema/taxonomy.v1.json \
             --manifest components/evidence-registry/data/releases/2026-08-23/manifest.json
+      - name: Validate CSI Evidence Gateway contract
+        run: python components/evidence-registry/scripts/validate_csi_gateway.py
       - name: Smoke-test route/product queries
         run: |
           python components/evidence-registry/scripts/query_registry.py \
