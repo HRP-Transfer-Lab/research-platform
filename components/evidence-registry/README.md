@@ -50,17 +50,19 @@ components/evidence-registry/
     taxonomy.v1.json
   data/releases/2026-08-23/
     manifest.json
-    records.v1.jsonl
+    records/
   scripts/
     validate_registry.py
     query_registry.py
 ```
 
+Each reviewed source has its own JSON file so scientific corrections and re-classifications receive an independent Git diff/history.
+
 ## Validate
 
 ```bash
 python components/evidence-registry/scripts/validate_registry.py \
-  components/evidence-registry/data/releases/2026-08-23/records.v1.jsonl \
+  components/evidence-registry/data/releases/2026-08-23/records \
   --taxonomy components/evidence-registry/schema/taxonomy.v1.json \
   --manifest components/evidence-registry/data/releases/2026-08-23/manifest.json
 ```
@@ -71,7 +73,7 @@ All Reasoning Coach-relevant records:
 
 ```bash
 python components/evidence-registry/scripts/query_registry.py \
-  components/evidence-registry/data/releases/2026-08-23/records.v1.jsonl \
+  components/evidence-registry/data/releases/2026-08-23/records/ \
   --product reasoning_coach --compact
 ```
 
@@ -79,7 +81,7 @@ Human-AI redesign evidence:
 
 ```bash
 python components/evidence-registry/scripts/query_registry.py \
-  components/evidence-registry/data/releases/2026-08-23/records.v1.jsonl \
+  components/evidence-registry/data/releases/2026-08-23/records/ \
   --route redesign --compact
 ```
 
@@ -87,7 +89,7 @@ Older-adult evidence:
 
 ```bash
 python components/evidence-registry/scripts/query_registry.py \
-  components/evidence-registry/data/releases/2026-08-23/records.v1.jsonl \
+  components/evidence-registry/data/releases/2026-08-23/records/ \
   --population older --compact
 ```
 
