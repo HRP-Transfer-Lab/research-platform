@@ -10,7 +10,7 @@ def main() -> None:
     data = json.loads(CONTRACT.read_text(encoding="utf-8"))
 
     assert data["contract_version"] == "csi-evidence-v1"
-    assert data["schema_version"] == "1.0.0"
+    assert data["schema_version"] == "1.1.0"
     assert data["status"] == "active"
 
     views = data["views"]
@@ -29,6 +29,7 @@ def main() -> None:
         "no_workbench_or_audit_data",
         "no_raw_extraction_json",
         "study_level_claim_boundary_until_approved_synthesis",
+        "maturity_is_separate_from_quality_and_certainty",
     }
     assert required_guarantees.issubset(set(data["guarantees"]))
 
@@ -44,8 +45,16 @@ def main() -> None:
         "product_ids",
         "evidence_rungs",
         "peer_review_status",
+        "maturity_level",
     ):
         assert required_filter in filters
+
+    maturity = data["maturity_scale"]
+    assert maturity["scale_version"] == "hrp-eml-v1"
+    assert len(maturity["levels"]) == 8
+    assert maturity["levels"][0] == [0, "Rationale only"]
+    assert maturity["levels"][-1] == [7, "Generalised / scale-ready"]
+    assert "not risk-of-bias" in maturity["meaning"].lower()
 
     current = data["current_release"]
     assert current["evidence_release_id"] == "2026-08-23"
@@ -53,6 +62,8 @@ def main() -> None:
     assert current["source_record_count"] == 18
     assert current["approved_claim_count"] == 0
     assert current["claim_boundary"] == "study_level_only"
+    assert current["maturity_scale_version"] == "hrp-eml-v1"
+    assert current["body_level_maturity_available"] is False
 
     assert "never write user/person data" in data["consumer_rule"]
 

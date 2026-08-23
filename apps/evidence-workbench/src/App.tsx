@@ -1,9 +1,9 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Activity, Archive, BookOpen, CheckCircle2, ChevronRight, ClipboardCheck, Database, FileSearch, Filter, FlaskConical, LogOut, RefreshCw, Search, ShieldCheck, Sparkles, Users, X } from 'lucide-react'
+import { Activity, Archive, BookOpen, ChevronRight, ClipboardCheck, Database, FileSearch, Filter, FlaskConical, LogOut, RefreshCw, Search, ShieldCheck, Sparkles, Users, X } from 'lucide-react'
 import type { Session } from '@supabase/supabase-js'
 import { supabase } from './lib/supabase'
 import { LoginScreen, PendingAccess } from './AuthViews'
-import { SourceDetail } from './SourceDetail'
+import { SourceDetailWithMaturity } from './SourceDetailWithMaturity'
 import { AccessPage, AuditPage, ReleasesPage } from './WorkbenchPages'
 import { BucketPill, CenteredLoader, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
 import { emptyData, humanize, primaryClassification, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type Study, type Tab, type WorkbenchMember } from './workbench'
@@ -41,12 +41,12 @@ function App() {
 
   useEffect(() => {
     if (!session) return
-    checkMembership(session.user.id)
+    void checkMembership(session.user.id)
   }, [session])
 
   useEffect(() => {
     if (!member) return
-    loadRegistry()
+    void loadRegistry()
   }, [member?.user_id])
 
   async function checkMembership(userId: string) {
@@ -77,7 +77,7 @@ function App() {
       supabase.from('quality_assessment').select('*').order('quality_assessment_id'),
       supabase.from('evidence_release').select('*').order('released_on', { ascending: false }),
     ])
-    const firstError = [sources, studies, components, outcomes, products, quality, releases].find((r) => r.error)?.error
+    const firstError = [sources, studies, components, outcomes, products, quality, releases].find((result) => result.error)?.error
     if (firstError) {
       setError(firstError.message)
     } else {
@@ -122,16 +122,16 @@ function App() {
   }
 
   const productsAvailable = useMemo(
-    () => Array.from(new Set(data.products.map((p) => p.product))).sort(),
+    () => Array.from(new Set(data.products.map((item) => item.product))).sort(),
     [data.products],
   )
 
   const filteredSources = useMemo(() => {
-    const q = search.trim().toLowerCase()
+    const query = search.trim().toLowerCase()
     return data.sources.filter((source) => {
-      const study = data.studies.find((s) => s.source_id === source.source_id)
-      const studyComponents = data.components.filter((c) => c.study_id === study?.study_id)
-      const sourceProducts = data.products.filter((p) => p.source_id === source.source_id)
+      const study = data.studies.find((item) => item.source_id === source.source_id)
+      const studyComponents = data.components.filter((item) => item.study_id === study?.study_id)
+      const sourceProducts = data.products.filter((item) => item.source_id === source.source_id)
       const tags = source.raw_record?.tags ?? []
       const haystack = [
         source.title,
@@ -140,18 +140,12 @@ function App() {
         primaryClassification(source),
         ...(study?.population_tags ?? []),
         ...(Array.isArray(tags) ? tags : []),
-        ...sourceProducts.map((p) => p.product),
-      ]
-        .filter(Boolean)
-        .join(' ')
-        .toLowerCase()
-      const matchesSearch = !q || haystack.includes(q)
+        ...sourceProducts.map((item) => item.product),
+      ].filter(Boolean).join(' ').toLowerCase()
+      const matchesSearch = !query || haystack.includes(query)
       const matchesBucket = bucket === 'all' || source.review_bucket === bucket
-      const matchesRoute =
-        route === 'all' ||
-        primaryClassification(source).includes(route) ||
-        studyComponents.some((c) => c.route === route || c.secondary_route === route)
-      const matchesProduct = product === 'all' || sourceProducts.some((p) => p.product === product)
+      const matchesRoute = route === 'all' || primaryClassification(source).includes(route) || studyComponents.some((item) => item.route === route || item.secondary_route === route)
+      const matchesProduct = product === 'all' || sourceProducts.some((item) => item.product === product)
       return matchesSearch && matchesBucket && matchesRoute && matchesProduct
     })
   }, [data, search, bucket, route, product])
@@ -163,17 +157,14 @@ function App() {
 
   const canEdit = member.role === 'editor' || member.role === 'owner'
   const isOwner = member.role === 'owner'
-  const selected = data.sources.find((s) => s.source_id === selectedId) ?? null
+  const selected = data.sources.find((source) => source.source_id === selectedId) ?? null
 
   return (
     <div className="app-shell">
       <header className="topbar">
         <div className="brand-lockup">
           <div className="brand-mark"><FlaskConical size={21} /></div>
-          <div>
-            <div className="eyebrow">HRP TRANSFER LAB</div>
-            <h1>Evidence Workbench</h1>
-          </div>
+          <div><div className="eyebrow">HRP TRANSFER LAB</div><h1>Evidence Workbench</h1></div>
         </div>
         <nav className="topnav" aria-label="Workbench sections">
           <NavButton active={tab === 'library'} onClick={() => switchTab('library')} icon={<BookOpen size={16} />} label="Evidence" />
@@ -188,19 +179,14 @@ function App() {
         </div>
       </header>
 
-      {error && (
-        <div className="error-banner">
-          <span>{error}</span>
-          <button onClick={() => setError(null)}><X size={16} /></button>
-        </div>
-      )}
+      {error && <div className="error-banner"><span>{error}</span><button onClick={() => setError(null)}><X size={16} /></button></div>}
 
       {tab === 'library' && (
         <main className="library-page">
           <section className="metrics-row">
             <Metric icon={<Database size={18} />} label="Reviewed sources" value={data.sources.length} />
-            <Metric icon={<ClipboardCheck size={18} />} label="Direct interventions" value={data.sources.filter((s) => s.review_bucket.startsWith('A_')).length} />
-            <Metric icon={<Sparkles size={18} />} label="Mechanism / measurement" value={data.sources.filter((s) => s.review_bucket.startsWith('B_')).length} />
+            <Metric icon={<ClipboardCheck size={18} />} label="Direct interventions" value={data.sources.filter((source) => source.review_bucket.startsWith('A_')).length} />
+            <Metric icon={<Sparkles size={18} />} label="Mechanism / measurement" value={data.sources.filter((source) => source.review_bucket.startsWith('B_')).length} />
             <Metric icon={<FileSearch size={18} />} label="Outcomes coded" value={data.outcomes.length} />
             <Metric icon={<ShieldCheck size={18} />} label="Current release" value={data.releases[0]?.release_id ?? '—'} compact />
           </section>
@@ -209,20 +195,17 @@ function App() {
             <aside className="filter-panel">
               <div className="panel-title"><Filter size={16} /> Evidence filters</div>
               <label className="field-label">Search</label>
-              <div className="search-box"><Search size={15} /><input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Title, target, population…" /></div>
+              <div className="search-box"><Search size={15} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Title, target, population…" /></div>
               <SelectField label="Evidence class" value={bucket} onChange={setBucket} options={[
                 ['all', 'All evidence'],
                 ['A_direct_intervention', 'Direct intervention'],
                 ['B_measurement_mechanism', 'Mechanism / measurement'],
                 ['C_human_ai_activity_system', 'Human–AI / activity system'],
               ]} />
-              <SelectField label="Route / classification" value={route} onChange={setRoute} options={[["all", "All routes"], ...routeOptions.map((r) => [r, humanize(r)] as [string, string])]} />
-              <SelectField label="Product relevance" value={product} onChange={setProduct} options={[["all", "All products"], ...productsAvailable.map((p) => [p, humanize(p)] as [string, string])]} />
+              <SelectField label="Route / classification" value={route} onChange={setRoute} options={[["all", "All routes"], ...routeOptions.map((item) => [item, humanize(item)] as [string, string])]} />
+              <SelectField label="Product relevance" value={product} onChange={setProduct} options={[["all", "All products"], ...productsAvailable.map((item) => [item, humanize(item)] as [string, string])]} />
               <button className="secondary-button full" onClick={() => { setSearch(''); setBucket('all'); setRoute('all'); setProduct('all') }}>Clear filters</button>
-              <div className="filter-note">
-                <ShieldCheck size={15} />
-                <span>Product relevance means evidence can inform a product; it does not mean the product itself is validated.</span>
-              </div>
+              <div className="filter-note"><ShieldCheck size={15} /><span>Product relevance means evidence can inform a product; it does not mean the product itself is validated.</span></div>
             </aside>
 
             <section className="source-list-panel">
@@ -233,16 +216,10 @@ function App() {
               <div className="source-list">
                 {filteredSources.map((source) => (
                   <button key={source.source_id} className={`source-card ${selectedId === source.source_id ? 'selected' : ''}`} onClick={() => setSelectedId(source.source_id)}>
-                    <div className="source-card-top">
-                      <BucketPill bucket={source.review_bucket} />
-                      <span className="source-date">{source.publication_date ?? source.publication_year ?? '—'}</span>
-                    </div>
+                    <div className="source-card-top"><BucketPill bucket={source.review_bucket} /><span className="source-date">{source.publication_date ?? source.publication_year ?? '—'}</span></div>
                     <h3>{source.title}</h3>
                     <p>{source.venue ?? humanize(source.source_kind)}</p>
-                    <div className="source-card-bottom">
-                      <RoutePill route={primaryClassification(source)} />
-                      <ChevronRight size={15} />
-                    </div>
+                    <div className="source-card-bottom"><RoutePill route={primaryClassification(source)} /><ChevronRight size={15} /></div>
                   </button>
                 ))}
                 {!loading && filteredSources.length === 0 && <div className="empty-state">No evidence matches these filters.</div>}
@@ -251,13 +228,7 @@ function App() {
 
             <section className="detail-panel">
               {selected ? (
-                <SourceDetail
-                  source={selected}
-                  data={data}
-                  canEdit={canEdit}
-                  onRefresh={loadRegistry}
-                  onError={setError}
-                />
+                <SourceDetailWithMaturity source={selected} data={data} canEdit={canEdit} onRefresh={loadRegistry} onError={setError} />
               ) : (
                 <div className="empty-detail"><BookOpen size={30} /><p>Select an evidence record.</p></div>
               )}
