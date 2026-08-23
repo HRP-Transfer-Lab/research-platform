@@ -1,0 +1,23 @@
+name: Evidence Workbench validation
+
+on:
+  pull_request:
+    paths:
+      - "apps/evidence-workbench/**"
+      - "supabase/migrations/**"
+      - ".github/workflows/evidence-workbench-validate.yml"
+  workflow_dispatch:
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/evidence-workbench
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build
