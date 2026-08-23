@@ -1,0 +1,44 @@
+name: Evidence registry validation
+
+on:
+  pull_request:
+    paths:
+      - 'components/evidence-registry/**'
+      - '.github/workflows/evidence-registry-validate.yml'
+  push:
+    branches: [main]
+    paths:
+      - 'components/evidence-registry/**'
+      - '.github/workflows/evidence-registry-validate.yml'
+
+permissions:
+  contents: read
+
+jobs:
+  validate-seed-release:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+      - name: Validate release
+        run: |
+          python components/evidence-registry/scripts/validate_registry.py \
+            components/evidence-registry/data/releases/2026-08-23/records \
+            --taxonomy components/evidence-registry/schema/taxonomy.v1.json \
+            --manifest components/evidence-registry/data/releases/2026-08-23/manifest.json
+      - name: Smoke-test route/product queries
+        run: |
+          python components/evidence-registry/scripts/query_registry.py \
+            components/evidence-registry/data/releases/2026-08-23/records \
+            --route redesign --compact > /tmp/redesign.json
+          python components/evidence-registry/scripts/query_registry.py \
+            components/evidence-registry/data/releases/2026-08-23/records \
+            --product reasoning_coach --compact > /tmp/reasoning.json
+          python - <<'PY'
+          import json
+          assert len(json.load(open('/tmp/redesign.json'))) >= 3
+          assert len(json.load(open('/tmp/reasoning.json'))) >= 4
+          print('QUERY SMOKE TESTS PASS')
+          PY
