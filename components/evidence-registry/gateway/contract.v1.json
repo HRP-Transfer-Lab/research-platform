@@ -1,6 +1,6 @@
 {
   "contract_version": "csi-evidence-v1",
-  "schema_version": "1.0.0",
+  "schema_version": "1.1.0",
   "status": "active",
   "purpose": "Read-only, release-pinned scientific evidence for Personal, Work, Health and future CSI applications.",
   "views": {
@@ -19,7 +19,8 @@
     "functional_domains": ["overlap"],
     "product_ids": ["overlap"],
     "evidence_rungs": ["overlap"],
-    "peer_review_status": ["eq", "in"]
+    "peer_review_status": ["eq", "in"],
+    "maturity_level": ["eq", "gte", "lte"]
   },
   "recommended_order": ["publication_date.desc", "card_id.asc"],
   "evidence_classes": [
@@ -32,6 +33,21 @@
     "study_level_only",
     "approved_synthesis_available"
   ],
+  "maturity_scale": {
+    "scale_version": "hrp-eml-v1",
+    "meaning": "Cumulative evidence maturity, not risk-of-bias or GRADE certainty.",
+    "scope_rule": "Source/card EML is a record-contribution rating. CSI recommendations should prefer an approved body-of-evidence EML when an approved synthesis/claim exists.",
+    "levels": [
+      [0, "Rationale only"],
+      [1, "Mechanism / paradigm support"],
+      [2, "Initial direct demonstration"],
+      [3, "Replicated efficacy"],
+      [4, "Convergent body"],
+      [5, "Transfer & durability"],
+      [6, "Real-world effectiveness"],
+      [7, "Generalised / scale-ready"]
+    ]
+  },
   "guarantees": [
     "read_only",
     "approved_release_only",
@@ -39,7 +55,8 @@
     "no_person_data",
     "no_workbench_or_audit_data",
     "no_raw_extraction_json",
-    "study_level_claim_boundary_until_approved_synthesis"
+    "study_level_claim_boundary_until_approved_synthesis",
+    "maturity_is_separate_from_quality_and_certainty"
   ],
   "consumer_rule": "CSI applications may read approved evidence from the Registry, but they never write user/person data back into the scientific Evidence Registry.",
   "current_release": {
@@ -47,6 +64,8 @@
     "taxonomy_version": "iqm-route-v0.2",
     "source_record_count": 18,
     "approved_claim_count": 0,
-    "claim_boundary": "study_level_only"
+    "claim_boundary": "study_level_only",
+    "maturity_scale_version": "hrp-eml-v1",
+    "body_level_maturity_available": false
   }
 }
