@@ -1,0 +1,46 @@
+{
+  "record_id": "rt-2026-003",
+  "release_id": "2026-08-23",
+  "review_bucket": "A_direct_intervention",
+  "bibliography": {
+    "title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+    "authors": ["Yi Feng","Mary DePascale","Geetha B. Ramani","Susanne M. Jaeggi"],
+    "year": 2026,
+    "publication_date": "2026-06-17",
+    "venue": "Journal of Cognitive Enhancement",
+    "source_kind": "journal_article",
+    "peer_review_status": "peer_reviewed",
+    "doi": "10.1007/s41465-026-00364-6",
+    "pmid": null,
+    "arxiv_id": null,
+    "url": "https://doi.org/10.1007/s41465-026-00364-6"
+  },
+  "review": {
+    "primary_classification": "integrate",
+    "secondary_component": "train_plus_domain_specific_learning",
+    "evidence_rungs": ["separate_measure","delayed"],
+    "route_rationale": "Combines domain-general working-memory training with domain-specific numerical-knowledge learning. This is within-person integration rather than Bridge.",
+    "review_status": "approved_seed",
+    "method_extraction_status": "route_review_plus_public_source",
+    "taxonomy_version": "iqm-route-v0.2",
+    "source_review_document": "Mindware-Lab/trident-g-ground-truth/July_2026/TRANSFER_ROUTE_FRAMEWORK.md",
+    "source_review_section": "19. Recent evidence classification radar: May–August 2026"
+  },
+  "study": {
+    "design": "secondary analysis integrating three randomized intervention studies",
+    "population": {"summary":"Diverse kindergarten children","age_min":4,"age_max":7,"age_mean":5.5,"tags":["children","kindergarten"]},
+    "sample": {"analysed":468},
+    "setting": "school",
+    "comparator": "Passive or active controls varied across source studies"
+  },
+  "protocol": {"component":"WM and/or numerical-knowledge tablet-game training","sessions_min":5,"sessions_max":10,"followup_weeks_min":4,"followup_weeks_max":6,"delivery_mode":"researcher-facilitated tablet games"},
+  "outcomes": [
+    {"name":"working-memory composite","rung":"separate_measure","timepoint":"post_and_4_6_week_followup","direction":"mixed_by_baseline_skill","objective":true},
+    {"name":"math composite","rung":"separate_measure","timepoint":"post_and_4_6_week_followup","direction":"positive_for_additive_training_at_long_term","objective":true}
+  ],
+  "product_relevance": [
+    {"product":"cognitive_control_coach","scope":"working_memory_training","match":"indirect","direction":"supportive","claim_status":"design_informing"},
+    {"product":"explorer","scope":"moderator_routing","match":"conceptual","direction":"supportive","claim_status":"design_informing"}
+  ],
+  "tags": ["working_memory","numeracy","kindergarten","integrated_training","moderators"]
+}

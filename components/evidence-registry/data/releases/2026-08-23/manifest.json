@@ -1,0 +1,22 @@
+{
+  "release_id": "2026-08-23",
+  "schema_version": "1.0.0",
+  "taxonomy_version": "iqm-route-v0.2",
+  "source_review_document": "Mindware-Lab/trident-g-ground-truth/July_2026/TRANSFER_ROUTE_FRAMEWORK.md",
+  "source_review_section": "19. Recent evidence classification radar: May–August 2026",
+  "record_count": 18,
+  "buckets": {
+    "A_direct_intervention": 7,
+    "B_measurement_mechanism": 6,
+    "C_human_ai_activity_system": 5
+  },
+  "corpus_basis": "All 18 records in the route-framework evidence radar are retained. One Gero et al. preprint is dated 13 April 2026 but is included because it is explicitly part of the reviewed May–August radar corpus.",
+  "status": "approved_seed",
+  "generated_on": "2026-08-23",
+  "limitations": [
+    "Rapid-scoping seed, not a systematic review.",
+    "Route classifications are IQ Mindware/CSI interpretations, not author labels.",
+    "Some protocol/sample fields remain null or notes-only where the route review/public source did not establish them.",
+    "Risk-of-bias and body-of-evidence certainty are not yet fully appraised for every record."
+  ]
+}

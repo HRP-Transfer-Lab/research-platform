@@ -1,0 +1,36 @@
+{
+  "taxonomy_version": "iqm-route-v0.2",
+  "routes": [
+    "develop_equip",
+    "develop_train",
+    "develop_condition",
+    "regulate",
+    "bridge",
+    "redesign",
+    "integrate",
+    "measure_prove",
+    "mechanism_evidence",
+    "mechanism_and_training_design_evidence",
+    "metacognitive_governor_evidence",
+    "state_mechanism_evidence",
+    "negative_metacognitive_overlay_evidence",
+    "observational_human_ai_coupling_taxonomy"
+  ],
+  "evidence_rungs": [
+    "practice_effect",
+    "changed_format",
+    "separate_measure",
+    "delayed",
+    "applied",
+    "measurement",
+    "mechanism",
+    "delayed_mechanism",
+    "observational_longitudinal"
+  ],
+  "transfer_axes": ["horizontal", "vertical", "niche", "delayed"],
+  "bridge_levels": ["prompted_use", "cue_triggered_use", "changed_context_use", "unprompted_use", "delayed_portability"],
+  "products": ["g_track", "cognitive_control_coach", "reasoning_coach", "h_agi", "explorer", "csi"],
+  "claim_status": ["mechanism_only", "observational_only", "design_informing", "approved_internal", "approved_public", "not_eligible"],
+  "source_kinds": ["journal_article", "systematic_review_meta_analysis", "scoping_review", "working_paper", "preprint", "conference_preprint"],
+  "review_buckets": ["A_direct_intervention", "B_measurement_mechanism", "C_human_ai_activity_system"]
+}

@@ -1,0 +1,12 @@
+{
+  "record_id": "rt-2026-004",
+  "release_id": "2026-08-23",
+  "review_bucket": "A_direct_intervention",
+  "bibliography": {"title":"Relational responding and analogical learning: An experimental test of relational frame theory","authors":["Xi Hu","Wang Jian"],"year":2026,"publication_date":"2026-08-01","venue":"Learning and Motivation","source_kind":"journal_article","peer_review_status":"peer_reviewed","doi":"10.1016/j.lmot.2026.102312","pmid":null,"arxiv_id":null,"url":"https://doi.org/10.1016/j.lmot.2026.102312"},
+  "review": {"primary_classification":"develop_train","secondary_component":"structured_variation","evidence_rungs":["changed_format"],"route_rationale":"Systematic and enhanced multi-exemplar relational training develops relation recovery across varied examples; generalization remains within a relational task family rather than Bridge.","review_status":"approved_seed","method_extraction_status":"route_review_plus_public_source","taxonomy_version":"iqm-route-v0.2","source_review_document":"Mindware-Lab/trident-g-ground-truth/July_2026/TRANSFER_ROUTE_FRAMEWORK.md","source_review_section":"19. Recent evidence classification radar: May–August 2026"},
+  "study": {"design":"randomized three-group experimental training study","population":{"summary":"Healthy university undergraduates","tags":["young_adults","university_students","healthy"]},"sample":{"randomized":119,"groups":{"relational_training":42,"enhanced_training":38,"yoked_control":39}},"setting":"controlled relational training","comparator":"Yoked non-relational control"},
+  "protocol": {"component":"relational-frame training","delivery_mode":"structured matching-to-sample training","conditions":["standard relational training","enhanced multi-exemplar training","yoked control"]},
+  "outcomes": [{"name":"derived relational responding accuracy","rung":"practice_effect","timepoint":"post","direction":"positive","objective":true},{"name":"analogical transfer accuracy and latency","rung":"changed_format","timepoint":"post","direction":"positive","objective":true}],
+  "product_relevance": [{"product":"reasoning_coach","scope":"relational_training_and_analogy","match":"close","direction":"supportive","claim_status":"design_informing"}],
+  "tags": ["relational_training","analogy","multi_exemplar","reasoning_coach"]
+}
