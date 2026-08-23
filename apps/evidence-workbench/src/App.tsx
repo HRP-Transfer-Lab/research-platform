@@ -3,6 +3,7 @@ import { Activity, Archive, BookOpen, ChevronRight, ClipboardCheck, Database, Fi
 import type { Session } from '@supabase/supabase-js'
 import { supabase } from './lib/supabase'
 import { LoginScreen, PendingAccess } from './AuthViews'
+import { MaturityBadge, type MaturityAssessment, type MaturityDefinition } from './EvidenceMaturity'
 import { SourceDetailWithMaturity } from './SourceDetailWithMaturity'
 import { AccessPage, AuditPage, ReleasesPage } from './WorkbenchPages'
 import { BucketPill, CenteredLoader, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
@@ -14,6 +15,8 @@ function App() {
   const [member, setMember] = useState<WorkbenchMember | null>(null)
   const [memberChecked, setMemberChecked] = useState(false)
   const [data, setData] = useState<RegistryData>(emptyData)
+  const [maturityAssessments, setMaturityAssessments] = useState<MaturityAssessment[]>([])
+  const [maturityDefinitions, setMaturityDefinitions] = useState<MaturityDefinition[]>([])
   const [audit, setAudit] = useState<AuditRow[]>([])
   const [members, setMembers] = useState<WorkbenchMember[]>([])
   const [loading, setLoading] = useState(false)
@@ -24,6 +27,7 @@ function App() {
   const [bucket, setBucket] = useState('all')
   const [route, setRoute] = useState('all')
   const [product, setProduct] = useState('all')
+  const [maturity, setMaturity] = useState('all')
 
   useEffect(() => {
     supabase.auth.getSession().then(({ data }) => {
@@ -68,7 +72,7 @@ function App() {
   async function loadRegistry() {
     setLoading(true)
     setError(null)
-    const [sources, studies, components, outcomes, products, quality, releases] = await Promise.all([
+    const [sources, studies, components, outcomes, products, quality, releases, maturityRows, maturityDefs] = await Promise.all([
       supabase.from('evidence_source').select('*').order('publication_date', { ascending: false, nullsFirst: false }),
       supabase.from('study').select('*'),
       supabase.from('intervention_component').select('*').order('component_id'),
@@ -76,8 +80,10 @@ function App() {
       supabase.from('product_relevance').select('*').order('product_relevance_id'),
       supabase.from('quality_assessment').select('*').order('quality_assessment_id'),
       supabase.from('evidence_release').select('*').order('released_on', { ascending: false }),
+      supabase.from('evidence_maturity_assessment').select('*').eq('scale_version', 'hrp-eml-v1').eq('scope', 'record_contribution'),
+      supabase.from('evidence_maturity_level_definition').select('*').eq('scale_version', 'hrp-eml-v1').order('maturity_level'),
     ])
-    const firstError = [sources, studies, components, outcomes, products, quality, releases].find((result) => result.error)?.error
+    const firstError = [sources, studies, components, outcomes, products, quality, releases, maturityRows, maturityDefs].find((result) => result.error)?.error
     if (firstError) {
       setError(firstError.message)
     } else {
@@ -91,6 +97,8 @@ function App() {
         releases: (releases.data ?? []) as Release[],
       }
       setData(next)
+      setMaturityAssessments((maturityRows.data ?? []) as MaturityAssessment[])
+      setMaturityDefinitions((maturityDefs.data ?? []) as MaturityDefinition[])
       setSelectedId((current) => current ?? next.sources[0]?.source_id ?? null)
     }
     setLoading(false)
@@ -126,12 +134,23 @@ function App() {
     [data.products],
   )
 
+  const maturityBySource = useMemo(() => new Map(
+    maturityAssessments
+      .filter((item) => item.source_id)
+      .map((item) => [item.source_id as string, item]),
+  ), [maturityAssessments])
+
+  const maturityDefinitionByLevel = useMemo(() => new Map(
+    maturityDefinitions.map((item) => [item.maturity_level, item]),
+  ), [maturityDefinitions])
+
   const filteredSources = useMemo(() => {
     const query = search.trim().toLowerCase()
     return data.sources.filter((source) => {
       const study = data.studies.find((item) => item.source_id === source.source_id)
       const studyComponents = data.components.filter((item) => item.study_id === study?.study_id)
       const sourceProducts = data.products.filter((item) => item.source_id === source.source_id)
+      const maturityAssessment = maturityBySource.get(source.source_id)
       const tags = source.raw_record?.tags ?? []
       const haystack = [
         source.title,
@@ -146,9 +165,11 @@ function App() {
       const matchesBucket = bucket === 'all' || source.review_bucket === bucket
       const matchesRoute = route === 'all' || primaryClassification(source).includes(route) || studyComponents.some((item) => item.route === route || item.secondary_route === route)
       const matchesProduct = product === 'all' || sourceProducts.some((item) => item.product === product)
-      return matchesSearch && matchesBucket && matchesRoute && matchesProduct
+      const matchesMaturity = maturity === 'all'
+        || (maturity === 'unrated' ? !maturityAssessment : maturityAssessment?.maturity_level === Number(maturity))
+      return matchesSearch && matchesBucket && matchesRoute && matchesProduct && matchesMaturity
     })
-  }, [data, search, bucket, route, product])
+  }, [data, search, bucket, route, product, maturity, maturityBySource])
 
   if (!authReady) return <CenteredLoader label="Checking secure session…" />
   if (!session) return <LoginScreen />
@@ -204,8 +225,13 @@ function App() {
               ]} />
               <SelectField label="Route / classification" value={route} onChange={setRoute} options={[["all", "All routes"], ...routeOptions.map((item) => [item, humanize(item)] as [string, string])]} />
               <SelectField label="Product relevance" value={product} onChange={setProduct} options={[["all", "All products"], ...productsAvailable.map((item) => [item, humanize(item)] as [string, string])]} />
-              <button className="secondary-button full" onClick={() => { setSearch(''); setBucket('all'); setRoute('all'); setProduct('all') }}>Clear filters</button>
-              <div className="filter-note"><ShieldCheck size={15} /><span>Product relevance means evidence can inform a product; it does not mean the product itself is validated.</span></div>
+              <SelectField label="Evidence maturity" value={maturity} onChange={setMaturity} options={[
+                ['all', 'All maturity levels'],
+                ...maturityDefinitions.map((item) => [String(item.maturity_level), `EML${item.maturity_level} · ${item.short_label}`] as [string, string]),
+                ['unrated', 'Not yet rated'],
+              ]} />
+              <button className="secondary-button full" onClick={() => { setSearch(''); setBucket('all'); setRoute('all'); setProduct('all'); setMaturity('all') }}>Clear filters</button>
+              <div className="filter-note"><ShieldCheck size={15} /><span>EML is evidence maturity, not study quality or GRADE certainty. Product relevance means evidence can inform a product; it does not mean the product itself is validated.</span></div>
             </aside>
 
             <section className="source-list-panel">
@@ -214,14 +240,21 @@ function App() {
                 <button className="icon-button" title="Refresh" onClick={loadRegistry} disabled={loading}><RefreshCw className={loading ? 'spin' : ''} size={16} /></button>
               </div>
               <div className="source-list">
-                {filteredSources.map((source) => (
-                  <button key={source.source_id} className={`source-card ${selectedId === source.source_id ? 'selected' : ''}`} onClick={() => setSelectedId(source.source_id)}>
-                    <div className="source-card-top"><BucketPill bucket={source.review_bucket} /><span className="source-date">{source.publication_date ?? source.publication_year ?? '—'}</span></div>
-                    <h3>{source.title}</h3>
-                    <p>{source.venue ?? humanize(source.source_kind)}</p>
-                    <div className="source-card-bottom"><RoutePill route={primaryClassification(source)} /><ChevronRight size={15} /></div>
-                  </button>
-                ))}
+                {filteredSources.map((source) => {
+                  const maturityAssessment = maturityBySource.get(source.source_id)
+                  const maturityDefinition = maturityAssessment ? maturityDefinitionByLevel.get(maturityAssessment.maturity_level) : null
+                  return (
+                    <button key={source.source_id} className={`source-card ${selectedId === source.source_id ? 'selected' : ''}`} onClick={() => setSelectedId(source.source_id)}>
+                      <div className="source-card-top"><BucketPill bucket={source.review_bucket} /><span className="source-date">{source.publication_date ?? source.publication_year ?? '—'}</span></div>
+                      {maturityAssessment && maturityDefinition && (
+                        <MaturityBadge level={maturityAssessment.maturity_level} label={maturityDefinition.short_label} colorToken={maturityDefinition.color_token} status={maturityAssessment.status} />
+                      )}
+                      <h3>{source.title}</h3>
+                      <p>{source.venue ?? humanize(source.source_kind)}</p>
+                      <div className="source-card-bottom"><RoutePill route={primaryClassification(source)} /><ChevronRight size={15} /></div>
+                    </button>
+                  )
+                })}
                 {!loading && filteredSources.length === 0 && <div className="empty-state">No evidence matches these filters.</div>}
               </div>
             </section>
