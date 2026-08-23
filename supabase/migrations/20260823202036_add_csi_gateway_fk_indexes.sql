@@ -1,0 +1,4 @@
+create index csi_gateway_release_contract_idx on public.csi_gateway_release(contract_version);
+create index csi_gateway_evidence_contract_idx on public.csi_gateway_evidence_card(contract_version);
+create index csi_gateway_claim_release_idx on public.csi_gateway_claim(evidence_release_id);
+create index csi_gateway_claim_contract_idx on public.csi_gateway_claim(contract_version);
