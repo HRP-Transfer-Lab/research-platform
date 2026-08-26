@@ -59,6 +59,7 @@ research-platform/
   README.md
   docs/
     ARCHITECTURE.md
+    EVIDENCE_REGISTRY_V1_1_IMPLEMENTATION_PLAN.md
     IMPLEMENTATION_PLAN.md
   components/
     knowledge-bank/
@@ -108,8 +109,9 @@ research-platform/
 
 ## Where to start
 
-1. Review architecture: `docs/ARCHITECTURE.md`
-2. Start with actionable first steps: `docs/FIRST_STEPS_IMPLEMENTATION_PLAN.md`
-3. Use the full roadmap: `docs/IMPLEMENTATION_PLAN.md`
-4. Review deployment placement: `docs/DUAL_MACHINE_IMPLEMENTATION.md`
-5. Configure integration secrets: `configs/env/README.md`
+1. **For the current Evidence Registry upgrade:** `docs/EVIDENCE_REGISTRY_V1_1_IMPLEMENTATION_PLAN.md`
+2. Review architecture: `docs/ARCHITECTURE.md`
+3. Start with general platform first steps: `docs/FIRST_STEPS_IMPLEMENTATION_PLAN.md`
+4. Use the wider platform roadmap: `docs/IMPLEMENTATION_PLAN.md`
+5. Review deployment placement: `docs/DUAL_MACHINE_IMPLEMENTATION.md`
+6. Configure integration secrets: `configs/env/README.md`
