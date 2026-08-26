@@ -205,6 +205,17 @@ select
     if actual != expected:
         raise SystemExit(f"LOCAL REGISTRY BASELINE FAIL: expected {expected}, got {actual}")
 
+    stage2_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage2_identity.py"
+    if stage2_validator.exists():
+        print("Validating Stage 2 canonical source identity/version layer...")
+        run([
+            sys.executable,
+            str(stage2_validator),
+            "--container", args.container,
+            "--release", args.release,
+            "--expected", str(expected_records),
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
