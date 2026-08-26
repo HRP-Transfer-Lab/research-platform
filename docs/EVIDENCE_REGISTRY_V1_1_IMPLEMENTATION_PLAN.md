@@ -241,7 +241,8 @@ Demand/application family is a use-case lens, not the intervention mechanism.
 - Mechanism/measurement/observational records validate without masquerading as intervention routes.
 - Existing Gateway cards still reproduce the same v1 public classifications/caveats.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`  
+**Evidence:** `docs/STAGE_1_ROUTE_SEMANTICS_VERIFICATION.md`; migration `20260826212614`; implementation commit `bf639c32249b7707bd8b2f8c485f715acafe6c37`.
 
 ---
 
@@ -273,7 +274,8 @@ release_source_version
 - The `2026-08-23` snapshot remains reproducible exactly.
 - A later correction creates a new source version rather than silently changing a historic release.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`  
+**Evidence:** `docs/STAGE_2_SOURCE_IDENTITY_VERIFICATION.md`; migration `20260826215834`; implementation commit `fb9e79a80e3c222c07b246d3116a147603726464`.
 
 ---
 
@@ -315,7 +317,8 @@ niche_or_activity_system
 - Mechanism evidence can be queried independently of intervention route.
 - A single intervention can legitimately map to several application families without changing its route.
 
-**Status:** `NOT STARTED`
+**Status:** `IN PROGRESS`  
+**Execution spec:** `docs/STAGE_3_TARGET_MECHANISM_APPLICATION_IMPLEMENTATION.md`.
 
 ---
 
@@ -883,9 +886,9 @@ Update this table as implementation proceeds.
 
 | Stage | Description | Status | Evidence / commit |
 | --- | --- | --- | --- |
-| 1 | Freeze route semantics | NOT STARTED | — |
-| 2 | Canonical source/version/release identity | NOT STARTED | — |
-| 3 | Demand/target/mechanism ontology | NOT STARTED | — |
+| 1 | Freeze route semantics | VERIFIED | `docs/STAGE_1_ROUTE_SEMANTICS_VERIFICATION.md`; `bf639c3`; migration `20260826212614` |
+| 2 | Canonical source/version/release identity | VERIFIED | `docs/STAGE_2_SOURCE_IDENTITY_VERIFICATION.md`; `fb9e79a`; migration `20260826215834` |
+| 3 | Demand/target/mechanism ontology | IN PROGRESS | `docs/STAGE_3_TARGET_MECHANISM_APPLICATION_IMPLEMENTATION.md` |
 | 4 | Orthogonal outcome/transfer/time architecture | NOT STARTED | — |
 | 5 | Study arms and contrasts | NOT STARTED | — |
 | 6 | First-class effect estimates | NOT STARTED | — |
@@ -929,6 +932,16 @@ Gateway contract: csi-evidence-v1
 body-level claim boundary: study_level_only
 ```
 
+Verified v1.1 layers now also preserve:
+
+```text
+Stage 1 canonical route semantics: VERIFIED
+canonical sources: 18
+source versions: 18
+release source-version memberships: 18
+legacy source aliases: 18
+```
+
 Known baseline gaps that v1.1 is designed to address:
 
 ```text
@@ -963,13 +976,14 @@ Then read, in this order:
 
 ```text
 1. docs/EVIDENCE_REGISTRY_V1_1_IMPLEMENTATION_PLAN.md   ← this file
-2. docs/EVIDENCE_REGISTRY_ARCHITECTURE.md
-3. docs/EVIDENCE_MATURITY_LEVELS.md
-4. docs/CSI_EVIDENCE_GATEWAY.md
-5. docs/DUAL_MACHINE_IMPLEMENTATION.md
-6. components/evidence-registry/README.md
-7. components/evidence-registry/schema/taxonomy.v1.json
-8. supabase/migrations/ latest migration files
+2. docs/STAGE_1_ROUTE_SEMANTICS_VERIFICATION.md
+3. docs/STAGE_2_SOURCE_IDENTITY_VERIFICATION.md
+4. docs/STAGE_3_TARGET_MECHANISM_APPLICATION_IMPLEMENTATION.md
+5. docs/EVIDENCE_REGISTRY_ARCHITECTURE.md
+6. docs/EVIDENCE_MATURITY_LEVELS.md
+7. docs/CSI_EVIDENCE_GATEWAY.md
+8. components/evidence-registry/schema/taxonomy.v1.1.json
+9. supabase/migrations/ latest migration files
 ```
 
 Before making changes:
@@ -982,9 +996,9 @@ Before making changes:
 
 ### Immediate next action
 
-The first implementation task is:
+The active implementation task is:
 
-> **Stage 1 — freeze route semantics and split intervention route from evidence role/controller classifications, with backwards mapping for the 18-source seed and no break to `csi-evidence-v1`.**
+> **Stage 3 — create the neutral Demand/Application Family × target locus × target construct × mechanism ontology, with explicit missingness and optional Trident-G/APC/H-AGI/CSI mappings, while preserving Stage 1, Stage 2 and `csi-evidence-v1` invariants.**
 
 ---
 
