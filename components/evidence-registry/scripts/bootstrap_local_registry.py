@@ -216,6 +216,18 @@ select
             "--expected", str(expected_records),
         ])
 
+    stage3_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage3_ontology.py"
+    if stage3_validator.exists():
+        print("Validating Stage 3 application/target/mechanism ontology layer...")
+        run([
+            sys.executable,
+            str(stage3_validator),
+            "--container", args.container,
+            "--release", args.release,
+            "--expected-sources", str(expected_records),
+            "--expected-components", "13",
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
