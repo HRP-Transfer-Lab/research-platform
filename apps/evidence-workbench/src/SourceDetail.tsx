@@ -1,7 +1,7 @@
 import { useEffect, useState } from 'react'
 import { Activity, ClipboardCheck, ExternalLink, FlaskConical, Pencil, Plus, Save, ShieldCheck, Sparkles, Users } from 'lucide-react'
 import { supabase } from './lib/supabase'
-import { asAuthorLine, compactJson, humanize, primaryClassification, routeOptions, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type RegistryData, type Study } from './workbench'
+import { asAuthorLine, compactJson, humanize, routeOptions, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type RegistryData, type Study } from './workbench'
 import { BucketPill, DetailSection, Dose, EditInput, EmptyLine, Info, RoutePill } from './WorkbenchUi'
 
 export function SourceDetail({ source, data, canEdit, onRefresh, onError }: { source: EvidenceSource; data: RegistryData; canEdit: boolean; onRefresh: () => Promise<void>; onError: (v: string | null) => void }) {
@@ -31,7 +31,7 @@ export function SourceDetail({ source, data, canEdit, onRefresh, onError }: { so
   return (
     <div className="detail-scroll">
       <div className="detail-hero">
-        <div className="detail-meta-row"><BucketPill bucket={source.review_bucket} /><RoutePill route={primaryClassification(source)} /><span className="status-pill">{humanize(source.review_status)}</span></div>
+        <div className="detail-meta-row"><BucketPill bucket={source.review_bucket} /><span className="status-pill">Historical seed record</span><span className="status-pill">{humanize(source.review_status)}</span></div>
         <h2>{source.title}</h2>
         <p className="authors">{asAuthorLine(source.authors)}</p>
         <div className="citation-line"><span>{source.venue ?? humanize(source.source_kind)}</span><span>•</span><span>{source.publication_date ?? source.publication_year ?? 'Date not extracted'}</span>{source.peer_review_status && <><span>•</span><span>{humanize(source.peer_review_status)}</span></>}</div>
@@ -42,19 +42,19 @@ export function SourceDetail({ source, data, canEdit, onRefresh, onError }: { so
         </div>
       </div>
 
-      <DetailSection title="Route interpretation" icon={<Activity size={17} />} action={canEdit ? <button className="text-button" onClick={() => setEditingSource((v) => !v)}><Pencil size={14} /> {editingSource ? 'Cancel' : 'Edit'}</button> : null}>
+      <DetailSection title="Review interpretation" icon={<Activity size={17} />} action={canEdit ? <button className="text-button" onClick={() => setEditingSource((v) => !v)}><Pencil size={14} /> {editingSource ? 'Cancel' : 'Edit'}</button> : null}>
         {editingSource ? (
           <div className="edit-stack">
             <label className="field-label">Review status</label>
             <select className="select-input" value={reviewStatus} onChange={(e) => setReviewStatus(e.target.value)}><option value="draft">Draft</option><option value="reviewing">Reviewing</option><option value="approved_seed">Approved seed</option><option value="approved_release">Approved release</option></select>
-            <label className="field-label">Route rationale</label>
+            <label className="field-label">Interpretive rationale</label>
             <textarea className="textarea" rows={5} value={routeRationale} onChange={(e) => setRouteRationale(e.target.value)} />
             <button className="primary-button fit" onClick={saveSource}><Save size={15} /> Save interpretation</button>
           </div>
         ) : (
           <>
-            <p className="body-copy">{source.route_rationale || 'No route rationale extracted.'}</p>
-            <div className="record-note">The original Git release JSON remains the immutable seed snapshot; Workbench edits modify the operational Postgres record and are audit-logged.</div>
+            <p className="body-copy">{source.route_rationale || 'No interpretive rationale extracted.'}</p>
+            <div className="record-note">The original Git release JSON remains the immutable seed snapshot. Canonical route/evidence-role semantics are reviewed separately above; Workbench edits modify the operational Postgres record and are audit-logged.</div>
           </>
         )}
       </DetailSection>
@@ -116,7 +116,7 @@ function ComponentCard({ component, canEdit, onRefresh, onError }: { component: 
   return (
     <div className="protocol-card">
       <div className="protocol-head"><div><strong>{component.component_name}</strong><RoutePill route={component.route} /></div>{canEdit && <button className="text-button" onClick={() => setEdit((v) => !v)}><Pencil size={14} /> {edit ? 'Cancel' : 'Edit'}</button>}</div>
-      {edit ? <div className="edit-stack subedit"><label className="field-label">Route</label><select className="select-input" value={form.route} onChange={(e) => setForm({ ...form, route: e.target.value })}>{routeOptions.slice(0, 7).map((r) => <option key={r} value={r}>{humanize(r)}</option>)}</select><EditInput label="Target" value={form.target_summary} onChange={(v) => setForm({ ...form, target_summary: v })} /><EditInput label="Method" value={form.method_summary} onChange={(v) => setForm({ ...form, method_summary: v })} /><div className="triple-fields"><EditInput label="Sessions" type="number" value={form.sessions_min} onChange={(v) => setForm({ ...form, sessions_min: v })} /><EditInput label="Minutes/session" type="number" value={form.session_minutes_min} onChange={(v) => setForm({ ...form, session_minutes_min: v })} /><EditInput label="Weeks" type="number" value={form.weeks_min} onChange={(v) => setForm({ ...form, weeks_min: v })} /></div><button className="primary-button fit" onClick={save}><Save size={14} /> Save component</button></div> : <div className="protocol-body"><Info label="Target" value={component.target_summary} /><Info label="Method" value={component.method_summary || compactJson(component.protocol_json)} /><div className="dose-row"><Dose label="Sessions" value={component.sessions_min} max={component.sessions_max} /><Dose label="Minutes" value={component.session_minutes_min} max={component.session_minutes_max} /><Dose label="Weeks" value={component.weeks_min} max={component.weeks_max} /><Dose label="Frequency/wk" value={component.frequency_per_week_min} max={component.frequency_per_week_max} /></div></div>}
+      {edit ? <div className="edit-stack subedit"><label className="field-label">Route</label><select className="select-input" value={form.route} onChange={(e) => setForm({ ...form, route: e.target.value })}>{routeOptions.map((r) => <option key={r} value={r}>{humanize(r)}</option>)}</select><EditInput label="Target" value={form.target_summary} onChange={(v) => setForm({ ...form, target_summary: v })} /><EditInput label="Method" value={form.method_summary} onChange={(v) => setForm({ ...form, method_summary: v })} /><div className="triple-fields"><EditInput label="Sessions" type="number" value={form.sessions_min} onChange={(v) => setForm({ ...form, sessions_min: v })} /><EditInput label="Minutes/session" type="number" value={form.session_minutes_min} onChange={(v) => setForm({ ...form, session_minutes_min: v })} /><EditInput label="Weeks" type="number" value={form.weeks_min} onChange={(v) => setForm({ ...form, weeks_min: v })} /></div><button className="primary-button fit" onClick={save}><Save size={14} /> Save component</button></div> : <div className="protocol-body"><Info label="Target" value={component.target_summary} /><Info label="Method" value={component.method_summary || compactJson(component.protocol_json)} /><div className="dose-row"><Dose label="Sessions" value={component.sessions_min} max={component.sessions_max} /><Dose label="Minutes" value={component.session_minutes_min} max={component.session_minutes_max} /><Dose label="Weeks" value={component.weeks_min} max={component.weeks_max} /><Dose label="Frequency/wk" value={component.frequency_per_week_min} max={component.frequency_per_week_max} /></div></div>}
     </div>
   )
 }
