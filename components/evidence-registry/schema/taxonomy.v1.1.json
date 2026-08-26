@@ -1,0 +1,158 @@
+{
+  "taxonomy_version": "hrp-registry-v1.1",
+  "governing_framework": "Mindware-Lab/trident-g-ground-truth/July_2026/TRANSFER_ROUTE_FRAMEWORK.md",
+  "canonical_routes": [
+    "develop_equip",
+    "develop_train",
+    "develop_condition",
+    "regulate",
+    "bridge",
+    "redesign",
+    "integrate"
+  ],
+  "evidence_roles": [
+    "direct_intervention",
+    "mechanism",
+    "measurement",
+    "observational",
+    "synthesis"
+  ],
+  "controller_overlays": [
+    "metacognitive_governor",
+    "adaptive_controller",
+    "external_scaffold",
+    "other_controller_or_overlay"
+  ],
+  "review_buckets": [
+    "A_direct_intervention",
+    "B_measurement_mechanism",
+    "C_human_ai_activity_system"
+  ],
+  "legacy_classification_map": {
+    "develop_equip": {
+      "canonical_route": "develop_equip",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "develop_train": {
+      "canonical_route": "develop_train",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "develop_condition": {
+      "canonical_route": "develop_condition",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "regulate": {
+      "canonical_route": "regulate",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "bridge": {
+      "canonical_route": "bridge",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "redesign": {
+      "canonical_route": "redesign",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "integrate": {
+      "canonical_route": "integrate",
+      "default_evidence_role": "direct_intervention",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "measure_prove": {
+      "canonical_route": null,
+      "default_evidence_role": "measurement",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "mechanism_evidence": {
+      "canonical_route": null,
+      "default_evidence_role": "mechanism",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "mechanism_and_training_design_evidence": {
+      "canonical_route": null,
+      "default_evidence_role": "mechanism",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "metacognitive_governor_evidence": {
+      "canonical_route": null,
+      "default_evidence_role": "mechanism",
+      "default_controller_overlay": "metacognitive_governor",
+      "review_required": false
+    },
+    "state_mechanism_evidence": {
+      "canonical_route": null,
+      "default_evidence_role": "mechanism",
+      "default_controller_overlay": null,
+      "review_required": false
+    },
+    "negative_metacognitive_overlay_evidence": {
+      "canonical_route": null,
+      "default_evidence_role": "mechanism",
+      "default_controller_overlay": "metacognitive_governor",
+      "review_required": true
+    },
+    "observational_human_ai_coupling_taxonomy": {
+      "canonical_route": null,
+      "default_evidence_role": "observational",
+      "default_controller_overlay": null,
+      "review_required": false
+    }
+  },
+  "synthesis_source_kinds": [
+    "systematic_review_meta_analysis",
+    "scoping_review"
+  ],
+  "products": [
+    "g_track",
+    "cognitive_control_coach",
+    "reasoning_coach",
+    "h_agi",
+    "explorer",
+    "csi"
+  ],
+  "legacy_evidence_rungs": [
+    "practice_effect",
+    "changed_format",
+    "separate_measure",
+    "delayed",
+    "applied",
+    "measurement",
+    "mechanism",
+    "delayed_mechanism",
+    "observational_longitudinal"
+  ],
+  "legacy_transfer_axes": [
+    "horizontal",
+    "vertical",
+    "niche",
+    "delayed"
+  ],
+  "bridge_levels": [
+    "prompted_use",
+    "cue_triggered_use",
+    "changed_context_use",
+    "unprompted_use",
+    "delayed_portability"
+  ],
+  "notes": [
+    "Historical taxonomy.v1.json remains unchanged so release 2026-08-23 stays reproducible.",
+    "Intervention route, evidence role, review bucket and controller/overlay are orthogonal dimensions.",
+    "Outcome-distance and transfer taxonomies remain legacy in Stage 1 and are refactored in later v1.1 stages."
+  ]
+}
