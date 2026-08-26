@@ -6,8 +6,8 @@ import { LoginScreen, PendingAccess } from './AuthViews'
 import { MaturityBadge, type MaturityAssessment, type MaturityDefinition } from './EvidenceMaturity'
 import { SourceDetailWithMaturity } from './SourceDetailWithMaturity'
 import { AccessPage, AuditPage, ReleasesPage } from './WorkbenchPages'
-import { BucketPill, CenteredLoader, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
-import { emptyData, humanize, primaryClassification, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type Study, type Tab, type WorkbenchMember } from './workbench'
+import { BucketPill, CenteredLoader, EvidenceRolePill, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
+import { emptyData, evidenceRoleOptions, humanize, primaryClassification, primaryEvidenceRole, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type SourceControllerOverlay, type SourceEvidenceRole, type Study, type Tab, type WorkbenchMember } from './workbench'
 
 function App() {
   const [session, setSession] = useState<Session | null>(null)
@@ -25,6 +25,7 @@ function App() {
   const [selectedId, setSelectedId] = useState<string | null>(null)
   const [search, setSearch] = useState('')
   const [bucket, setBucket] = useState('all')
+  const [evidenceRole, setEvidenceRole] = useState('all')
   const [route, setRoute] = useState('all')
   const [product, setProduct] = useState('all')
   const [maturity, setMaturity] = useState('all')
@@ -72,7 +73,7 @@ function App() {
   async function loadRegistry() {
     setLoading(true)
     setError(null)
-    const [sources, studies, components, outcomes, products, quality, releases, maturityRows, maturityDefs] = await Promise.all([
+    const [sources, studies, components, outcomes, products, quality, releases, roleLinks, overlayLinks, maturityRows, maturityDefs] = await Promise.all([
       supabase.from('evidence_source').select('*').order('publication_date', { ascending: false, nullsFirst: false }),
       supabase.from('study').select('*'),
       supabase.from('intervention_component').select('*').order('component_id'),
@@ -80,10 +81,12 @@ function App() {
       supabase.from('product_relevance').select('*').order('product_relevance_id'),
       supabase.from('quality_assessment').select('*').order('quality_assessment_id'),
       supabase.from('evidence_release').select('*').order('released_on', { ascending: false }),
+      supabase.from('source_evidence_role').select('*').order('source_id').order('primary_role', { ascending: false }),
+      supabase.from('source_controller_overlay').select('*').order('source_controller_overlay_id'),
       supabase.from('evidence_maturity_assessment').select('*').eq('scale_version', 'hrp-eml-v1').eq('scope', 'record_contribution'),
       supabase.from('evidence_maturity_level_definition').select('*').eq('scale_version', 'hrp-eml-v1').order('maturity_level'),
     ])
-    const firstError = [sources, studies, components, outcomes, products, quality, releases, maturityRows, maturityDefs].find((result) => result.error)?.error
+    const firstError = [sources, studies, components, outcomes, products, quality, releases, roleLinks, overlayLinks, maturityRows, maturityDefs].find((result) => result.error)?.error
     if (firstError) {
       setError(firstError.message)
     } else {
@@ -95,6 +98,8 @@ function App() {
         products: (products.data ?? []) as ProductRelevance[],
         quality: (quality.data ?? []) as QualityAssessment[],
         releases: (releases.data ?? []) as Release[],
+        evidenceRoles: (roleLinks.data ?? []) as SourceEvidenceRole[],
+        controllerOverlays: (overlayLinks.data ?? []) as SourceControllerOverlay[],
       }
       setData(next)
       setMaturityAssessments((maturityRows.data ?? []) as MaturityAssessment[])
@@ -150,6 +155,7 @@ function App() {
       const study = data.studies.find((item) => item.source_id === source.source_id)
       const studyComponents = data.components.filter((item) => item.study_id === study?.study_id)
       const sourceProducts = data.products.filter((item) => item.source_id === source.source_id)
+      const sourceRoles = data.evidenceRoles.filter((item) => item.source_id === source.source_id)
       const maturityAssessment = maturityBySource.get(source.source_id)
       const tags = source.raw_record?.tags ?? []
       const haystack = [
@@ -157,19 +163,22 @@ function App() {
         source.venue,
         source.route_rationale,
         primaryClassification(source),
+        ...sourceRoles.map((item) => item.evidence_role),
+        ...studyComponents.map((item) => item.route),
         ...(study?.population_tags ?? []),
         ...(Array.isArray(tags) ? tags : []),
         ...sourceProducts.map((item) => item.product),
       ].filter(Boolean).join(' ').toLowerCase()
       const matchesSearch = !query || haystack.includes(query)
       const matchesBucket = bucket === 'all' || source.review_bucket === bucket
-      const matchesRoute = route === 'all' || primaryClassification(source).includes(route) || studyComponents.some((item) => item.route === route || item.secondary_route === route)
+      const matchesEvidenceRole = evidenceRole === 'all' || sourceRoles.some((item) => item.evidence_role === evidenceRole)
+      const matchesRoute = route === 'all' || studyComponents.some((item) => item.route === route)
       const matchesProduct = product === 'all' || sourceProducts.some((item) => item.product === product)
       const matchesMaturity = maturity === 'all'
         || (maturity === 'unrated' ? !maturityAssessment : maturityAssessment?.maturity_level === Number(maturity))
-      return matchesSearch && matchesBucket && matchesRoute && matchesProduct && matchesMaturity
+      return matchesSearch && matchesBucket && matchesEvidenceRole && matchesRoute && matchesProduct && matchesMaturity
     })
-  }, [data, search, bucket, route, product, maturity, maturityBySource])
+  }, [data, search, bucket, evidenceRole, route, product, maturity, maturityBySource])
 
   if (!authReady) return <CenteredLoader label="Checking secure session…" />
   if (!session) return <LoginScreen />
@@ -206,8 +215,8 @@ function App() {
         <main className="library-page">
           <section className="metrics-row">
             <Metric icon={<Database size={18} />} label="Reviewed sources" value={data.sources.length} />
-            <Metric icon={<ClipboardCheck size={18} />} label="Direct interventions" value={data.sources.filter((source) => source.review_bucket.startsWith('A_')).length} />
-            <Metric icon={<Sparkles size={18} />} label="Mechanism / measurement" value={data.sources.filter((source) => source.review_bucket.startsWith('B_')).length} />
+            <Metric icon={<ClipboardCheck size={18} />} label="Direct intervention evidence" value={new Set(data.evidenceRoles.filter((item) => item.evidence_role === 'direct_intervention').map((item) => item.source_id)).size} />
+            <Metric icon={<Sparkles size={18} />} label="Mechanism / measurement" value={new Set(data.evidenceRoles.filter((item) => item.evidence_role === 'mechanism' || item.evidence_role === 'measurement').map((item) => item.source_id)).size} />
             <Metric icon={<FileSearch size={18} />} label="Outcomes coded" value={data.outcomes.length} />
             <Metric icon={<ShieldCheck size={18} />} label="Current release" value={data.releases[0]?.release_id ?? '—'} compact />
           </section>
@@ -217,21 +226,22 @@ function App() {
               <div className="panel-title"><Filter size={16} /> Evidence filters</div>
               <label className="field-label">Search</label>
               <div className="search-box"><Search size={15} /><input value={search} onChange={(event) => setSearch(event.target.value)} placeholder="Title, target, population…" /></div>
-              <SelectField label="Evidence class" value={bucket} onChange={setBucket} options={[
-                ['all', 'All evidence'],
-                ['A_direct_intervention', 'Direct intervention'],
-                ['B_measurement_mechanism', 'Mechanism / measurement'],
-                ['C_human_ai_activity_system', 'Human–AI / activity system'],
+              <SelectField label="Review stream" value={bucket} onChange={setBucket} options={[
+                ['all', 'All review streams'],
+                ['A_direct_intervention', 'Direct intervention stream'],
+                ['B_measurement_mechanism', 'Mechanism / measurement stream'],
+                ['C_human_ai_activity_system', 'Human–AI / activity-system stream'],
               ]} />
-              <SelectField label="Route / classification" value={route} onChange={setRoute} options={[["all", "All routes"], ...routeOptions.map((item) => [item, humanize(item)] as [string, string])]} />
+              <SelectField label="Evidence role" value={evidenceRole} onChange={setEvidenceRole} options={[["all", "All evidence roles"], ...evidenceRoleOptions.map((item) => [item, humanize(item)] as [string, string])]} />
+              <SelectField label="Intervention route" value={route} onChange={setRoute} options={[["all", "All intervention routes"], ...routeOptions.map((item) => [item, humanize(item)] as [string, string])]} />
               <SelectField label="Product relevance" value={product} onChange={setProduct} options={[["all", "All products"], ...productsAvailable.map((item) => [item, humanize(item)] as [string, string])]} />
               <SelectField label="Evidence maturity" value={maturity} onChange={setMaturity} options={[
                 ['all', 'All maturity levels'],
                 ...maturityDefinitions.map((item) => [String(item.maturity_level), `EML${item.maturity_level} · ${item.short_label}`] as [string, string]),
                 ['unrated', 'Not yet rated'],
               ]} />
-              <button className="secondary-button full" onClick={() => { setSearch(''); setBucket('all'); setRoute('all'); setProduct('all'); setMaturity('all') }}>Clear filters</button>
-              <div className="filter-note"><ShieldCheck size={15} /><span>EML is evidence maturity, not study quality or GRADE certainty. Product relevance means evidence can inform a product; it does not mean the product itself is validated.</span></div>
+              <button className="secondary-button full" onClick={() => { setSearch(''); setBucket('all'); setEvidenceRole('all'); setRoute('all'); setProduct('all'); setMaturity('all') }}>Clear filters</button>
+              <div className="filter-note"><ShieldCheck size={15} /><span>Route describes what an intervention changes. Evidence role describes what a source contributes. Review stream is ingestion metadata. EML is maturity, not study quality or GRADE certainty.</span></div>
             </aside>
 
             <section className="source-list-panel">
@@ -243,6 +253,9 @@ function App() {
                 {filteredSources.map((source) => {
                   const maturityAssessment = maturityBySource.get(source.source_id)
                   const maturityDefinition = maturityAssessment ? maturityDefinitionByLevel.get(maturityAssessment.maturity_level) : null
+                  const study = data.studies.find((item) => item.source_id === source.source_id)
+                  const sourceRoutes = Array.from(new Set(data.components.filter((item) => item.study_id === study?.study_id).map((item) => item.route)))
+                  const primaryRole = primaryEvidenceRole(source.source_id, data.evidenceRoles)
                   return (
                     <button key={source.source_id} className={`source-card ${selectedId === source.source_id ? 'selected' : ''}`} onClick={() => setSelectedId(source.source_id)}>
                       <div className="source-card-top"><BucketPill bucket={source.review_bucket} /><span className="source-date">{source.publication_date ?? source.publication_year ?? '—'}</span></div>
@@ -251,7 +264,7 @@ function App() {
                       )}
                       <h3>{source.title}</h3>
                       <p>{source.venue ?? humanize(source.source_kind)}</p>
-                      <div className="source-card-bottom"><RoutePill route={primaryClassification(source)} /><ChevronRight size={15} /></div>
+                      <div className="source-card-bottom"><div className="detail-meta-row"><EvidenceRolePill role={primaryRole} />{sourceRoutes.slice(0, 2).map((item) => <RoutePill key={item} route={item} />)}</div><ChevronRight size={15} /></div>
                     </button>
                   )
                 })}
