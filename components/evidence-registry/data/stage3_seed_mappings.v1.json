@@ -1,0 +1,216 @@
+{
+  "mapping_version": "stage3-seed-v1",
+  "release_id": "2026-08-23",
+  "status": "agent_candidate_for_human_review",
+  "basis": "Conservative v1.1 interpretation of the immutable 18-record approved seed corpus. Candidate mappings must not be treated as author terminology, approved claims, or product validation.",
+  "principles": [
+    "Application family is a broad use-case lens, not efficacy or product validation.",
+    "Targets are mapped only where the seed record explicitly supports the intervention focus.",
+    "Mechanisms are proposed only for records whose approved rapid review explicitly describes a mechanism relationship.",
+    "Candidate mappings do not overwrite human-reviewed mappings or extraction states."
+  ],
+  "sources": {
+    "rt-2026-001": {
+      "application_families": [
+        {"application_family":"mental_fitness","relevance_level":"primary","rationale":"Episodic-specificity memory training in healthy older adults."},
+        {"application_family":"longevity","relevance_level":"secondary","rationale":"Healthy older-adult cognitive training with memory and problem-solving outcomes."}
+      ],
+      "components": [
+        {"component_name":"SPECTRA episodic-specificity training","targets":[
+          {"target_id":"target_episodic_retrieval_specificity","relationship":"primary_target","rationale":"The approved route rationale explicitly describes repeated episodic-specificity reconstruction developing retrieval/specificity."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-002": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Educational training in children with learning difficulties."},
+        {"application_family":"executive_functioning","relevance_level":"primary","rationale":"Protocol explicitly targets working memory, inhibitory control and cognitive flexibility."}
+      ],
+      "components": [
+        {"component_name":"comprehensive executive-function training","targets":[
+          {"target_id":"target_working_memory_function","relationship":"primary_target","rationale":"Protocol explicitly lists working memory."},
+          {"target_id":"target_response_inhibition","relationship":"primary_target","rationale":"Protocol explicitly lists inhibitory control."},
+          {"target_id":"target_cognitive_flexibility","relationship":"primary_target","rationale":"Protocol explicitly lists cognitive flexibility."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-003": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Kindergarten numerical-knowledge and working-memory intervention."},
+        {"application_family":"executive_functioning","relevance_level":"secondary","rationale":"Working-memory training is one intervention component."}
+      ],
+      "components": [
+        {"component_name":"WM and/or numerical-knowledge tablet-game training","targets":[
+          {"target_id":"target_working_memory_function","relationship":"primary_target","rationale":"The intervention explicitly contains working-memory training."},
+          {"target_id":"target_numerical_knowledge","relationship":"primary_target","rationale":"The intervention explicitly contains domain-specific numerical-knowledge learning."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-004": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Experimental relational and analogical learning."},
+        {"application_family":"performance","relevance_level":"secondary","rationale":"Analogy and relational reasoning performance are the transfer outcomes."}
+      ],
+      "components": [
+        {"component_name":"relational-frame training","targets":[
+          {"target_id":"target_relational_integration","relationship":"primary_target","rationale":"Multi-exemplar relational training explicitly develops relational responding and analogical transfer."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-005": {
+      "application_families": [
+        {"application_family":"executive_functioning","relevance_level":"primary","rationale":"The intervention is explicitly multi-operation executive-function training."},
+        {"application_family":"mental_fitness","relevance_level":"secondary","rationale":"Cognitive training in healthy younger and older adults."},
+        {"application_family":"longevity","relevance_level":"secondary","rationale":"Older-adult subgroup and three-month retention are relevant to maintenance across ageing."}
+      ],
+      "components": [
+        {"component_name":"custom-developed cognitive games","targets":[
+          {"target_id":"target_multi_domain_executive_control","relationship":"primary_target","rationale":"Approved route rationale describes training multiple executive operations; outcomes include working memory, inhibition and flexibility."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-006": {
+      "application_families": [
+        {"application_family":"longevity","relevance_level":"primary","rationale":"Twelve-week combined physical and cognitive intervention in cognitively normal older adults."},
+        {"application_family":"mental_fitness","relevance_level":"secondary","rationale":"General cognitive-function development in healthy older adults."},
+        {"application_family":"executive_functioning","relevance_level":"secondary","rationale":"Executive function is among the explicitly trained cognitive domains."}
+      ],
+      "components": [
+        {"component_name":"Baduanjin","targets":[
+          {"target_id":"target_physical_conditioning","relationship":"primary_target","rationale":"The approved route rationale treats Baduanjin as changing the longer-term physiological/behavioural operating substrate without specifying a narrower physiological mediator."}
+        ]},
+        {"component_name":"cognitive_training","targets":[
+          {"target_id":"target_multi_domain_cognitive_function","relationship":"primary_target","rationale":"Protocol explicitly targets memory, attention, language, executive function and visuospatial cognition."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-007": {
+      "application_families": [
+        {"application_family":"executive_functioning","relevance_level":"primary","rationale":"Systematic review/meta-analysis of working-memory cognitive training plus tDCS."},
+        {"application_family":"mental_fitness","relevance_level":"secondary","rationale":"Healthy-adult cognitive training evidence."}
+      ],
+      "components": [
+        {"component_name":"active tDCS plus structured cognitive training","targets":[
+          {"target_id":"target_working_memory_function","relationship":"primary_target","rationale":"The synthesis explicitly evaluates working-memory outcomes from structured cognitive training plus tDCS; the seed record does not justify a narrower physiological target."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-008": {
+      "application_families": [
+        {"application_family":"executive_functioning","relevance_level":"primary","rationale":"Measurement review of working-memory tasks and transfer measures."},
+        {"application_family":"longevity","relevance_level":"secondary","rationale":"Reviewed evidence concerns healthy older adults."}
+      ],
+      "components": [],
+      "mechanisms": []
+    },
+    "rt-2026-009": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Mechanistic evidence on learned abstract relational structure and consolidation."}
+      ],
+      "components": [],
+      "mechanisms": [
+        {"mechanism_id":"mechanism_relational_structure_consolidation","assertion_type":"hrp_candidate","assertion_direction":"supports","support_summary":"A stimulus-independent relational representation emerged over days after learning two graphs with shared structure.","rationale":"The approved seed review explicitly identifies emergence of an abstract relational representation over days as mechanistic evidence."}
+      ]
+    },
+    "rt-2026-010": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Perceptual-learning generalisation evidence."},
+        {"application_family":"performance","relevance_level":"secondary","rationale":"Generalisation of perceptual discrimination performance across locations."}
+      ],
+      "components": [],
+      "mechanisms": [
+        {"mechanism_id":"mechanism_temporal_integration_generalization","assertion_type":"hrp_candidate","assertion_direction":"supports","support_summary":"Longer temporal integration/serial dependence was associated with greater generalisation across visual locations.","rationale":"The approved review describes serial dependence/temporal integration as predicting generalisation."}
+      ]
+    },
+    "rt-2026-011": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Retrieval-practice learning and metamemory mechanism evidence."}
+      ],
+      "components": [],
+      "mechanisms": [
+        {"mechanism_id":"mechanism_confidence_gated_error_learning","assertion_type":"hrp_candidate","assertion_direction":"supports","support_summary":"Confidence moderated how retrieval errors predicted subsequent learning and network engagement.","rationale":"The approved review explicitly describes confidence as gating error-driven learning and metamemory-network engagement."}
+      ]
+    },
+    "rt-2026-012": {
+      "application_families": [
+        {"application_family":"performance","relevance_level":"primary","rationale":"Acute stress changes the operating state in which prediction and episodic encoding compete."},
+        {"application_family":"wellbeing","relevance_level":"secondary","rationale":"Stress-state evidence is relevant to sustainable cognitive-affective functioning, without implying a wellbeing intervention effect."}
+      ],
+      "components": [],
+      "mechanisms": [
+        {"mechanism_id":"mechanism_stress_induced_prediction_shift","assertion_type":"hrp_candidate","assertion_direction":"supports","support_summary":"Acute stress shifted representation toward statistical prediction and away from episodic encoding.","rationale":"This relationship is explicitly stated in the approved mechanism review."}
+      ]
+    },
+    "rt-2026-013": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Controlled experiments on metacognitive prompts during educationally relevant learning."}
+      ],
+      "components": [],
+      "mechanisms": []
+    },
+    "rt-2026-014": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Large school field experiment on AI tutoring and mastery-based mathematics practice."}
+      ],
+      "components": [
+        {"component_name":"AI tutoring support","targets":[
+          {"target_id":"target_feedback_architecture","relationship":"primary_target","rationale":"AI support changes instructional feedback and error handling in the learning activity system."}
+        ]},
+        {"component_name":"mastery progression policy","targets":[
+          {"target_id":"target_mastery_progression_policy","relationship":"primary_target","rationale":"The intervention directly manipulates the progression rule governing advancement through practice."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-015": {
+      "application_families": [
+        {"application_family":"learning","relevance_level":"primary","rationale":"Eight-week classroom study examining supported versus independent writing and higher-order thinking."},
+        {"application_family":"performance","relevance_level":"secondary","rationale":"Authentic writing quality and argument/revision quality are performance outcomes."}
+      ],
+      "components": [
+        {"component_name":"integrate","targets":[
+          {"target_id":"target_human_ai_task_allocation","relationship":"primary_target","rationale":"Bounded versus open AI changes how cognitive work is distributed between learner and AI."},
+          {"target_id":"target_metacognitive_monitoring_strategy","relationship":"primary_target","rationale":"The bounded-AI condition includes compulsory reflection as an explicit strategy overlay."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-016": {
+      "application_families": [
+        {"application_family":"performance","relevance_level":"primary","rationale":"Human-AI assistance experiment on completion time, expected speed and effort across cognitive work tasks."}
+      ],
+      "components": [
+        {"component_name":"redesign","targets":[
+          {"target_id":"target_human_ai_task_allocation","relationship":"primary_target","rationale":"AI-assisted versus independent completion changes allocation of task work between human and AI."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-017": {
+      "application_families": [
+        {"application_family":"performance","relevance_level":"primary","rationale":"Experiment manipulates where AI support enters a writing workflow and measures ownership and quality."}
+      ],
+      "components": [
+        {"component_name":"redesign","targets":[
+          {"target_id":"target_human_ai_task_allocation","relationship":"primary_target","rationale":"Moving AI support among planning, drafting and revision directly manipulates human-AI role allocation across workflow stages."}
+        ]}
+      ],
+      "mechanisms": []
+    },
+    "rt-2026-018": {
+      "application_families": [
+        {"application_family":"performance","relevance_level":"primary","rationale":"Observational evidence concerns AI offloading, cognitive agency and downstream functioning in students and knowledge workers."},
+        {"application_family":"learning","relevance_level":"secondary","rationale":"Deep processing, autonomous capability and student use make learning a relevant secondary lens."}
+      ],
+      "components": [],
+      "mechanisms": []
+    }
+  }
+}
