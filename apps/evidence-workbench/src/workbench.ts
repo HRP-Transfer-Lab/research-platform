@@ -128,6 +128,27 @@ export type Release = {
   notes: string | null
 }
 
+export type SourceEvidenceRole = {
+  source_id: string
+  evidence_role: string
+  primary_role: boolean
+  rationale: string | null
+  mapping_source: string
+  created_at: string
+  updated_at: string
+}
+
+export type SourceControllerOverlay = {
+  source_controller_overlay_id: number
+  source_id: string
+  component_id: number | null
+  controller_overlay: string
+  rationale: string | null
+  mapping_source: string
+  created_at: string
+  updated_at: string
+}
+
 export type AuditRow = {
   audit_id: number
   occurred_at: string
@@ -146,6 +167,8 @@ export type RegistryData = {
   products: ProductRelevance[]
   quality: QualityAssessment[]
   releases: Release[]
+  evidenceRoles: SourceEvidenceRole[]
+  controllerOverlays: SourceControllerOverlay[]
 }
 
 export const routeOptions = [
@@ -156,8 +179,21 @@ export const routeOptions = [
   'bridge',
   'redesign',
   'integrate',
-  'measure_prove',
-  'mechanism_evidence',
+]
+
+export const evidenceRoleOptions = [
+  'direct_intervention',
+  'mechanism',
+  'measurement',
+  'observational',
+  'synthesis',
+]
+
+export const controllerOverlayOptions = [
+  'metacognitive_governor',
+  'adaptive_controller',
+  'external_scaffold',
+  'other_controller_or_overlay',
 ]
 
 export const emptyData: RegistryData = {
@@ -168,6 +204,8 @@ export const emptyData: RegistryData = {
   products: [],
   quality: [],
   releases: [],
+  evidenceRoles: [],
+  controllerOverlays: [],
 }
 
 export function humanize(value?: string | null) {
@@ -177,6 +215,12 @@ export function humanize(value?: string | null) {
 
 export function primaryClassification(source: EvidenceSource) {
   return source.raw_record?.review?.primary_classification || 'unclassified'
+}
+
+export function primaryEvidenceRole(sourceId: string, links: SourceEvidenceRole[]) {
+  return links.find((item) => item.source_id === sourceId && item.primary_role)?.evidence_role
+    ?? links.find((item) => item.source_id === sourceId)?.evidence_role
+    ?? 'unclassified'
 }
 
 export function asAuthorLine(authors: unknown) {
@@ -193,8 +237,8 @@ export function compactJson(value: any) {
 }
 
 export function bucketLabel(bucket: string) {
-  if (bucket.startsWith('A_')) return 'Direct intervention'
-  if (bucket.startsWith('B_')) return 'Mechanism / measurement'
-  if (bucket.startsWith('C_')) return 'Human–AI / activity system'
+  if (bucket.startsWith('A_')) return 'Direct intervention review stream'
+  if (bucket.startsWith('B_')) return 'Mechanism / measurement review stream'
+  if (bucket.startsWith('C_')) return 'Human–AI / activity-system review stream'
   return humanize(bucket)
 }
