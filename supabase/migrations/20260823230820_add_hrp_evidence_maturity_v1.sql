@@ -62,7 +62,16 @@ comment on table public.evidence_maturity_assessment is 'Ordinal evidence-maturi
 
 insert into public.evidence_maturity_assessment (
   source_id, scale_version, maturity_level, scope, status, basis, assessor
-) values
+)
+select
+  seed.source_id,
+  seed.scale_version,
+  seed.maturity_level,
+  seed.scope,
+  seed.status,
+  seed.basis,
+  seed.assessor
+from (values
 ('rt-2026-001','hrp-eml-v1',2,'record_contribution','provisional_seed','Direct randomized training study with separate-measure transfer evidence; currently a single reviewed direct study in this Registry release.','seed-mapping-2026-08-23'),
 ('rt-2026-002','hrp-eml-v1',2,'record_contribution','provisional_seed','Direct randomized longitudinal training study with separate and delayed outcomes; source-level contribution remains an initial direct demonstration until replicated body review is completed.','seed-mapping-2026-08-23'),
 ('rt-2026-003','hrp-eml-v1',2,'record_contribution','provisional_seed','Direct intervention evidence drawn from randomized studies; this Registry record is treated as a direct demonstration contribution rather than an approved body-level synthesis.','seed-mapping-2026-08-23'),
@@ -80,7 +89,15 @@ insert into public.evidence_maturity_assessment (
 ('rt-2026-015','hrp-eml-v1',2,'record_contribution','provisional_seed','Direct quasi-experimental classroom demonstration of bounded AI plus reflection with independent no-AI outcomes; replication/body synthesis not yet approved.','seed-mapping-2026-08-23'),
 ('rt-2026-016','hrp-eml-v1',2,'record_contribution','provisional_seed','Preregistered behavioral experiment directly demonstrates human-AI offloading/speedup effects under defined task conditions.','seed-mapping-2026-08-23'),
 ('rt-2026-017','hrp-eml-v1',2,'record_contribution','provisional_seed','Direct experiment on AI support stage and ownership in writing; source-level direct demonstration only.','seed-mapping-2026-08-23'),
-('rt-2026-018','hrp-eml-v1',1,'record_contribution','provisional_seed','Observational longitudinal taxonomy of autonomous/dependent offloading informs mechanism/activity-system hypotheses but is not a direct intervention test.','seed-mapping-2026-08-23');
+('rt-2026-018','hrp-eml-v1',1,'record_contribution','provisional_seed','Observational longitudinal taxonomy of autonomous/dependent offloading informs mechanism/activity-system hypotheses but is not a direct intervention test.','seed-mapping-2026-08-23')
+) as seed(
+  source_id, scale_version, maturity_level, scope, status, basis, assessor
+)
+where exists (
+  select 1
+  from public.evidence_source es
+  where es.source_id = seed.source_id
+);
 
 alter table public.evidence_maturity_level_definition enable row level security;
 alter table public.evidence_maturity_assessment enable row level security;
