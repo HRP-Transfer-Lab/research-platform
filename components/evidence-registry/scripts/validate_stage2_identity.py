@@ -112,11 +112,14 @@ select
        where sv.canonical_source_id=cs.canonical_source_id
     )),
 
-  (select count(*)
-     from public.canonical_source cs
-     join public.source_version sv on sv.canonical_source_id=cs.canonical_source_id
-    group by cs.canonical_source_id
-   having count(*) <> 1),
+  (select count(*) from (
+      select cs.canonical_source_id
+      from public.canonical_source cs
+      left join public.source_version sv
+        on sv.canonical_source_id=cs.canonical_source_id
+      group by cs.canonical_source_id
+      having count(sv.source_version_id) <> 1
+  ) invalid_version_counts),
 
   (select count(*)
      from public.source_version sv
