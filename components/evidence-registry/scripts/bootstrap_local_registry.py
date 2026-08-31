@@ -246,6 +246,33 @@ select
             "--container", args.container,
         ])
 
+    stage4_mapper = REPO_ROOT / "components/evidence-registry/scripts/apply_stage4_seed_mappings.py"
+    if stage4_mapper.exists():
+        print("Applying Stage 4 candidate outcome mappings...")
+        run([
+            sys.executable,
+            str(stage4_mapper),
+            "--container", args.container,
+        ])
+
+    stage4_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage4_ontology.py"
+    if stage4_validator.exists():
+        print("Validating Stage 4 orthogonal outcome architecture...")
+        run([
+            sys.executable,
+            str(stage4_validator),
+            "--container", args.container,
+        ])
+
+    stage4_seed_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage4_seed_mappings.py"
+    if stage4_seed_validator.exists():
+        print("Validating Stage 4 seed identity, controlled vocabularies and human-approval boundary...")
+        run([
+            sys.executable,
+            str(stage4_seed_validator),
+            "--container", args.container,
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
