@@ -137,13 +137,16 @@ select
     fit_count = scalar(args.container, "select count(*) from public.context_fit_assessment;")
     require(fit_count == 0, f"immutable seed must not contain context-fit judgements; got {fit_count}")
 
+    application_family_definitions = scalar(args.container, "select count(*) from public.application_family_definition;")
+    require(application_family_definitions == 7, f"expected 7 controlled Stage 3 application-family definitions; got {application_family_definitions}")
+
     stage3_app = psql(args.container, """
 select
   (select count(*) from public.source_version_application_family),
   (select count(distinct source_version_id) from public.source_version_application_family),
   (select count(distinct application_family) from public.source_version_application_family);
 """)
-    require(stage3_app == "32|18|7", f"Stage 3 application-family lens changed: {stage3_app!r}")
+    require(stage3_app == "32|18|6", f"Stage 3 application-family seed lens changed: {stage3_app!r}")
 
     rt004 = psql(args.container, """
 select string_agg(t.term_id,',' order by t.term_id)
@@ -194,7 +197,7 @@ where not tgisinternal and tgname in (
     print("mixed_sample_subgroup_preservation: PASS")
     print("study_setting_vs_delivery_context: PASS")
     print("geography_noninference: PASS")
-    print("application_family_separation: PASS (32 links / 18 sources / 7 families unchanged)")
+    print("application_family_separation: PASS (7 definitions; seed uses 32 links / 18 sources / 6 distinct families)")
     print("context_fit_nonfabrication: PASS")
     print("human_approval_boundary: PASS (0 agent candidates promoted)")
     return 0
