@@ -453,7 +453,9 @@ Effects should attach to the relevant contrast + outcome/result, not merely to a
 - Meta-analysis-ready effect data can be exported for supported studies.
 - The existing single effect estimate is migrated without loss.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_6_EFFECT_ESTIMATES_VERIFICATION.md`; migration `20260831194000`; implementation commit `97dc9378e4dd21d133f7df7e819c8512bf0935c3`.
+**Execution spec:** `docs/STAGE_6_EFFECT_ESTIMATES_IMPLEMENTATION.md`.
 
 ---
 
