@@ -566,7 +566,9 @@ inclusion criteria
 - `healthy university students` cannot collapse simply to `adults`.
 - Evidence can be filtered across education, work, healthy ageing, longevity and condition-related contexts without overgeneralisation.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_9_POPULATION_CONTEXT_VERIFICATION.md`; migration `20260831223000`; implementation commit `9a1b1631caff236c99cc1bcc8fc5e503911d38e7`.
+**Execution spec:** `docs/STAGE_9_POPULATION_CONTEXT_IMPLEMENTATION.md`.
 
 ---
 
