@@ -2,8 +2,9 @@
 """Safe transactional wrapper for governed Stage 12 batch approval.
 
 Keeps the approval interface from ``approve_stage12_review_batch.py`` but moves
-the normalized-row update and row-count assertion into the same PL/pgSQL block.
-Any unexpected zero-row update therefore aborts and rolls back the whole batch.
+the Stage 11 adjudication, normalized-row update, and row-count assertion into
+the same PL/pgSQL block. Any mismatch therefore aborts and rolls back the whole
+batch.
 """
 from __future__ import annotations
 
@@ -37,11 +38,6 @@ def safe_build_apply_sql(packet: dict[str, Any], reviewer_id: str, stable_hash: 
             f"packet_sha256={packet['packet_sha256']}; scientific_decision_sha256={stable_hash}."
         )
 
-        statements.append(
-            "select private.apply_scientific_adjudication_core("
-            f"{candidate_id},{base.sql_text(reviewer_id)}::uuid,'accept',null,{base.sql_text(rationale)});"
-        )
-
         if dimension:
             update_sql = (
                 f"update public.{base.qident(table)} set "
@@ -58,14 +54,18 @@ def safe_build_apply_sql(packet: dict[str, Any], reviewer_id: str, stable_hash: 
             )
 
         error_text = (
-            f"Stage 12 normalized row update affected zero rows: "
+            f"Stage 12 normalized row update expected exactly one row: "
             f"batch={packet['batch_id']} table={table} candidate={candidate_id}"
         )
+
         statements.append(
             "do $s12row$\n"
+            "declare v_rows integer;\n"
             "begin\n"
+            f"  perform private.apply_scientific_adjudication_core({candidate_id},{base.sql_text(reviewer_id)}::uuid,'accept',null,{base.sql_text(rationale)});\n"
             f"  {update_sql};\n"
-            "  if not found then\n"
+            "  get diagnostics v_rows = row_count;\n"
+            "  if v_rows <> 1 then\n"
             f"    raise exception {base.sql_text(error_text)};\n"
             "  end if;\n"
             "end\n"
