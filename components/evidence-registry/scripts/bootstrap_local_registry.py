@@ -327,6 +327,32 @@ select
             "--container", args.container,
         ])
 
+    stage7_mapper = REPO_ROOT / "components/evidence-registry/scripts/apply_stage7_seed_status.py"
+    if stage7_mapper.exists():
+        print("Applying Stage 7 status-only quality/RoB seed backfill...")
+        run([
+            sys.executable,
+            str(stage7_mapper),
+            "--container", args.container,
+        ])
+
+    stage7_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage7_quality_architecture.py"
+    if stage7_validator.exists():
+        print("Validating Stage 7 typed quality and result-RoB architecture...")
+        run([
+            sys.executable,
+            str(stage7_validator),
+            "--container", args.container,
+        ])
+
+    stage7_seed_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage7_seed_status.py"
+    if stage7_seed_validator.exists():
+        print("Validating Stage 7 status-only seed boundary and GRADE deferral...")
+        run([
+            sys.executable,
+            str(stage7_seed_validator),
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
