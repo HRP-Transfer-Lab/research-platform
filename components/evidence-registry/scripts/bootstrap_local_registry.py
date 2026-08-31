@@ -300,6 +300,33 @@ select
             "--container", args.container,
         ])
 
+    stage6_mapper = REPO_ROOT / "components/evidence-registry/scripts/apply_stage6_seed_mappings.py"
+    if stage6_mapper.exists():
+        print("Applying Stage 6 candidate quantitative mappings...")
+        run([
+            sys.executable,
+            str(stage6_mapper),
+            "--container", args.container,
+        ])
+
+    stage6_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage6_ontology.py"
+    if stage6_validator.exists():
+        print("Validating Stage 6 first-class effect architecture...")
+        run([
+            sys.executable,
+            str(stage6_validator),
+            "--container", args.container,
+        ])
+
+    stage6_seed_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage6_seed_mappings.py"
+    if stage6_seed_validator.exists():
+        print("Validating Stage 6 seed mappings and human-approval boundary...")
+        run([
+            sys.executable,
+            str(stage6_seed_validator),
+            "--container", args.container,
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
