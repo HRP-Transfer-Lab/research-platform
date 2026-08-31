@@ -192,7 +192,8 @@ export function Stage4OutcomeReview({
     else await load()
   }
 
-  async function setDistance(outcomeId: number, value: string) {
+  async function setDistance(outcomeId: number, value?: string) {
+    if (!value) return
     const { error } = await supabase.from('outcome_stage4_classification').update({
       outcome_distance: value,
       distance_status: 'reviewed_mapped',
