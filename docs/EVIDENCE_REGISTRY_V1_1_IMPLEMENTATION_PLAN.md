@@ -697,7 +697,9 @@ A historical Git seed file must never be able to overwrite a later approved Work
 - Approved release export is deterministic and reproducible.
 - Agent runs can write only to staging/proposal state by default.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_11_PROVENANCE_RELEASE_AUTHORITY_VERIFICATION.md`; migrations `20260831230000`, `20260831230100`, `20260831230200`; implementation commit `5672acefe4a94e026ed1dae020ad2df5bdf30875`.
+**Execution spec:** `docs/STAGE_11_PROVENANCE_RELEASE_AUTHORITY_IMPLEMENTATION.md`.
 
 ---
 
@@ -739,7 +741,7 @@ same route/product relevance caveats remain reproducible
 - New release has an immutable manifest + schema/taxonomy versions + source-version membership.
 - Only after this gate may large-scale ingestion begin.
 
-**Status:** `NOT STARTED`
+**Status:** `IN PROGRESS`
 
 ---
 
@@ -912,8 +914,8 @@ Update this table as implementation proceeds.
 | 8 | Evidence propositions and synthesis outcomes | NOT STARTED | — |
 | 9 | Normalised population/context | NOT STARTED | — |
 | 10 | Harms/fidelity/boundaries/implementation | VERIFIED | `docs/STAGE_10_HARMS_FIDELITY_VERIFICATION.md`; `17f25ba4` |
-| 11 | Provenance + deterministic review/release pipeline | NOT STARTED | — |
-| 12 | 18-source backfill + parity + v1.1 release | NOT STARTED | — |
+| 11 | Provenance + deterministic review/release pipeline | VERIFIED | `docs/STAGE_11_PROVENANCE_RELEASE_AUTHORITY_VERIFICATION.md`; `5672ace` |
+| 12 | 18-source backfill + parity + v1.1 release | IN PROGRESS | `docs/STAGE_12_BACKFILL_PARITY_RELEASE_IMPLEMENTATION.md` |
 
 Allowed status values:
 
