@@ -616,7 +616,9 @@ cost/resources where relevant
 - Absence of harms reporting is distinguishable from evidence of no harm.
 - Bridge evidence can distinguish scaffolded from unsupported real-world use.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_10_HARMS_FIDELITY_VERIFICATION.md`; migrations `20260831224500` and `20260831224600`; implementation commit `17f25ba4db70577cd092ba8cc3dcff09da82bbdb`.
+**Execution spec:** `docs/STAGE_10_HARMS_FIDELITY_IMPLEMENTATION.md`.
 
 ---
 
@@ -909,7 +911,7 @@ Update this table as implementation proceeds.
 | 7 | Correct quality/RoB/GRADE units | NOT STARTED | — |
 | 8 | Evidence propositions and synthesis outcomes | NOT STARTED | — |
 | 9 | Normalised population/context | NOT STARTED | — |
-| 10 | Harms/fidelity/boundaries/implementation | NOT STARTED | — |
+| 10 | Harms/fidelity/boundaries/implementation | VERIFIED | `docs/STAGE_10_HARMS_FIDELITY_VERIFICATION.md`; `17f25ba4` |
 | 11 | Provenance + deterministic review/release pipeline | NOT STARTED | — |
 | 12 | 18-source backfill + parity + v1.1 release | NOT STARTED | — |
 
