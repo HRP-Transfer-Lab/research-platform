@@ -1,5 +1,5 @@
 import { useEffect, useState } from 'react'
-import { Activity, ClipboardCheck, ExternalLink, FlaskConical, Pencil, Plus, Save, ShieldCheck, Sparkles, Users } from 'lucide-react'
+import { Activity, ClipboardCheck, ExternalLink, FlaskConical, Pencil, Save, ShieldCheck, Sparkles, Users } from 'lucide-react'
 import { supabase } from './lib/supabase'
 import { asAuthorLine, compactJson, humanize, routeOptions, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type RegistryData, type Study } from './workbench'
 import { BucketPill, DetailSection, Dose, EditInput, EmptyLine, Info, RoutePill } from './WorkbenchUi'
@@ -13,13 +13,11 @@ export function SourceDetail({ source, data, canEdit, onRefresh, onError }: { so
   const [editingSource, setEditingSource] = useState(false)
   const [routeRationale, setRouteRationale] = useState(source.route_rationale ?? '')
   const [reviewStatus, setReviewStatus] = useState(source.review_status)
-  const [qualityOpen, setQualityOpen] = useState(false)
 
   useEffect(() => {
     setRouteRationale(source.route_rationale ?? '')
     setReviewStatus(source.review_status)
     setEditingSource(false)
-    setQualityOpen(false)
   }, [source.source_id])
 
   async function saveSource() {
@@ -75,9 +73,9 @@ export function SourceDetail({ source, data, canEdit, onRefresh, onError }: { so
         <div className="stack-list">{products.map((p) => <ProductCard key={p.product_relevance_id} item={p} canEdit={canEdit} onRefresh={onRefresh} onError={onError} />)}</div>
       </DetailSection>
 
-      <DetailSection title="Quality appraisal" icon={<ShieldCheck size={17} />} action={canEdit ? <button className="text-button" onClick={() => setQualityOpen((v) => !v)}><Plus size={14} /> Add appraisal</button> : null}>
-        {qualityOpen && <QualityForm sourceId={source.source_id} onDone={async () => { setQualityOpen(false); await onRefresh() }} onError={onError} />}
-        {quality.length ? quality.map((q) => <div className="quality-row" key={q.quality_assessment_id}><div><strong>{q.tool}</strong><span>{humanize(q.assessment_level)}</span></div><div className="quality-judgement">{q.judgement ?? 'Pending judgement'}</div><p>{q.notes}</p></div>) : <EmptyLine>No formal RoB/reporting appraisal recorded yet.</EmptyLine>}
+      <DetailSection title="Historical quality compatibility" icon={<ShieldCheck size={17} />}>
+        <div className="record-note">The source-linked quality table is retained only for historical compatibility and is read-only to Workbench users. Use the Stage 7 Quality & risk of bias section above for typed study/report appraisal and result-specific RoB. GRADE/body certainty is deferred to Stage 8.</div>
+        {quality.length ? quality.map((q) => <div className="quality-row" key={q.quality_assessment_id}><div><strong>{q.tool}</strong><span>{humanize(q.assessment_level)}</span></div><div className="quality-judgement">{q.judgement ?? 'Pending judgement'}</div><p>{q.notes}</p></div>) : <EmptyLine>No historical source-linked quality rows.</EmptyLine>}
       </DetailSection>
     </div>
   )
@@ -144,13 +142,4 @@ function ProductCard({ item, canEdit, onRefresh, onError }: { item: ProductRelev
     if (error) onError(error.message); else { setEdit(false); await onRefresh() }
   }
   return <div className="product-card"><div className="product-head"><div><span className="product-name">{humanize(item.product)}</span><span className="match-pill">{humanize(item.match_level)}</span></div>{canEdit && <button className="icon-button mini" onClick={() => setEdit((v) => !v)}><Pencil size={13} /></button>}</div>{edit ? <div className="edit-stack subedit"><EditInput label="Product" value={form.product} onChange={(v) => setForm({ ...form, product: v })} /><EditInput label="Support scope" value={form.support_scope} onChange={(v) => setForm({ ...form, support_scope: v })} /><EditInput label="Match" value={form.match_level} onChange={(v) => setForm({ ...form, match_level: v })} /><EditInput label="Direction" value={form.direction} onChange={(v) => setForm({ ...form, direction: v })} /><EditInput label="Claim status" value={form.claim_status} onChange={(v) => setForm({ ...form, claim_status: v })} /><button className="primary-button fit" onClick={save}><Save size={14} /> Save relevance</button></div> : <><div className="product-meta"><span>{humanize(item.support_scope)}</span><span>{humanize(item.direction)}</span><span>{humanize(item.claim_status)}</span></div>{item.rationale && <p>{item.rationale}</p>}</>}</div>
-}
-
-function QualityForm({ sourceId, onDone, onError }: { sourceId: string; onDone: () => Promise<void>; onError: (v: string | null) => void }) {
-  const [form, setForm] = useState({ assessment_level: 'study', tool: 'RoB 2', judgement: '', notes: '', assessor: '' })
-  async function save() {
-    const { error } = await supabase.from('quality_assessment').insert({ source_id: sourceId, ...form, assessed_on: new Date().toISOString().slice(0, 10) })
-    if (error) onError(error.message); else await onDone()
-  }
-  return <div className="quality-form"><div className="two-fields"><label><span className="field-label">Level</span><select className="select-input" value={form.assessment_level} onChange={(e) => setForm({ ...form, assessment_level: e.target.value })}><option value="study">Study</option><option value="outcome">Outcome</option><option value="reporting">Reporting</option><option value="body_of_evidence">Body of evidence</option></select></label><EditInput label="Tool" value={form.tool} onChange={(v) => setForm({ ...form, tool: v })} /></div><div className="two-fields"><EditInput label="Judgement" value={form.judgement} onChange={(v) => setForm({ ...form, judgement: v })} /><EditInput label="Assessor" value={form.assessor} onChange={(v) => setForm({ ...form, assessor: v })} /></div><label className="field-label">Notes</label><textarea className="textarea" rows={3} value={form.notes} onChange={(e) => setForm({ ...form, notes: e.target.value })} /><button className="primary-button fit" onClick={save}><Save size={14} /> Save appraisal</button></div>
 }
