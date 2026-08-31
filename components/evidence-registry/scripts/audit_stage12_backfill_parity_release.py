@@ -11,7 +11,7 @@ DEFAULT_CONTAINER = "supabase_db_research-platform"
 
 
 def run(cmd: list[str], *, input_text: str | None = None, capture: bool = False) -> subprocess.CompletedProcess[str]:
-    return subprocess.run(cmd, input=input_text, text=True, check=True, capture_output=capture)
+    return subprocess.run(cmd, input=input_text, text=True, check=False, capture_output=capture)
 
 
 def psql(container: str, sql: str) -> str:
@@ -19,7 +19,13 @@ def psql(container: str, sql: str) -> str:
         "docker", "exec", "-i", container, "psql", "-v", "ON_ERROR_STOP=1",
         "-U", "postgres", "-d", "postgres", "-A", "-t", "-F", "|",
     ]
-    return run(cmd, input_text=sql, capture=True).stdout.strip()
+    result = run(cmd, input_text=sql, capture=True)
+    if result.returncode != 0:
+        stderr = result.stderr.strip() or "<no PostgreSQL stderr>"
+        stdout = result.stdout.strip()
+        extra = f"\nstdout:\n{stdout}" if stdout else ""
+        raise RuntimeError(f"psql failed with exit status {result.returncode}:\n{stderr}{extra}")
+    return result.stdout.strip()
 
 
 def scalar(container: str, sql: str) -> int:
@@ -141,9 +147,9 @@ select
  (select count(*) from public.result_rob_status);
 """))
     print("study_quality_status")
-    print(psql(args.container, "select extraction_status,count(*) from public.study_quality_status group by extraction_status order by extraction_status;"))
+    print(psql(args.container, "select assessment_status,count(*) from public.study_quality_status group by assessment_status order by assessment_status;"))
     print("result_rob_status")
-    print(psql(args.container, "select extraction_status,count(*) from public.result_rob_status group by extraction_status order by extraction_status;"))
+    print(psql(args.container, "select assessment_status,count(*) from public.result_rob_status group by assessment_status order by assessment_status;"))
 
     print_section("STAGE 8 BODY EVIDENCE")
     print("propositions|contributions|body_syntheses|synthesis_outcomes|body_certainty|body_eml|body_claims")
