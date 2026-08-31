@@ -59,6 +59,14 @@ def main() -> int:
     require(domains == 0, f"seed should have 0 domain judgements; got {domains}")
     require(legacy_quality == 0, f"historical seed expected 0 compatibility quality rows; got {legacy_quality}")
 
+    legacy_write_privileges = psql(args.container, """
+select
+  has_table_privilege('authenticated','public.quality_assessment','INSERT'),
+  has_table_privilege('authenticated','public.quality_assessment','UPDATE'),
+  has_table_privilege('authenticated','public.quality_assessment','DELETE');
+""")
+    require(legacy_write_privileges == "f|f|f", f"legacy quality table must be read-only to authenticated; got {legacy_write_privileges!r}")
+
     non_default_study_status = scalar(args.container, "select count(*) from public.study_quality_status where assessment_status <> 'not_yet_assessed';")
     non_default_result_status = scalar(args.container, "select count(*) from public.result_rob_status where assessment_status <> 'not_yet_assessed';")
     require(non_default_study_status == 0, f"seed study-quality status must remain not_yet_assessed; non-default={non_default_study_status}")
@@ -151,6 +159,7 @@ where not tgisinternal
     print("status_only_seed_boundary: PASS (18 studies + 38 results all not_yet_assessed)")
     print("framework_subject_integrity: PASS (RoB 2/ROBINS-I=result-level; GRADE=body-certainty reserved)")
     print("cross_subject_link_integrity: PASS")
+    print("legacy_quality_write_boundary: PASS (authenticated compatibility table is read-only)")
     print("grade_attachment_boundary: PASS (0 source/study/result GRADE assessments)")
     print("no_fabricated_quality_or_rob_judgements: PASS")
     print("human_approval_boundary: PASS (0 agent candidates promoted)")
