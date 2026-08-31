@@ -413,7 +413,9 @@ study
 - Active control, waitlist, treatment-as-usual and alternative interventions are explicit arms/contrasts.
 - Existing studies without detailed arm extraction remain valid using explicit completeness status.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_5_STUDY_ARMS_CONTRASTS_VERIFICATION.md`; migration `20260831141000`; implementation commit `0d76ee5da93a8362a761d5c4c5ae680ba815c292`.
+**Execution spec:** `docs/STAGE_5_STUDY_ARMS_CONTRASTS_IMPLEMENTATION.md`.
 
 ---
 
