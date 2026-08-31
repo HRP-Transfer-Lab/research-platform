@@ -1,0 +1,704 @@
+{
+  "batch_id": "stage3_extraction_status",
+  "batch_label": "Stage 3 extraction status — target and mechanism completeness",
+  "bridge_processing_run_id": 5,
+  "decision_count": 17,
+  "generated_from_git_commit": "8f3513030f9b49ca5edb429dbae17c3b8ef64f3c",
+  "governance_notes": [
+    "Packet preparation does not approve scientific state.",
+    "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
+    "Packet includes ordinary, dimension-specific or provenance-only candidate status surfaces as declared per decision.",
+    "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
+  ],
+  "historical_release_id": "2026-08-23",
+  "packet_sha256": "03d1c719c6564f1bfbdc14ecf808ae7d10cd24c37dc5e23d71fe70a9aa43301a",
+  "review_unit_count": 15,
+  "schema_version": "stage12-review-surface-v2",
+  "scientific_state_revision": 1785,
+  "units": [
+    {
+      "context": {
+        "component_id": 1,
+        "component_name": "SPECTRA episodic-specificity training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 270,
+          "candidate_value": {
+            "component_id": 1,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 1,
+            "component_name": "SPECTRA episodic-specificity training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6f7b0e57ffc03ba952f423a255f16718beb8934a718775ca5d93cab84ec69347",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-001 — SPECTRA episodic-specificity training",
+      "unit_key": "source:rt-2026-001"
+    },
+    {
+      "context": {
+        "component_id": 2,
+        "component_name": "comprehensive executive-function training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-002",
+        "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+        "study_id": 2
+      },
+      "decisions": [
+        {
+          "candidate_id": 271,
+          "candidate_value": {
+            "component_id": 2,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 2,
+            "component_name": "comprehensive executive-function training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fe31230c9e897abe90408382c1544431ff89a3f7224cc18ebac6090714b76355",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-002 — comprehensive executive-function training",
+      "unit_key": "source:rt-2026-002"
+    },
+    {
+      "context": {
+        "component_id": 3,
+        "component_name": "WM and/or numerical-knowledge tablet-game training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-003",
+        "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+        "study_id": 3
+      },
+      "decisions": [
+        {
+          "candidate_id": 272,
+          "candidate_value": {
+            "component_id": 3,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 3,
+            "component_name": "WM and/or numerical-knowledge tablet-game training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ef56a9f15d2d22207ef4f594a5f7fa12d26e2d9d784ade97956c9547fcdc6439",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-003 — WM and/or numerical-knowledge tablet-game training",
+      "unit_key": "source:rt-2026-003"
+    },
+    {
+      "context": {
+        "component_id": 4,
+        "component_name": "relational-frame training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-004",
+        "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+        "study_id": 4
+      },
+      "decisions": [
+        {
+          "candidate_id": 273,
+          "candidate_value": {
+            "component_id": 4,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 4,
+            "component_name": "relational-frame training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7024982d7705e6978f552c4bf2cd9c42109356dc4bf69119f0da1b940971ea9f",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-004 — relational-frame training",
+      "unit_key": "source:rt-2026-004"
+    },
+    {
+      "context": {
+        "component_id": 5,
+        "component_name": "custom-developed cognitive games",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 274,
+          "candidate_value": {
+            "component_id": 5,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 5,
+            "component_name": "custom-developed cognitive games",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f107425428139762ab361a8733e348a238f0b7dcdc42a9f3eea2d35f1521f01c",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-005 — custom-developed cognitive games",
+      "unit_key": "source:rt-2026-005"
+    },
+    {
+      "context": {
+        "component_id": 6,
+        "component_name": "Baduanjin",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 275,
+          "candidate_value": {
+            "component_id": 6,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 6,
+            "component_name": "Baduanjin",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4e0a63d75d0c1b6aa6b1c0b6546963adb2637ace2ca58f49db49dc21dbed6145",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        },
+        {
+          "candidate_id": 276,
+          "candidate_value": {
+            "component_id": 7,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 7,
+            "component_name": "cognitive_training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "daad32f68fa9d37799a61e421cf5b8dae7afc76484b0d20653db64479363f0bd",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-006 — Baduanjin",
+      "unit_key": "source:rt-2026-006"
+    },
+    {
+      "context": {
+        "component_id": 8,
+        "component_name": "active tDCS plus structured cognitive training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 277,
+          "candidate_value": {
+            "component_id": 8,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 8,
+            "component_name": "active tDCS plus structured cognitive training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "04f9ad1c0f6bd1e63e45eb11b15bbf457f167039681df9083b3e57a44e1b2861",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-007 — active tDCS plus structured cognitive training",
+      "unit_key": "source:rt-2026-007"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-009",
+        "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+        "study_id": null
+      },
+      "decisions": [
+        {
+          "candidate_id": 283,
+          "candidate_value": {
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mechanism mapping applied; human review required.",
+            "source_version_id": "sv-rt-2026-009-v1"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-009",
+            "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+            "study_id": null
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mechanism mapping applied; human review required.",
+          "field_path": "legacy_seed_review.source_version_mechanism_status",
+          "primary_key": {
+            "source_version_id": "sv-rt-2026-009-v1"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3d2fd655f05d473b33688c92d348a47d13af0979aac9e7128423a862af54911b",
+          "surface_mode": "provenance_only",
+          "table_name": "source_version_mechanism_status"
+        }
+      ],
+      "label": "rt-2026-009 — An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+      "unit_key": "source:rt-2026-009"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-010",
+        "source_title": "Serial dependence predicts generalization in perceptual learning",
+        "study_id": null
+      },
+      "decisions": [
+        {
+          "candidate_id": 284,
+          "candidate_value": {
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mechanism mapping applied; human review required.",
+            "source_version_id": "sv-rt-2026-010-v1"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-010",
+            "source_title": "Serial dependence predicts generalization in perceptual learning",
+            "study_id": null
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mechanism mapping applied; human review required.",
+          "field_path": "legacy_seed_review.source_version_mechanism_status",
+          "primary_key": {
+            "source_version_id": "sv-rt-2026-010-v1"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f96f1146510002d239cf0fd64e061f99a43484889ffa21473af40d6a8d1fc10c",
+          "surface_mode": "provenance_only",
+          "table_name": "source_version_mechanism_status"
+        }
+      ],
+      "label": "rt-2026-010 — Serial dependence predicts generalization in perceptual learning",
+      "unit_key": "source:rt-2026-010"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-011",
+        "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+        "study_id": null
+      },
+      "decisions": [
+        {
+          "candidate_id": 285,
+          "candidate_value": {
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mechanism mapping applied; human review required.",
+            "source_version_id": "sv-rt-2026-011-v1"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-011",
+            "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+            "study_id": null
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mechanism mapping applied; human review required.",
+          "field_path": "legacy_seed_review.source_version_mechanism_status",
+          "primary_key": {
+            "source_version_id": "sv-rt-2026-011-v1"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b387c85f517e74411ec7b0a0f2bf470dee3926b22eb856533d70d75645388b1b",
+          "surface_mode": "provenance_only",
+          "table_name": "source_version_mechanism_status"
+        }
+      ],
+      "label": "rt-2026-011 — Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+      "unit_key": "source:rt-2026-011"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-012",
+        "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+        "study_id": null
+      },
+      "decisions": [
+        {
+          "candidate_id": 286,
+          "candidate_value": {
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mechanism mapping applied; human review required.",
+            "source_version_id": "sv-rt-2026-012-v1"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-012",
+            "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+            "study_id": null
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mechanism mapping applied; human review required.",
+          "field_path": "legacy_seed_review.source_version_mechanism_status",
+          "primary_key": {
+            "source_version_id": "sv-rt-2026-012-v1"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "62ed3ef56c1c8797e46fe70c9dd9f1d15154c42cce6d2fdd2a0de0ceac3a1fe1",
+          "surface_mode": "provenance_only",
+          "table_name": "source_version_mechanism_status"
+        }
+      ],
+      "label": "rt-2026-012 — Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+      "unit_key": "source:rt-2026-012"
+    },
+    {
+      "context": {
+        "component_id": 10,
+        "component_name": "mastery progression policy",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-014",
+        "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+        "study_id": 14
+      },
+      "decisions": [
+        {
+          "candidate_id": 279,
+          "candidate_value": {
+            "component_id": 10,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 10,
+            "component_name": "mastery progression policy",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "72d9e920b80c98c7e8b195e83a003e9753713339a5687d13b03831b5ae07cbfd",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        },
+        {
+          "candidate_id": 278,
+          "candidate_value": {
+            "component_id": 9,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 9,
+            "component_name": "AI tutoring support",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c70cd1204fb679320a93bf01036641b921bd40fc4c76c502cbb35b8a08125986",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-014 — mastery progression policy",
+      "unit_key": "source:rt-2026-014"
+    },
+    {
+      "context": {
+        "component_id": 11,
+        "component_name": "integrate",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 280,
+          "candidate_value": {
+            "component_id": 11,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 11,
+            "component_name": "integrate",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "841c80b55a2b51cfc7f02f2888dcb8ac7b9a16266e23308d1bf02483eedbeee5",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-015 — integrate",
+      "unit_key": "source:rt-2026-015"
+    },
+    {
+      "context": {
+        "component_id": 12,
+        "component_name": "redesign",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 281,
+          "candidate_value": {
+            "component_id": 12,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 12,
+            "component_name": "redesign",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "48a60c81eb08d36e588e97a28aeee745179737325f86f1e27112328265efd8d3",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-016 — redesign",
+      "unit_key": "source:rt-2026-016"
+    },
+    {
+      "context": {
+        "component_id": 13,
+        "component_name": "redesign",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-017",
+        "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        "study_id": 17
+      },
+      "decisions": [
+        {
+          "candidate_id": 282,
+          "candidate_value": {
+            "component_id": 13,
+            "extraction_status": "partially_extracted",
+            "notes": "Stage 3 candidate mapping manifest applied; human review required."
+          },
+          "context": {
+            "component_id": 13,
+            "component_name": "redesign",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 3 candidate mapping manifest applied; human review required.",
+          "field_path": "legacy_seed_review.component_target_extraction_status",
+          "primary_key": {
+            "component_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7f380e0a4959d771ec6ddde12dcf93e240d514cb1e6d311f9dd458efae95f8a5",
+          "surface_mode": "provenance_only",
+          "table_name": "component_target_extraction_status"
+        }
+      ],
+      "label": "rt-2026-017 — redesign",
+      "unit_key": "source:rt-2026-017"
+    }
+  ]
+}

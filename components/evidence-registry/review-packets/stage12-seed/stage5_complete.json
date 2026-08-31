@@ -1,0 +1,3431 @@
+{
+  "batch_id": "stage5_complete",
+  "batch_label": "Stage 5 complete study design — arms, components, contrasts and extraction status",
+  "bridge_processing_run_id": 5,
+  "decision_count": 107,
+  "generated_from_git_commit": "8f3513030f9b49ca5edb429dbae17c3b8ef64f3c",
+  "governance_notes": [
+    "Packet preparation does not approve scientific state.",
+    "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
+    "Packet includes ordinary, dimension-specific or provenance-only candidate status surfaces as declared per decision.",
+    "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
+  ],
+  "historical_release_id": "2026-08-23",
+  "packet_sha256": "55185952c5760c1c3fa1ece67f558811d8e2d2260ffa556cfc03374b9764faef",
+  "review_unit_count": 18,
+  "schema_version": "stage12-review-surface-v2",
+  "scientific_state_revision": 1785,
+  "units": [
+    {
+      "context": {
+        "component_id": 1,
+        "component_name": "SPECTRA episodic-specificity training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 87,
+          "candidate_value": {
+            "arm_id": 1,
+            "component_id": 1,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 1,
+            "component_name": "SPECTRA episodic-specificity training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 1,
+            "component_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f9be5fd44042b64a98a4f1673637ddab8c4b20b621024650163866a8c2942429",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 113,
+          "candidate_value": {
+            "arm_id": 1,
+            "contrast_coefficient": 1,
+            "contrast_id": 1,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 1,
+            "contrast_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "81913b838de9594e83a4bf743a40dc801eb6bff981bcc9ba7074c57c7296eafc",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 117,
+          "candidate_value": {
+            "arm_id": 2,
+            "contrast_coefficient": -1,
+            "contrast_id": 1,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 2,
+            "contrast_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2fdbdffc518fe283dc525c01dbe4746c48c6ebe9cd1aee23f63e2c51250dbd75",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 58,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 1,
+            "arm_key": "spectra_training",
+            "arm_label": "SPECTRA episodic-specificity training",
+            "arm_role": "intervention",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "SPECTRA episodic-specificity training",
+            "sample_json": {},
+            "study_id": 1
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f8553c808baead11d578a8536b01357b04aa84b73c26c240c26e70265093dfdc",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 69,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 2,
+            "arm_key": "asso_active_control",
+            "arm_label": "ASSO associative-memory active control",
+            "arm_role": "active_control",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "ASSO associative word-picture recall training",
+            "sample_json": {},
+            "study_id": 1
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e0e7534381c980f9a4705568216de8f9ae39bd975abf5eff064180c0d7b0f9cf",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 105,
+          "candidate_value": {
+            "contrast_id": 1,
+            "contrast_key": "spectra_vs_asso",
+            "contrast_label": "SPECTRA vs ASSO active control",
+            "contrast_type": "pairwise",
+            "estimand_summary": null,
+            "study_id": 1
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3940fca9913cbf43e5f97b6c02f3110f0d779579795ebe4a1bba94e1a28961d3",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 304,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 1
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Two-arm randomized active-control trial is explicit; per-arm sample counts were not extracted.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "481f692e7342a884035edf2c59a668d87ca4100f5af8aeab562af9cdc44e785e",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 322,
+          "candidate_value": {
+            "contrast_extraction_status": "partially_extracted",
+            "study_id": 1
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Two-arm randomized active-control trial is explicit; per-arm sample counts were not extracted.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "481f692e7342a884035edf2c59a668d87ca4100f5af8aeab562af9cdc44e785e",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-001 — SPECTRA episodic-specificity training",
+      "unit_key": "study:1"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-010",
+        "source_title": "Serial dependence predicts generalization in perceptual learning",
+        "study_id": 10
+      },
+      "decisions": [
+        {
+          "candidate_id": 296,
+          "candidate_value": {
+            "arm_extraction_status": "not_yet_extracted",
+            "study_id": 10
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-010",
+            "source_title": "Serial dependence predicts generalization in perceptual learning",
+            "study_id": 10
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Secondary analysis of perceptual-learning data; source conditions are not fully represented in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ecb66ff07b0fc176e7904272bdec9a0bf3e215a7134be55561b5377eaefc4af3",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 314,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 10
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-010",
+            "source_title": "Serial dependence predicts generalization in perceptual learning",
+            "study_id": 10
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Secondary analysis of perceptual-learning data; source conditions are not fully represented in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ecb66ff07b0fc176e7904272bdec9a0bf3e215a7134be55561b5377eaefc4af3",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-010 — Serial dependence predicts generalization in perceptual learning",
+      "unit_key": "study:10"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-011",
+        "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+        "study_id": 11
+      },
+      "decisions": [
+        {
+          "candidate_id": 294,
+          "candidate_value": {
+            "arm_extraction_status": "not_yet_extracted",
+            "study_id": 11
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-011",
+            "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+            "study_id": 11
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Retrieval-practice mechanism experiment; condition structure is not sufficiently extracted in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "36e1c571ef6ccd00edc8d727a1c337e8a5222ed86eea403dcde5543eecf9b375",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 312,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 11
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-011",
+            "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+            "study_id": 11
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Retrieval-practice mechanism experiment; condition structure is not sufficiently extracted in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "36e1c571ef6ccd00edc8d727a1c337e8a5222ed86eea403dcde5543eecf9b375",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-011 — Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+      "unit_key": "study:11"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-012",
+        "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+        "study_id": 12
+      },
+      "decisions": [
+        {
+          "candidate_id": 288,
+          "candidate_value": {
+            "arm_extraction_status": "not_yet_extracted",
+            "study_id": 12
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-012",
+            "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+            "study_id": 12
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Acute-stress mechanism experiment; stress/control condition structure is not sufficiently extracted in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a81d3ee35c234dec5c7244edd7f7d67b18ef476c83675a81fc6cd38ab6c990c2",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 306,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 12
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-012",
+            "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+            "study_id": 12
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Acute-stress mechanism experiment; stress/control condition structure is not sufficiently extracted in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a81d3ee35c234dec5c7244edd7f7d67b18ef476c83675a81fc6cd38ab6c990c2",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-012 — Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+      "unit_key": "study:12"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-013",
+        "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+        "study_id": 13
+      },
+      "decisions": [
+        {
+          "candidate_id": 115,
+          "candidate_value": {
+            "arm_id": 15,
+            "contrast_coefficient": 1,
+            "contrast_id": 5,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 15,
+            "contrast_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c61dbba364d47653e5b6466d96e889c810b8ecd3ebe06c164bdd238ca95e6f81",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 116,
+          "candidate_value": {
+            "arm_id": 16,
+            "contrast_coefficient": -1,
+            "contrast_id": 5,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 16,
+            "contrast_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0031493825887f6c64e8380866fdb7692e7787e321493488b08eeaf73da2aa7e",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 64,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 15,
+            "arm_key": "jol_during_study",
+            "arm_label": "Immediate judgment-of-learning prompts",
+            "arm_role": "experimental_condition",
+            "assignment_structure": "unclear",
+            "author_arm_label": "JOL during study",
+            "sample_json": {},
+            "study_id": 13
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 15
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7ea9aedaa4bfa3753a6c21755a0ec101a381b291e479ea29914b14cc42f91b5e",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 65,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 16,
+            "arm_key": "no_jol",
+            "arm_label": "No JOL",
+            "arm_role": "reference",
+            "assignment_structure": "unclear",
+            "author_arm_label": "no JOL",
+            "sample_json": {},
+            "study_id": 13
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 16
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "bb9557f49a159021188884e37cd9287def5e0c7483a1876fd8d1d74329c3d90e",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 106,
+          "candidate_value": {
+            "contrast_id": 5,
+            "contrast_key": "jol_vs_no_jol",
+            "contrast_label": "JOL during study vs no JOL",
+            "contrast_type": "pairwise",
+            "estimand_summary": null,
+            "study_id": 13
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e5e2f9a68023d9e1d7dd4390f1fb219526a912ff63459059a4a283688c67992e",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 287,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 13
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Across three controlled experiments the seed explicitly states JOL during study versus no JOL, but does not establish assignment structure for each experiment.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ad23364c02acce90dfd4cbfb513e73dbd1ef67530d29af4396aa815c23f876f4",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 305,
+          "candidate_value": {
+            "contrast_extraction_status": "partially_extracted",
+            "study_id": 13
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Across three controlled experiments the seed explicitly states JOL during study versus no JOL, but does not establish assignment structure for each experiment.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ad23364c02acce90dfd4cbfb513e73dbd1ef67530d29af4396aa815c23f876f4",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-013 — Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+      "unit_key": "study:13"
+    },
+    {
+      "context": {
+        "component_id": 10,
+        "component_name": "mastery progression policy",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-014",
+        "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+        "study_id": 14
+      },
+      "decisions": [
+        {
+          "candidate_id": 92,
+          "candidate_value": {
+            "arm_id": 18,
+            "component_id": 10,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 10,
+            "component_name": "mastery progression policy",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 18,
+            "component_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0868c958a2330210ee15c17d1538276f69646fc873d5bee118201a37c26bf69f",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 93,
+          "candidate_value": {
+            "arm_id": 19,
+            "component_id": 9,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 9,
+            "component_name": "AI tutoring support",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 19,
+            "component_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "079f52000fb2e9d72a45b5221160f1a953f1423858ea7df17ed7742ff69fc88d",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 95,
+          "candidate_value": {
+            "arm_id": 20,
+            "component_id": 10,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 10,
+            "component_name": "mastery progression policy",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 20,
+            "component_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "251628207a30243be99e771596e9683c53c0454d382dc1b958ad9a08844f32e0",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 94,
+          "candidate_value": {
+            "arm_id": 20,
+            "component_id": 9,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 9,
+            "component_name": "AI tutoring support",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 20,
+            "component_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e22125372b8c90b86cf61fe597b54e6030c2fd600dbf1933f567344eee5252f3",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 66,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 17,
+            "arm_key": "cal_nonmastery",
+            "arm_label": "CAL-only + non-mastery progression",
+            "arm_role": "reference",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "CAL-only + non-mastery",
+            "sample_json": {},
+            "study_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 17
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f29f826029638f562568e7d349d9fe884c77832605a82caf959f9d80c131efe5",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 67,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 18,
+            "arm_key": "cal_mastery",
+            "arm_label": "CAL-only + mastery progression",
+            "arm_role": "intervention",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "CAL-only + mastery",
+            "sample_json": {},
+            "study_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 18
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c1e2f601b6bad8b5de5d5656edfd481ca3ec9fe8e0718a4908908bff7e32dae2",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 68,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 19,
+            "arm_key": "ai_nonmastery",
+            "arm_label": "AI tutoring + non-mastery progression",
+            "arm_role": "intervention",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "AI + non-mastery",
+            "sample_json": {},
+            "study_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 19
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f66c01ae461e1433c44009d3111cefbcca203730b740d7859f1aa88281931dc2",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 70,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 20,
+            "arm_key": "ai_mastery",
+            "arm_label": "AI tutoring + mastery progression",
+            "arm_role": "intervention",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "AI + mastery",
+            "sample_json": {},
+            "study_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 20
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0532e380a92b87785e847231b0923a3a45578677fcd302d402decd7e787100ef",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 289,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: AI support x mastery yields four recoverable policy cells. Topic is an additional factorial dimension but is not expanded because its assignment structure is not sufficiently represented.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 14
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "86591ee4d1bce233a259dc24453fc021cc58904b90ab019d3515993a7c8173e5",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 307,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: AI support x mastery yields four recoverable policy cells. Topic is an additional factorial dimension but is not expanded because its assignment structure is not sufficiently represented.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 14
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "86591ee4d1bce233a259dc24453fc021cc58904b90ab019d3515993a7c8173e5",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-014 — mastery progression policy",
+      "unit_key": "study:14"
+    },
+    {
+      "context": {
+        "component_id": 11,
+        "component_name": "integrate",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 96,
+          "candidate_value": {
+            "arm_id": 22,
+            "component_id": 11,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 11,
+            "component_name": "integrate",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 22,
+            "component_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "646f94058925d208824c3504b7fe715e065a9c2f94fe0fa246198a6c5e86ab89",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 118,
+          "candidate_value": {
+            "arm_id": 21,
+            "contrast_coefficient": -1,
+            "contrast_id": 6,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 21,
+            "contrast_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3090104762cea5a4c0d715f2e21b20c71c4376f67b6b454734f04f64b0c5aa36",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 119,
+          "candidate_value": {
+            "arm_id": 22,
+            "contrast_coefficient": 1,
+            "contrast_id": 6,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 22,
+            "contrast_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1c12c8ef78e482d5ab95386a98460ed244f104d0640c3da61ea6c2c1c250e246",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 120,
+          "candidate_value": {
+            "arm_id": 22,
+            "contrast_coefficient": 1,
+            "contrast_id": 7,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 22,
+            "contrast_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "58830bf4e989b57ff87f2fe741407ef0cbabfe8ecfdfb90a818c7a5b6a65eae9",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 121,
+          "candidate_value": {
+            "arm_id": 23,
+            "contrast_coefficient": -1,
+            "contrast_id": 7,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 23,
+            "contrast_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "84ea4a8c1f979fa8f7d56f92cf142f74389433492126514b6dcb1f45858d7f38",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 71,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 21,
+            "arm_key": "no_ai",
+            "arm_label": "No AI",
+            "arm_role": "reference",
+            "assignment_structure": "cluster_group",
+            "author_arm_label": "no AI",
+            "sample_json": {},
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 21
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6f300322bb35344f127a6d96efcd69af53c709c53cd14a5610cd1b0832a8507b",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 72,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 22,
+            "arm_key": "bounded_ai_reflection",
+            "arm_label": "Bounded AI + compulsory reflection",
+            "arm_role": "intervention",
+            "assignment_structure": "cluster_group",
+            "author_arm_label": "bounded AI + compulsory reflection",
+            "sample_json": {},
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 22
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "03be918574a3a502ff9553e066b8b3c8d750ea1a62bf83e4f4008e6b9f8decb0",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 73,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 23,
+            "arm_key": "open_ai",
+            "arm_label": "Open AI collaboration",
+            "arm_role": "alternative_intervention",
+            "assignment_structure": "cluster_group",
+            "author_arm_label": "open AI collaboration",
+            "sample_json": {},
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 23
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c9da7f86209103e653bbbe6e2ae951b3d90961349f91cd1fe3ee61a89b76a74c",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 107,
+          "candidate_value": {
+            "contrast_id": 6,
+            "contrast_key": "bounded_vs_no_ai",
+            "contrast_label": "Bounded AI + reflection vs no AI",
+            "contrast_type": "multiarm_pairwise",
+            "estimand_summary": null,
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7d1a0d21e0f399e9b7933c6b304df4cb954f4b6c376deb3d6f7925f1d0df024c",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 108,
+          "candidate_value": {
+            "contrast_id": 7,
+            "contrast_key": "bounded_vs_open_ai",
+            "contrast_label": "Bounded AI + reflection vs open AI",
+            "contrast_type": "multiarm_pairwise",
+            "estimand_summary": null,
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5d43641ef7619e34d27eacb0acf00b750674fd75b91fcd6a22565fc43836e204",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 300,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Three quasi-experimental classroom conditions are explicit; six intact classes support cluster-group representation but per-condition class counts are not extracted.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 15
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2359a6c318673a1f572a4ee4f0795108961f66cb12d51eac0f29c0e75ff4b970",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 318,
+          "candidate_value": {
+            "contrast_extraction_status": "partially_extracted",
+            "study_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Three quasi-experimental classroom conditions are explicit; six intact classes support cluster-group representation but per-condition class counts are not extracted.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 15
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2359a6c318673a1f572a4ee4f0795108961f66cb12d51eac0f29c0e75ff4b970",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-015 — integrate",
+      "unit_key": "study:15"
+    },
+    {
+      "context": {
+        "component_id": 12,
+        "component_name": "redesign",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 97,
+          "candidate_value": {
+            "arm_id": 25,
+            "component_id": 12,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 12,
+            "component_name": "redesign",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 25,
+            "component_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b3e01aea346d346555b85c194387cfd4c6ada735d88ee78b6d590c0037e47b97",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 122,
+          "candidate_value": {
+            "arm_id": 24,
+            "contrast_coefficient": -1,
+            "contrast_id": 8,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 24,
+            "contrast_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a0c07c8b3924e801826270a103e64fc153a2ab2fb05f5630d71665e0a624d237",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 123,
+          "candidate_value": {
+            "arm_id": 25,
+            "contrast_coefficient": 1,
+            "contrast_id": 8,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 25,
+            "contrast_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e5bf81207a830d3b42e94c45bc809564cc62952c88c3c749d9091ea873188bcb",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 74,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 24,
+            "arm_key": "independent_completion",
+            "arm_label": "Independent completion",
+            "arm_role": "reference",
+            "assignment_structure": "unclear",
+            "author_arm_label": "independent completion",
+            "sample_json": {},
+            "study_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 24
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0cf2a9da21dba637bb36aa81891869d7a8e24ee453f8ff3ea0c3e06704b924f2",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 75,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 25,
+            "arm_key": "ai_assisted_completion",
+            "arm_label": "AI-assisted completion",
+            "arm_role": "intervention",
+            "assignment_structure": "unclear",
+            "author_arm_label": "AI-assisted completion",
+            "sample_json": {},
+            "study_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 25
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0c23e8b262b9c63fc86b52f1dc528408a292c31ec7d649c2b43b482aa071601d",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 76,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 26,
+            "arm_key": "completion_time_prediction",
+            "arm_label": "Prediction of completion time",
+            "arm_role": "measurement_condition",
+            "assignment_structure": "unclear",
+            "author_arm_label": "prediction of completion time",
+            "sample_json": {},
+            "study_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 26
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0593bce5e6866509cde7d4deb5fe4691af8329385b577135daa8e510cffb6740",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 109,
+          "candidate_value": {
+            "contrast_id": 8,
+            "contrast_key": "ai_vs_independent",
+            "contrast_label": "AI-assisted vs independent completion",
+            "contrast_type": "pairwise",
+            "estimand_summary": null,
+            "study_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fcf3b1a8446f685ee96396e35c0818e7d02f2ab639d041974836cb592dc36887",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 290,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Independent completion, AI-assisted completion and prediction are explicit; prediction is represented as a measurement condition rather than an intervention arm.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 16
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "49fb49a05c22f3f7317b29edc051fad0873116e771438d438c2457ca0463d92d",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 308,
+          "candidate_value": {
+            "contrast_extraction_status": "partially_extracted",
+            "study_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Independent completion, AI-assisted completion and prediction are explicit; prediction is represented as a measurement condition rather than an intervention arm.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 16
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "49fb49a05c22f3f7317b29edc051fad0873116e771438d438c2457ca0463d92d",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-016 — redesign",
+      "unit_key": "study:16"
+    },
+    {
+      "context": {
+        "component_id": 13,
+        "component_name": "redesign",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-017",
+        "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        "study_id": 17
+      },
+      "decisions": [
+        {
+          "candidate_id": 98,
+          "candidate_value": {
+            "arm_id": 27,
+            "component_id": 13,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 13,
+            "component_name": "redesign",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 27,
+            "component_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9b7e83b8d947bce4f4568340cf18f4a44bcade0b8924db912dfd57f07d06ed93",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 99,
+          "candidate_value": {
+            "arm_id": 28,
+            "component_id": 13,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 13,
+            "component_name": "redesign",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 28,
+            "component_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6b28e6aa9c05c95ff148937ca4dc4deefb594361fe5c151441ae98537bba3661",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 100,
+          "candidate_value": {
+            "arm_id": 29,
+            "component_id": 13,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 13,
+            "component_name": "redesign",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 29,
+            "component_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a6b89a9b4c7d72135e8479bb9e8f86507d12189bee319861e54dad699cf5a6f6",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 77,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 27,
+            "arm_key": "ai_planning",
+            "arm_label": "AI support at planning",
+            "arm_role": "experimental_condition",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "AI support at planning",
+            "sample_json": {},
+            "study_id": 17
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 27
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "21bc030bcf32603ece5749c0ec50d8caee4ec7edd219a60b9807ba5de5f2a0a2",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 78,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 28,
+            "arm_key": "ai_drafting",
+            "arm_label": "AI support at drafting",
+            "arm_role": "experimental_condition",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "AI support at drafting",
+            "sample_json": {},
+            "study_id": 17
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 28
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "be2f668b575b56a29bf9ad3f0a49a261db28a6122242c97942561550efee1222",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 79,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 29,
+            "arm_key": "ai_revision",
+            "arm_label": "AI support at revision",
+            "arm_role": "experimental_condition",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "AI support at revision",
+            "sample_json": {},
+            "study_id": 17
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 29
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fa16df6e9fd0e1c681fcb4cbfdd759833c987dce6ca271a8bf435acc5fe53240",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 299,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 17
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Three between-subjects AI-support-stage conditions are explicit; no specific pairwise contrast is privileged by the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 17
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6c5f5044073e70da5e3203f40fc21d57718151fa55fa0a16ef80244bc6567bde",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 317,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 17
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Three between-subjects AI-support-stage conditions are explicit; no specific pairwise contrast is privileged by the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 17
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6c5f5044073e70da5e3203f40fc21d57718151fa55fa0a16ef80244bc6567bde",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-017 — redesign",
+      "unit_key": "study:17"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-018",
+        "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+        "study_id": 18
+      },
+      "decisions": [
+        {
+          "candidate_id": 303,
+          "candidate_value": {
+            "arm_extraction_status": "not_applicable",
+            "study_id": 18
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-018",
+            "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+            "study_id": 18
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Three-wave observational survey models continuous offloading constructs rather than discrete assigned arms/groups in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 18
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5d7bd03ea2d07877f9c8d045034c373725a23876d113654a3b49c717b82c120f",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 321,
+          "candidate_value": {
+            "contrast_extraction_status": "not_applicable",
+            "study_id": 18
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-018",
+            "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+            "study_id": 18
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Three-wave observational survey models continuous offloading constructs rather than discrete assigned arms/groups in the seed.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 18
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5d7bd03ea2d07877f9c8d045034c373725a23876d113654a3b49c717b82c120f",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-018 — Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+      "unit_key": "study:18"
+    },
+    {
+      "context": {
+        "component_id": 2,
+        "component_name": "comprehensive executive-function training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-002",
+        "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+        "study_id": 2
+      },
+      "decisions": [
+        {
+          "candidate_id": 101,
+          "candidate_value": {
+            "arm_id": 3,
+            "component_id": 2,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 2,
+            "component_name": "comprehensive executive-function training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 3,
+            "component_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2e9693577a257919c1f763645bab2f8edb57116043a8eeb93523459800c742e9",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 80,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 3,
+            "arm_key": "executive_function_training",
+            "arm_label": "Comprehensive executive-function training",
+            "arm_role": "intervention",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "Comprehensive executive-function training",
+            "sample_json": {},
+            "study_id": 2
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "dbbf2882358c3bba2330f6625068e0014a457227e32feb2050528cb6ddcaf332",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 81,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 4,
+            "arm_key": "behavioral_training",
+            "arm_label": "Behavioral-training group",
+            "arm_role": "alternative_intervention",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "Behavioral-training group",
+            "sample_json": {},
+            "study_id": 2
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0145b82e8b03bf68e730b9472d6a811672aaef1e6d1334d6883ca2ed4e731996",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 82,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 5,
+            "arm_key": "control",
+            "arm_label": "Control group",
+            "arm_role": "unclear",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "Control group",
+            "sample_json": {},
+            "study_id": 2
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "deee9081583faa4e8cfa599878974037f2fe6765f487774f30cd6fc5de47eee8",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 302,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 2
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Three-group design is explicit; the rapid-review seed does not specify the control sufficiently to assign a more specific role or safe contrast.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a8943c2ef7604a303f11cb6f080d223c07b633a112b216fff69100c9decff11a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 320,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 2
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Three-group design is explicit; the rapid-review seed does not specify the control sufficiently to assign a more specific role or safe contrast.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a8943c2ef7604a303f11cb6f080d223c07b633a112b216fff69100c9decff11a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-002 — comprehensive executive-function training",
+      "unit_key": "study:2"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-003",
+        "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+        "study_id": 3
+      },
+      "decisions": [
+        {
+          "candidate_id": 295,
+          "candidate_value": {
+            "arm_extraction_status": "not_applicable",
+            "study_id": 3
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Secondary analysis integrates three separate randomized studies with varying controls; one synthetic arm set would misrepresent the analysis.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "71dac8433c97f5b18a7e6740ece3fc96919e48ddb31fbd8749702735d24e222c",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 313,
+          "candidate_value": {
+            "contrast_extraction_status": "not_applicable",
+            "study_id": 3
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Secondary analysis integrates three separate randomized studies with varying controls; one synthetic arm set would misrepresent the analysis.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "71dac8433c97f5b18a7e6740ece3fc96919e48ddb31fbd8749702735d24e222c",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-003 — Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+      "unit_key": "study:3"
+    },
+    {
+      "context": {
+        "component_id": 4,
+        "component_name": "relational-frame training",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-004",
+        "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+        "study_id": 4
+      },
+      "decisions": [
+        {
+          "candidate_id": 102,
+          "candidate_value": {
+            "arm_id": 6,
+            "component_id": 4,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 4,
+            "component_name": "relational-frame training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 6,
+            "component_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8a0921a6d6639ad81253fc2aacc18827c7f646ad57e3ee49bb5c921bb7595186",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 103,
+          "candidate_value": {
+            "arm_id": 7,
+            "component_id": 4,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 4,
+            "component_name": "relational-frame training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 7,
+            "component_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2578c76324920a8e992ac3b9da92f7167e16d8116e1ffbebe0e87e9e7ad9f001",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 124,
+          "candidate_value": {
+            "arm_id": 6,
+            "contrast_coefficient": 1,
+            "contrast_id": 2,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 6,
+            "contrast_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "cac30090849f5a98c0a9344bf44c14a3c36a08e44b7a281676fd203886e98a73",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 125,
+          "candidate_value": {
+            "arm_id": 7,
+            "contrast_coefficient": 1,
+            "contrast_id": 3,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 7,
+            "contrast_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b0a5c577c420e2ad554e995eec70d240731957f001969f2482a87640df5eb5db",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 126,
+          "candidate_value": {
+            "arm_id": 8,
+            "contrast_coefficient": -1,
+            "contrast_id": 2,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 8,
+            "contrast_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8d041afe049f39cc4d0526bd25dacd783d0ca952845f249b3c55f78e4a9f086c",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 127,
+          "candidate_value": {
+            "arm_id": 8,
+            "contrast_coefficient": -1,
+            "contrast_id": 3,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 8,
+            "contrast_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d09ba023739faa337cf2b55fbf840e28e7c3d57ab58f7338314f981fafff2675",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 83,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 6,
+            "arm_key": "standard_relational_training",
+            "arm_label": "Standard relational training",
+            "arm_role": "intervention",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "standard relational training",
+            "sample_json": {
+              "randomized": 42
+            },
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "169899fed0e3553ba95833464a6564332e079a3725b055e6e8915713f2db28d6",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 84,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 7,
+            "arm_key": "enhanced_multi_exemplar_training",
+            "arm_label": "Enhanced multi-exemplar training",
+            "arm_role": "intervention",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "enhanced multi-exemplar training",
+            "sample_json": {
+              "randomized": 38
+            },
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "402101db1db471964133611fa10988bbbc53c2c8e337b89755568102d6dea62e",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 85,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 8,
+            "arm_key": "yoked_control",
+            "arm_label": "Yoked control",
+            "arm_role": "active_control",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "yoked control",
+            "sample_json": {
+              "randomized": 39
+            },
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "11a1bfd16bb7db220f4ab77f28f7b44fd48ce1171e848e2f25cfd87dfdae4de8",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 110,
+          "candidate_value": {
+            "contrast_id": 2,
+            "contrast_key": "standard_vs_yoked",
+            "contrast_label": "Standard relational training vs yoked control",
+            "contrast_type": "pairwise",
+            "estimand_summary": null,
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "99e02dea5c0e8ebb22632159e54533e14cef69bc6f4751c64f226c1da7003784",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 111,
+          "candidate_value": {
+            "contrast_id": 3,
+            "contrast_key": "enhanced_vs_yoked",
+            "contrast_label": "Enhanced multi-exemplar training vs yoked control",
+            "contrast_type": "pairwise",
+            "estimand_summary": null,
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e0df7a13a2671558b2da4e86752584aaec258fed0056c17b3011691f29fb2f06",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 301,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Three randomized groups and per-group randomized counts are explicit. The same normalized relational-training component appears in two arms.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f93ab39c275d5f4175d135c963a07bcb5f5146992d15a686169d6a6607f28cf2",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 319,
+          "candidate_value": {
+            "contrast_extraction_status": "partially_extracted",
+            "study_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Three randomized groups and per-group randomized counts are explicit. The same normalized relational-training component appears in two arms.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f93ab39c275d5f4175d135c963a07bcb5f5146992d15a686169d6a6607f28cf2",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-004 — relational-frame training",
+      "unit_key": "study:4"
+    },
+    {
+      "context": {
+        "component_id": 5,
+        "component_name": "custom-developed cognitive games",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 104,
+          "candidate_value": {
+            "arm_id": 9,
+            "component_id": 5,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 5,
+            "component_name": "custom-developed cognitive games",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 9,
+            "component_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8a3669f0f55826aef668d7de9229adf75cea53b22a7f41b631310e06ce0805c8",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 114,
+          "candidate_value": {
+            "arm_id": 10,
+            "contrast_coefficient": -1,
+            "contrast_id": 4,
+            "contrast_side": "comparator",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 10,
+            "contrast_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "edd63378c45a6813a8729d07c83c1a44f847c9fc7a23e893b31263bce24217fb",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 128,
+          "candidate_value": {
+            "arm_id": 9,
+            "contrast_coefficient": 1,
+            "contrast_id": 4,
+            "contrast_side": "focal",
+            "rationale": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.contrast_arm_member",
+          "primary_key": {
+            "arm_id": 9,
+            "contrast_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "da7e5bd329c6c7dab6b58ef5f0a29055754ed6133a2e1e7a4dd69944fe10f272",
+          "surface_mode": "ordinary",
+          "table_name": "contrast_arm_member"
+        },
+        {
+          "candidate_id": 59,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 10,
+            "arm_key": "video_observation_active_control",
+            "arm_label": "Perceptual-matched gameplay-video observation",
+            "arm_role": "active_control",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "perceptual-matched gameplay-video observation",
+            "sample_json": {},
+            "study_id": 5
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "57e375df938d1bd940de6684164fb7b5cf567646d79d1fc3da186476aec8d126",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 86,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 9,
+            "arm_key": "cognitive_game_training",
+            "arm_label": "Custom-developed cognitive-game training",
+            "arm_role": "intervention",
+            "assignment_structure": "parallel_group",
+            "author_arm_label": "custom-developed cognitive games",
+            "sample_json": {},
+            "study_id": 5
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "904d9679592e826fac7232cd05ee2627c29e8c426787b3246c4e54b464ddf41b",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 112,
+          "candidate_value": {
+            "contrast_id": 4,
+            "contrast_key": "training_vs_video_control",
+            "contrast_label": "Cognitive-game training vs video-observation active control",
+            "contrast_type": "pairwise",
+            "estimand_summary": null,
+            "study_id": 5
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_contrast",
+          "primary_key": {
+            "contrast_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ad9dfb1de9099bd14bf87fcbad396f687f2fb86af6438460c03dd85b3adae92c",
+          "surface_mode": "ordinary",
+          "table_name": "study_contrast"
+        },
+        {
+          "candidate_id": 293,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 5
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Randomized training-versus-active-control structure is explicit; no per-arm counts are inferred from total randomized N.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a81361251c9157617f100373dba632ecfc54f6b2eecf436fe12594a824dd381a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 311,
+          "candidate_value": {
+            "contrast_extraction_status": "partially_extracted",
+            "study_id": 5
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Randomized training-versus-active-control structure is explicit; no per-arm counts are inferred from total randomized N.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a81361251c9157617f100373dba632ecfc54f6b2eecf436fe12594a824dd381a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-005 — custom-developed cognitive games",
+      "unit_key": "study:5"
+    },
+    {
+      "context": {
+        "component_id": 6,
+        "component_name": "Baduanjin",
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 88,
+          "candidate_value": {
+            "arm_id": 12,
+            "component_id": 6,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 6,
+            "component_name": "Baduanjin",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 12,
+            "component_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4f3a733bf27b95714d657d41d64b048b020153734e100812a55d734885079c4a",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 89,
+          "candidate_value": {
+            "arm_id": 13,
+            "component_id": 7,
+            "membership_role": "defining",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 7,
+            "component_name": "cognitive_training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 13,
+            "component_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "934d98e8f6faf2af0cfbc726523a3a042230f20fb97487d2304b8c27cd4eee80",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 90,
+          "candidate_value": {
+            "arm_id": 14,
+            "component_id": 6,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 6,
+            "component_name": "Baduanjin",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 14,
+            "component_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "363fe58b62b6d28a11eafa61cfabcae7961b0ac682631cf40f368d3cdf67d2cc",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 91,
+          "candidate_value": {
+            "arm_id": 14,
+            "component_id": 7,
+            "membership_role": "shared",
+            "rationale": null
+          },
+          "context": {
+            "component_id": 7,
+            "component_name": "cognitive_training",
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.arm_component",
+          "primary_key": {
+            "arm_id": 14,
+            "component_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5ee49ea484a775747ee6fa1d047b2b6386358a690dce8181fa532cb3c6a0fc88",
+          "surface_mode": "ordinary",
+          "table_name": "arm_component"
+        },
+        {
+          "candidate_id": 60,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 11,
+            "arm_key": "control",
+            "arm_label": "Control",
+            "arm_role": "passive_control",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "Control",
+            "sample_json": {},
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1f5ecb3a7be0d8c894cd6090301220875b28f2fe0420ff477f5342208ccac4ba",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 61,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 12,
+            "arm_key": "baduanjin_only",
+            "arm_label": "Baduanjin only",
+            "arm_role": "intervention",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "Baduanjin-only",
+            "sample_json": {},
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "62198cbaada2982398437110781ccd6a21c69252737921d505d54c125480488f",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 62,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 13,
+            "arm_key": "cognitive_training_only",
+            "arm_label": "Cognitive training only",
+            "arm_role": "intervention",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "cognitive-training-only",
+            "sample_json": {},
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0c571f3af8bc64eaee1dc9f834d779efee5df125636e77a7bc458f86af0b2ad0",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 63,
+          "candidate_value": {
+            "arm_description": null,
+            "arm_id": 14,
+            "arm_key": "combined_baduanjin_cognitive",
+            "arm_label": "Baduanjin + cognitive training",
+            "arm_role": "intervention",
+            "assignment_structure": "factorial_cell",
+            "author_arm_label": "combined",
+            "sample_json": {},
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.study_arm",
+          "primary_key": {
+            "arm_id": 14
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "eaff2c11910f37ba1820f59b6c0bea6a0199b1e8f37ea29288dda49fbc188684",
+          "surface_mode": "ordinary",
+          "table_name": "study_arm"
+        },
+        {
+          "candidate_id": 298,
+          "candidate_value": {
+            "arm_extraction_status": "partially_extracted",
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: The 2x2 factorial cells are explicit, but the seed does not establish which factorial estimands should be privileged.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4a5bbd85bcfb73f846edbd83bb52d1ddaf72628be25a9e386d5c1642ab71d78a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 316,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: The 2x2 factorial cells are explicit, but the seed does not establish which factorial estimands should be privileged.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4a5bbd85bcfb73f846edbd83bb52d1ddaf72628be25a9e386d5c1642ab71d78a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-006 — Baduanjin",
+      "unit_key": "study:6"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 297,
+          "candidate_value": {
+            "arm_extraction_status": "not_applicable",
+            "study_id": 7
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Systematic review/meta-analysis aggregates 23 randomized trials; source-level pooled descriptions are not one trial arm set.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1d4e65ab96e034105229b1a4b4411125ed9bb0d541e151eb3625649b133f7744",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 315,
+          "candidate_value": {
+            "contrast_extraction_status": "not_applicable",
+            "study_id": 7
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Systematic review/meta-analysis aggregates 23 randomized trials; source-level pooled descriptions are not one trial arm set.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1d4e65ab96e034105229b1a4b4411125ed9bb0d541e151eb3625649b133f7744",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-007 — Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+      "unit_key": "study:7"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-008",
+        "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+        "study_id": 8
+      },
+      "decisions": [
+        {
+          "candidate_id": 291,
+          "candidate_value": {
+            "arm_extraction_status": "not_applicable",
+            "study_id": 8
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-008",
+            "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+            "study_id": 8
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Measurement-focused scoping review; no single experimental arm structure applies.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b69dd072fb6f21aa0f6df027412e861d7ea3e4ea56d739640945c30c063b555a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 309,
+          "candidate_value": {
+            "contrast_extraction_status": "not_applicable",
+            "study_id": 8
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-008",
+            "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+            "study_id": 8
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Measurement-focused scoping review; no single experimental arm structure applies.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b69dd072fb6f21aa0f6df027412e861d7ea3e4ea56d739640945c30c063b555a",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-008 — Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+      "unit_key": "study:8"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-009",
+        "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+        "study_id": 9
+      },
+      "decisions": [
+        {
+          "candidate_id": 292,
+          "candidate_value": {
+            "arm_extraction_status": "not_yet_extracted",
+            "study_id": 9
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-009",
+            "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+            "study_id": 9
+          },
+          "dimension": "arm",
+          "evidence_basis": "notes: Mechanism study likely contains learning/scan conditions, but the rapid-review seed does not enumerate them sufficiently.",
+          "field_path": "legacy_seed_review.study_stage5_status.arm",
+          "primary_key": {
+            "study_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "438b4c3d33c3fa42075776d4ad4012557533937d34f142b3f6ffc26414019afa",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        },
+        {
+          "candidate_id": 310,
+          "candidate_value": {
+            "contrast_extraction_status": "not_yet_extracted",
+            "study_id": 9
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-009",
+            "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+            "study_id": 9
+          },
+          "dimension": "contrast",
+          "evidence_basis": "notes: Mechanism study likely contains learning/scan conditions, but the rapid-review seed does not enumerate them sufficiently.",
+          "field_path": "legacy_seed_review.study_stage5_status.contrast",
+          "primary_key": {
+            "study_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "438b4c3d33c3fa42075776d4ad4012557533937d34f142b3f6ffc26414019afa",
+          "surface_mode": "dimension",
+          "table_name": "study_stage5_status"
+        }
+      ],
+      "label": "rt-2026-009 — An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+      "unit_key": "study:9"
+    }
+  ]
+}
