@@ -26,7 +26,12 @@ def run(cmd: list[str], *, input_text: str | None = None, capture: bool = False,
 
 def psql(container: str, sql: str, *, check: bool = True) -> str:
     cmd = ["docker", "exec", "-i", container, "psql", "-v", "ON_ERROR_STOP=1", "-U", "postgres", "-d", "postgres", "-A", "-t", "-F", "|"]
-    result = run(cmd, input_text=sql, capture=True, check=check)
+    result = run(cmd, input_text=sql, capture=True, check=False)
+    if check and result.returncode != 0:
+        stderr = result.stderr.strip() or "<no PostgreSQL stderr>"
+        stdout = result.stdout.strip()
+        extra = f"\nstdout:\n{stdout}" if stdout else ""
+        raise RuntimeError(f"psql failed with exit status {result.returncode}:\n{stderr}{extra}")
     return result.stdout.strip()
 
 
@@ -110,7 +115,13 @@ begin
     '{{"value":"agent-b"}}'::jsonb,'Synthetic local Stage 11 later candidate B',0.95,cand1
   ) returning field_candidate_id into cand2;
 
-  select count(*),max(authoritative_value_json) into auth_count,auth_value
+  select count(*) into auth_count
+  from public.scientific_field_authority
+  where subject_kind='source_version'
+    and subject_key='{{"source_version_id":"sv-rt-2026-015-v1"}}'::jsonb
+    and field_path='stage11.test.field' and active=true;
+
+  select authoritative_value_json into auth_value
   from public.scientific_field_authority
   where subject_kind='source_version'
     and subject_key='{{"source_version_id":"sv-rt-2026-015-v1"}}'::jsonb
