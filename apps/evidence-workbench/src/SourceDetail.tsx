@@ -85,19 +85,19 @@ export function SourceDetail({ source, data, canEdit, onRefresh, onError }: { so
 
 function StudyCard({ study, canEdit, onRefresh, onError }: { study: Study; canEdit: boolean; onRefresh: () => Promise<void>; onError: (v: string | null) => void }) {
   const [edit, setEdit] = useState(false)
-  const [form, setForm] = useState({ design: study.design ?? '', population_summary: study.population_summary ?? '', setting: study.setting ?? '', comparator_summary: study.comparator_summary ?? '' })
-  useEffect(() => setForm({ design: study.design ?? '', population_summary: study.population_summary ?? '', setting: study.setting ?? '', comparator_summary: study.comparator_summary ?? '' }), [study.study_id])
+  const [form, setForm] = useState({ design: study.design ?? '', population_summary: study.population_summary ?? '', setting: study.setting ?? '' })
+  useEffect(() => setForm({ design: study.design ?? '', population_summary: study.population_summary ?? '', setting: study.setting ?? '' }), [study.study_id])
   async function save() {
     const { error } = await supabase.from('study').update(form).eq('study_id', study.study_id)
     if (error) onError(error.message); else { setEdit(false); await onRefresh() }
   }
-  if (edit) return <div className="edit-stack subedit"><EditInput label="Design" value={form.design} onChange={(v) => setForm({ ...form, design: v })} /><EditInput label="Population" value={form.population_summary} onChange={(v) => setForm({ ...form, population_summary: v })} /><EditInput label="Setting" value={form.setting} onChange={(v) => setForm({ ...form, setting: v })} /><EditInput label="Comparator" value={form.comparator_summary} onChange={(v) => setForm({ ...form, comparator_summary: v })} /><div className="edit-actions"><button className="primary-button fit" onClick={save}><Save size={14} /> Save</button><button className="secondary-button fit" onClick={() => setEdit(false)}>Cancel</button></div></div>
+  if (edit) return <div className="edit-stack subedit"><EditInput label="Design" value={form.design} onChange={(v) => setForm({ ...form, design: v })} /><EditInput label="Population" value={form.population_summary} onChange={(v) => setForm({ ...form, population_summary: v })} /><EditInput label="Setting" value={form.setting} onChange={(v) => setForm({ ...form, setting: v })} /><div className="record-note">Historical comparator summary is preserved as compatibility metadata. Review canonical arms, conditions and contrasts in the Stage 5 section above.</div><div className="edit-actions"><button className="primary-button fit" onClick={save}><Save size={14} /> Save</button><button className="secondary-button fit" onClick={() => setEdit(false)}>Cancel</button></div></div>
   return (
     <div className="info-grid">
       <Info label="Design" value={study.design} />
       <Info label="Population" value={study.population_summary} />
       <Info label="Setting" value={study.setting} />
-      <Info label="Comparator" value={study.comparator_summary} />
+      <Info label="Historical comparator summary" value={study.comparator_summary} />
       <Info label="Sample" value={compactJson(study.sample_json)} />
       <Info label="Population tags" value={study.population_tags?.map(humanize).join(', ')} />
       {canEdit && <button className="text-button edit-link" onClick={() => setEdit(true)}><Pencil size={14} /> Edit study fields</button>}
