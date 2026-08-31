@@ -20,7 +20,8 @@ def psql(container: str, sql: str, *, tuples_only: bool = False) -> str:
     cmd = ["docker", "exec", "-i", container, "psql", "-v", "ON_ERROR_STOP=1", "-U", "postgres", "-d", "postgres"]
     if tuples_only:
         cmd.extend(["-A", "-t", "-F", "|"])
-    return run(cmd, input_text=sql, capture=tuples_only).stdout.strip() if tuples_only else ""
+    completed = run(cmd, input_text=sql, capture=tuples_only)
+    return completed.stdout.strip() if tuples_only else ""
 
 
 def q(value: str) -> str:
