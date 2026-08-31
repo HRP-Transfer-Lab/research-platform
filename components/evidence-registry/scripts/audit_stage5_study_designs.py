@@ -43,6 +43,20 @@ def compact(value) -> str:
     return json.dumps(value, ensure_ascii=False, separators=(",", ":"))
 
 
+def normalize_row(line: str) -> list[str]:
+    """Split one psql unaligned row, preserving a legitimate empty final field.
+
+    psql may omit the visual trailing separator when the final selected text
+    expression is empty. Stage 5 deliberately allows studies with no normalized
+    intervention components, so a seven-field row is valid and is padded to the
+    expected eight fields rather than treated as malformed.
+    """
+    parts = line.split("\t", 7)
+    if len(parts) == 7:
+        parts.append("")
+    return parts
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Audit Stage 5 study-arm/contrast signals in local seed Registry.")
     ap.add_argument("--container", default=DEFAULT_CONTAINER)
@@ -74,7 +88,7 @@ order by es.source_id;
 """
 
     raw = run_psql(args.container, sql)
-    rows = [line.split("\t", 7) for line in raw.splitlines() if line.strip()]
+    rows = [normalize_row(line) for line in raw.splitlines() if line.strip()]
 
     if len(rows) != 18:
         raise SystemExit(f"Expected 18 seed studies, found {len(rows)}")
