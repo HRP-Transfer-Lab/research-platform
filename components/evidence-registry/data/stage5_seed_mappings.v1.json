@@ -1,0 +1,120 @@
+{
+  "mapping_version": "stage5-seed-v1",
+  "release_id": "2026-08-23",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "scientific_boundary": "Candidate arm/condition and contrast normalization only. No missing arm sizes are inferred, aggregate reviews are not turned into synthetic trials, and no candidate is human-approved.",
+  "studies": {
+    "rt-2026-001": {
+      "arm_extraction_status": "partially_extracted",
+      "contrast_extraction_status": "partially_extracted",
+      "notes": "Two-arm randomized active-control trial is explicit; per-arm sample counts were not extracted.",
+      "arms": [
+        {"arm_key":"spectra_training","arm_label":"SPECTRA episodic-specificity training","author_arm_label":"SPECTRA episodic-specificity training","arm_role":"intervention","assignment_structure":"parallel_group","sample":{},"components":[{"component_name":"SPECTRA episodic-specificity training","membership_role":"defining"}]},
+        {"arm_key":"asso_active_control","arm_label":"ASSO associative-memory active control","author_arm_label":"ASSO associative word-picture recall training","arm_role":"active_control","assignment_structure":"parallel_group","sample":{},"components":[]}
+      ],
+      "contrasts": [
+        {"contrast_key":"spectra_vs_asso","contrast_label":"SPECTRA vs ASSO active control","contrast_type":"pairwise","members":[{"arm_key":"spectra_training","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"asso_active_control","contrast_side":"comparator","contrast_coefficient":-1}]}
+      ]
+    },
+    "rt-2026-002": {
+      "arm_extraction_status": "partially_extracted",
+      "contrast_extraction_status": "not_yet_extracted",
+      "notes": "Three-group design is explicit; the rapid-review seed does not specify the control sufficiently to assign a more specific role or safe contrast.",
+      "arms": [
+        {"arm_key":"executive_function_training","arm_label":"Comprehensive executive-function training","author_arm_label":"Comprehensive executive-function training","arm_role":"intervention","assignment_structure":"parallel_group","sample":{},"components":[{"component_name":"comprehensive executive-function training","membership_role":"defining"}]},
+        {"arm_key":"behavioral_training","arm_label":"Behavioral-training group","author_arm_label":"Behavioral-training group","arm_role":"alternative_intervention","assignment_structure":"parallel_group","sample":{},"components":[]},
+        {"arm_key":"control","arm_label":"Control group","author_arm_label":"Control group","arm_role":"unclear","assignment_structure":"parallel_group","sample":{},"components":[]}
+      ],
+      "contrasts": []
+    },
+    "rt-2026-003": {"arm_extraction_status":"not_applicable","contrast_extraction_status":"not_applicable","notes":"Secondary analysis integrates three separate randomized studies with varying controls; one synthetic arm set would misrepresent the analysis.","arms":[],"contrasts":[]},
+    "rt-2026-004": {
+      "arm_extraction_status": "partially_extracted",
+      "contrast_extraction_status": "partially_extracted",
+      "notes": "Three randomized groups and per-group randomized counts are explicit. The same normalized relational-training component appears in two arms.",
+      "arms": [
+        {"arm_key":"standard_relational_training","arm_label":"Standard relational training","author_arm_label":"standard relational training","arm_role":"intervention","assignment_structure":"parallel_group","sample":{"randomized":42},"components":[{"component_name":"relational-frame training","membership_role":"defining"}]},
+        {"arm_key":"enhanced_multi_exemplar_training","arm_label":"Enhanced multi-exemplar training","author_arm_label":"enhanced multi-exemplar training","arm_role":"intervention","assignment_structure":"parallel_group","sample":{"randomized":38},"components":[{"component_name":"relational-frame training","membership_role":"defining"}]},
+        {"arm_key":"yoked_control","arm_label":"Yoked control","author_arm_label":"yoked control","arm_role":"active_control","assignment_structure":"parallel_group","sample":{"randomized":39},"components":[]}
+      ],
+      "contrasts": [
+        {"contrast_key":"standard_vs_yoked","contrast_label":"Standard relational training vs yoked control","contrast_type":"pairwise","members":[{"arm_key":"standard_relational_training","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"yoked_control","contrast_side":"comparator","contrast_coefficient":-1}]},
+        {"contrast_key":"enhanced_vs_yoked","contrast_label":"Enhanced multi-exemplar training vs yoked control","contrast_type":"pairwise","members":[{"arm_key":"enhanced_multi_exemplar_training","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"yoked_control","contrast_side":"comparator","contrast_coefficient":-1}]}
+      ]
+    },
+    "rt-2026-005": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"partially_extracted","notes":"Randomized training-versus-active-control structure is explicit; no per-arm counts are inferred from total randomized N.",
+      "arms":[
+        {"arm_key":"cognitive_game_training","arm_label":"Custom-developed cognitive-game training","author_arm_label":"custom-developed cognitive games","arm_role":"intervention","assignment_structure":"parallel_group","sample":{},"components":[{"component_name":"custom-developed cognitive games","membership_role":"defining"}]},
+        {"arm_key":"video_observation_active_control","arm_label":"Perceptual-matched gameplay-video observation","author_arm_label":"perceptual-matched gameplay-video observation","arm_role":"active_control","assignment_structure":"parallel_group","sample":{},"components":[]}
+      ],
+      "contrasts":[{"contrast_key":"training_vs_video_control","contrast_label":"Cognitive-game training vs video-observation active control","contrast_type":"pairwise","members":[{"arm_key":"cognitive_game_training","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"video_observation_active_control","contrast_side":"comparator","contrast_coefficient":-1}]}]
+    },
+    "rt-2026-006": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"not_yet_extracted","notes":"The 2x2 factorial cells are explicit, but the seed does not establish which factorial estimands should be privileged.",
+      "arms":[
+        {"arm_key":"control","arm_label":"Control","author_arm_label":"Control","arm_role":"passive_control","assignment_structure":"factorial_cell","sample":{},"components":[]},
+        {"arm_key":"baduanjin_only","arm_label":"Baduanjin only","author_arm_label":"Baduanjin-only","arm_role":"intervention","assignment_structure":"factorial_cell","sample":{},"components":[{"component_name":"Baduanjin","membership_role":"defining"}]},
+        {"arm_key":"cognitive_training_only","arm_label":"Cognitive training only","author_arm_label":"cognitive-training-only","arm_role":"intervention","assignment_structure":"factorial_cell","sample":{},"components":[{"component_name":"cognitive_training","membership_role":"defining"}]},
+        {"arm_key":"combined_baduanjin_cognitive","arm_label":"Baduanjin + cognitive training","author_arm_label":"combined","arm_role":"intervention","assignment_structure":"factorial_cell","sample":{},"components":[{"component_name":"Baduanjin","membership_role":"shared"},{"component_name":"cognitive_training","membership_role":"shared"}]}
+      ],
+      "contrasts":[]
+    },
+    "rt-2026-007": {"arm_extraction_status":"not_applicable","contrast_extraction_status":"not_applicable","notes":"Systematic review/meta-analysis aggregates 23 randomized trials; source-level pooled descriptions are not one trial arm set.","arms":[],"contrasts":[]},
+    "rt-2026-008": {"arm_extraction_status":"not_applicable","contrast_extraction_status":"not_applicable","notes":"Measurement-focused scoping review; no single experimental arm structure applies.","arms":[],"contrasts":[]},
+    "rt-2026-009": {"arm_extraction_status":"not_yet_extracted","contrast_extraction_status":"not_yet_extracted","notes":"Mechanism study likely contains learning/scan conditions, but the rapid-review seed does not enumerate them sufficiently.","arms":[],"contrasts":[]},
+    "rt-2026-010": {"arm_extraction_status":"not_yet_extracted","contrast_extraction_status":"not_yet_extracted","notes":"Secondary analysis of perceptual-learning data; source conditions are not fully represented in the seed.","arms":[],"contrasts":[]},
+    "rt-2026-011": {"arm_extraction_status":"not_yet_extracted","contrast_extraction_status":"not_yet_extracted","notes":"Retrieval-practice mechanism experiment; condition structure is not sufficiently extracted in the seed.","arms":[],"contrasts":[]},
+    "rt-2026-012": {"arm_extraction_status":"not_yet_extracted","contrast_extraction_status":"not_yet_extracted","notes":"Acute-stress mechanism experiment; stress/control condition structure is not sufficiently extracted in the seed.","arms":[],"contrasts":[]},
+    "rt-2026-013": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"partially_extracted","notes":"Across three controlled experiments the seed explicitly states JOL during study versus no JOL, but does not establish assignment structure for each experiment.",
+      "arms":[
+        {"arm_key":"jol_during_study","arm_label":"Immediate judgment-of-learning prompts","author_arm_label":"JOL during study","arm_role":"experimental_condition","assignment_structure":"unclear","sample":{},"components":[]},
+        {"arm_key":"no_jol","arm_label":"No JOL","author_arm_label":"no JOL","arm_role":"reference","assignment_structure":"unclear","sample":{},"components":[]}
+      ],
+      "contrasts":[{"contrast_key":"jol_vs_no_jol","contrast_label":"JOL during study vs no JOL","contrast_type":"pairwise","members":[{"arm_key":"jol_during_study","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"no_jol","contrast_side":"comparator","contrast_coefficient":-1}]}]
+    },
+    "rt-2026-014": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"not_yet_extracted","notes":"AI support x mastery yields four recoverable policy cells. Topic is an additional factorial dimension but is not expanded because its assignment structure is not sufficiently represented.",
+      "arms":[
+        {"arm_key":"cal_nonmastery","arm_label":"CAL-only + non-mastery progression","author_arm_label":"CAL-only + non-mastery","arm_role":"reference","assignment_structure":"factorial_cell","sample":{},"components":[]},
+        {"arm_key":"cal_mastery","arm_label":"CAL-only + mastery progression","author_arm_label":"CAL-only + mastery","arm_role":"intervention","assignment_structure":"factorial_cell","sample":{},"components":[{"component_name":"mastery progression policy","membership_role":"defining"}]},
+        {"arm_key":"ai_nonmastery","arm_label":"AI tutoring + non-mastery progression","author_arm_label":"AI + non-mastery","arm_role":"intervention","assignment_structure":"factorial_cell","sample":{},"components":[{"component_name":"AI tutoring support","membership_role":"defining"}]},
+        {"arm_key":"ai_mastery","arm_label":"AI tutoring + mastery progression","author_arm_label":"AI + mastery","arm_role":"intervention","assignment_structure":"factorial_cell","sample":{},"components":[{"component_name":"AI tutoring support","membership_role":"shared"},{"component_name":"mastery progression policy","membership_role":"shared"}]}
+      ],
+      "contrasts":[]
+    },
+    "rt-2026-015": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"partially_extracted","notes":"Three quasi-experimental classroom conditions are explicit; six intact classes support cluster-group representation but per-condition class counts are not extracted.",
+      "arms":[
+        {"arm_key":"no_ai","arm_label":"No AI","author_arm_label":"no AI","arm_role":"reference","assignment_structure":"cluster_group","sample":{},"components":[]},
+        {"arm_key":"bounded_ai_reflection","arm_label":"Bounded AI + compulsory reflection","author_arm_label":"bounded AI + compulsory reflection","arm_role":"intervention","assignment_structure":"cluster_group","sample":{},"components":[{"component_name":"integrate","membership_role":"defining"}]},
+        {"arm_key":"open_ai","arm_label":"Open AI collaboration","author_arm_label":"open AI collaboration","arm_role":"alternative_intervention","assignment_structure":"cluster_group","sample":{},"components":[]}
+      ],
+      "contrasts":[
+        {"contrast_key":"bounded_vs_no_ai","contrast_label":"Bounded AI + reflection vs no AI","contrast_type":"multiarm_pairwise","members":[{"arm_key":"bounded_ai_reflection","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"no_ai","contrast_side":"comparator","contrast_coefficient":-1}]},
+        {"contrast_key":"bounded_vs_open_ai","contrast_label":"Bounded AI + reflection vs open AI","contrast_type":"multiarm_pairwise","members":[{"arm_key":"bounded_ai_reflection","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"open_ai","contrast_side":"comparator","contrast_coefficient":-1}]}
+      ]
+    },
+    "rt-2026-016": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"partially_extracted","notes":"Independent completion, AI-assisted completion and prediction are explicit; prediction is represented as a measurement condition rather than an intervention arm.",
+      "arms":[
+        {"arm_key":"independent_completion","arm_label":"Independent completion","author_arm_label":"independent completion","arm_role":"reference","assignment_structure":"unclear","sample":{},"components":[]},
+        {"arm_key":"ai_assisted_completion","arm_label":"AI-assisted completion","author_arm_label":"AI-assisted completion","arm_role":"intervention","assignment_structure":"unclear","sample":{},"components":[{"component_name":"redesign","membership_role":"defining"}]},
+        {"arm_key":"completion_time_prediction","arm_label":"Prediction of completion time","author_arm_label":"prediction of completion time","arm_role":"measurement_condition","assignment_structure":"unclear","sample":{},"components":[]}
+      ],
+      "contrasts":[{"contrast_key":"ai_vs_independent","contrast_label":"AI-assisted vs independent completion","contrast_type":"pairwise","members":[{"arm_key":"ai_assisted_completion","contrast_side":"focal","contrast_coefficient":1},{"arm_key":"independent_completion","contrast_side":"comparator","contrast_coefficient":-1}]}]
+    },
+    "rt-2026-017": {
+      "arm_extraction_status":"partially_extracted","contrast_extraction_status":"not_yet_extracted","notes":"Three between-subjects AI-support-stage conditions are explicit; no specific pairwise contrast is privileged by the seed.",
+      "arms":[
+        {"arm_key":"ai_planning","arm_label":"AI support at planning","author_arm_label":"AI support at planning","arm_role":"experimental_condition","assignment_structure":"parallel_group","sample":{},"components":[{"component_name":"redesign","membership_role":"shared"}]},
+        {"arm_key":"ai_drafting","arm_label":"AI support at drafting","author_arm_label":"AI support at drafting","arm_role":"experimental_condition","assignment_structure":"parallel_group","sample":{},"components":[{"component_name":"redesign","membership_role":"shared"}]},
+        {"arm_key":"ai_revision","arm_label":"AI support at revision","author_arm_label":"AI support at revision","arm_role":"experimental_condition","assignment_structure":"parallel_group","sample":{},"components":[{"component_name":"redesign","membership_role":"shared"}]}
+      ],
+      "contrasts":[]
+    },
+    "rt-2026-018": {"arm_extraction_status":"not_applicable","contrast_extraction_status":"not_applicable","notes":"Three-wave observational survey models continuous offloading constructs rather than discrete assigned arms/groups in the seed.","arms":[],"contrasts":[]}
+  }
+}
