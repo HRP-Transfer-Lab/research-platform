@@ -86,7 +86,7 @@ select
 select
   (select count(*) from public.source_version_application_family),
   (select count(distinct source_version_id) from public.source_version_application_family),
-  (select count(distinct application_family_key) from public.source_version_application_family);
+  (select count(distinct application_family) from public.source_version_application_family);
 """)
     print(app)
 
