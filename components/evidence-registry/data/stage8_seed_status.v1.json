@@ -1,0 +1,47 @@
+{
+  "manifest_version": "stage8-seed-v1",
+  "release_id": "2026-08-23",
+  "mapping_source": "migration",
+  "review_status": "proposed",
+  "scientific_boundary": "The immutable 18-source seed contains no curated evidence proposition, body synthesis, synthesis outcome, body-certainty assessment, body-level EML assessment, or approved body claim. Stage 8 therefore creates explicit programme curation status only and does not infer body-level scientific objects from source titles, product relevance, source EML, or the one source-level pooled effect.",
+  "body_curation_status": {
+    "scope_key": "seed_body_curation",
+    "status": "not_yet_curated",
+    "notes": "Body-level proposition and synthesis curation has not yet been performed for the immutable 2026-08-23 seed."
+  },
+  "legacy_expectations": {
+    "evidence_synthesis_rows": 0,
+    "synthesis_source_rows": 0,
+    "approved_claim_rows": 0
+  },
+  "maturity_expectations": {
+    "source_record_contribution_eml": 18,
+    "body_of_evidence_eml": 0,
+    "synthesis_subject_eml": 0,
+    "claim_subject_eml": 0
+  },
+  "source_level_synthesis_effects": {
+    "expected_count": 1,
+    "source_id": "rt-2026-007",
+    "outcome_name": "overall post-training working memory",
+    "estimate_scope": "source_level_synthesis",
+    "estimate_type": "standardised_mean_difference",
+    "metric": "Hedges_g",
+    "estimate_value": 0.191,
+    "ci_lower": 0.062,
+    "ci_upper": 0.32,
+    "scientific_boundary": "This pooled estimate remains a source-level synthesis result until a human-reviewed proposition/contribution/synthesis outcome explicitly links it. No Stage 5 contrast is fabricated."
+  },
+  "body_backfill": {
+    "propositions": [],
+    "contributions": [],
+    "body_syntheses": [],
+    "synthesis_outcomes": [],
+    "body_certainty_assessments": [],
+    "body_maturity_assessments": [],
+    "body_approved_claims": []
+  },
+  "grade_boundary": "No GRADE judgement is present in the seed. GRADE may only attach to a Stage 8 synthesis_outcome through the typed body-certainty path.",
+  "eml_boundary": "The 18 existing EML rows are record-contribution maturity only. Body EML is not inferred from maximum, mean, count, or distribution of source-level EML ratings.",
+  "claim_boundary": "No approved claim is inferred from product_relevance, source-level EML, result direction, or statistical significance."
+}
