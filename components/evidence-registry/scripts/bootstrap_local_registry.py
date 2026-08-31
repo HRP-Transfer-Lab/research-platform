@@ -379,6 +379,32 @@ select
             str(stage8_seed_validator),
         ])
 
+    stage9_mapper = REPO_ROOT / "components/evidence-registry/scripts/apply_stage9_seed_mappings.py"
+    if stage9_mapper.exists():
+        print("Applying Stage 9 candidate population/context mappings...")
+        run([
+            sys.executable,
+            str(stage9_mapper),
+            "--container", args.container,
+        ])
+
+    stage9_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage9_population_context.py"
+    if stage9_validator.exists():
+        print("Validating Stage 9 population/context architecture...")
+        run([
+            sys.executable,
+            str(stage9_validator),
+            "--container", args.container,
+        ])
+
+    stage9_seed_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage9_seed_mappings.py"
+    if stage9_seed_validator.exists():
+        print("Validating Stage 9 candidate seed mappings and human-approval boundary...")
+        run([
+            sys.executable,
+            str(stage9_seed_validator),
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
