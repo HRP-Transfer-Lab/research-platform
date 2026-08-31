@@ -353,6 +353,32 @@ select
             str(stage7_seed_validator),
         ])
 
+    stage8_mapper = REPO_ROOT / "components/evidence-registry/scripts/apply_stage8_seed_status.py"
+    if stage8_mapper.exists():
+        print("Applying Stage 8 zero-body curation status...")
+        run([
+            sys.executable,
+            str(stage8_mapper),
+            "--container", args.container,
+        ])
+
+    stage8_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage8_body_evidence.py"
+    if stage8_validator.exists():
+        print("Validating Stage 8 proposition/synthesis/body-evidence architecture...")
+        run([
+            sys.executable,
+            str(stage8_validator),
+            "--container", args.container,
+        ])
+
+    stage8_seed_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage8_seed_status.py"
+    if stage8_seed_validator.exists():
+        print("Validating Stage 8 zero-body seed boundary...")
+        run([
+            sys.executable,
+            str(stage8_seed_validator),
+        ])
+
     print("LOCAL REGISTRY BASELINE PASS")
     return 0
 
