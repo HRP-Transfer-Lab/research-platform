@@ -154,6 +154,15 @@ def scientific_value(row: dict[str, Any], surface: dict[str, Any], pk: dict[str,
             k: v for k, v in row.items()
             if k.startswith(prefix) and k not in {f"{dim}_mapping_source", f"{dim}_review_status"}
         }
+        # Stage 4 outcome distance is the one single-valued Stage 4 dimension whose
+        # scientific value lives on the classification row but does not use the
+        # ``distance_`` prefix. Bind it explicitly so human adjudication/authority
+        # covers the actual distance classification as well as its extraction state.
+        if (
+            surface.get("table") == "outcome_stage4_classification"
+            and dim == "distance"
+        ):
+            value["outcome_distance"] = row.get("outcome_distance")
         value.update(pk)
         return value
     excluded = {"mapping_source", "review_status", "created_at", "updated_at"}
