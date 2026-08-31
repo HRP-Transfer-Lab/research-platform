@@ -3,7 +3,7 @@
   "batch_label": "Stage 4 outcome distance",
   "bridge_processing_run_id": 5,
   "decision_count": 38,
-  "generated_from_git_commit": "f976597bd6d6a3a0b58f4cdc8d1083d8042923b7",
+  "generated_from_git_commit": "7cc2c3ca2e3881249b8268177a882872d519578b",
   "governance_notes": [
     "Packet preparation does not approve scientific state.",
     "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
@@ -11,7 +11,7 @@
     "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
   ],
   "historical_release_id": "2026-08-23",
-  "packet_sha256": "c07761565cec0b7f7736d1a6628777aa13438d8694ccb5a815f599a1b3bf6e35",
+  "packet_sha256": "dfeeb098f1de3e13cd8fd51a92f9b43392da80b3c8e588ddeeef84a5c86e0330",
   "review_unit_count": 38,
   "schema_version": "stage12-review-surface-v2",
   "scientific_state_revision": 2033,
@@ -28,9 +28,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 145,
+          "candidate_id": 339,
           "candidate_value": {
             "distance_status": "not_yet_extracted",
+            "outcome_distance": null,
             "outcome_id": 1
           },
           "context": {
@@ -69,9 +70,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 156,
+          "candidate_id": 350,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 10
           },
           "context": {
@@ -110,9 +112,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 157,
+          "candidate_id": 351,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 11
           },
           "context": {
@@ -151,9 +154,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 158,
+          "candidate_id": 352,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 12
           },
           "context": {
@@ -192,9 +196,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 164,
+          "candidate_id": 358,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 13
           },
           "context": {
@@ -233,9 +238,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 162,
+          "candidate_id": 356,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 14
           },
           "context": {
@@ -274,9 +280,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 147,
+          "candidate_id": 341,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 15
           },
           "context": {
@@ -315,9 +322,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 163,
+          "candidate_id": 357,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 16
           },
           "context": {
@@ -356,9 +364,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 144,
+          "candidate_id": 338,
           "candidate_value": {
             "distance_status": "not_yet_extracted",
+            "outcome_distance": null,
             "outcome_id": 17
           },
           "context": {
@@ -397,9 +406,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 140,
+          "candidate_id": 334,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 18
           },
           "context": {
@@ -438,9 +448,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 136,
+          "candidate_id": 330,
           "candidate_value": {
             "distance_status": "not_yet_extracted",
+            "outcome_distance": null,
             "outcome_id": 19
           },
           "context": {
@@ -479,9 +490,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 146,
+          "candidate_id": 340,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 2
           },
           "context": {
@@ -520,9 +532,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 150,
+          "candidate_id": 344,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 20
           },
           "context": {
@@ -561,9 +574,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 137,
+          "candidate_id": 331,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 21
           },
           "context": {
@@ -602,9 +616,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 151,
+          "candidate_id": 345,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 22
           },
           "context": {
@@ -643,9 +658,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 139,
+          "candidate_id": 333,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "changed_format",
             "outcome_id": 23
           },
           "context": {
@@ -684,9 +700,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 152,
+          "candidate_id": 346,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 24
           },
           "context": {
@@ -725,9 +742,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 135,
+          "candidate_id": 329,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 25
           },
           "context": {
@@ -766,9 +784,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 142,
+          "candidate_id": 336,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 26
           },
           "context": {
@@ -807,9 +826,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 141,
+          "candidate_id": 335,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 27
           },
           "context": {
@@ -848,9 +868,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 155,
+          "candidate_id": 349,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 28
           },
           "context": {
@@ -889,9 +910,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 134,
+          "candidate_id": 328,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 29
           },
           "context": {
@@ -930,9 +952,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 165,
+          "candidate_id": 359,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 3
           },
           "context": {
@@ -971,9 +994,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 143,
+          "candidate_id": 337,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 30
           },
           "context": {
@@ -1012,9 +1036,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 166,
+          "candidate_id": 360,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 31
           },
           "context": {
@@ -1053,9 +1078,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 133,
+          "candidate_id": 327,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 32
           },
           "context": {
@@ -1094,9 +1120,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 131,
+          "candidate_id": 325,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 33
           },
           "context": {
@@ -1135,9 +1162,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 130,
+          "candidate_id": 324,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 34
           },
           "context": {
@@ -1176,9 +1204,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 129,
+          "candidate_id": 323,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 35
           },
           "context": {
@@ -1217,9 +1246,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 132,
+          "candidate_id": 326,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "real_life_function",
             "outcome_id": 36
           },
           "context": {
@@ -1258,9 +1288,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 148,
+          "candidate_id": 342,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 37
           },
           "context": {
@@ -1299,9 +1330,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 149,
+          "candidate_id": 343,
           "candidate_value": {
             "distance_status": "not_applicable",
+            "outcome_distance": null,
             "outcome_id": 38
           },
           "context": {
@@ -1340,9 +1372,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 159,
+          "candidate_id": 353,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 4
           },
           "context": {
@@ -1381,9 +1414,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 161,
+          "candidate_id": 355,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 5
           },
           "context": {
@@ -1422,9 +1456,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 153,
+          "candidate_id": 347,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 6
           },
           "context": {
@@ -1463,9 +1498,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 154,
+          "candidate_id": 348,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "separate_measure",
             "outcome_id": 7
           },
           "context": {
@@ -1504,9 +1540,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 160,
+          "candidate_id": 354,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "trained_task",
             "outcome_id": 8
           },
           "context": {
@@ -1545,9 +1582,10 @@
       },
       "decisions": [
         {
-          "candidate_id": 138,
+          "candidate_id": 332,
           "candidate_value": {
             "distance_status": "reviewed_mapped",
+            "outcome_distance": "changed_format",
             "outcome_id": 9
           },
           "context": {
