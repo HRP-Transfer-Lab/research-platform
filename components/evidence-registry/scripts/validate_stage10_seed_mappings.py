@@ -52,7 +52,8 @@ def main() -> int:
     require(h.get("event_count") is None, "must not invent event_count")
     require(h.get("participant_count") is None, "must not invent participant_count")
     require(h.get("systematically_assessed") is False, "must not portray rt-013 as systematic adverse-event surveillance")
-    require(h.get("withdrawal_due_to_harm") is False, "rt-013 must not invent harm withdrawal")
+    require(h.get("withdrawal_due_to_harm") is None, "withdrawal due to harm must remain unknown when not reported")
+    require(h.get("serious") is None, "seriousness must remain unknown when not established")
 
     flow_sources = {(r["source_id"], r["flow_kind"], r["participant_count"]) for r in participation}
     required_flows = {
@@ -87,6 +88,7 @@ def main() -> int:
 
     print("STAGE 10 SEED MAPPINGS VALID: harms=1; participation=8; implementation=4; support=1; boundaries=3; component_reporting=0")
     print("no_harm_noninference: PASS")
+    print("harm_attribute_missingness: PASS (seriousness / harm-withdrawal remain unknown when not established)")
     print("participation_vs_adherence_boundary: PASS")
     print("support_vs_bridge_boundary: PASS")
     print("observational_vs_causal_boundary: PASS")
