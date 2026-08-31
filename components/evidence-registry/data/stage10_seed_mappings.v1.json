@@ -1,0 +1,118 @@
+{
+  "schema_version": "stage10-harms-implementation-v1",
+  "release_id": "2026-08-23",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "harms_status_overrides": [
+    {
+      "source_id": "rt-2026-013",
+      "extraction_status": "candidate_signal_present",
+      "assessment_mode": "passive_or_incidental",
+      "systematic_assessment": false,
+      "notes": "A measured performance trade-off is explicitly reported, but the seed does not establish a systematic adverse-event assessment."
+    }
+  ],
+  "harm_observations": [
+    {
+      "source_id": "rt-2026-013",
+      "outcome_name": "memory test performance",
+      "harm_type": "performance_tradeoff",
+      "harm_label": "Immediate JOL prompting worsened difficult learning in some conditions",
+      "severity": "unclear",
+      "serious": false,
+      "withdrawal_due_to_harm": false,
+      "systematically_assessed": false,
+      "result_summary": "Memory performance was null overall and negative when learning was difficult.",
+      "evidence_basis": "Reviewed route rationale states that immediate judgments of learning did not improve learning and sometimes harmed difficult learning; normalized outcome direction is null_overall_negative_when_difficult."
+    }
+  ],
+  "participation_observations": [
+    {"source_id":"rt-2026-001","flow_kind":"randomized","participant_count":54,"source_field":"sample.randomized","evidence_basis":"Reviewed seed sample_json reports 54 randomized."},
+    {"source_id":"rt-2026-001","flow_kind":"analysed","participant_count":51,"source_field":"sample.analysed","evidence_basis":"Reviewed seed sample_json reports 51 analysed."},
+    {"source_id":"rt-2026-006","flow_kind":"randomized","participant_count":162,"source_field":"sample.randomized","evidence_basis":"Reviewed seed sample_json reports 162 randomized."},
+    {"source_id":"rt-2026-006","flow_kind":"completed","participant_count":138,"source_field":"sample.completed","evidence_basis":"Reviewed seed sample_json reports 138 completed."},
+    {"source_id":"rt-2026-009","flow_kind":"enrolled","participant_count":23,"source_field":"sample.enrolled","evidence_basis":"Reviewed seed sample_json reports 23 enrolled."},
+    {"source_id":"rt-2026-009","flow_kind":"followup_assessed","participant_count":22,"source_field":"sample.second_scan","evidence_basis":"Reviewed seed sample_json reports 22 participants at second scan."},
+    {"source_id":"rt-2026-015","flow_kind":"entered","participant_count":180,"source_field":"sample.entered","evidence_basis":"Reviewed seed sample_json reports 180 entered."},
+    {"source_id":"rt-2026-015","flow_kind":"completed","participant_count":168,"source_field":"sample.completed","evidence_basis":"Reviewed seed sample_json reports 168 completed."}
+  ],
+  "implementation_observations": [
+    {
+      "source_id": "rt-2026-001",
+      "component_name": "SPECTRA episodic-specificity training",
+      "dimension": "delivery_mode",
+      "observation_kind": "author_or_reviewed_delivery_description",
+      "value_text": "guided cognitive training",
+      "evidence_basis": "Normalized component delivery_mode explicitly states guided cognitive training."
+    },
+    {
+      "source_id": "rt-2026-003",
+      "component_name": "WM and/or numerical-knowledge tablet-game training",
+      "dimension": "delivery_mode",
+      "observation_kind": "author_or_reviewed_delivery_description",
+      "value_text": "researcher-facilitated tablet games",
+      "evidence_basis": "Normalized component delivery_mode explicitly states researcher-facilitated tablet games."
+    },
+    {
+      "source_id": "rt-2026-004",
+      "component_name": "relational-frame training",
+      "dimension": "delivery_mode",
+      "observation_kind": "author_or_reviewed_delivery_description",
+      "value_text": "structured matching-to-sample training",
+      "evidence_basis": "Normalized component delivery_mode explicitly states structured matching-to-sample training."
+    },
+    {
+      "source_id": "rt-2026-015",
+      "component_name": "integrate",
+      "dimension": "materials_procedures",
+      "observation_kind": "reviewed_protocol_structure",
+      "value_text": "8-week comparison of no AI, bounded AI plus compulsory reflection, and open AI collaboration, with supervised no-AI follow-up",
+      "evidence_basis": "Reviewed protocol explicitly records the three conditions and the Week 8 supervised no-AI writing task."
+    }
+  ],
+  "support_dependence_observations": [
+    {
+      "source_id": "rt-2026-015",
+      "component_name": "integrate",
+      "outcome_name": "independent no-AI writing quality",
+      "support_type": "ai_assistance",
+      "support_presence": "absent",
+      "support_requirement": "absent_at_test",
+      "autonomy_status": "unsupported_demonstrated",
+      "evidence_basis": "Week 8 outcome was measured on a supervised no-AI writing task after the intervention period. This demonstrates performance without AI at that test, but does not by itself establish spontaneous cue recovery or prompt fading."
+    }
+  ],
+  "boundary_observations": [
+    {
+      "source_id": "rt-2026-015",
+      "component_name": "integrate",
+      "boundary_dimension": "support_dependence",
+      "boundary_direction": "independence_not_demonstrated",
+      "boundary_summary": "Spontaneous cue recovery and prompt fading were not demonstrated.",
+      "evidence_basis": "Reviewed route rationale explicitly states that authentic writing plus later no-AI performance makes this partial Bridge, but spontaneous cue recovery/prompt fading were not demonstrated."
+    },
+    {
+      "source_id": "rt-2026-016",
+      "component_name": "redesign",
+      "boundary_dimension": "performance_tradeoff",
+      "boundary_direction": "effect_dissociation",
+      "boundary_summary": "AI reduced subjective effort but did not produce the expected objective speed advantage; perceived speedup was overestimated.",
+      "evidence_basis": "Reviewed source reports no-AI speed advantage, AI speed overestimation, and lower subjective effort with AI."
+    },
+    {
+      "source_id": "rt-2026-018",
+      "outcome_name": "perceived downstream cognitive functioning",
+      "boundary_dimension": "support_dependence",
+      "boundary_direction": "observational_association",
+      "boundary_summary": "Dependent offloading was associated with less favourable perceived downstream cognitive functioning than autonomous offloading.",
+      "evidence_basis": "Three-wave observational source distinguishes dependent from autonomous generative-AI offloading; the association is non-causal and informs Bridge/Redesign boundaries only."
+    }
+  ],
+  "component_reporting_assessments": [],
+  "notes": [
+    "No zero-harm conclusion is created.",
+    "Participation flow is not treated as adherence or withdrawal due to harm.",
+    "No fidelity, provider, tailoring, modification, burden or cost judgement is inferred where not explicitly supported.",
+    "Support-dependence observations do not auto-create Stage 4 Bridge evidence."
+  ]
+}
