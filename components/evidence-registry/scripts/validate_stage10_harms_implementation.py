@@ -51,14 +51,14 @@ select
     require(counts=="1|8|4|0|1|3",f"unexpected Stage 10 observation counts: {counts}")
 
     rt013=psql(args.container,"""
-select s.source_id||'|'||hs.extraction_status||'|'||hs.assessment_mode||'|'||coalesce(hs.systematic_assessment::text,'NULL')||'|'||ho.harm_type||'|'||eo.outcome_name||'|'||coalesce(ho.event_count::text,'NULL')||'|'||coalesce(ho.participant_count::text,'NULL')
+select s.source_id||'|'||hs.extraction_status||'|'||hs.assessment_mode||'|'||coalesce(hs.systematic_assessment::text,'NULL')||'|'||ho.harm_type||'|'||eo.outcome_name||'|'||coalesce(ho.event_count::text,'NULL')||'|'||coalesce(ho.participant_count::text,'NULL')||'|'||coalesce(ho.serious::text,'NULL')||'|'||coalesce(ho.withdrawal_due_to_harm::text,'NULL')
 from public.study_harms_status hs
 join public.study s on s.study_id=hs.study_id
 join public.harm_observation ho on ho.study_id=s.study_id
 left join public.evidence_outcome eo on eo.outcome_id=ho.outcome_id
 where s.source_id='rt-2026-013';
 """)
-    require(rt013=="rt-2026-013|candidate_signal_present|passive_or_incidental|false|performance_tradeoff|memory test performance|NULL|NULL",f"rt-013 harm semantics changed: {rt013!r}")
+    require(rt013=="rt-2026-013|candidate_signal_present|passive_or_incidental|false|performance_tradeoff|memory test performance|NULL|NULL|NULL|NULL",f"rt-013 harm semantics changed: {rt013!r}")
 
     no_harm_claims=scalar(args.container,"""
 select count(*) from public.study_harms_status
@@ -69,6 +69,8 @@ where extraction_status='reviewed_no_harm_observed';
     require(zero_events==0,f"seed fabricated zero-event harm observations={zero_events}")
     harm_withdrawals=scalar(args.container,"select count(*) from public.harm_observation where withdrawal_due_to_harm is true;")
     require(harm_withdrawals==0,f"seed fabricated withdrawal-due-to-harm observations={harm_withdrawals}")
+    unknown_harm_attributes=scalar(args.container,"select count(*) from public.harm_observation where serious is null and withdrawal_due_to_harm is null;")
+    require(unknown_harm_attributes==1,f"seed must retain unknown seriousness/withdrawal attributes; got {unknown_harm_attributes}")
 
     flows=psql(args.container,"""
 select string_agg(s.source_id||':'||p.flow_kind||':'||p.participant_count::text,',' order by s.source_id,p.flow_kind,p.participant_count)
@@ -137,14 +139,16 @@ select
 select count(*) from pg_trigger where not tgisinternal and tgname in (
  'ensure_stage10_study_status','ensure_stage10_component_status',
  'validate_stage10_harm_links','validate_stage10_support_links','validate_stage10_boundary_links','validate_stage10_component_reporting_framework',
+ 'validate_stage10_harms_status_semantics','validate_stage10_harm_observation_missingness',
  'prevent_stage10_agent_harm_status','prevent_stage10_agent_harm','prevent_stage10_agent_participation','prevent_stage10_agent_impl_status',
  'prevent_stage10_agent_impl_obs','prevent_stage10_agent_reporting','prevent_stage10_agent_support','prevent_stage10_agent_boundary'
 );
 """)
-    require(triggers==14,f"expected 14 Stage 10 status/integrity/human-gate triggers; got {triggers}")
+    require(triggers==16,f"expected 16 Stage 10 status/integrity/human-gate triggers; got {triggers}")
 
     print("STAGE 10 HARMS/IMPLEMENTATION VALID: harm_types=8; studies=18; harm_status=18; harms=1; participation=8; components=13; impl_status=130; impl_obs=4; support=1; boundaries=3; component_reporting=0")
-    print("no_harm_noninference: PASS (17 not_yet_extracted; 0 reviewed-no-harm claims)")
+    print("no_harm_noninference: PASS (17 not_yet_extracted; 0 reviewed-no-harm claims; systematic guard active)")
+    print("harm_attribute_missingness: PASS (rt-013 seriousness / harm-withdrawal remain unknown)")
     print("performance_tradeoff_harm_signal: PASS (rt-2026-013 only)")
     print("participation_vs_adherence_vs_harm_withdrawal: PASS")
     print("implementation_missingness: PASS (no fabricated fidelity/adherence/burden/cost)")
