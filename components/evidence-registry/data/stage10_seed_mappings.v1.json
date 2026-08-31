@@ -19,8 +19,8 @@
       "harm_type": "performance_tradeoff",
       "harm_label": "Immediate JOL prompting worsened difficult learning in some conditions",
       "severity": "unclear",
-      "serious": false,
-      "withdrawal_due_to_harm": false,
+      "serious": null,
+      "withdrawal_due_to_harm": null,
       "systematically_assessed": false,
       "result_summary": "Memory performance was null overall and negative when learning was difficult.",
       "evidence_basis": "Reviewed route rationale states that immediate judgments of learning did not improve learning and sometimes harmed difficult learning; normalized outcome direction is null_overall_negative_when_difficult."
