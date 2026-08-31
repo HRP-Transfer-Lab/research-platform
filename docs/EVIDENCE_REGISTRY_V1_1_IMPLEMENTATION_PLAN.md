@@ -290,6 +290,7 @@ biological_or_physiological_substrate
 current_operating_state
 cognitive_operation
 affective_or_motivational_process
+knowledge_or_mental_representation
 explicit_strategy_or_policy
 person_niche_coupling
 niche_or_activity_system

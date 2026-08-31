@@ -111,13 +111,14 @@ The mapping is versioned scientific interpretation and therefore should attach t
 
 ## 2. Target locus
 
-Stage 3 introduces seven high-level target-locus families:
+Stage 3 introduces eight high-level target-locus families:
 
 ```text
 biological_or_physiological_substrate
 current_operating_state
 cognitive_operation
 affective_or_motivational_process
+knowledge_or_mental_representation
 explicit_strategy_or_policy
 person_niche_coupling
 niche_or_activity_system
@@ -183,6 +184,19 @@ reward valuation
 avoidance motivation
 emotion regulation processes
 ```
+
+
+#### knowledge_or_mental_representation
+
+Learned or stored knowledge, conceptual content, schemas and structured
+mental representations that are distinct from the cognitive operations
+acting upon them.
+
+Examples include numerical knowledge, conceptual knowledge, abstract
+relational maps and learned task representations.
+
+This distinction prevents domain learning from being forced into
+`cognitive_operation`.
 
 #### explicit_strategy_or_policy
 

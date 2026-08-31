@@ -216,6 +216,15 @@ select
             "--expected", str(expected_records),
         ])
 
+    stage3_mapper = REPO_ROOT / "components/evidence-registry/scripts/apply_stage3_seed_mappings.py"
+    if stage3_mapper.exists():
+        print("Applying Stage 3 candidate application/target/mechanism mappings...")
+        run([
+            sys.executable,
+            str(stage3_mapper),
+            "--container", args.container,
+        ])
+
     stage3_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage3_ontology.py"
     if stage3_validator.exists():
         print("Validating Stage 3 application/target/mechanism ontology layer...")
@@ -226,6 +235,15 @@ select
             "--release", args.release,
             "--expected-sources", str(expected_records),
             "--expected-components", "13",
+        ])
+
+    stage3_seed_validator = REPO_ROOT / "components/evidence-registry/scripts/validate_stage3_seed_mappings.py"
+    if stage3_seed_validator.exists():
+        print("Validating Stage 3 candidate seed mappings and human-approval boundary...")
+        run([
+            sys.executable,
+            str(stage3_seed_validator),
+            "--container", args.container,
         ])
 
     print("LOCAL REGISTRY BASELINE PASS")
