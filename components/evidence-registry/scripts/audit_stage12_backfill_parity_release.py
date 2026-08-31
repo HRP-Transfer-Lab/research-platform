@@ -179,8 +179,8 @@ select
     print(psql(args.container, "select release_id,status from public.evidence_release order by released_on,release_id;"))
 
     print_section("NORMALIZED RELEASE EXPORT COVERAGE")
-    exercise_path = REPO_ROOT / "components/evidence-registry/scripts/exercise_stage11_authority_release.py"
-    exporter_text = exercise_path.read_text(encoding="utf-8") if exercise_path.exists() else ""
+    exporter_path = REPO_ROOT / "components/evidence-registry/scripts/export_stage12_release_bundle.py"
+    exporter_text = exporter_path.read_text(encoding="utf-8") if exporter_path.exists() else ""
     required_tokens = [
         "source_evidence_role",
         "source_version_application_family",
