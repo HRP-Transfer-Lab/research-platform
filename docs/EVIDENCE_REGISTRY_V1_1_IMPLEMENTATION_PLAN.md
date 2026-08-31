@@ -528,7 +528,9 @@ timeframe
 - EML3 replication evidence can be evaluated at proposition level.
 - Body-level EML no longer depends on the highest source-level EML.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_8_PROPOSITIONS_SYNTHESIS_VERIFICATION.md`; migrations `20260831211000`, `20260831211010` and `20260831211100`; implementation commit `e0ee2777adfee090142c5c11e6689a33e8425a34`.
+**Execution spec:** `docs/STAGE_8_PROPOSITIONS_SYNTHESIS_IMPLEMENTATION.md`.
 
 ---
 
