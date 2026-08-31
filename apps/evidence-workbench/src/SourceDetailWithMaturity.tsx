@@ -5,6 +5,7 @@ import { Stage3OntologyReview } from './Stage3OntologyReview'
 import { Stage4OutcomeReview } from './Stage4OutcomeReview'
 import { Stage5StudyDesignReview } from './Stage5StudyDesignReview'
 import { Stage6QuantitativeReview } from './Stage6QuantitativeReview'
+import { Stage7QualityReview } from './Stage7QualityReview'
 import type { EvidenceSource, RegistryData } from './workbench'
 
 export function SourceDetailWithMaturity({ source, data, canEdit, onRefresh, onError }: { source: EvidenceSource; data: RegistryData; canEdit: boolean; onRefresh: () => Promise<void>; onError: (value: string | null) => void }) {
@@ -16,6 +17,7 @@ export function SourceDetailWithMaturity({ source, data, canEdit, onRefresh, onE
       <Stage4OutcomeReview source={source} data={data} canEdit={canEdit} onError={onError} />
       <Stage5StudyDesignReview source={source} data={data} canEdit={canEdit} onError={onError} />
       <Stage6QuantitativeReview source={source} data={data} canEdit={canEdit} onError={onError} />
+      <Stage7QualityReview source={source} data={data} canEdit={canEdit} onError={onError} />
       <SourceDetail source={source} data={data} canEdit={canEdit} onRefresh={onRefresh} onError={onError} />
     </div>
   )
