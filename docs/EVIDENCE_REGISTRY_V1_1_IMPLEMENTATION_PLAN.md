@@ -318,7 +318,8 @@ niche_or_activity_system
 - Mechanism evidence can be queried independently of intervention route.
 - A single intervention can legitimately map to several application families without changing its route.
 
-**Status:** `IN PROGRESS`  
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_3_TARGET_MECHANISM_APPLICATION_VERIFICATION.md`; migration `20260826221551`; implementation commit `0b3f14a75c3e48965c86792c19837f4d959694d6`.
 **Execution spec:** `docs/STAGE_3_TARGET_MECHANISM_APPLICATION_IMPLEMENTATION.md`.
 
 ---
