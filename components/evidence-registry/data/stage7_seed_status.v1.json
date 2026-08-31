@@ -1,0 +1,31 @@
+{
+  "manifest_version": "stage7-seed-v1",
+  "release_id": "2026-08-23",
+  "mapping_source": "migration",
+  "review_status": "proposed",
+  "scientific_boundary": "Status-only backfill. The immutable seed contains no formal quality, risk-of-bias or body-certainty judgements. Study design labels must not be converted into framework assignments or risk judgements. GRADE/body certainty remains deferred to Stage 8.",
+  "study_identity": {
+    "key_field": "source_id",
+    "source_ids": [
+      "rt-2026-001", "rt-2026-002", "rt-2026-003", "rt-2026-004", "rt-2026-005", "rt-2026-006",
+      "rt-2026-007", "rt-2026-008", "rt-2026-009", "rt-2026-010", "rt-2026-011", "rt-2026-012",
+      "rt-2026-013", "rt-2026-014", "rt-2026-015", "rt-2026-016", "rt-2026-017", "rt-2026-018"
+    ],
+    "status": "not_yet_assessed"
+  },
+  "result_identity": {
+    "identity_manifest": "components/evidence-registry/data/stage4_seed_mappings.v1.json",
+    "key_fields": ["source_id", "outcome_name", "legacy_rung", "raw_timepoint"],
+    "expected_outcomes": 38,
+    "status": "not_yet_assessed"
+  },
+  "assessment_backfill": {
+    "study_quality_assessments": [],
+    "result_risk_of_bias_assessments": [],
+    "domain_judgements": []
+  },
+  "body_certainty": {
+    "status": "deferred_to_stage8",
+    "assessments": []
+  }
+}
