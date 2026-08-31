@@ -1,0 +1,19 @@
+{
+  "batches": [
+    {
+      "batch_id": "stage3_ontology",
+      "decisions": 53,
+      "json": "components/evidence-registry/review-packets/stage12-seed/stage3_ontology.json",
+      "markdown": "components/evidence-registry/review-packets/stage12-seed/stage3_ontology.md",
+      "packet_sha256": "cdd59fea33393dfd985c603d31db62f7b3a713ce82c5e8cbc9d92351502d5e90",
+      "review_units": 18
+    }
+  ],
+  "bridge_processing_run_id": 5,
+  "generated_from_git_commit": "71035e9de22234f8dba3f7df46db84b5af2299b8",
+  "historical_release_id": "2026-08-23",
+  "index_sha256": "f2c2adf763dd2116bba02121d9f60d44ac1adaa49926fea82fca019cfa6d38dc",
+  "schema_version": "stage12-review-packet-v1",
+  "scientific_state_revision": 1679,
+  "total_decisions": 53
+}
