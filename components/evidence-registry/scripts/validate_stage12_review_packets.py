@@ -160,19 +160,24 @@ def validate_packet(container: str, path: Path, current_revision: int) -> tuple[
 
         cid = int(d["candidate_id"])
         candidate_raw = psql(container, f"""
-select candidate_status||'|'||candidate_value_json::text||'|'||subject_key::text||'|'||field_path
+select jsonb_build_object(
+  'candidate_status',candidate_status,
+  'candidate_value_json',candidate_value_json,
+  'subject_key',subject_key,
+  'field_path',field_path
+)::text
 from public.scientific_field_candidate where field_candidate_id={cid};
 """)
         require(bool(candidate_raw), f"{batch_id}: Stage 11 candidate {cid} missing")
-        parts = candidate_raw.split("|", 3)
-        require(parts[0] == "proposed", f"{batch_id}: Stage 11 candidate {cid} is {parts[0]}, not proposed")
-        require(json.loads(parts[1]) == d["candidate_value"], f"{batch_id}: candidate value drift for {cid}")
-        subject_key = json.loads(parts[2])
+        candidate = json.loads(candidate_raw)
+        require(candidate["candidate_status"] == "proposed", f"{batch_id}: Stage 11 candidate {cid} is {candidate['candidate_status']}, not proposed")
+        require(candidate["candidate_value_json"] == d["candidate_value"], f"{batch_id}: candidate value drift for {cid}")
+        subject_key = candidate["subject_key"]
         require(subject_key.get("stage12_legacy") is True and subject_key.get("table") == table and subject_key.get("primary_key") == pk,
                 f"{batch_id}: candidate subject key mismatch for {cid}")
         if dimension:
             require(subject_key.get("dimension") == dimension, f"{batch_id}: candidate dimension mismatch for {cid}")
-        require(parts[3] == d["field_path"], f"{batch_id}: candidate field_path mismatch for {cid}")
+        require(candidate["field_path"] == d["field_path"], f"{batch_id}: candidate field_path mismatch for {cid}")
 
     stable_hash = sha256_json(stable_decision_projection(packet))
     return stable_hash, len(packet.get("units", [])), len(flat)
