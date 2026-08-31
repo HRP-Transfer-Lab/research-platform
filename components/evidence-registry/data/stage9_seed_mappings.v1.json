@@ -1,0 +1,97 @@
+{
+  "schema_version": "stage9-population-context-v1",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "principles": [
+    "Map only facets explicitly supported by the reviewed seed record.",
+    "Keep life stage, role, health context, cognitive status, education, setting, delivery and geography orthogonal.",
+    "Do not infer provider or delivery context from study setting alone.",
+    "Do not infer geography from institution names unless geography is explicit.",
+    "Unmapped facets remain not_yet_extracted rather than being treated as absent."
+  ],
+  "study_mappings": [
+    {"source_id":"rt-2026-001","term_id":"pc_life_older_adult","relationship":"entire_sample","evidence_basis":"Population summary: Healthy older adults; mean age 72.6."},
+    {"source_id":"rt-2026-001","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Population explicitly described as healthy older adults."},
+    {"source_id":"rt-2026-001","term_id":"pc_setting_research_training","relationship":"study_context","evidence_basis":"Study setting recorded as research intervention."},
+
+    {"source_id":"rt-2026-002","term_id":"pc_life_child","relationship":"entire_sample","evidence_basis":"Population summary: Children with learning difficulties; ages 10–12."},
+    {"source_id":"rt-2026-002","term_id":"pc_health_learning_difficulties","relationship":"entire_sample","evidence_basis":"Population explicitly described as children with learning difficulties."},
+    {"source_id":"rt-2026-002","term_id":"pc_setting_research_training","relationship":"study_context","evidence_basis":"Study setting recorded as educational training; mapped only to broad training/research context."},
+
+    {"source_id":"rt-2026-003","term_id":"pc_life_child","relationship":"entire_sample","evidence_basis":"Population summary: Diverse kindergarten children; ages 4–7."},
+    {"source_id":"rt-2026-003","term_id":"pc_role_school_student","relationship":"entire_sample","evidence_basis":"Kindergarten children studied in a school setting."},
+    {"source_id":"rt-2026-003","term_id":"pc_edu_kindergarten","relationship":"entire_sample","evidence_basis":"Population explicitly described as kindergarten children."},
+    {"source_id":"rt-2026-003","term_id":"pc_setting_school","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as school."},
+
+    {"source_id":"rt-2026-004","term_id":"pc_life_young_adult","relationship":"entire_sample","evidence_basis":"Population tags explicitly include young_adults."},
+    {"source_id":"rt-2026-004","term_id":"pc_role_university_student","relationship":"entire_sample","evidence_basis":"Population summary: Healthy university undergraduates."},
+    {"source_id":"rt-2026-004","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Population explicitly described as healthy university undergraduates."},
+    {"source_id":"rt-2026-004","term_id":"pc_edu_higher","relationship":"entire_sample","evidence_basis":"Population explicitly described as university undergraduates."},
+    {"source_id":"rt-2026-004","term_id":"pc_setting_controlled_research","relationship":"study_context","evidence_basis":"Study setting recorded as controlled relational training."},
+
+    {"source_id":"rt-2026-005","term_id":"pc_life_young_adult","relationship":"includes_subgroup","evidence_basis":"Population summary includes younger healthy adults."},
+    {"source_id":"rt-2026-005","term_id":"pc_life_older_adult","relationship":"includes_subgroup","evidence_basis":"Population summary includes older healthy adults."},
+    {"source_id":"rt-2026-005","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Population described as younger and older healthy adults."},
+    {"source_id":"rt-2026-005","term_id":"pc_setting_research_training","relationship":"study_context","evidence_basis":"Study setting recorded as computerized training; normalized only to broad research/training setting."},
+
+    {"source_id":"rt-2026-006","term_id":"pc_life_older_adult","relationship":"entire_sample","evidence_basis":"Population summary: Community-dwelling cognitively normal older adults; ages 60–75."},
+    {"source_id":"rt-2026-006","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Reviewed population tags include healthy."},
+    {"source_id":"rt-2026-006","term_id":"pc_cog_cognitively_normal","relationship":"entire_sample","evidence_basis":"Population explicitly described as cognitively normal older adults."},
+    {"source_id":"rt-2026-006","term_id":"pc_setting_community","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as community supervised group intervention."},
+
+    {"source_id":"rt-2026-007","term_id":"pc_life_young_adult","relationship":"includes_subgroup","evidence_basis":"Synthesis population summary includes young adult samples."},
+    {"source_id":"rt-2026-007","term_id":"pc_life_older_adult","relationship":"includes_subgroup","evidence_basis":"Synthesis population summary includes older adult samples."},
+    {"source_id":"rt-2026-007","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Synthesis population summary: Healthy adults; young and older adult samples."},
+    {"source_id":"rt-2026-007","term_id":"pc_setting_evidence_synthesis","relationship":"study_context","evidence_basis":"Study row explicitly represents an evidence synthesis."},
+
+    {"source_id":"rt-2026-008","term_id":"pc_life_older_adult","relationship":"entire_sample","evidence_basis":"Reviewed studies represented healthy older adults, approximately ages 59–80."},
+    {"source_id":"rt-2026-008","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Population summary explicitly describes healthy older adults."},
+    {"source_id":"rt-2026-008","term_id":"pc_setting_evidence_synthesis","relationship":"study_context","evidence_basis":"Study row explicitly represents an evidence synthesis."},
+
+    {"source_id":"rt-2026-009","term_id":"pc_life_young_adult","relationship":"entire_sample","evidence_basis":"Population summary: Healthy young adults; ages 18–32."},
+    {"source_id":"rt-2026-009","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Population explicitly described as healthy young adults."},
+    {"source_id":"rt-2026-009","term_id":"pc_setting_online","relationship":"study_context","evidence_basis":"Study setting explicitly includes online training."},
+    {"source_id":"rt-2026-009","term_id":"pc_setting_lab","relationship":"study_context","evidence_basis":"Study setting explicitly includes fMRI laboratory sessions."},
+
+    {"source_id":"rt-2026-010","term_id":"pc_health_healthy_nonclinical","relationship":"entire_sample","evidence_basis":"Reviewed population tags explicitly include healthy_participants."},
+    {"source_id":"rt-2026-010","term_id":"pc_setting_controlled_research","relationship":"study_context","evidence_basis":"Study setting recorded as perceptual-learning experiments."},
+
+    {"source_id":"rt-2026-011","term_id":"pc_life_adult","relationship":"entire_sample","evidence_basis":"Population summary: Adult participants."},
+    {"source_id":"rt-2026-011","term_id":"pc_setting_lab","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as laboratory fMRI."},
+
+    {"source_id":"rt-2026-012","term_id":"pc_life_adult","relationship":"entire_sample","evidence_basis":"Population summary: Adults."},
+    {"source_id":"rt-2026-012","term_id":"pc_setting_lab","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as laboratory fMRI."},
+
+    {"source_id":"rt-2026-013","term_id":"pc_role_university_student","relationship":"entire_sample","evidence_basis":"Population summary: University participant-pool learners."},
+    {"source_id":"rt-2026-013","term_id":"pc_edu_higher","relationship":"entire_sample","evidence_basis":"University participant-pool learners imply a higher-education context without inferring age."},
+    {"source_id":"rt-2026-013","term_id":"pc_setting_controlled_research","relationship":"study_context","evidence_basis":"Study setting recorded as learning experiments."},
+
+    {"source_id":"rt-2026-014","term_id":"pc_role_school_student","relationship":"entire_sample","evidence_basis":"Population summary: Middle-school students."},
+    {"source_id":"rt-2026-014","term_id":"pc_edu_middle_school","relationship":"entire_sample","evidence_basis":"Population explicitly described as middle-school students."},
+    {"source_id":"rt-2026-014","term_id":"pc_setting_school","relationship":"study_context","evidence_basis":"Study setting explicitly a school computer-assisted math platform."},
+
+    {"source_id":"rt-2026-015","term_id":"pc_role_university_student","relationship":"entire_sample","evidence_basis":"Population summary: Chinese undergraduates."},
+    {"source_id":"rt-2026-015","term_id":"pc_edu_higher","relationship":"entire_sample","evidence_basis":"Participants explicitly described as undergraduates in university classes."},
+    {"source_id":"rt-2026-015","term_id":"pc_setting_university_classroom","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as university classroom."},
+    {"source_id":"rt-2026-015","term_id":"pc_geo_china","relationship":"entire_sample","evidence_basis":"Population explicitly described as Chinese undergraduates; no finer geographic inference made."},
+
+    {"source_id":"rt-2026-016","term_id":"pc_life_adult","relationship":"entire_sample","evidence_basis":"Population summary: Adult participants completing simple cognitive work tasks."},
+    {"source_id":"rt-2026-016","term_id":"pc_setting_online","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as online behavioral study."},
+
+    {"source_id":"rt-2026-017","term_id":"pc_life_adult","relationship":"entire_sample","evidence_basis":"Population summary: Adult short-essay writers."},
+    {"source_id":"rt-2026-017","term_id":"pc_setting_controlled_research","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as controlled AI-assisted writing study."},
+
+    {"source_id":"rt-2026-018","term_id":"pc_life_adult","relationship":"entire_sample","evidence_basis":"Age minimum is 18 and population comprises university students and early-career knowledge workers."},
+    {"source_id":"rt-2026-018","term_id":"pc_role_university_student","relationship":"includes_subgroup","evidence_basis":"Population explicitly includes university students."},
+    {"source_id":"rt-2026-018","term_id":"pc_role_early_career_knowledge_worker","relationship":"includes_subgroup","evidence_basis":"Population explicitly includes early-career knowledge workers."},
+    {"source_id":"rt-2026-018","term_id":"pc_edu_higher","relationship":"includes_subgroup","evidence_basis":"University-student subgroup explicitly present; classification is subgroup-scoped."},
+    {"source_id":"rt-2026-018","term_id":"pc_setting_online","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as online survey."}
+  ],
+  "component_delivery_mappings": [
+    {"source_id":"rt-2026-001","component_name":"SPECTRA episodic-specificity training","term_id":"pc_delivery_guided_training","evidence_basis":"Component delivery_mode explicitly recorded as guided cognitive training."},
+    {"source_id":"rt-2026-003","component_name":"WM and/or numerical-knowledge tablet-game training","term_id":"pc_delivery_researcher_facilitated","evidence_basis":"Component delivery_mode explicitly recorded as researcher-facilitated tablet games."},
+    {"source_id":"rt-2026-003","component_name":"WM and/or numerical-knowledge tablet-game training","term_id":"pc_delivery_tablet_game","evidence_basis":"Component delivery_mode explicitly recorded as researcher-facilitated tablet games."},
+    {"source_id":"rt-2026-004","component_name":"relational-frame training","term_id":"pc_delivery_structured_task_training","evidence_basis":"Component delivery_mode explicitly recorded as structured matching-to-sample training."}
+  ],
+  "context_fit_assessments": []
+}
