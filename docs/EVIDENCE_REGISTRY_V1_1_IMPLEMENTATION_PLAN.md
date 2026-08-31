@@ -379,7 +379,9 @@ delayed_portability
 - `not measured` cannot be mistaken for `null effect`.
 - Current 38 outcomes migrate losslessly.
 
-**Status:** `NOT STARTED`
+**Status:** `VERIFIED`
+**Evidence:** `docs/STAGE_4_OUTCOME_ARCHITECTURE_VERIFICATION.md`; migration `20260831133500`; implementation commit `9d26b50828a78a323e2bae8fbdf6cfe157e6d95a`.
+**Execution spec:** `docs/STAGE_4_OUTCOME_ARCHITECTURE_IMPLEMENTATION.md`.
 
 ---
 
