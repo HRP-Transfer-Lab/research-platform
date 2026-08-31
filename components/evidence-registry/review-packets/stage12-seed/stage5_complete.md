@@ -1,8 +1,8 @@
 # Stage 12 review packet — Stage 5 complete study design — arms, components, contrasts and extraction status
 
 - Packet: `stage5_complete`
-- SHA-256: `55185952c5760c1c3fa1ece67f558811d8e2d2260ffa556cfc03374b9764faef`
-- Scientific revision: `1785`
+- SHA-256: `dabf830a868c2edd10a90aca72c9f9b946e8a9357799768c1b9daec669e00469`
+- Scientific revision: `1819`
 - Decisions: **107**
 - Review units: **18**
 

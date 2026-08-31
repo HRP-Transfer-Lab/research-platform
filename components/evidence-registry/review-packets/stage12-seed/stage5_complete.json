@@ -3,7 +3,7 @@
   "batch_label": "Stage 5 complete study design — arms, components, contrasts and extraction status",
   "bridge_processing_run_id": 5,
   "decision_count": 107,
-  "generated_from_git_commit": "8f3513030f9b49ca5edb429dbae17c3b8ef64f3c",
+  "generated_from_git_commit": "6847325c8a412b67784b8124c008699ed4cdfcf8",
   "governance_notes": [
     "Packet preparation does not approve scientific state.",
     "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
@@ -11,10 +11,10 @@
     "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
   ],
   "historical_release_id": "2026-08-23",
-  "packet_sha256": "55185952c5760c1c3fa1ece67f558811d8e2d2260ffa556cfc03374b9764faef",
+  "packet_sha256": "dabf830a868c2edd10a90aca72c9f9b946e8a9357799768c1b9daec669e00469",
   "review_unit_count": 18,
   "schema_version": "stage12-review-surface-v2",
-  "scientific_state_revision": 1785,
+  "scientific_state_revision": 1819,
   "units": [
     {
       "context": {
