@@ -1,0 +1,136 @@
+{
+  "schema_version": "stage12-source-acquisition-seed-v1",
+  "recorded_on": "2026-09-01",
+  "scientific_boundary": "Operational source acquisition only. Access state is not study quality, risk of bias, certainty, EML, scientific approval, or release publication state.",
+  "records": [
+    {
+      "source_id": "rt-2026-004",
+      "status": {
+        "access_status": "blocked",
+        "access_route": "institutional_library",
+        "blocker_reason": "institutional_unavailable",
+        "fulltext_available": false,
+        "fulltext_verified": false,
+        "supplement_status": "unknown",
+        "protocol_status": "unknown",
+        "registration_status": "unknown",
+        "needs_human_access": true,
+        "last_checked_at": "2026-09-01T19:37:00+01:00",
+        "next_retry_at": null,
+        "notes": "User checked university-library access on 1 September 2026; full text was not available through the institution. This is an acquisition blocker, not a scientific-quality judgement.",
+        "recorded_by_kind": "human",
+        "verification_status": "human_verified"
+      },
+      "attempts": [
+        {
+          "attempt_key": "2026-09-01-institutional-fulltext",
+          "attempted_at": "2026-09-01T19:37:00+01:00",
+          "requested_artifact_kind": "full_text",
+          "channel": "institutional_library",
+          "attempted_by_kind": "human",
+          "outcome": "blocked",
+          "access_route": "institutional_library",
+          "blocker_reason": "institutional_unavailable",
+          "resolved_url": null,
+          "http_status": null,
+          "tool_name": null,
+          "tool_version": null,
+          "notes": "University-library check did not provide full text."
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "source_id": "rt-2026-005",
+      "status": {
+        "access_status": "blocked",
+        "access_route": "institutional_library",
+        "blocker_reason": "institutional_unavailable",
+        "fulltext_available": false,
+        "fulltext_verified": false,
+        "supplement_status": "unknown",
+        "protocol_status": "unknown",
+        "registration_status": "unknown",
+        "needs_human_access": true,
+        "last_checked_at": "2026-09-01T19:37:00+01:00",
+        "next_retry_at": null,
+        "notes": "User checked university-library access on 1 September 2026; full text was not available through the institution. This is an acquisition blocker, not a scientific-quality judgement.",
+        "recorded_by_kind": "human",
+        "verification_status": "human_verified"
+      },
+      "attempts": [
+        {
+          "attempt_key": "2026-09-01-institutional-fulltext",
+          "attempted_at": "2026-09-01T19:37:00+01:00",
+          "requested_artifact_kind": "full_text",
+          "channel": "institutional_library",
+          "attempted_by_kind": "human",
+          "outcome": "blocked",
+          "access_route": "institutional_library",
+          "blocker_reason": "institutional_unavailable",
+          "resolved_url": null,
+          "http_status": null,
+          "tool_name": null,
+          "tool_version": null,
+          "notes": "University-library check did not provide full text."
+        }
+      ],
+      "artifacts": []
+    },
+    {
+      "source_id": "rt-2026-014",
+      "status": {
+        "access_status": "fulltext_available",
+        "access_route": "user_supplied",
+        "blocker_reason": "none",
+        "fulltext_available": true,
+        "fulltext_verified": false,
+        "supplement_status": "unknown",
+        "protocol_status": "unknown",
+        "registration_status": "available",
+        "needs_human_access": false,
+        "last_checked_at": "2026-09-01T19:37:00+01:00",
+        "next_retry_at": null,
+        "notes": "User supplied the complete 73-page August 2026 EdWorkingPaper PDF. The paper identifies AEA RCT Registry trial AEARCTR-0018678. Binary persistence/hash in the local corpus remains pending, so fulltext_verified is false.",
+        "recorded_by_kind": "human",
+        "verification_status": "human_verified"
+      },
+      "attempts": [
+        {
+          "attempt_key": "2026-09-01-user-upload-fulltext",
+          "attempted_at": "2026-09-01T19:37:00+01:00",
+          "requested_artifact_kind": "full_text",
+          "channel": "user_upload",
+          "attempted_by_kind": "human",
+          "outcome": "fulltext_acquired",
+          "access_route": "user_supplied",
+          "blocker_reason": "none",
+          "resolved_url": null,
+          "http_status": null,
+          "tool_name": null,
+          "tool_version": null,
+          "notes": "Full working-paper PDF supplied in the project conversation."
+        }
+      ],
+      "artifacts": [
+        {
+          "artifact_key": "fulltext-user-2026-09-01",
+          "attempt_key": "2026-09-01-user-upload-fulltext",
+          "artifact_kind": "full_text",
+          "artifact_status": "available",
+          "access_route": "user_supplied",
+          "content_sha256": null,
+          "media_type": "application/pdf",
+          "byte_size": null,
+          "page_count": 73,
+          "filename": "ai26-1552.pdf",
+          "external_url": null,
+          "storage_backend": "none",
+          "storage_locator": null,
+          "license_status": "user_provided",
+          "notes": "PDF metadata registered; copy is not stored in Git. Local-corpus persistence and SHA-256 should be registered when the binary is placed on the ingestion host."
+        }
+      ]
+    }
+  ]
+}
