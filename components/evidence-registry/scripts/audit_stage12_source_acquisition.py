@@ -27,6 +27,10 @@ def scalar(container: str, sql: str) -> int:
     return int(psql(container, sql) or "0")
 
 
+def expected_exactly_one(container: str, sql: str) -> int:
+    return 0 if scalar(container, sql) == 1 else 1
+
+
 def main() -> int:
     ap = argparse.ArgumentParser(description="Audit source acquisition/readiness without mutation.")
     ap.add_argument("--container", default=DEFAULT_CONTAINER)
@@ -84,32 +88,32 @@ where table_schema='public'
   and column_name in ('mapping_source','review_status');
 """)
 
-    rt004_bad = scalar(args.container, """
+    rt004_bad = expected_exactly_one(args.container, """
 select count(*) from public.v_source_acquisition_dashboard
 where source_id='rt-2026-004'
-  and not (access_status='blocked' and access_route='institutional_library'
-           and blocker_reason='institutional_unavailable' and not fulltext_available);
+  and access_status='blocked' and access_route='institutional_library'
+  and blocker_reason='institutional_unavailable' and not fulltext_available;
 """)
-    rt005_bad = scalar(args.container, """
+    rt005_bad = expected_exactly_one(args.container, """
 select count(*) from public.v_source_acquisition_dashboard
 where source_id='rt-2026-005'
-  and not (access_status='blocked' and access_route='institutional_library'
-           and blocker_reason='institutional_unavailable' and not fulltext_available);
+  and access_status='blocked' and access_route='institutional_library'
+  and blocker_reason='institutional_unavailable' and not fulltext_available;
 """)
-    rt014_bad = scalar(args.container, """
+    rt014_bad = expected_exactly_one(args.container, """
 select count(*) from public.v_source_acquisition_dashboard
 where source_id='rt-2026-014'
-  and not (access_status in ('fulltext_available','fulltext_verified')
-           and access_route='user_supplied' and fulltext_available);
+  and access_status in ('fulltext_available','fulltext_verified')
+  and access_route='user_supplied' and fulltext_available;
 """)
-    rt014_artifact_bad = scalar(args.container, """
+    rt014_artifact_bad = expected_exactly_one(args.container, """
 select count(*) from public.source_document_artifact a
 join public.source_version sv on sv.source_version_id=a.source_version_id
 join public.canonical_source_identity csi on csi.canonical_source_id=sv.canonical_source_id
 where csi.identity_scheme='legacy_source_id' and csi.normalized_value='rt-2026-014'
   and a.artifact_key='fulltext-user-2026-09-01'
-  and not (a.artifact_kind='full_text' and a.media_type='application/pdf' and a.page_count=73
-           and a.access_route='user_supplied');
+  and a.artifact_kind='full_text' and a.media_type='application/pdf' and a.page_count=73
+  and a.access_route='user_supplied';
 """)
 
     errors = {
