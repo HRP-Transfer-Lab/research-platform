@@ -1,0 +1,128 @@
+{
+  "schema_version": "stage12-quality-rob-candidate-v1",
+  "batch_id": "quality_q1_rt001",
+  "source_id": "rt-2026-001",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "source_material": [
+    "Full 2026 Memory article",
+    "ClinicalTrials.gov NCT06110234 as described in the report and public registry mirrors",
+    "Published CONSORT flow information",
+    "Published transparency/open-science statement",
+    "Article-reported OSF materials/data record CWTFP"
+  ],
+  "study_assessment": {
+    "assessment_key": "hrp_q1_methodological_pilot_v1",
+    "assessment_kind": "methodological_quality",
+    "framework_key": "custom",
+    "framework_version": "HRP-QA-Q1-pilot-v1",
+    "overall_judgement": "methodologically_adequate_with_documented_limitations",
+    "assessment_status": "reviewed_complete",
+    "notes": "Custom study-level appraisal used because RoB 2 is correctly result-specific rather than a paper-level quality score. Scope: design/conduct/reporting adequacy required to support the result-specific RoB 2 appraisal. Judgement vocabulary: strong, minor_concern, major_concern, insufficient_information. This is not a validated external quality score and does not replace result-specific RoB 2.",
+    "domains": [
+      {
+        "domain_key": "design_randomization_documentation",
+        "domain_label": "Design and randomization documentation",
+        "judgement": "strong",
+        "supporting_text": "Independent team member generated blocked allocation; recruitment and assessment staff were separated from assignment; baseline characteristics showed no material imbalance.",
+        "order_index": 1
+      },
+      {
+        "domain_key": "masking_assessment_separation",
+        "domain_label": "Masking and assessment separation",
+        "judgement": "strong",
+        "supporting_text": "Recruitment/assessment staff were blinded to assignment and participants were blinded to which memory-training condition was the active comparator.",
+        "order_index": 2
+      },
+      {
+        "domain_key": "participant_flow",
+        "domain_label": "Participant flow and post-randomization loss",
+        "judgement": "minor_concern",
+        "supporting_text": "54 participants were randomized and 51 analysed; all three post-randomization losses occurred in SPECTRA, including one withdrawal after one session for lack of motivation.",
+        "order_index": 3
+      },
+      {
+        "domain_key": "outcome_measurement_documentation",
+        "domain_label": "Outcome measurement documentation",
+        "judgement": "strong",
+        "supporting_text": "Programmed/standardized outcome procedures, distinct pre/post materials and defined scoring procedures were reported for the current behavioral outcomes.",
+        "order_index": 4
+      },
+      {
+        "domain_key": "analysis_registration_transparency",
+        "domain_label": "Analysis, registration and transparency",
+        "judgement": "minor_concern",
+        "supporting_text": "Trial registration, preregistration statement, open data/code/materials and analysis descriptions are reported, but the preserved preregistered analysis specification has not yet been compared line-by-line with the reported mixed-model/model-selection procedure.",
+        "order_index": 5
+      }
+    ]
+  },
+  "result_assessments": [
+    {
+      "outcome_name": "free recall",
+      "legacy_rung": "practice_or_nearest_transfer",
+      "raw_timepoint": "post",
+      "contrast_key": "spectra_vs_asso",
+      "assessment_key": "rob2_assignment_post_spectra_vs_asso_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effect of assignment to SPECTRA versus ASSO on post-intervention free recall.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "RoB 2 appraisal candidate based on the full report and available registration/transparency information. Domain 3 is some concerns because all three missing randomized participants were from SPECTRA and one withdrew after exposure for lack of motivation. Domain 5 remains some concerns because the exact preregistered analysis specification was not directly compared with the reported model-selection procedure.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"low","supporting_text":"Independent blocked randomization, restricted allocation access, blinded recruitment/assessment and no material baseline imbalance were reported.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Matched six-session structures and participant blinding were reported; no systematic crossover or contamination affecting the effect-of-assignment comparison was identified.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"54 randomized, 51 analysed; all three losses were from SPECTRA and one withdrew after one session for lack of motivation. No sensitivity analysis resolving the missing outcomes was identified.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Assessment staff were blinded and free-recall procedures/scoring were standardized; no differential measurement by randomized arm was identified.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"Prospective registration and open-science statements reduce concern, but direct comparison of the preregistered analysis specification with reported mixed-model/model-selection choices remains unresolved.","order_index":5}
+      ]
+    },
+    {
+      "outcome_name": "spatial recognition",
+      "legacy_rung": "separate_measure",
+      "raw_timepoint": "post",
+      "contrast_key": "spectra_vs_asso",
+      "assessment_key": "rob2_assignment_post_spectra_vs_asso_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effect of assignment to SPECTRA versus ASSO on post-intervention spatial recognition.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to programmed spatial-recognition performance.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"low","supporting_text":"Independent blocked randomization, restricted allocation access, blinded recruitment/assessment and no material baseline imbalance were reported.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Matched six-session structures and participant blinding were reported; no systematic crossover or contamination affecting the effect-of-assignment comparison was identified.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"54 randomized, 51 analysed; all three losses were from SPECTRA and one withdrew after one session for lack of motivation. No sensitivity analysis resolving the missing outcomes was identified.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Spatial recognition was measured using standardized programmed performance procedures by a blinded assessment team; no differential measurement by randomized arm was identified.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"Prospective registration and open-science statements reduce concern, but direct comparison of the preregistered analysis specification with reported mixed-model/model-selection choices remains unresolved.","order_index":5}
+      ]
+    },
+    {
+      "outcome_name": "social problem solving",
+      "legacy_rung": "separate_measure",
+      "raw_timepoint": "post",
+      "contrast_key": "spectra_vs_asso",
+      "assessment_key": "rob2_assignment_post_spectra_vs_asso_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effect of assignment to SPECTRA versus ASSO on post-intervention social problem solving.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to recorded/scored problem-solving responses.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"low","supporting_text":"Independent blocked randomization, restricted allocation access, blinded recruitment/assessment and no material baseline imbalance were reported.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Matched six-session structures and participant blinding were reported; no systematic crossover or contamination affecting the effect-of-assignment comparison was identified.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"54 randomized, 51 analysed; all three losses were from SPECTRA and one withdrew after one session for lack of motivation. No sensitivity analysis resolving the missing outcomes was identified.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Problem-solving verbal responses were recorded/scored using defined procedures and assessment staff were blinded to assignment; no differential measurement by arm was identified.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"Prospective registration and open-science statements reduce concern, but direct comparison of the preregistered analysis specification with reported mixed-model/model-selection choices remains unresolved.","order_index":5}
+      ]
+    }
+  ],
+  "governance_notes": [
+    "All inserted rows remain agent_candidate/proposed until explicit human approval.",
+    "reviewed_complete describes the proposed appraisal completeness, not human approval status.",
+    "No historical release or CSI Gateway object may be mutated by candidate application or review.",
+    "The custom study assessment is not a validated external quality score and complements, rather than replaces, result-specific RoB 2."
+  ]
+}
