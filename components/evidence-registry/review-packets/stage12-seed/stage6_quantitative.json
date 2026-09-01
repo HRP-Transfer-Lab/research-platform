@@ -1,0 +1,1661 @@
+{
+  "batch_id": "stage6_quantitative",
+  "batch_label": "Stage 6 quantitative extraction and effect estimates",
+  "bridge_processing_run_id": 5,
+  "decision_count": 39,
+  "generated_from_git_commit": "aa8d42a38763eac8802f9536d16378ea583c2968",
+  "governance_notes": [
+    "Packet preparation does not approve scientific state.",
+    "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
+    "Packet includes ordinary, dimension-specific or provenance-only candidate status surfaces as declared per decision.",
+    "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
+  ],
+  "historical_release_id": "2026-08-23",
+  "packet_sha256": "7ccc2d15a1adefa62ab86a2445604ec00a958f0a8d2a49bce0af650ab11b4c1d",
+  "review_unit_count": 38,
+  "schema_version": "stage12-review-surface-v2",
+  "scientific_state_revision": 2553,
+  "units": [
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 1,
+        "outcome_name": "free recall",
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 480,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 1,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 1,
+            "outcome_name": "free recall",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d6b8fb3e6714249de84ea02d3229a2351f5af0da8b62d0d0bfeab36a23b6e13e",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-001 — free recall",
+      "unit_key": "outcome:1"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 10,
+        "outcome_name": "working-memory span",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 489,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 10,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 10,
+            "outcome_name": "working-memory span",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fa1a2f59cf88d2a084fafa6ad1128fdb8eaa82833b5fcb1c198d43fbc28d3cde",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-005 — working-memory span",
+      "unit_key": "outcome:10"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 11,
+        "outcome_name": "digit updating",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 490,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 11,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 11,
+            "outcome_name": "digit updating",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "889ff457fb154a3bff9328f1d0e60ffbf768a0cd5ad82578e8bc55e9c4d493ad",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-005 — digit updating",
+      "unit_key": "outcome:11"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 12,
+        "outcome_name": "response inhibition",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 491,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 12,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 12,
+            "outcome_name": "response inhibition",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d04ccfe26d8401b6a4bcbc6bd015112402830e331ec3b7f2b6ddeef4db6a3cf1",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-005 — response inhibition",
+      "unit_key": "outcome:12"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 13,
+        "outcome_name": "cognitive flexibility",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 492,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 13,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 13,
+            "outcome_name": "cognitive flexibility",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "58c09a64ab1a25614f225012930a5b0ca2805e62cc9b7c0111c6bce2419633fd",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-005 — cognitive flexibility",
+      "unit_key": "outcome:13"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 14,
+        "outcome_name": "global cognition",
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 493,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 14,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 14
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1c36097cb2a5ce47cae4b9206ef5b9d1988c40042c78d2c9bacbf5b7af2343a7",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-006 — global cognition",
+      "unit_key": "outcome:14"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 15,
+        "outcome_name": "long-delay memory",
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 494,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 15,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 15
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b8361e92d37c8d5ea9cd4d673125cdb22caa746c944d70bbd10c511861699080",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-006 — long-delay memory",
+      "unit_key": "outcome:15"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 16,
+        "outcome_name": "executive/language/visuospatial domains",
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 495,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 16,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 16
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b048f0329f7eec7535bbdd9095eba2b3f5e75fd1d77869602f54cfe45e77a799",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-006 — executive/language/visuospatial domains",
+      "unit_key": "outcome:16"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 17,
+        "outcome_name": "overall post-training working memory",
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 518,
+          "candidate_value": {
+            "adjustment_status": "not_applicable",
+            "ci_level": null,
+            "ci_lower": 0.062,
+            "ci_upper": 0.32,
+            "contrast_id": null,
+            "effect_estimate_id": 1,
+            "estimate_key": "overall_post_training_wm_hedges_g",
+            "estimate_scope": "source_level_synthesis",
+            "estimate_type": "standardised_mean_difference",
+            "estimate_value": 0.191,
+            "metric": "Hedges_g",
+            "model_specification": "Historical seed represents a pooled robust-variance meta-analytic estimate; detailed synthesis/model extraction is deferred.",
+            "n_analysed": null,
+            "outcome_id": 17,
+            "p_value": null,
+            "rationale": "Preserve the historical pooled Hedges g without manufacturing a Stage 5 trial contrast. Formal synthesis-outcome linkage belongs to Stage 8.",
+            "scale_direction": "neutral_or_metric_defined",
+            "source_reported": true,
+            "standard_error": null,
+            "time_or_model_label": "overall post-training working memory",
+            "unit": null
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 17,
+            "outcome_name": "overall post-training working memory",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Preserve the historical pooled Hedges g without manufacturing a Stage 5 trial contrast. Formal synthesis-outcome linkage belongs to Stage 8.",
+          "field_path": "legacy_seed_review.effect_estimate",
+          "primary_key": {
+            "effect_estimate_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d183be14b5b7f186bdbb0f02e3272a64e7d9e05adffa6a995f5011a32858503e",
+          "surface_mode": "ordinary",
+          "table_name": "effect_estimate"
+        },
+        {
+          "candidate_id": 496,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 17,
+            "quantitative_extraction_status": "partially_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 17,
+            "outcome_name": "overall post-training working memory",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 17
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "03bb8dd3acf5742639bb79d2712d27965727b56f3e8235a56da3e5526adb8ac3",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-007 — overall post-training working memory",
+      "unit_key": "outcome:17"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 18,
+        "outcome_name": "untrained working-memory outcomes",
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 497,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 18,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 18,
+            "outcome_name": "untrained working-memory outcomes",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 18
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b2204f1df70e9c9d4189e288eafc9adb2fc018afe29b1807b65fa9f786d55bcd",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-007 — untrained working-memory outcomes",
+      "unit_key": "outcome:18"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 19,
+        "outcome_name": "follow-up outcomes",
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 498,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 19,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 19,
+            "outcome_name": "follow-up outcomes",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 19
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ea591222b0d423cd427e2e0c3237086cfe1b6f47a9ad44c5411128ff7787589d",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-007 — follow-up outcomes",
+      "unit_key": "outcome:19"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 2,
+        "outcome_name": "spatial recognition",
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 481,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 2,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 2,
+            "outcome_name": "spatial recognition",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "89bd8b1496a919e57e9debc3bed54d3d304048bf4a90e3e5436a558b80919233",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-001 — spatial recognition",
+      "unit_key": "outcome:2"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 20,
+        "outcome_name": "psychometric adequacy of WM tasks",
+        "source_id": "rt-2026-008",
+        "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+        "study_id": 8
+      },
+      "decisions": [
+        {
+          "candidate_id": 499,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 20,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 20,
+            "outcome_name": "psychometric adequacy of WM tasks",
+            "source_id": "rt-2026-008",
+            "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+            "study_id": 8
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 20
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7249c7430b978b14312e5ab11bd88d638facdcdbf0ebe9252aedecb45a0e345e",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-008 — psychometric adequacy of WM tasks",
+      "unit_key": "outcome:20"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 21,
+        "outcome_name": "near/far transfer evidence",
+        "source_id": "rt-2026-008",
+        "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+        "study_id": 8
+      },
+      "decisions": [
+        {
+          "candidate_id": 500,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 21,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 21,
+            "outcome_name": "near/far transfer evidence",
+            "source_id": "rt-2026-008",
+            "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+            "study_id": 8
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 21
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fdf9f3566b2f0436ebb359e17eb23f3eebaace4bc0a4fe56a4e44161a483086d",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-008 — near/far transfer evidence",
+      "unit_key": "outcome:21"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 22,
+        "outcome_name": "abstract relational representation",
+        "source_id": "rt-2026-009",
+        "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+        "study_id": 9
+      },
+      "decisions": [
+        {
+          "candidate_id": 501,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 22,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 22,
+            "outcome_name": "abstract relational representation",
+            "source_id": "rt-2026-009",
+            "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+            "study_id": 9
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 22
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5c9721d6b9c0ce7bef31b3d3c70f376918f9061225bc544c209afce339f73eb0",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-009 — abstract relational representation",
+      "unit_key": "outcome:22"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 23,
+        "outcome_name": "generalization across visual locations",
+        "source_id": "rt-2026-010",
+        "source_title": "Serial dependence predicts generalization in perceptual learning",
+        "study_id": 10
+      },
+      "decisions": [
+        {
+          "candidate_id": 502,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 23,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 23,
+            "outcome_name": "generalization across visual locations",
+            "source_id": "rt-2026-010",
+            "source_title": "Serial dependence predicts generalization in perceptual learning",
+            "study_id": 10
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 23
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "bcee25706f1732e904ab2e031356dfd781437d4436f63d2e86b04e43dea72cf6",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-010 — generalization across visual locations",
+      "unit_key": "outcome:23"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 24,
+        "outcome_name": "subsequent memory improvement",
+        "source_id": "rt-2026-011",
+        "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+        "study_id": 11
+      },
+      "decisions": [
+        {
+          "candidate_id": 503,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 24,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 24,
+            "outcome_name": "subsequent memory improvement",
+            "source_id": "rt-2026-011",
+            "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+            "study_id": 11
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 24
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fb5260c0588cb580308eef8687264b46a4b862029dd959f2de28bcfeabe780ed",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-011 — subsequent memory improvement",
+      "unit_key": "outcome:24"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 25,
+        "outcome_name": "representation balance",
+        "source_id": "rt-2026-012",
+        "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+        "study_id": 12
+      },
+      "decisions": [
+        {
+          "candidate_id": 504,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 25,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 25,
+            "outcome_name": "representation balance",
+            "source_id": "rt-2026-012",
+            "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+            "study_id": 12
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 25
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3a095064ff0c844482bd72ef8136db96ca4dadeb4276da33486bfb22e09678b9",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-012 — representation balance",
+      "unit_key": "outcome:25"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 26,
+        "outcome_name": "memory test performance",
+        "source_id": "rt-2026-013",
+        "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+        "study_id": 13
+      },
+      "decisions": [
+        {
+          "candidate_id": 505,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 26,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 26,
+            "outcome_name": "memory test performance",
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 26
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "52495c0933ff9e231d597224dc1f348c9a526a1855fc5b722fd689521e3973ad",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-013 — memory test performance",
+      "unit_key": "outcome:26"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 27,
+        "outcome_name": "next-attempt correctness after mistakes",
+        "source_id": "rt-2026-014",
+        "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+        "study_id": 14
+      },
+      "decisions": [
+        {
+          "candidate_id": 506,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 27,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 27,
+            "outcome_name": "next-attempt correctness after mistakes",
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 27
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "bcebf0b076727363285f07531e7eb12b674050760c653a605d563ff850d3a570",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-014 — next-attempt correctness after mistakes",
+      "unit_key": "outcome:27"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 28,
+        "outcome_name": "delayed practiced/unpracticed math assessment",
+        "source_id": "rt-2026-014",
+        "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+        "study_id": 14
+      },
+      "decisions": [
+        {
+          "candidate_id": 507,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 28,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 28,
+            "outcome_name": "delayed practiced/unpracticed math assessment",
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 28
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0740616957f986aecb98f1b41f9d1ceecf8a7e1a04eddf14f3020dc908ddb0e8",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-014 — delayed practiced/unpracticed math assessment",
+      "unit_key": "outcome:28"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 29,
+        "outcome_name": "supported writing quality",
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 508,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 29,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 29,
+            "outcome_name": "supported writing quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 29
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8b0ccb1028195d94eb1b38d477d190d5096b0e0557150b1f73278feae29f320a",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-015 — supported writing quality",
+      "unit_key": "outcome:29"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 3,
+        "outcome_name": "social problem solving",
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 482,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 3,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 3,
+            "outcome_name": "social problem solving",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d3416a00269c4c6f290c41c567df485a5b7e32e172258093ac25ffba006ac8ee",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-001 — social problem solving",
+      "unit_key": "outcome:3"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 30,
+        "outcome_name": "independent no-AI writing quality",
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 509,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 30,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 30,
+            "outcome_name": "independent no-AI writing quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 30
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8de9450ceb74dfa672a34dbbb965e688fbaf36c986f9b3c7662070fa0bbddfc8",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-015 — independent no-AI writing quality",
+      "unit_key": "outcome:30"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 31,
+        "outcome_name": "higher-order thinking / argument depth / revision quality",
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 510,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 31,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 31,
+            "outcome_name": "higher-order thinking / argument depth / revision quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 31
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7a22d9072ee21fad3b019890c8d0c31f594a1a02233278ade9113acd55e203ff",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-015 — higher-order thinking / argument depth / revision quality",
+      "unit_key": "outcome:31"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 32,
+        "outcome_name": "actual completion time",
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 511,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 32,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 32,
+            "outcome_name": "actual completion time",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 32
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "55897805c5e13e67cc164f7715355bf0ceaef4250e0a7cd3cc11884c73bd9cc8",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-016 — actual completion time",
+      "unit_key": "outcome:32"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 33,
+        "outcome_name": "predicted completion time",
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 512,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 33,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 33,
+            "outcome_name": "predicted completion time",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 33
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2a4196287c992c93c926f5070d87995dc1e882e6818a6de59bb592f7ad36883e",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-016 — predicted completion time",
+      "unit_key": "outcome:33"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 34,
+        "outcome_name": "subjective effort",
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 513,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 34,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 34,
+            "outcome_name": "subjective effort",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 34
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "18382c685d57641f7e09afc5747d46c0dc0cadd5e6936109166003e12130922c",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-016 — subjective effort",
+      "unit_key": "outcome:34"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 35,
+        "outcome_name": "ownership",
+        "source_id": "rt-2026-017",
+        "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        "study_id": 17
+      },
+      "decisions": [
+        {
+          "candidate_id": 514,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 35,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 35,
+            "outcome_name": "ownership",
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 35
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fb5359028d33477876ac54a4f968a5cebed2dd7217488e0d95f364a13ca738e0",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-017 — ownership",
+      "unit_key": "outcome:35"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 36,
+        "outcome_name": "essay quality",
+        "source_id": "rt-2026-017",
+        "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        "study_id": 17
+      },
+      "decisions": [
+        {
+          "candidate_id": 515,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 36,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 36,
+            "outcome_name": "essay quality",
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 36
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7418d827d4f893651a46f74d4922e9af7938ad8c21b72935a8ee37f50951d06e",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-017 — essay quality",
+      "unit_key": "outcome:36"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 37,
+        "outcome_name": "perceived downstream cognitive functioning",
+        "source_id": "rt-2026-018",
+        "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+        "study_id": 18
+      },
+      "decisions": [
+        {
+          "candidate_id": 516,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 37,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 37,
+            "outcome_name": "perceived downstream cognitive functioning",
+            "source_id": "rt-2026-018",
+            "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+            "study_id": 18
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 37
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f1f6ae3277b101ec1ee1bfa166b936a19566e9da5c01cd8301d9ebc1baf2db08",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-018 — perceived downstream cognitive functioning",
+      "unit_key": "outcome:37"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 38,
+        "outcome_name": "cognitive agency transfer",
+        "source_id": "rt-2026-018",
+        "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+        "study_id": 18
+      },
+      "decisions": [
+        {
+          "candidate_id": 517,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 38,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 38,
+            "outcome_name": "cognitive agency transfer",
+            "source_id": "rt-2026-018",
+            "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+            "study_id": 18
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 38
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8065e5d9aa0eec1b2cadc38bbc3b5e387f652b77c892ce06c2240eeef5c0d87a",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-018 — cognitive agency transfer",
+      "unit_key": "outcome:38"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 4,
+        "outcome_name": "prospective memory",
+        "source_id": "rt-2026-002",
+        "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+        "study_id": 2
+      },
+      "decisions": [
+        {
+          "candidate_id": 483,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 4,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 4,
+            "outcome_name": "prospective memory",
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6171cb5731bac1dc459dffb441b7abf104087bb396151e61ab8744e3f93ad596",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-002 — prospective memory",
+      "unit_key": "outcome:4"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 5,
+        "outcome_name": "prospective memory",
+        "source_id": "rt-2026-002",
+        "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+        "study_id": 2
+      },
+      "decisions": [
+        {
+          "candidate_id": 484,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 5,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 5,
+            "outcome_name": "prospective memory",
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f1b95062331909926621047634e4aef207afc2779c9dbbc0dec145e9aeef4e89",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-002 — prospective memory",
+      "unit_key": "outcome:5"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 6,
+        "outcome_name": "working-memory composite",
+        "source_id": "rt-2026-003",
+        "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+        "study_id": 3
+      },
+      "decisions": [
+        {
+          "candidate_id": 485,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 6,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 6,
+            "outcome_name": "working-memory composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2c4727d48c4fe78456973fb627f0a53bfedfce4f88bcc8d0f73b3726a70f0f4b",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-003 — working-memory composite",
+      "unit_key": "outcome:6"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 7,
+        "outcome_name": "math composite",
+        "source_id": "rt-2026-003",
+        "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+        "study_id": 3
+      },
+      "decisions": [
+        {
+          "candidate_id": 486,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 7,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 7,
+            "outcome_name": "math composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fec7920ead94873aa87ae2b990d8b53f79ee7d4a2a13d66508a3de76cdc66408",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-003 — math composite",
+      "unit_key": "outcome:7"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 8,
+        "outcome_name": "derived relational responding accuracy",
+        "source_id": "rt-2026-004",
+        "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+        "study_id": 4
+      },
+      "decisions": [
+        {
+          "candidate_id": 487,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 8,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 8,
+            "outcome_name": "derived relational responding accuracy",
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "46e563dace481ff05e85cdf53898482c1154c649b108e68b097cba809bfa5214",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-004 — derived relational responding accuracy",
+      "unit_key": "outcome:8"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 9,
+        "outcome_name": "analogical transfer accuracy and latency",
+        "source_id": "rt-2026-004",
+        "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+        "study_id": 4
+      },
+      "decisions": [
+        {
+          "candidate_id": 488,
+          "candidate_value": {
+            "notes": "Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+            "outcome_id": 9,
+            "quantitative_extraction_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 9,
+            "outcome_name": "analogical transfer accuracy and latency",
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Stage 6 seed candidate quantitative mapping; absence of extracted numbers does not imply a null effect or no reported quantitative result.",
+          "field_path": "legacy_seed_review.outcome_stage6_status",
+          "primary_key": {
+            "outcome_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "34732aca9deefd0a235921c19a0106057055f9457a3d9a3fa0bd25c32ffba976",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_stage6_status"
+        }
+      ],
+      "label": "rt-2026-004 — analogical transfer accuracy and latency",
+      "unit_key": "outcome:9"
+    }
+  ]
+}
