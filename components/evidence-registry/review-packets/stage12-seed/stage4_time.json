@@ -1,0 +1,2642 @@
+{
+  "batch_id": "stage4_time",
+  "batch_label": "Stage 4 outcome time",
+  "bridge_processing_run_id": 5,
+  "decision_count": 76,
+  "generated_from_git_commit": "4429b7caffa18639b3c9f33cd8b157db70bfe104",
+  "governance_notes": [
+    "Packet preparation does not approve scientific state.",
+    "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
+    "Packet includes ordinary, dimension-specific or provenance-only candidate status surfaces as declared per decision.",
+    "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
+  ],
+  "historical_release_id": "2026-08-23",
+  "packet_sha256": "45cb9c7ba5a6f557893a423d852a4e081370e6b80d76ba8a8c13845ce2329716",
+  "review_unit_count": 38,
+  "schema_version": "stage12-review-surface-v2",
+  "scientific_state_revision": 2109,
+  "units": [
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 1,
+        "outcome_name": "free recall",
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 183,
+          "candidate_value": {
+            "outcome_id": 1,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 1,
+            "outcome_name": "free recall",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Legacy rung is ambiguous between trained-task and nearest/changed-format performance; do not coerce.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 1
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "63eb59cd4a6f6517f1a7fa9932c2d39f2c97562390329defecc2f7edd7b65403",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 376,
+          "candidate_value": {
+            "outcome_id": 1,
+            "rationale": "Legacy rung is ambiguous between trained-task and nearest/changed-format performance; do not coerce.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 1,
+            "outcome_name": "free recall",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Legacy rung is ambiguous between trained-task and nearest/changed-format performance; do not coerce.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 1,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "dddf873a0b8eb29417d02d8e90b751ee474eaae3755c729bb1d7f20eefa262cc",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-001 — free recall",
+      "unit_key": "outcome:1"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 10,
+        "outcome_name": "working-memory span",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 194,
+          "candidate_value": {
+            "outcome_id": 10,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 10,
+            "outcome_name": "working-memory span",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8c11659897bd54bdce37cef186010eb2b70db24ac1269949172d504b75fe2a74",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 386,
+          "candidate_value": {
+            "outcome_id": 10,
+            "rationale": "Post and three-month follow-up are represented separately from measurement distance.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 10,
+            "outcome_name": "working-memory span",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 10,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2ae42b86242bec06604a4eceba8dab30c9792e485d849757d2d50495ce235bcc",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        },
+        {
+          "candidate_id": 385,
+          "candidate_value": {
+            "outcome_id": 10,
+            "rationale": "Post and three-month follow-up are represented separately from measurement distance.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 10,
+            "outcome_name": "working-memory span",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 10,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4dceb1c7ed517777449ec79eb7dd2264571b5da0aa89e358ed1f0c9cda523223",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-005 — working-memory span",
+      "unit_key": "outcome:10"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 11,
+        "outcome_name": "digit updating",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 195,
+          "candidate_value": {
+            "outcome_id": 11,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 11,
+            "outcome_name": "digit updating",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "47d7e45cbf4b1b1b3a88259ca75c2e0cceb0a5b91c3fec340ea6ddea0c42e52e",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 388,
+          "candidate_value": {
+            "outcome_id": 11,
+            "rationale": "Post and three-month follow-up are represented separately from measurement distance.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 11,
+            "outcome_name": "digit updating",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 11,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9bd27a07ce848524ac9730e56cd2db2cfa1020b05bfc2c400741616a8bef5b5e",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        },
+        {
+          "candidate_id": 387,
+          "candidate_value": {
+            "outcome_id": 11,
+            "rationale": "Post and three-month follow-up are represented separately from measurement distance.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 11,
+            "outcome_name": "digit updating",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 11,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "65312422d44aca0f27ac51e69b21c8d2a53e597db2f5d9d100b70591acde8e1c",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-005 — digit updating",
+      "unit_key": "outcome:11"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 12,
+        "outcome_name": "response inhibition",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 196,
+          "candidate_value": {
+            "outcome_id": 12,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 12,
+            "outcome_name": "response inhibition",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 12
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a20ba7ff9a85f5f808ee6bbb8881538118afaf380ba3e54e591e63f660da4725",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 390,
+          "candidate_value": {
+            "outcome_id": 12,
+            "rationale": "Post and three-month follow-up are represented separately from measurement distance.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 12,
+            "outcome_name": "response inhibition",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 12,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "dc9ca45b6b77476eb7aac430ba95ecd2aad16a32db85e33524aac056caa2f614",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        },
+        {
+          "candidate_id": 389,
+          "candidate_value": {
+            "outcome_id": 12,
+            "rationale": "Post and three-month follow-up are represented separately from measurement distance.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 12,
+            "outcome_name": "response inhibition",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post and three-month follow-up are represented separately from measurement distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 12,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b5ce50024a89a2fc69fe61aad06aafa503c45a3efa964ba4bcaa6e3378621f22",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-005 — response inhibition",
+      "unit_key": "outcome:12"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 13,
+        "outcome_name": "cognitive flexibility",
+        "source_id": "rt-2026-005",
+        "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+        "study_id": 5
+      },
+      "decisions": [
+        {
+          "candidate_id": 202,
+          "candidate_value": {
+            "outcome_id": 13,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 13,
+            "outcome_name": "cognitive flexibility",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Separate post-intervention measure.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 13
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6b4b0442f8c4c0f8bff63421dcf5c0932c2c6cc7d0ae09f951c078ee14353196",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 396,
+          "candidate_value": {
+            "outcome_id": 13,
+            "rationale": "Separate post-intervention measure.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 13,
+            "outcome_name": "cognitive flexibility",
+            "source_id": "rt-2026-005",
+            "source_title": "Video game training enhances executive function in younger and older adults: A randomized controlled trial",
+            "study_id": 5
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Separate post-intervention measure.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 13,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "925f30ca842ed6d9e0b3173f71730f5e3e43a218bd2da3d3cfbf8affe3abfc23",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-005 — cognitive flexibility",
+      "unit_key": "outcome:13"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 14,
+        "outcome_name": "global cognition",
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 200,
+          "candidate_value": {
+            "outcome_id": 14,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Separate post-intervention cognitive outcome.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 14
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ce34e201644df2a36cb01f61cd501e09b5728ee6215aa86e008624e979674757",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 394,
+          "candidate_value": {
+            "outcome_id": 14,
+            "rationale": "Separate post-intervention cognitive outcome.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Separate post-intervention cognitive outcome.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 14,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "cbb3da1e80ab759fafae4e0b91807bb7177bfdb2cb8d775a6e34846b640e4ddc",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-006 — global cognition",
+      "unit_key": "outcome:14"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 15,
+        "outcome_name": "long-delay memory",
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 185,
+          "candidate_value": {
+            "outcome_id": 15,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Long-delay describes the memory test, while the study timepoint is post-intervention.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 15
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "35727f4cf1e0de1a3f88e7a4bab6db51ac19b674b9f45daea9fb018c3146b97f",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 378,
+          "candidate_value": {
+            "outcome_id": 15,
+            "rationale": "Long-delay describes the memory test, while the study timepoint is post-intervention.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Long-delay describes the memory test, while the study timepoint is post-intervention.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 15,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4a91dfaff72ff7442310236cba11a62513d4b5a0341140ae42e06027ff19849f",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-006 — long-delay memory",
+      "unit_key": "outcome:15"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 16,
+        "outcome_name": "executive/language/visuospatial domains",
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 201,
+          "candidate_value": {
+            "outcome_id": 16,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Separate post-intervention domains.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 16
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3e9b8f10c66649b0a699f5b1fc12b23ad65e6c2eddcffaac49fb78ff81ac4d59",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 395,
+          "candidate_value": {
+            "outcome_id": 16,
+            "rationale": "Separate post-intervention domains.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Separate post-intervention domains.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 16,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "62b45dee9801ef20ce7e6e559de8931b452df8356090fc07a24b3adf239be7b9",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-006 — executive/language/visuospatial domains",
+      "unit_key": "outcome:16"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 17,
+        "outcome_name": "overall post-training working memory",
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 182,
+          "candidate_value": {
+            "outcome_id": 17,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 17,
+            "outcome_name": "overall post-training working memory",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Legacy rung explicitly mixes practice and separate-measure interpretations.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 17
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c7040e3352fec9154f152b1cdc703d65969a032058a9bf90f7fa61c48a8ad63f",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 375,
+          "candidate_value": {
+            "outcome_id": 17,
+            "rationale": "Legacy rung explicitly mixes practice and separate-measure interpretations.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 17,
+            "outcome_name": "overall post-training working memory",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Legacy rung explicitly mixes practice and separate-measure interpretations.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 17,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0964a49a0eb1efc12c1cda60c53a3ab8d37c875668b4c847b4ba2cb1a775ac9b",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-007 — overall post-training working memory",
+      "unit_key": "outcome:17"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 18,
+        "outcome_name": "untrained working-memory outcomes",
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 178,
+          "candidate_value": {
+            "outcome_id": 18,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 18,
+            "outcome_name": "untrained working-memory outcomes",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Explicitly untrained separate working-memory outcomes.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 18
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e769824b5eb27def96579448ab6d0b3755bd89ad68de5b31511c995f67a6bbc8",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 371,
+          "candidate_value": {
+            "outcome_id": 18,
+            "rationale": "Explicitly untrained separate working-memory outcomes.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 18,
+            "outcome_name": "untrained working-memory outcomes",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Explicitly untrained separate working-memory outcomes.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 18,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e016eba49109c7059f85288c2851b7397fc2722097e15c353967bd14ca7166fb",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-007 — untrained working-memory outcomes",
+      "unit_key": "outcome:18"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 19,
+        "outcome_name": "follow-up outcomes",
+        "source_id": "rt-2026-007",
+        "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+        "study_id": 7
+      },
+      "decisions": [
+        {
+          "candidate_id": 174,
+          "candidate_value": {
+            "outcome_id": 19,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 19,
+            "outcome_name": "follow-up outcomes",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Delayed is clear; measurement distance is not recoverable from this rapid-review row alone.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 19
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "55985835dabf5d488aecae93e7fc3d799aa99985f014f156065e39dd7639414d",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 368,
+          "candidate_value": {
+            "outcome_id": 19,
+            "rationale": "Delayed is clear; measurement distance is not recoverable from this rapid-review row alone.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 19,
+            "outcome_name": "follow-up outcomes",
+            "source_id": "rt-2026-007",
+            "source_title": "Transcranial direct current stimulation combined with cognitive training for working memory in healthy adults: a systematic review and robust variance meta-analysis of trained and untrained outcomes",
+            "study_id": 7
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Delayed is clear; measurement distance is not recoverable from this rapid-review row alone.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 19,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "20fde8ddda85a3109bc36ecfd45f1f98d892bd43cee068cf08b9bd844dcac348",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-007 — follow-up outcomes",
+      "unit_key": "outcome:19"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 2,
+        "outcome_name": "spatial recognition",
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 184,
+          "candidate_value": {
+            "outcome_id": 2,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 2,
+            "outcome_name": "spatial recognition",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Legacy separate-measure and post-intervention semantics are orthogonal.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 2
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6102ed06aff221768d515d82acbae0959de61c2ea26f7e10e466f38dca7c68d8",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 377,
+          "candidate_value": {
+            "outcome_id": 2,
+            "rationale": "Legacy separate-measure and post-intervention semantics are orthogonal.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 2,
+            "outcome_name": "spatial recognition",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Legacy separate-measure and post-intervention semantics are orthogonal.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 2,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "4425e5c8dac312b7ec62252ea3853b7f50d48c6812f6d9173afc5703892cffae",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-001 — spatial recognition",
+      "unit_key": "outcome:2"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 20,
+        "outcome_name": "psychometric adequacy of WM tasks",
+        "source_id": "rt-2026-008",
+        "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+        "study_id": 8
+      },
+      "decisions": [
+        {
+          "candidate_id": 188,
+          "candidate_value": {
+            "outcome_id": 20,
+            "time_status": "not_reported"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 20,
+            "outcome_name": "psychometric adequacy of WM tasks",
+            "source_id": "rt-2026-008",
+            "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+            "study_id": 8
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Measurement-method evidence is not an intervention outcome-distance/role observation.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 20
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "a25cd787eea5e247637a94f7ab51d6c8b7e88c97d062b92fde798ddb6731e427",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        }
+      ],
+      "label": "rt-2026-008 — psychometric adequacy of WM tasks",
+      "unit_key": "outcome:20"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 21,
+        "outcome_name": "near/far transfer evidence",
+        "source_id": "rt-2026-008",
+        "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+        "study_id": 8
+      },
+      "decisions": [
+        {
+          "candidate_id": 175,
+          "candidate_value": {
+            "outcome_id": 21,
+            "time_status": "not_reported"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 21,
+            "outcome_name": "near/far transfer evidence",
+            "source_id": "rt-2026-008",
+            "source_title": "Psychometric Properties and Transfer Measures of Working Memory in Older Adults: A Scoping Review",
+            "study_id": 8
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Evidence synthesis about measurement/transfer should not be forced into one intervention result transfer axis.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 21
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c072b56f3ce0d25572bafffc9897be751f65cd418f1f8e38988b74276a43f328",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        }
+      ],
+      "label": "rt-2026-008 — near/far transfer evidence",
+      "unit_key": "outcome:21"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 22,
+        "outcome_name": "abstract relational representation",
+        "source_id": "rt-2026-009",
+        "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+        "study_id": 9
+      },
+      "decisions": [
+        {
+          "candidate_id": 189,
+          "candidate_value": {
+            "outcome_id": 22,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 22,
+            "outcome_name": "abstract relational representation",
+            "source_id": "rt-2026-009",
+            "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+            "study_id": 9
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Mechanism evidence; second scan and reported emergence over days support delayed timing, but not intervention distance/role.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 22
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8da7bb603897231dedd3e66321b242b96e98a978761d901e2cfbb3cfcb2f94d1",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 379,
+          "candidate_value": {
+            "outcome_id": 22,
+            "rationale": "Mechanism evidence; second scan and reported emergence over days support delayed timing, but not intervention distance/role.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 22,
+            "outcome_name": "abstract relational representation",
+            "source_id": "rt-2026-009",
+            "source_title": "An abstract relational map emerges in the human medial prefrontal cortex with consolidation",
+            "study_id": 9
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Mechanism evidence; second scan and reported emergence over days support delayed timing, but not intervention distance/role.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 22,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "78e4580c23015cc805a84bfffa5da2492a288f469d58d8e302a066a075e392b2",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-009 — abstract relational representation",
+      "unit_key": "outcome:22"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 23,
+        "outcome_name": "generalization across visual locations",
+        "source_id": "rt-2026-010",
+        "source_title": "Serial dependence predicts generalization in perceptual learning",
+        "study_id": 10
+      },
+      "decisions": [
+        {
+          "candidate_id": 177,
+          "candidate_value": {
+            "outcome_id": 23,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 23,
+            "outcome_name": "generalization across visual locations",
+            "source_id": "rt-2026-010",
+            "source_title": "Serial dependence predicts generalization in perceptual learning",
+            "study_id": 10
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Explicit generalization across visual locations supports horizontal portability; source is mechanism evidence so benefit-role coding is not imposed.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 23
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8748a063da71b8beb124ddc1f25be984cd2758be18820ed85962bd6a880db073",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 370,
+          "candidate_value": {
+            "outcome_id": 23,
+            "rationale": "Explicit generalization across visual locations supports horizontal portability; source is mechanism evidence so benefit-role coding is not imposed.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 23,
+            "outcome_name": "generalization across visual locations",
+            "source_id": "rt-2026-010",
+            "source_title": "Serial dependence predicts generalization in perceptual learning",
+            "study_id": 10
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Explicit generalization across visual locations supports horizontal portability; source is mechanism evidence so benefit-role coding is not imposed.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 23,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fda95f30b3e76c8eac005b7a8f4e3730b2721065637b1c1b63314e9f0f781f30",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-010 — generalization across visual locations",
+      "unit_key": "outcome:23"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 24,
+        "outcome_name": "subsequent memory improvement",
+        "source_id": "rt-2026-011",
+        "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+        "study_id": 11
+      },
+      "decisions": [
+        {
+          "candidate_id": 190,
+          "candidate_value": {
+            "outcome_id": 24,
+            "time_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 24,
+            "outcome_name": "subsequent memory improvement",
+            "source_id": "rt-2026-011",
+            "source_title": "Neural mechanisms of error-driven learning in retrieval practice: confidence gates memory and metamemory networks",
+            "study_id": 11
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Mechanism evidence; subsequent-test timing cannot be safely reduced to post-intervention versus delayed from the seed alone.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 24
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "64088dd8a08353d5cf5c1f9bd3aab15aa25154fc267887eab6e3b4235d4e5406",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        }
+      ],
+      "label": "rt-2026-011 — subsequent memory improvement",
+      "unit_key": "outcome:24"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 25,
+        "outcome_name": "representation balance",
+        "source_id": "rt-2026-012",
+        "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+        "study_id": 12
+      },
+      "decisions": [
+        {
+          "candidate_id": 173,
+          "candidate_value": {
+            "outcome_id": 25,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 25,
+            "outcome_name": "representation balance",
+            "source_id": "rt-2026-012",
+            "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+            "study_id": 12
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Concurrent mechanism observation during stress.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 25
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3517fd1715c60f290457fb786dacf046471d18d6d241e460a0dc47291a06a7aa",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 367,
+          "candidate_value": {
+            "outcome_id": 25,
+            "rationale": "Concurrent mechanism observation during stress.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 25,
+            "outcome_name": "representation balance",
+            "source_id": "rt-2026-012",
+            "source_title": "Stress drives the hippocampus to prioritize statistical prediction over episodic encoding",
+            "study_id": 12
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Concurrent mechanism observation during stress.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 25,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "27dc6fc8400d4d24a146f9ba064a36cacdd414196041a48af5112ee810ef696e",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-012 — representation balance",
+      "unit_key": "outcome:25"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 26,
+        "outcome_name": "memory test performance",
+        "source_id": "rt-2026-013",
+        "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+        "study_id": 13
+      },
+      "decisions": [
+        {
+          "candidate_id": 180,
+          "candidate_value": {
+            "outcome_id": 26,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 26,
+            "outcome_name": "memory test performance",
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Immediate separate memory test; null/negative result direction does not change the benefit outcome role.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 26
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d1f7b743ad6cd18d11480df1563e34147d700b8b25e13cba92e7a1647db2beff",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 373,
+          "candidate_value": {
+            "outcome_id": 26,
+            "rationale": "Immediate separate memory test; null/negative result direction does not change the benefit outcome role.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 26,
+            "outcome_name": "memory test performance",
+            "source_id": "rt-2026-013",
+            "source_title": "Immediate judgments of learning do not improve performance for educationally relevant materials: Evidence from key-term definitions, country outlines, and animal species",
+            "study_id": 13
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Immediate separate memory test; null/negative result direction does not change the benefit outcome role.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 26,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c8085577bc7420a202f51bb17f7d2ce5f8d1285f9a616233c72f9e59e1492a70",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-013 — memory test performance",
+      "unit_key": "outcome:26"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 27,
+        "outcome_name": "next-attempt correctness after mistakes",
+        "source_id": "rt-2026-014",
+        "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+        "study_id": 14
+      },
+      "decisions": [
+        {
+          "candidate_id": 179,
+          "candidate_value": {
+            "outcome_id": 27,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 27,
+            "outcome_name": "next-attempt correctness after mistakes",
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Functional process outcome in the live learning activity system; no independent transfer axis is inferred.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 27
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3d547062fac1c0289bd35040054206be966023cbda97af1940b80dbadff147b0",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 372,
+          "candidate_value": {
+            "outcome_id": 27,
+            "rationale": "Functional process outcome in the live learning activity system; no independent transfer axis is inferred.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 27,
+            "outcome_name": "next-attempt correctness after mistakes",
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Functional process outcome in the live learning activity system; no independent transfer axis is inferred.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 27,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5ef406313dac8cbbe78b1c38ea7293c119f8a80e356c7a410c020302a9f94c13",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-014 — next-attempt correctness after mistakes",
+      "unit_key": "outcome:27"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 28,
+        "outcome_name": "delayed practiced/unpracticed math assessment",
+        "source_id": "rt-2026-014",
+        "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+        "study_id": 14
+      },
+      "decisions": [
+        {
+          "candidate_id": 193,
+          "candidate_value": {
+            "outcome_id": 28,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 28,
+            "outcome_name": "delayed practiced/unpracticed math assessment",
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: One-week delayed assessment; delayed remains a time semantic.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 28
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0a47f2e23466022db2ef2e2033131e48b4e272e19c6636ffadca07e74f67b0bb",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 384,
+          "candidate_value": {
+            "outcome_id": 28,
+            "rationale": "One-week delayed assessment; delayed remains a time semantic.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 28,
+            "outcome_name": "delayed practiced/unpracticed math assessment",
+            "source_id": "rt-2026-014",
+            "source_title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+            "study_id": 14
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: One-week delayed assessment; delayed remains a time semantic.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 28,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "10c95ecde123a85fdd0aad82b62aece5a3cc2c96cd73bd51521d3b69241d9e42",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-014 — delayed practiced/unpracticed math assessment",
+      "unit_key": "outcome:28"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 29,
+        "outcome_name": "supported writing quality",
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 172,
+          "candidate_value": {
+            "outcome_id": 29,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 29,
+            "outcome_name": "supported writing quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Applied writing-quality outcome under ongoing support; no transfer is inferred because support remains present.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 29
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c84f7468b0783a7f0b14fbe96313257e6932e07625686b45de3689374c08b473",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 366,
+          "candidate_value": {
+            "outcome_id": 29,
+            "rationale": "Applied writing-quality outcome under ongoing support; no transfer is inferred because support remains present.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 29,
+            "outcome_name": "supported writing quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Applied writing-quality outcome under ongoing support; no transfer is inferred because support remains present.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 29,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e3f524d8717e78300a16978dc4122832ec6e28b88143bc038efa2cebe02210d1",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-015 — supported writing quality",
+      "unit_key": "outcome:29"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 3,
+        "outcome_name": "social problem solving",
+        "source_id": "rt-2026-001",
+        "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+        "study_id": 1
+      },
+      "decisions": [
+        {
+          "candidate_id": 203,
+          "candidate_value": {
+            "outcome_id": 3,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 3,
+            "outcome_name": "social problem solving",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Separate problem-solving outcome; seed boundary explicitly says no delayed or naturalistic cue-triggered use test.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 3
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "69923767e87368dcbaac2b896830c8a4a2195614c3199a6440b32fd03f931d6d",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 397,
+          "candidate_value": {
+            "outcome_id": 3,
+            "rationale": "Separate problem-solving outcome; seed boundary explicitly says no delayed or naturalistic cue-triggered use test.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 3,
+            "outcome_name": "social problem solving",
+            "source_id": "rt-2026-001",
+            "source_title": "Efficacy and transfer of a memory training based on the Episodic Specificity Induction in older adults",
+            "study_id": 1
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Separate problem-solving outcome; seed boundary explicitly says no delayed or naturalistic cue-triggered use test.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 3,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8c004b6e2cdb633ae76a354a2c7a9200ee5b2d47c1ffea53059007c73c7fa0ef",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-001 — social problem solving",
+      "unit_key": "outcome:3"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 30,
+        "outcome_name": "independent no-AI writing quality",
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 181,
+          "candidate_value": {
+            "outcome_id": 30,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 30,
+            "outcome_name": "independent no-AI writing quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Independent no-AI measure is kept distinct from supported applied performance; transfer axis requires review rather than automatic inference.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 30
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9610bedfc11a56d05382e36ea7eae0f128315ad9e16fb865324db48f70f20590",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 374,
+          "candidate_value": {
+            "outcome_id": 30,
+            "rationale": "Independent no-AI measure is kept distinct from supported applied performance; transfer axis requires review rather than automatic inference.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 30,
+            "outcome_name": "independent no-AI writing quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Independent no-AI measure is kept distinct from supported applied performance; transfer axis requires review rather than automatic inference.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 30,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "732bb3e4999c89debfbb23574a24b81585b9c38e891641d7b4ac2c6ca60b1c9c",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-015 — independent no-AI writing quality",
+      "unit_key": "outcome:30"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 31,
+        "outcome_name": "higher-order thinking / argument depth / revision quality",
+        "source_id": "rt-2026-015",
+        "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+        "study_id": 15
+      },
+      "decisions": [
+        {
+          "candidate_id": 204,
+          "candidate_value": {
+            "outcome_id": 31,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 31,
+            "outcome_name": "higher-order thinking / argument depth / revision quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Separate week-eight outcome; no transfer axis is inferred solely from distance.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 31
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2ff38a20eb7e7be442a1a25b9b22036ee89b71b876894c0f2be46b841c32aee7",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 398,
+          "candidate_value": {
+            "outcome_id": 31,
+            "rationale": "Separate week-eight outcome; no transfer axis is inferred solely from distance.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 31,
+            "outcome_name": "higher-order thinking / argument depth / revision quality",
+            "source_id": "rt-2026-015",
+            "source_title": "Layer-Sensitive Cognitive Offloading in Generative AI-Assisted Writing: Supported Performance and Independent No-AI Outcomes",
+            "study_id": 15
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Separate week-eight outcome; no transfer axis is inferred solely from distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 31,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1b17f21f782169b6d1e1e2360948543a921ca296ab0130252da0a12c09d5d780",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-015 — higher-order thinking / argument depth / revision quality",
+      "unit_key": "outcome:31"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 32,
+        "outcome_name": "actual completion time",
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 171,
+          "candidate_value": {
+            "outcome_id": 32,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 32,
+            "outcome_name": "actual completion time",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Applied task-efficiency process outcome.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 32
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "fa629e7f4bd1f6c061eef215924f954a53bc5b19301877cbdfee802a84fdbca2",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 365,
+          "candidate_value": {
+            "outcome_id": 32,
+            "rationale": "Applied task-efficiency process outcome.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 32,
+            "outcome_name": "actual completion time",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Applied task-efficiency process outcome.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 32,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "61aef9b446cbdd5ef468c8de834bb487e2e4f8752927e4046221cbe56a2cb3fa",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-016 — actual completion time",
+      "unit_key": "outcome:32"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 33,
+        "outcome_name": "predicted completion time",
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 169,
+          "candidate_value": {
+            "outcome_id": 33,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 33,
+            "outcome_name": "predicted completion time",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Applied task prediction/calibration process measure.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 33
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e4bba300dbec830baf11200866f3bad146a37e33377a560f6d6113d39648ae96",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 363,
+          "candidate_value": {
+            "outcome_id": 33,
+            "rationale": "Applied task prediction/calibration process measure.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 33,
+            "outcome_name": "predicted completion time",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Applied task prediction/calibration process measure.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 33,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "06342ecb65f29270e79458def2ad22803ff8f7491a71f648eca790ea53386474",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-016 — predicted completion time",
+      "unit_key": "outcome:33"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 34,
+        "outcome_name": "subjective effort",
+        "source_id": "rt-2026-016",
+        "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+        "study_id": 16
+      },
+      "decisions": [
+        {
+          "candidate_id": 168,
+          "candidate_value": {
+            "outcome_id": 34,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 34,
+            "outcome_name": "subjective effort",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Applied task effort/process measure.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 34
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1a6b5bb1493ceb727a16916af0a4a0ce54519b7ac2bc1038518a2b4941fd5cd9",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 362,
+          "candidate_value": {
+            "outcome_id": 34,
+            "rationale": "Applied task effort/process measure.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 34,
+            "outcome_name": "subjective effort",
+            "source_id": "rt-2026-016",
+            "source_title": "Cognitive offloading and the speedup illusion in human-AI interaction",
+            "study_id": 16
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Applied task effort/process measure.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 34,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7b334284b511ae00e9859e1b0ca6e4b35168cc02630e0d07371a4b3d8a09766c",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-016 — subjective effort",
+      "unit_key": "outcome:34"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 35,
+        "outcome_name": "ownership",
+        "source_id": "rt-2026-017",
+        "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        "study_id": 17
+      },
+      "decisions": [
+        {
+          "candidate_id": 167,
+          "candidate_value": {
+            "outcome_id": 35,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 35,
+            "outcome_name": "ownership",
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Applied human-AI activity-system process/experience measure.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 35
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "37716a406527b53150cbb4c578c5012e76027ad6b1918e43577b53b4786d1e6c",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 361,
+          "candidate_value": {
+            "outcome_id": 35,
+            "rationale": "Applied human-AI activity-system process/experience measure.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 35,
+            "outcome_name": "ownership",
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Applied human-AI activity-system process/experience measure.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 35,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f9551166f350d0af267a1023faa47d7cf385d05e9ae3897494de48919910fe42",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-017 — ownership",
+      "unit_key": "outcome:35"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 36,
+        "outcome_name": "essay quality",
+        "source_id": "rt-2026-017",
+        "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+        "study_id": 17
+      },
+      "decisions": [
+        {
+          "candidate_id": 170,
+          "candidate_value": {
+            "outcome_id": 36,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 36,
+            "outcome_name": "essay quality",
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Applied task quality outcome.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 36
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ec54a3cec32bc64ac0b18e864e8101810ff7a4fc0aab617860af691e80256154",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 364,
+          "candidate_value": {
+            "outcome_id": 36,
+            "rationale": "Applied task quality outcome.",
+            "time_class": "immediate"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 36,
+            "outcome_name": "essay quality",
+            "source_id": "rt-2026-017",
+            "source_title": "From Planning to Revision: How AI Writing Support at Different Stages Alters Ownership",
+            "study_id": 17
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Applied task quality outcome.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 36,
+            "time_class": "immediate"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "044e86d706345531388fd9d1ed4e6faf5d060dfa4b574d990920717dee562b0f",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-017 — essay quality",
+      "unit_key": "outcome:36"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 37,
+        "outcome_name": "perceived downstream cognitive functioning",
+        "source_id": "rt-2026-018",
+        "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+        "study_id": 18
+      },
+      "decisions": [
+        {
+          "candidate_id": 186,
+          "candidate_value": {
+            "outcome_id": 37,
+            "time_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 37,
+            "outcome_name": "perceived downstream cognitive functioning",
+            "source_id": "rt-2026-018",
+            "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+            "study_id": 18
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Longitudinal observational association, not an intervention outcome-distance classification; T3 timing requires source-level schedule review.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 37
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5d3bef0681fcfe26cb692934f8941ac9e692618b2d8b23a95d5067cb0c434773",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        }
+      ],
+      "label": "rt-2026-018 — perceived downstream cognitive functioning",
+      "unit_key": "outcome:37"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 38,
+        "outcome_name": "cognitive agency transfer",
+        "source_id": "rt-2026-018",
+        "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+        "study_id": 18
+      },
+      "decisions": [
+        {
+          "candidate_id": 187,
+          "candidate_value": {
+            "outcome_id": 38,
+            "time_status": "not_yet_extracted"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 38,
+            "outcome_name": "cognitive agency transfer",
+            "source_id": "rt-2026-018",
+            "source_title": "Not all cognitive offloading is equal: distinguishing dependent and autonomous offloading to generative AI",
+            "study_id": 18
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Longitudinal observational association, not an intervention result transfer test; T2 timing requires source-level schedule review.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 38
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "2bc6eaea902cd9d27905959c8f4a03f99921b9391360bd71f7624c5a50f7a9a2",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        }
+      ],
+      "label": "rt-2026-018 — cognitive agency transfer",
+      "unit_key": "outcome:38"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 4,
+        "outcome_name": "prospective memory",
+        "source_id": "rt-2026-002",
+        "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+        "study_id": 2
+      },
+      "decisions": [
+        {
+          "candidate_id": 197,
+          "candidate_value": {
+            "outcome_id": 4,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 4,
+            "outcome_name": "prospective memory",
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Post-intervention separate measure.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3845f57e5cf2969716354ae6e38f66a2e3ba350495ad7edd309476574cd889ec",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 391,
+          "candidate_value": {
+            "outcome_id": 4,
+            "rationale": "Post-intervention separate measure.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 4,
+            "outcome_name": "prospective memory",
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Post-intervention separate measure.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 4,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7a908cf5bcda6ba47c247470ed9ec0badb6e6648b28aa6d34c46f32570c39746",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-002 — prospective memory",
+      "unit_key": "outcome:4"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 5,
+        "outcome_name": "prospective memory",
+        "source_id": "rt-2026-002",
+        "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+        "study_id": 2
+      },
+      "decisions": [
+        {
+          "candidate_id": 199,
+          "candidate_value": {
+            "outcome_id": 5,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 5,
+            "outcome_name": "prospective memory",
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Same prospective-memory measure as the post row; delayed is time, not distance.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 5
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3129fbf543ae124f0705558fbb3904095542500fbe1fd9f31c03e69933fd5b2d",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 393,
+          "candidate_value": {
+            "outcome_id": 5,
+            "rationale": "Same prospective-memory measure as the post row; delayed is time, not distance.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 5,
+            "outcome_name": "prospective memory",
+            "source_id": "rt-2026-002",
+            "source_title": "The transfer effects of executive function training on prospective memory in children with learning difficulties: a longitudinal study",
+            "study_id": 2
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Same prospective-memory measure as the post row; delayed is time, not distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 5,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f7b686dca62852ffd1faa210cb246447231b8e183f899c114fcd1a77b5734447",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-002 — prospective memory",
+      "unit_key": "outcome:5"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 6,
+        "outcome_name": "working-memory composite",
+        "source_id": "rt-2026-003",
+        "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+        "study_id": 3
+      },
+      "decisions": [
+        {
+          "candidate_id": 191,
+          "candidate_value": {
+            "outcome_id": 6,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 6,
+            "outcome_name": "working-memory composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: One historical row combines post-test and delayed follow-up.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b5565c2ef5d2f437835b8a8c47625448026f1dd6bd02d046ce1c80621eed403e",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 381,
+          "candidate_value": {
+            "outcome_id": 6,
+            "rationale": "One historical row combines post-test and delayed follow-up.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 6,
+            "outcome_name": "working-memory composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: One historical row combines post-test and delayed follow-up.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 6,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "3ba6e2c2fc132c4079a2c7969b9eb830525d93b5d0f7115a25ea58267fc8345f",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        },
+        {
+          "candidate_id": 380,
+          "candidate_value": {
+            "outcome_id": 6,
+            "rationale": "One historical row combines post-test and delayed follow-up.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 6,
+            "outcome_name": "working-memory composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: One historical row combines post-test and delayed follow-up.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 6,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5c653dabf5db3706637eccb5903950f49c0cb1e2bcdb6dcfc3dc8a523364ec9a",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-003 — working-memory composite",
+      "unit_key": "outcome:6"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 7,
+        "outcome_name": "math composite",
+        "source_id": "rt-2026-003",
+        "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+        "study_id": 3
+      },
+      "decisions": [
+        {
+          "candidate_id": 192,
+          "candidate_value": {
+            "outcome_id": 7,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 7,
+            "outcome_name": "math composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: One historical row combines post-test and delayed follow-up.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 7
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "48196f0d5ed3cbe2ef491c2eb04ce2378fb0480776482a1538670f0e1d57b3a4",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 383,
+          "candidate_value": {
+            "outcome_id": 7,
+            "rationale": "One historical row combines post-test and delayed follow-up.",
+            "time_class": "delayed"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 7,
+            "outcome_name": "math composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: One historical row combines post-test and delayed follow-up.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 7,
+            "time_class": "delayed"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9ea0df83b71c713d1c87948ba953e52dec25648f1667795780a1cb1d5d0a67e7",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        },
+        {
+          "candidate_id": 382,
+          "candidate_value": {
+            "outcome_id": 7,
+            "rationale": "One historical row combines post-test and delayed follow-up.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 7,
+            "outcome_name": "math composite",
+            "source_id": "rt-2026-003",
+            "source_title": "Promoting Working Memory and Numeracy Skills in Kindergarteners: Optimal Intervention Designs for Children Across Skill Levels",
+            "study_id": 3
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: One historical row combines post-test and delayed follow-up.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 7,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "ca5b6d6a44e06eeb0fe5e8b97ca08a21a05f9606dd6ef6e26bfff9ca964d2c32",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-003 — math composite",
+      "unit_key": "outcome:7"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 8,
+        "outcome_name": "derived relational responding accuracy",
+        "source_id": "rt-2026-004",
+        "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+        "study_id": 4
+      },
+      "decisions": [
+        {
+          "candidate_id": 198,
+          "candidate_value": {
+            "outcome_id": 8,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 8,
+            "outcome_name": "derived relational responding accuracy",
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Practice-effect rung maps to trained-task outcome distance.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 8
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "256694516d6a85328aaff0ae9924aa57ca5a169e1b82738d15f62a13335e21f7",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 392,
+          "candidate_value": {
+            "outcome_id": 8,
+            "rationale": "Practice-effect rung maps to trained-task outcome distance.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 8,
+            "outcome_name": "derived relational responding accuracy",
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Practice-effect rung maps to trained-task outcome distance.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 8,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "76a2f407dc288c450f4e081aefa7a091239911d3a252ad9a3b0ccff01becb405",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-004 — derived relational responding accuracy",
+      "unit_key": "outcome:8"
+    },
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": 9,
+        "outcome_name": "analogical transfer accuracy and latency",
+        "source_id": "rt-2026-004",
+        "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+        "study_id": 4
+      },
+      "decisions": [
+        {
+          "candidate_id": 176,
+          "candidate_value": {
+            "outcome_id": 9,
+            "time_status": "reviewed_mapped"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 9,
+            "outcome_name": "analogical transfer accuracy and latency",
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": "time",
+          "evidence_basis": "rationale: Explicit changed-format analogical transfer outcome supports a horizontal-transfer candidate.",
+          "field_path": "legacy_seed_review.outcome_stage4_classification.time",
+          "primary_key": {
+            "outcome_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "7ca1c8097b587f5faae282821ac3dd94ccd9af0f330895816ef8192b7164e4ed",
+          "surface_mode": "dimension",
+          "table_name": "outcome_stage4_classification"
+        },
+        {
+          "candidate_id": 369,
+          "candidate_value": {
+            "outcome_id": 9,
+            "rationale": "Explicit changed-format analogical transfer outcome supports a horizontal-transfer candidate.",
+            "time_class": "post_intervention"
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 9,
+            "outcome_name": "analogical transfer accuracy and latency",
+            "source_id": "rt-2026-004",
+            "source_title": "Relational responding and analogical learning: An experimental test of relational frame theory",
+            "study_id": 4
+          },
+          "dimension": null,
+          "evidence_basis": "rationale: Explicit changed-format analogical transfer outcome supports a horizontal-transfer candidate.",
+          "field_path": "legacy_seed_review.outcome_time_link",
+          "primary_key": {
+            "outcome_id": 9,
+            "time_class": "post_intervention"
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "12267b6a492c7e7c7817fd473c1ce58faec3fec752e1f7e121f5ae19ccf61acf",
+          "surface_mode": "ordinary",
+          "table_name": "outcome_time_link"
+        }
+      ],
+      "label": "rt-2026-004 — analogical transfer accuracy and latency",
+      "unit_key": "outcome:9"
+    }
+  ]
+}
