@@ -239,7 +239,8 @@ on conflict (source_version_id) do nothing;
 -- 5. Workbench dashboard view
 -- ===========================================================================
 
-create or replace view public.v_source_acquisition_dashboard as
+create or replace view public.v_source_acquisition_dashboard
+with (security_invoker=true) as
 select
   sv.source_version_id,
   coalesce(rsv.release_record_id, csi.identity_value) as source_id,
