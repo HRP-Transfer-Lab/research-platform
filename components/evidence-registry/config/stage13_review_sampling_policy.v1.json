@@ -1,0 +1,63 @@
+{
+  "policy_id": "stage13-study-review-sampling-v1",
+  "policy_version": "1.0.0",
+  "effective_date": "2026-09-01",
+  "sample_unit": "study",
+  "eligible_state": "machine_screened",
+  "routine_human_review_ceiling_rate": 0.10,
+  "review_budget_rounding": "ceiling",
+  "allocation": {
+    "stratified_random_share": 0.50,
+    "targeted_risk_share": 0.50
+  },
+  "stratification_dimensions": [
+    "study_design",
+    "evidence_class",
+    "intervention_route",
+    "source_kind",
+    "peer_review_status",
+    "population_context_family",
+    "parser_version",
+    "model_prompt_version"
+  ],
+  "targeted_priority_signals": [
+    "low_field_confidence",
+    "model_disagreement",
+    "weak_source_anchor",
+    "novel_design_or_taxonomy_class",
+    "high_recommendation_usage",
+    "single_source_recommendation_dependence",
+    "recommendation_correction",
+    "new_parser_model_or_prompt_cohort"
+  ],
+  "outside_budget_actions": [
+    "exclude_affected_field_from_recommendation_ranking",
+    "quarantine_source_or_processing_cohort",
+    "rerun_with_corrected_pipeline",
+    "reduce_evidence_use_tier",
+    "require_recommendation_level_review",
+    "withhold_public_claim_or_synthesis"
+  ],
+  "working_release_semantics": {
+    "human_approved_release": false,
+    "required_metadata": [
+      "sampling_policy_id",
+      "eligible_study_count",
+      "human_reviewed_study_count",
+      "human_review_rate",
+      "strata_covered",
+      "sample_error_metrics",
+      "processing_cohorts",
+      "known_limitations"
+    ]
+  },
+  "batch_failure_policy": {
+    "expand_to_universal_manual_review": false,
+    "action": "quarantine_correct_rerun_and_resample"
+  },
+  "override": {
+    "allowed": true,
+    "requires_explicit_owner_decision": true,
+    "scope": "one_off_defined_validation_study"
+  }
+}
