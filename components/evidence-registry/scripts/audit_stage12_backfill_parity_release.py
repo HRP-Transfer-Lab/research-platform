@@ -138,11 +138,12 @@ order by {dim}_mapping_source,{dim}_review_status;
         )
 
     print_section("QUALITY / ROB COMPLETENESS")
-    print("study_quality_assessments|result_rob_assessments|study_status_rows|result_status_rows")
+    print("study_quality_assessments|result_rob_assessments|domain_judgements|study_status_rows|result_status_rows")
     print(psql(args.container, """
 select
  (select count(*) from public.study_quality_assessment),
  (select count(*) from public.result_risk_of_bias_assessment),
+ (select count(*) from public.assessment_domain_judgement),
  (select count(*) from public.study_quality_status),
  (select count(*) from public.result_rob_status);
 """))
@@ -150,6 +151,74 @@ select
     print(psql(args.container, "select assessment_status,count(*) from public.study_quality_status group by assessment_status order by assessment_status;"))
     print("result_rob_status")
     print(psql(args.container, "select assessment_status,count(*) from public.result_rob_status group by assessment_status order by assessment_status;"))
+
+    study_quality_nonterminal = scalar(args.container, "select count(*) from public.study_quality_status where assessment_status not in ('reviewed_complete','not_applicable');")
+    result_rob_nonterminal = scalar(args.container, "select count(*) from public.result_rob_status where assessment_status not in ('reviewed_complete','not_applicable');")
+    closed_study_without_human_authority = scalar(args.container, """
+select count(*) from public.study_quality_status
+where assessment_status in ('reviewed_complete','not_applicable')
+  and not (mapping_source in ('human_review','manual') and review_status='approved');
+""")
+    closed_result_without_human_authority = scalar(args.container, """
+select count(*) from public.result_rob_status
+where assessment_status in ('reviewed_complete','not_applicable')
+  and not (mapping_source in ('human_review','manual') and review_status='approved');
+""")
+    study_complete_without_assessment = scalar(args.container, """
+select count(*) from public.study_quality_status s
+where s.assessment_status='reviewed_complete'
+  and not exists (
+    select 1 from public.study_quality_assessment a
+    where a.study_id=s.study_id and a.assessment_status='reviewed_complete'
+      and a.mapping_source in ('human_review','manual') and a.review_status='approved'
+  );
+""")
+    result_complete_without_assessment = scalar(args.container, """
+select count(*) from public.result_rob_status s
+where s.assessment_status='reviewed_complete'
+  and not exists (
+    select 1 from public.result_risk_of_bias_assessment a
+    where a.outcome_id=s.outcome_id and a.assessment_status='reviewed_complete'
+      and a.mapping_source in ('human_review','manual') and a.review_status='approved'
+  );
+""")
+    completed_study_assessment_without_domain = scalar(args.container, """
+select count(*) from public.study_quality_assessment a
+where a.assessment_status='reviewed_complete'
+  and a.mapping_source in ('human_review','manual') and a.review_status='approved'
+  and not exists (
+    select 1 from public.assessment_domain_judgement d
+    where d.study_quality_assessment_id=a.study_quality_assessment_id
+      and d.mapping_source in ('human_review','manual') and d.review_status='approved'
+  );
+""")
+    completed_result_assessment_without_domain = scalar(args.container, """
+select count(*) from public.result_risk_of_bias_assessment a
+where a.assessment_status='reviewed_complete'
+  and a.mapping_source in ('human_review','manual') and a.review_status='approved'
+  and not exists (
+    select 1 from public.assessment_domain_judgement d
+    where d.result_rob_assessment_id=a.result_rob_assessment_id
+      and d.mapping_source in ('human_review','manual') and d.review_status='approved'
+  );
+""")
+    study_na_without_rationale = scalar(args.container, "select count(*) from public.study_quality_status where assessment_status='not_applicable' and (notes is null or btrim(notes)='');")
+    result_na_without_rationale = scalar(args.container, "select count(*) from public.result_rob_status where assessment_status='not_applicable' and (notes is null or btrim(notes)='');")
+    quality_gate_metrics = [
+        ("study_status_nonterminal", study_quality_nonterminal),
+        ("result_status_nonterminal", result_rob_nonterminal),
+        ("closed_study_status_without_human_authority", closed_study_without_human_authority),
+        ("closed_result_status_without_human_authority", closed_result_without_human_authority),
+        ("reviewed_complete_study_without_approved_assessment", study_complete_without_assessment),
+        ("reviewed_complete_result_without_approved_assessment", result_complete_without_assessment),
+        ("completed_study_assessment_without_approved_domain", completed_study_assessment_without_domain),
+        ("completed_result_assessment_without_approved_domain", completed_result_assessment_without_domain),
+        ("study_not_applicable_without_rationale", study_na_without_rationale),
+        ("result_not_applicable_without_rationale", result_na_without_rationale),
+    ]
+    print("quality_gate_metric|count")
+    for metric, count in quality_gate_metrics:
+        print(f"{metric}|{count}")
 
     print_section("STAGE 8 BODY EVIDENCE")
     print("propositions|contributions|body_syntheses|synthesis_outcomes|body_certainty|body_eml|body_claims")
@@ -191,7 +260,10 @@ select
         "outcome_stage4_classification",
         "effect_estimate",
         "study_quality_status",
+        "study_quality_assessment",
         "result_rob_status",
+        "result_risk_of_bias_assessment",
+        "assessment_domain_judgement",
         "study_population_context_term",
         "harm_observation",
         "component_implementation_observation",
@@ -211,10 +283,9 @@ select
         blockers.append(f"unresolved_agent_candidate_proposed_rows={unresolved_generic}")
     if stage4_unresolved:
         blockers.append(f"unresolved_stage4_dimension_candidates={stage4_unresolved}")
-    study_quality = scalar(args.container, "select count(*) from public.study_quality_assessment;")
-    result_rob = scalar(args.container, "select count(*) from public.result_risk_of_bias_assessment;")
-    if study_quality == 0 and result_rob == 0:
-        blockers.append("initial_formal_quality_rob_appraisal_pending")
+    quality_gate_total = sum(count for _, count in quality_gate_metrics)
+    if quality_gate_total:
+        blockers.append(f"formal_quality_rob_gate_open={quality_gate_total}")
     propositions = scalar(args.container, "select count(*) from public.evidence_proposition;")
     syntheses = scalar(args.container, "select count(*) from public.body_evidence_synthesis;")
     if propositions == 0 or syntheses == 0:
