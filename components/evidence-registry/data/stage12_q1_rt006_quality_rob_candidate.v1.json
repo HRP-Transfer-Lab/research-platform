@@ -1,0 +1,127 @@
+{
+  "schema_version": "stage12-quality-rob-candidate-v1",
+  "batch_id": "quality_q1_rt006",
+  "source_id": "rt-2026-006",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "source_material": [
+    "Full 2026 Frontiers in Psychology article",
+    "Published randomized 2x2 factorial design, bias-control, outcome and statistical-analysis sections",
+    "Published participant flow, baseline table and supplementary-material link"
+  ],
+  "study_assessment": {
+    "assessment_key": "hrp_q1_methodological_pilot_v1",
+    "assessment_kind": "methodological_quality",
+    "framework_key": "custom",
+    "framework_version": "HRP-QA-Q1-pilot-v1",
+    "overall_judgement": "methodologically_adequate_with_documented_limitations",
+    "assessment_status": "reviewed_complete",
+    "notes": "Custom study-level appraisal complementing result-specific RoB 2. Computer-generated randomized allocation, concealed sequence and blinded outcome assessment are reported. Published analyses appear to use the 138 completers from 162 randomized participants without a reported ITT or missing-outcome sensitivity analysis. No prospective trial-registration identifier or preserved statistical-analysis plan is reported in the article. The combined arm also received greater total intervention exposure than either single-intervention arm; this limits interpretation of combination superiority but is not itself converted into a RoB 2 domain penalty. This is not a validated external quality score.",
+    "domains": [
+      {
+        "domain_key": "design_randomization_documentation",
+        "domain_label": "Design and randomization documentation",
+        "judgement": "strong",
+        "supporting_text": "Participants were randomized by computer-generated random numbers to four factorial cells; the randomization sequence was concealed from research staff and baseline characteristics were comparable across groups.",
+        "order_index": 1
+      },
+      {
+        "domain_key": "masking_assessment_separation",
+        "domain_label": "Masking and assessment separation",
+        "judgement": "strong",
+        "supporting_text": "Outcome assessments were conducted by trained assessors blinded to group allocation, and intervention delivery and outcome assessment were performed by different research staff.",
+        "order_index": 2
+      },
+      {
+        "domain_key": "participant_flow",
+        "domain_label": "Participant flow and post-randomization loss",
+        "judgement": "minor_concern",
+        "supporting_text": "162 participants were randomized and 138 completed the 12-week study (14.8% attrition). Attrition differed numerically across groups and the article reports voluntary withdrawal, loss to follow-up and health-related reasons, but no ITT or missing-outcome sensitivity analysis is reported.",
+        "order_index": 3
+      },
+      {
+        "domain_key": "outcome_measurement_documentation",
+        "domain_label": "Outcome measurement documentation",
+        "judgement": "strong",
+        "supporting_text": "A standardized cognitive battery was administered at baseline and post-intervention in a fixed sequence by blinded assessors using established instruments for global cognition, memory, attention, executive function, language and visuospatial performance.",
+        "order_index": 4
+      },
+      {
+        "domain_key": "analysis_registration_transparency",
+        "domain_label": "Analysis, registration and transparency",
+        "judgement": "minor_concern",
+        "supporting_text": "The article specifies change-score factorial ANOVA, interaction tests and Sidak-corrected simple effects, but no prospective trial-registration identifier or preserved statistical-analysis plan is reported despite multiple cognitive outcomes and eligible analytic choices.",
+        "order_index": 5
+      }
+    ]
+  },
+  "result_assessments": [
+    {
+      "outcome_name": "global cognition",
+      "legacy_rung": "separate_measure",
+      "raw_timepoint": "post",
+      "contrast_key": null,
+      "assessment_key": "rob2_assignment_post_factorial_global_cognition_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effects of randomized factorial assignment to Baduanjin and/or cognitive training on post-intervention change in global cognition.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "Outcome-scoped RoB 2 appraisal for the randomized factorial global-cognition result. Stage 5 contains the four factorial cells but no privileged contrast; this appraisal does not create or alter a contrast. D3 is some concerns because 24 of 162 randomized participants were absent from the reported completer analyses without a reported ITT or missing-outcome sensitivity analysis. D5 is some concerns because no prospective registry/SAP is reported for the multiple eligible cognitive outcomes and analyses.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"low","supporting_text":"Computer-generated random numbers, concealment of the randomization sequence from research staff and comparable baseline characteristics support a low-risk randomization judgement.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Interventions were delivered by trained staff using standardized protocols and manuals; no systematic trial-context crossover or other assignment-related deviation affecting the effect-of-assignment estimand was reported.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"162 participants were randomized and 138 completed post-intervention assessment. Attrition was 14.8% overall, with group-specific completion of 35/43, 36/40, 34/41 and 33/38; no ITT or sensitivity analysis for missing outcomes was reported.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Global cognition was measured with the standardized MoCA by trained assessors blinded to randomized group, with the same procedures across assessment sessions.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"The article specifies the reported change-score factorial ANOVA and simple-effects procedure, but no prospective registry/SAP is reported despite multiple cognitive outcomes, interaction tests and eligible analytic specifications.","order_index":5}
+      ]
+    },
+    {
+      "outcome_name": "long-delay memory",
+      "legacy_rung": "separate_measure",
+      "raw_timepoint": "post",
+      "contrast_key": null,
+      "assessment_key": "rob2_assignment_post_factorial_long_delay_memory_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effects of randomized factorial assignment to Baduanjin and/or cognitive training on post-intervention change in long-delay memory.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "Outcome-scoped RoB 2 appraisal for long-delay memory. The result shares the trial-level randomization, deviation and attrition structure of the global-cognition result. D5 remains some concerns because the article reports many cognitive subdomains and no prospective registry/SAP is reported to establish the prespecified analytic path for this specific result.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"low","supporting_text":"Computer-generated random numbers, concealed sequence and comparable baseline characteristics support a low-risk randomization judgement.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Standardized supervised intervention delivery was reported and no systematic trial-context deviation from randomized assignment affecting this effect-of-assignment result was identified.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"The published post-intervention analyses are based on 138 completers from 162 randomized participants, with no reported ITT or missing-outcome sensitivity analysis.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Long-delay memory was assessed within the standardized AVLT-H battery by trained assessors blinded to randomized group using the same post-intervention procedure across groups.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"Long-delay memory is explicitly reported within the cognitive battery, but no prospective registry/SAP is reported to rule out selection among multiple memory subdomains, factorial effects and simple-effect analyses.","order_index":5}
+      ]
+    },
+    {
+      "outcome_name": "executive/language/visuospatial domains",
+      "legacy_rung": "separate_measure",
+      "raw_timepoint": "post",
+      "contrast_key": null,
+      "assessment_key": "rob2_assignment_post_factorial_multidomain_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effects of randomized factorial assignment to Baduanjin and/or cognitive training on the post-intervention executive-function, language and visuospatial results represented by this normalized outcome bundle.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "The normalized Registry outcome bundles several author-reported cognitive domains that share the same randomized factorial design and appraisal pattern. This assessment does not imply that the measures are one composite estimand; it records the common RoB pattern for the currently normalized bundle. D3 and D5 remain some concerns for the same reasons as the other post-intervention results.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"low","supporting_text":"Computer-generated randomized allocation, concealed sequence and comparable baseline characteristics support low risk for the common randomization process.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Standardized supervised delivery and no reported systematic assignment-related deviations support low risk for the effect-of-assignment interpretation.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"The executive, language and visuospatial post-intervention analyses are reported for the 138 completers from 162 randomized participants without a reported ITT or missing-outcome sensitivity analysis.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"TMT-B, BNT and CDT were administered as standardized cognitive measures by trained outcome assessors blinded to randomized group.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"The article reports these cognitive domains and its factorial/simple-effects approach, but no prospective registry/SAP is reported to rule out selective choice among multiple domain outcomes and analytic specifications.","order_index":5}
+      ]
+    }
+  ],
+  "governance_notes": [
+    "All inserted rows must remain agent_candidate/proposed until explicit human approval.",
+    "reviewed_complete describes proposed appraisal completeness, not human authority.",
+    "No Stage 5 contrast is created or changed by this quality/RoB manifest.",
+    "The bundled executive/language/visuospatial Registry outcome is appraised as a common-risk normalized bundle, not asserted to be a single author-defined composite estimand.",
+    "No historical release or CSI Gateway object may be mutated."
+  ]
+}
