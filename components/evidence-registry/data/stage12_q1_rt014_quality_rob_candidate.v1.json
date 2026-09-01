@@ -1,0 +1,170 @@
+{
+  "schema_version": "stage12-quality-rob-candidate-v1",
+  "batch_id": "quality_q1_rt014",
+  "source_id": "rt-2026-014",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "source_material": [
+    "User-supplied 73-page August 2026 EdWorkingPaper 26-1552, including the full appendix and AI tutor prompts",
+    "Paper-reported individual 2 x 2 x 2 randomization, intent-to-treat specifications, participant-flow tables, baseline balance, delayed outcomes and robustness analyses",
+    "Paper-reported AEA RCT Registry identifier AEARCTR-0018678; the public registration record and any separate statistical analysis plan have not yet been acquired into the verified local corpus"
+  ],
+  "study_assessment": {
+    "assessment_key": "hrp_q1_methodological_pilot_v1",
+    "assessment_kind": "methodological_quality",
+    "framework_key": "custom",
+    "framework_version": "HRP-QA-Q1-pilot-v1",
+    "overall_judgement": "methodologically_adequate_with_result_specific_limitations",
+    "assessment_status": "reviewed_complete",
+    "notes": "Custom study-level appraisal used because RoB 2 is result-specific rather than a paper-level quality score. The experiment is a large, individually randomized field trial with objective platform and delayed-test outcomes, but treatment-dependent progression, delayed-assessment attrition and a post-mistake conditioned mechanism analysis create material result-specific limitations. Judgement vocabulary: strong, minor_concern, major_concern, insufficient_information. This is not a validated external quality score and does not replace result-specific RoB 2.",
+    "domains": [
+      {
+        "domain_key": "design_randomization_documentation",
+        "domain_label": "Design and randomization documentation",
+        "judgement": "strong",
+        "supporting_text": "Students were randomized individually at initial platform registration across three independent dimensions: topic, AI versus CAL-only support, and mastery versus non-mastery progression. Each assignment had equal probability, teachers and students did not know assignments in advance, and reported baseline characteristics in the delayed-test sample were generally balanced. Exact software sequence-generation details were not reported, but no material randomization failure signal was identified.",
+        "order_index": 1
+      },
+      {
+        "domain_key": "masking_assessment_separation",
+        "domain_label": "Masking and assessment separation",
+        "judgement": "minor_concern",
+        "supporting_text": "AI access and mastery rules were necessarily visible after allocation, so students and teachers were not blinded to the experienced intervention. Platform outcomes and delayed-test items were objectively scored, assignments were unknown in advance, and no differential assessor judgement was required; however, independent delayed-outcome assessor masking was not documented.",
+        "order_index": 2
+      },
+      {
+        "domain_key": "participant_flow",
+        "domain_label": "Participant flow, exposure and post-randomization selection",
+        "judgement": "minor_concern",
+        "supporting_text": "The week-1 analysis sample contained 6,997 students and 6,327 completed the delayed assessment. Exercise 1 was reached by nearly all platform entrants, but treatment changed pace and progression to later content. The authors explicitly document these exposure and selection complications. Delayed non-participation and the post-mistake event sample require separate result-level appraisal.",
+        "order_index": 3
+      },
+      {
+        "domain_key": "outcome_measurement_documentation",
+        "domain_label": "Outcome measurement documentation",
+        "judgement": "strong",
+        "supporting_text": "Platform progression, practice and post-mistake outcomes were defined from logged events. The one-week delayed assessment used four objectively scored items, with practiced versus unpracticed status determined by randomized topic assignment and missing item responses among test takers coded as incorrect. The full appendix documents outcome construction, tables and tutor prompts.",
+        "order_index": 4
+      },
+      {
+        "domain_key": "analysis_registration_transparency",
+        "domain_label": "Analysis, registration and transparency",
+        "judgement": "minor_concern",
+        "supporting_text": "The paper reports the 2 x 2 intent-to-treat specification, the AI-within-mastery mechanism specification, an AEA RCT Registry identifier and a preregistered complementarity hypothesis, and it presents extensive null and robustness results. The registration record and any separate analysis plan have not yet been acquired and independently compared, while multiple outcome and model choices remain eligible.",
+        "order_index": 5
+      }
+    ]
+  },
+  "result_assessments": [
+    {
+      "outcome_name": "next-attempt correctness after mistakes",
+      "legacy_rung": "applied",
+      "raw_timepoint": "during_platform_use",
+      "contrast_key": null,
+      "assessment_key": "rob2_ai_within_mastery_next_attempt_after_mistake_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Difference between assignment to AI and CAL-only support in correctness of the next non-skip attempt among observed Exercise 1 mistake events in mastery-assigned students, conditional on a subsequent non-skip attempt.",
+      "overall_judgement": "high",
+      "assessment_status": "reviewed_complete",
+      "notes": "RoB 2 candidate for the normalized post-mistake outcome. Overall high risk applies to causal interpretation because the analysis conditions on a post-randomization event—making a mistake—that AI assignment itself affects, and next-attempt correctness is undefined for events without a subsequent attempt. The authors appropriately describe these estimates as mechanism evidence rather than the primary randomized evidence on learning. The observed platform association remains informative for mechanism generation but should not be treated as an unbiased intent-to-treat learning effect.",
+      "domains": [
+        {
+          "domain_key": "D1_randomization_process",
+          "domain_label": "Bias arising from the randomization process",
+          "judgement": "low",
+          "supporting_text": "AI assignment was individually randomized at platform registration with equal assignment probability; assignment was not known in advance and no concerning baseline imbalance was reported.",
+          "order_index": 1
+        },
+        {
+          "domain_key": "D2_deviations_intended_interventions",
+          "domain_label": "Bias due to deviations from intended interventions",
+          "judgement": "high",
+          "supporting_text": "Although AI assignment was randomized, the reported comparison is restricted to mastery students who generated an observed mistake event. AI altered exposure, pace and the probability and timing of mistakes, so conditioning on mistakes does not preserve the randomized comparison. The unadjusted event-conditioned model is therefore not an appropriate estimator of a full-population effect of assignment.",
+          "order_index": 2
+        },
+        {
+          "domain_key": "D3_missing_outcome_data",
+          "domain_label": "Bias due to missing outcome data",
+          "judgement": "some_concerns",
+          "supporting_text": "Next-attempt correctness excludes mistake events with no subsequent non-skip submitted attempt. Table 8 reports 13,512 observations for next-attempt correctness versus 14,558 mistake events for the subsequently reached-streak outcome. Because assignment affected pace and continuation, the missing next-attempt outcomes could be related to intervention and prognosis; no dedicated missing-outcome sensitivity analysis was identified.",
+          "order_index": 3
+        },
+        {
+          "domain_key": "D4_measurement_outcome",
+          "domain_label": "Bias in measurement of the outcome",
+          "judgement": "low",
+          "supporting_text": "Correctness of submitted attempts was captured automatically by the NUMI platform using the same objective scoring rule across randomized groups; no differential outcome ascertainment was identified.",
+          "order_index": 4
+        },
+        {
+          "domain_key": "D5_selection_reported_result",
+          "domain_label": "Bias in selection of the reported result",
+          "judgement": "some_concerns",
+          "supporting_text": "The paper reports several post-mistake outcomes and robustness decompositions and explicitly limits their causal interpretation. However, the AEA registration record and any separate analysis plan have not yet been independently verified, so prespecification of the exact event-conditioned outcome, exclusions and model cannot be established.",
+          "order_index": 5
+        }
+      ]
+    },
+    {
+      "outcome_name": "delayed practiced/unpracticed math assessment",
+      "legacy_rung": "delayed",
+      "raw_timepoint": "1_week",
+      "contrast_key": null,
+      "assessment_key": "rob2_factorial_one_week_delayed_math_assessment_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effects of randomized AI support, mastery progression and their interaction on the one-week delayed practiced and unpracticed mathematics assessment outcomes; reported delayed analyses are among week-1 platform entrants who completed the delayed assessment.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "RoB 2 appraisal candidate for the normalized one-week delayed assessment bundle. The randomized factorial design and objective assessment support the comparison, but 670 of 6,997 week-1 platform entrants did not complete the delayed assessment and the published delayed analyses exclude those non-takers. Baseline balance in the delayed-test sample is reassuring, while absence of a verified registration/SAP comparison and multiple eligible delayed outcomes leave some selective-analysis uncertainty.",
+      "domains": [
+        {
+          "domain_key": "D1_randomization_process",
+          "domain_label": "Bias arising from the randomization process",
+          "judgement": "low",
+          "supporting_text": "Topic, AI and mastery were independently randomized at individual registration with equal assignment probabilities and assignments unknown in advance. Reported delayed-sample baseline characteristics were generally balanced across the four AI-by-mastery groups.",
+          "order_index": 1
+        },
+        {
+          "domain_key": "D2_deviations_intended_interventions",
+          "domain_label": "Bias due to deviations from intended interventions",
+          "judgement": "low",
+          "supporting_text": "The interventions were delivered through a purpose-built platform and the main factorial regressions estimate effects of assignment. Students and teachers could not be blinded after exposure, but the experienced AI support and progression rule were the intended interventions, and no off-protocol deviations likely to bias the effect-of-assignment estimand were identified.",
+          "order_index": 2
+        },
+        {
+          "domain_key": "D3_missing_outcome_data",
+          "domain_label": "Bias due to missing outcome data",
+          "judgement": "some_concerns",
+          "supporting_text": "Of 6,997 week-1 platform entrants, 6,327 completed the delayed assessment. Delayed analyses were restricted to test takers; missing item responses were coded incorrect only among those who took the test, while non-takers had no imputed outcome. Completion was high and delayed-sample balance was reassuring, but no all-randomized-participant missing-data sensitivity analysis was identified.",
+          "order_index": 3
+        },
+        {
+          "domain_key": "D4_measurement_outcome",
+          "domain_label": "Bias in measurement of the outcome",
+          "judgement": "low",
+          "supporting_text": "All groups received the same objectively scored four-item delayed assessment. Randomized topic assignment determined which items were practiced or unpracticed, limiting differential classification. The brief test may be statistically imprecise, but that is not in itself differential measurement bias.",
+          "order_index": 4
+        },
+        {
+          "domain_key": "D5_selection_reported_result",
+          "domain_label": "Bias in selection of the reported result",
+          "judgement": "some_concerns",
+          "supporting_text": "The paper reports practiced and unpracticed Exercise 1 and Exercise 2 items, totals, differences and several null or robustness results, and it identifies a preregistered AI-by-mastery complementarity hypothesis. The public registration record and any separate analysis plan have not yet been verified against the report, and multiple eligible delayed outcomes and specifications remain; selective-analysis risk cannot be ruled out.",
+          "order_index": 5
+        }
+      ]
+    }
+  ],
+  "governance_notes": [
+    "All inserted rows remain agent_candidate/proposed until explicit human approval.",
+    "reviewed_complete describes the proposed appraisal's completeness, not human approval status.",
+    "The user-supplied PDF should be registered separately as a verified local document artifact with SHA-256 provenance; this manifest does not embed or place the PDF in Git.",
+    "The paper reports AEA RCT Registry AEARCTR-0018678, but the registration record and any separate statistical analysis plan have not yet been acquired into the verified source corpus; Domain 5 therefore remains some concerns.",
+    "The post-mistake result is conditioned on treatment-affected mistake events and is high risk for causal interpretation. It may inform mechanism hypotheses but must not be presented as the primary randomized learning effect.",
+    "The delayed assessment bundle retains some concerns because non-takers are excluded and exact registration-to-report concordance has not yet been independently verified.",
+    "No Stage 5 contrast is created or privileged by this appraisal; both normalized outcomes retain contrast_id null.",
+    "No historical release or CSI Gateway object may be mutated by candidate application or review."
+  ]
+}
