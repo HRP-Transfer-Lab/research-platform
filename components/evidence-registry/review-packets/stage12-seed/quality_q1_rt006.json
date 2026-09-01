@@ -1,0 +1,949 @@
+{
+  "batch_id": "quality_q1_rt006",
+  "batch_label": "Q1 rt-2026-006 study quality and result-specific RoB 2 appraisal",
+  "bridge_processing_run_id": 5,
+  "decision_count": 28,
+  "generated_from_git_commit": "07f4b76c0454add62759f6b35093b99eaf7160b5",
+  "governance_notes": [
+    "Packet preparation does not approve scientific state.",
+    "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
+    "Packet includes ordinary, dimension-specific or provenance-only candidate status surfaces as declared per decision.",
+    "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
+  ],
+  "historical_release_id": "2026-08-23",
+  "packet_sha256": "8185a6b3f37cae0b8b54a8ff2b5ce41ac259cfb8311afcfa2d719ff49052857f",
+  "review_unit_count": 1,
+  "schema_version": "stage12-review-surface-v2",
+  "scientific_state_revision": 3121,
+  "units": [
+    {
+      "context": {
+        "component_id": null,
+        "component_name": null,
+        "outcome_id": null,
+        "outcome_name": null,
+        "source_id": "rt-2026-006",
+        "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+        "study_id": 6
+      },
+      "decisions": [
+        {
+          "candidate_id": 744,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 56,
+            "domain_key": "design_randomization_documentation",
+            "domain_label": "Design and randomization documentation",
+            "judgement": "strong",
+            "notes": null,
+            "order_index": 1,
+            "result_rob_assessment_id": null,
+            "study_quality_assessment_id": 4,
+            "supporting_text": "Participants were randomized by computer-generated random numbers to four factorial cells; the randomization sequence was concealed from research staff and baseline characteristics were comparable across groups."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 56
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1502e6e2d725a6a0cc2c6c2576db4e76659068c5f513367864d27a0cf1c87a72",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 745,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 57,
+            "domain_key": "masking_assessment_separation",
+            "domain_label": "Masking and assessment separation",
+            "judgement": "strong",
+            "notes": null,
+            "order_index": 2,
+            "result_rob_assessment_id": null,
+            "study_quality_assessment_id": 4,
+            "supporting_text": "Outcome assessments were conducted by trained assessors blinded to group allocation, and intervention delivery and outcome assessment were performed by different research staff."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 57
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "699f64c3f52dd7da238c1ab2e95f68517385f8675400eb7fa35b7db4ee238ad0",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 737,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 58,
+            "domain_key": "participant_flow",
+            "domain_label": "Participant flow and post-randomization loss",
+            "judgement": "minor_concern",
+            "notes": null,
+            "order_index": 3,
+            "result_rob_assessment_id": null,
+            "study_quality_assessment_id": 4,
+            "supporting_text": "162 participants were randomized and 138 completed the 12-week study (14.8% attrition). Attrition differed numerically across groups and the article reports voluntary withdrawal, loss to follow-up and health-related reasons, but no ITT or missing-outcome sensitivity analysis is reported."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 58
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "b581b2ed9101ab532cb1b8ce8cc41b8051c8ac55213697f5b3b0eeeaaf0610ad",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 746,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 59,
+            "domain_key": "outcome_measurement_documentation",
+            "domain_label": "Outcome measurement documentation",
+            "judgement": "strong",
+            "notes": null,
+            "order_index": 4,
+            "result_rob_assessment_id": null,
+            "study_quality_assessment_id": 4,
+            "supporting_text": "A standardized cognitive battery was administered at baseline and post-intervention in a fixed sequence by blinded assessors using established instruments for global cognition, memory, attention, executive function, language and visuospatial performance."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 59
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9792ea3b63b457685d737d0c2911b1bd0377a69e5f1483f2caca7d9617e9ded0",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 736,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 60,
+            "domain_key": "analysis_registration_transparency",
+            "domain_label": "Analysis, registration and transparency",
+            "judgement": "minor_concern",
+            "notes": null,
+            "order_index": 5,
+            "result_rob_assessment_id": null,
+            "study_quality_assessment_id": 4,
+            "supporting_text": "The article specifies change-score factorial ANOVA, interaction tests and Sidak-corrected simple effects, but no prospective trial-registration identifier or preserved statistical-analysis plan is reported despite multiple cognitive outcomes and eligible analytic choices."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 60
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8f7b4707a0cbdbf9259facffb4ef253081974ae75cfa14fdf2141b115fdba038",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 723,
+          "candidate_value": {
+            "assessed_on": null,
+            "assessment_key": "hrp_q1_methodological_pilot_v1",
+            "assessment_kind": "methodological_quality",
+            "assessment_status": "reviewed_complete",
+            "assessor": null,
+            "framework_key": "custom",
+            "framework_version": "HRP-QA-Q1-pilot-v1",
+            "notes": "Custom study-level appraisal complementing result-specific RoB 2. Computer-generated randomized allocation, concealed sequence and blinded outcome assessment are reported. Published analyses appear to use the 138 completers from 162 randomized participants without a reported ITT or missing-outcome sensitivity analysis. No prospective trial-registration identifier or preserved statistical-analysis plan is reported in the article. The combined arm also received greater total intervention exposure than either single-intervention arm; this limits interpretation of combination superiority but is not itself converted into a RoB 2 domain penalty. This is not a validated external quality score.",
+            "overall_judgement": "methodologically_adequate_with_documented_limitations",
+            "study_id": 6,
+            "study_quality_assessment_id": 4
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Custom study-level appraisal complementing result-specific RoB 2. Computer-generated randomized allocation, concealed sequence and blinded outcome assessment are reported. Published analyses appear to use the 138 completers from 162 randomized participants without a reported ITT or missing-outcome sensitivity analysis. No prospective trial-registration identifier or preserved statistical-analysis plan is reported in the article. The combined arm also received greater total intervention exposure than either single-intervention arm; this limits interpretation of combination superiority but is not itself converted into a RoB 2 domain penalty. This is not a validated external quality score.",
+          "field_path": "legacy_seed_review.study_quality_assessment",
+          "primary_key": {
+            "study_quality_assessment_id": 4
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f448e445392f28b5c17bb8cebf7f46dde13a8325d79f6e4731e6b5c7a4f6fb6a",
+          "surface_mode": "ordinary",
+          "table_name": "study_quality_assessment"
+        },
+        {
+          "candidate_id": 719,
+          "candidate_value": {
+            "assessment_status": "reviewed_complete",
+            "notes": "quality_q1_rt006 candidate study-level appraisal complete; human approval required.",
+            "study_id": 6
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": null,
+            "outcome_name": null,
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: quality_q1_rt006 candidate study-level appraisal complete; human approval required.",
+          "field_path": "legacy_seed_review.study_quality_status",
+          "primary_key": {
+            "study_id": 6
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "aeb3ce8886bb37255f0b028011e0d1332af543b4e2ad0da03187059209144703",
+          "surface_mode": "ordinary",
+          "table_name": "study_quality_status"
+        },
+        {
+          "candidate_id": 728,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 61,
+            "domain_key": "D1_randomization_process",
+            "domain_label": "Bias arising from the randomization process",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 1,
+            "result_rob_assessment_id": 9,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Computer-generated random numbers, concealment of the randomization sequence from research staff and comparable baseline characteristics support a low-risk randomization judgement."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 61
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "e90d1754af596579ccbff24db4fe9d6175572823a3ff6e22dd39aad0ab74888a",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 730,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 62,
+            "domain_key": "D2_deviations_intended_interventions",
+            "domain_label": "Bias due to deviations from intended interventions",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 2,
+            "result_rob_assessment_id": 9,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Interventions were delivered by trained staff using standardized protocols and manuals; no systematic trial-context crossover or other assignment-related deviation affecting the effect-of-assignment estimand was reported."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 62
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1f8471f1ba519ca77cd31b314031302155d5b2b7f70c36c088d9ed60c38907ad",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 738,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 63,
+            "domain_key": "D3_missing_outcome_data",
+            "domain_label": "Bias due to missing outcome data",
+            "judgement": "some_concerns",
+            "notes": null,
+            "order_index": 3,
+            "result_rob_assessment_id": 9,
+            "study_quality_assessment_id": null,
+            "supporting_text": "162 participants were randomized and 138 completed post-intervention assessment. Attrition was 14.8% overall, with group-specific completion of 35/43, 36/40, 34/41 and 33/38; no ITT or sensitivity analysis for missing outcomes was reported."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 63
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "d178d5d6bb0ebc0e4839adb08345d3fc9b996c9bc2b1e8418078615d92e45892",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 733,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 64,
+            "domain_key": "D4_measurement_outcome",
+            "domain_label": "Bias in measurement of the outcome",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 4,
+            "result_rob_assessment_id": 9,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Global cognition was measured with the standardized MoCA by trained assessors blinded to randomized group, with the same procedures across assessment sessions."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 64
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "08d0e305652207a2bb96e05541bb8356275f6d40f6f063842243bf9298c80c40",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 743,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 65,
+            "domain_key": "D5_selection_reported_result",
+            "domain_label": "Bias in selection of the reported result",
+            "judgement": "some_concerns",
+            "notes": null,
+            "order_index": 5,
+            "result_rob_assessment_id": 9,
+            "study_quality_assessment_id": null,
+            "supporting_text": "The article specifies the reported change-score factorial ANOVA and simple-effects procedure, but no prospective registry/SAP is reported despite multiple cognitive outcomes, interaction tests and eligible analytic specifications."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 65
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9c2b3b9c9b23f63b5dc8604f7bc9af47e40d6c2aac6dcbc8abdb784b3c3f2f5c",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 725,
+          "candidate_value": {
+            "assessed_on": null,
+            "assessment_key": "rob2_assignment_post_factorial_global_cognition_v1",
+            "assessment_status": "reviewed_complete",
+            "assessor": null,
+            "contrast_id": null,
+            "effect_estimate_id": null,
+            "estimand_or_result_scope": "Effects of randomized factorial assignment to Baduanjin and/or cognitive training on post-intervention change in global cognition.",
+            "framework_key": "rob2",
+            "framework_version": "22 August 2019",
+            "notes": "Outcome-scoped RoB 2 appraisal for the randomized factorial global-cognition result. Stage 5 contains the four factorial cells but no privileged contrast; this appraisal does not create or alter a contrast. D3 is some concerns because 24 of 162 randomized participants were absent from the reported completer analyses without a reported ITT or missing-outcome sensitivity analysis. D5 is some concerns because no prospective registry/SAP is reported for the multiple eligible cognitive outcomes and analyses.",
+            "outcome_id": 14,
+            "overall_judgement": "some_concerns",
+            "result_rob_assessment_id": 9
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Outcome-scoped RoB 2 appraisal for the randomized factorial global-cognition result. Stage 5 contains the four factorial cells but no privileged contrast; this appraisal does not create or alter a contrast. D3 is some concerns because 24 of 162 randomized participants were absent from the reported completer analyses without a reported ITT or missing-outcome sensitivity analysis. D5 is some concerns because no prospective registry/SAP is reported for the multiple eligible cognitive outcomes and analyses.",
+          "field_path": "legacy_seed_review.result_risk_of_bias_assessment",
+          "primary_key": {
+            "result_rob_assessment_id": 9
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "507e8a4a62fca88b076ef9c4f5b18676a7eeed4153e98f8538d3a07fc655d3de",
+          "surface_mode": "ordinary",
+          "table_name": "result_risk_of_bias_assessment"
+        },
+        {
+          "candidate_id": 720,
+          "candidate_value": {
+            "assessment_status": "reviewed_complete",
+            "notes": "quality_q1_rt006 candidate result-specific RoB appraisal complete; human approval required.",
+            "outcome_id": 14
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 14,
+            "outcome_name": "global cognition",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: quality_q1_rt006 candidate result-specific RoB appraisal complete; human approval required.",
+          "field_path": "legacy_seed_review.result_rob_status",
+          "primary_key": {
+            "outcome_id": 14
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9b4dcbd6c4dee7909bbe4316978785aa8c3c4ad8cab46fc8e1b5fcc85c1f6c9a",
+          "surface_mode": "ordinary",
+          "table_name": "result_rob_status"
+        },
+        {
+          "candidate_id": 727,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 66,
+            "domain_key": "D1_randomization_process",
+            "domain_label": "Bias arising from the randomization process",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 1,
+            "result_rob_assessment_id": 10,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Computer-generated random numbers, concealed sequence and comparable baseline characteristics support a low-risk randomization judgement."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 66
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "18f3e044ddebd723d0579d650d58a57ea8877cb501ade4b80fd031cfc3125d9f",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 732,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 67,
+            "domain_key": "D2_deviations_intended_interventions",
+            "domain_label": "Bias due to deviations from intended interventions",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 2,
+            "result_rob_assessment_id": 10,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Standardized supervised intervention delivery was reported and no systematic trial-context deviation from randomized assignment affecting this effect-of-assignment result was identified."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 67
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "6677c9a1c548fcf65f8847438cc0e4accc935fff30066fdefbcc6dddf4329dcc",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 740,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 68,
+            "domain_key": "D3_missing_outcome_data",
+            "domain_label": "Bias due to missing outcome data",
+            "judgement": "some_concerns",
+            "notes": null,
+            "order_index": 3,
+            "result_rob_assessment_id": 10,
+            "study_quality_assessment_id": null,
+            "supporting_text": "The published post-intervention analyses are based on 138 completers from 162 randomized participants, with no reported ITT or missing-outcome sensitivity analysis."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 68
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "cf89a4a7d42eaf514d0fde90569766c1e265e9a0c1334d4d603adc74493c3710",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 734,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 69,
+            "domain_key": "D4_measurement_outcome",
+            "domain_label": "Bias in measurement of the outcome",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 4,
+            "result_rob_assessment_id": 10,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Long-delay memory was assessed within the standardized AVLT-H battery by trained assessors blinded to randomized group using the same post-intervention procedure across groups."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 69
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "f0aa52cc9879d5ed8d3a84686c6a7e34c3b3ce3b2ecbcb579cf761a0be21aef6",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 741,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 70,
+            "domain_key": "D5_selection_reported_result",
+            "domain_label": "Bias in selection of the reported result",
+            "judgement": "some_concerns",
+            "notes": null,
+            "order_index": 5,
+            "result_rob_assessment_id": 10,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Long-delay memory is explicitly reported within the cognitive battery, but no prospective registry/SAP is reported to rule out selection among multiple memory subdomains, factorial effects and simple-effect analyses."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 70
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "55c40f439bb69c13b4289a974e7835ccc601ad4f50fb259f4d6b0bc1779c2418",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 724,
+          "candidate_value": {
+            "assessed_on": null,
+            "assessment_key": "rob2_assignment_post_factorial_long_delay_memory_v1",
+            "assessment_status": "reviewed_complete",
+            "assessor": null,
+            "contrast_id": null,
+            "effect_estimate_id": null,
+            "estimand_or_result_scope": "Effects of randomized factorial assignment to Baduanjin and/or cognitive training on post-intervention change in long-delay memory.",
+            "framework_key": "rob2",
+            "framework_version": "22 August 2019",
+            "notes": "Outcome-scoped RoB 2 appraisal for long-delay memory. The result shares the trial-level randomization, deviation and attrition structure of the global-cognition result. D5 remains some concerns because the article reports many cognitive subdomains and no prospective registry/SAP is reported to establish the prespecified analytic path for this specific result.",
+            "outcome_id": 15,
+            "overall_judgement": "some_concerns",
+            "result_rob_assessment_id": 10
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: Outcome-scoped RoB 2 appraisal for long-delay memory. The result shares the trial-level randomization, deviation and attrition structure of the global-cognition result. D5 remains some concerns because the article reports many cognitive subdomains and no prospective registry/SAP is reported to establish the prespecified analytic path for this specific result.",
+          "field_path": "legacy_seed_review.result_risk_of_bias_assessment",
+          "primary_key": {
+            "result_rob_assessment_id": 10
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "5b9fff99e9ba49dbc818713f3161200d0d07a1f832356f1a3e98e317854ef69e",
+          "surface_mode": "ordinary",
+          "table_name": "result_risk_of_bias_assessment"
+        },
+        {
+          "candidate_id": 721,
+          "candidate_value": {
+            "assessment_status": "reviewed_complete",
+            "notes": "quality_q1_rt006 candidate result-specific RoB appraisal complete; human approval required.",
+            "outcome_id": 15
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 15,
+            "outcome_name": "long-delay memory",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: quality_q1_rt006 candidate result-specific RoB appraisal complete; human approval required.",
+          "field_path": "legacy_seed_review.result_rob_status",
+          "primary_key": {
+            "outcome_id": 15
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "01b4165d4bf3f64a60b08bd86794704eed5d1e4acd68b2ef7d19adfe7c6fd79b",
+          "surface_mode": "ordinary",
+          "table_name": "result_rob_status"
+        },
+        {
+          "candidate_id": 729,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 71,
+            "domain_key": "D1_randomization_process",
+            "domain_label": "Bias arising from the randomization process",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 1,
+            "result_rob_assessment_id": 11,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Computer-generated randomized allocation, concealed sequence and comparable baseline characteristics support low risk for the common randomization process."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 71
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "0567d90b98b0a8460fcc3f2ebd7a9dee1d00090cbe19f890a27c8573e6f1e2a5",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 731,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 72,
+            "domain_key": "D2_deviations_intended_interventions",
+            "domain_label": "Bias due to deviations from intended interventions",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 2,
+            "result_rob_assessment_id": 11,
+            "study_quality_assessment_id": null,
+            "supporting_text": "Standardized supervised delivery and no reported systematic assignment-related deviations support low risk for the effect-of-assignment interpretation."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 72
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "9f9312ff70783967a1163721cddeff97de35042cd1343f0fb9610ccb2cb98646",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 739,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 73,
+            "domain_key": "D3_missing_outcome_data",
+            "domain_label": "Bias due to missing outcome data",
+            "judgement": "some_concerns",
+            "notes": null,
+            "order_index": 3,
+            "result_rob_assessment_id": 11,
+            "study_quality_assessment_id": null,
+            "supporting_text": "The executive, language and visuospatial post-intervention analyses are reported for the 138 completers from 162 randomized participants without a reported ITT or missing-outcome sensitivity analysis."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 73
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "08548df47027b40ba2e92939171b82df6685ed5acb2f59c8bdfe02d12999e70e",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 735,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 74,
+            "domain_key": "D4_measurement_outcome",
+            "domain_label": "Bias in measurement of the outcome",
+            "judgement": "low",
+            "notes": null,
+            "order_index": 4,
+            "result_rob_assessment_id": 11,
+            "study_quality_assessment_id": null,
+            "supporting_text": "TMT-B, BNT and CDT were administered as standardized cognitive measures by trained outcome assessors blinded to randomized group."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 74
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "85e614add29b268cd6ec485b83bd004d3768ee664c143a1095103373452028f8",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 742,
+          "candidate_value": {
+            "assessment_domain_judgement_id": 75,
+            "domain_key": "D5_selection_reported_result",
+            "domain_label": "Bias in selection of the reported result",
+            "judgement": "some_concerns",
+            "notes": null,
+            "order_index": 5,
+            "result_rob_assessment_id": 11,
+            "study_quality_assessment_id": null,
+            "supporting_text": "The article reports these cognitive domains and its factorial/simple-effects approach, but no prospective registry/SAP is reported to rule out selective choice among multiple domain outcomes and analytic specifications."
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "No separate evidence-basis text field; review the complete proposed row snapshot and linked source context.",
+          "field_path": "legacy_seed_review.assessment_domain_judgement",
+          "primary_key": {
+            "assessment_domain_judgement_id": 75
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "1eadaf24877e8dc80a210f592693d2bcdb11ded285be955eb1efba68f3b02792",
+          "surface_mode": "ordinary",
+          "table_name": "assessment_domain_judgement"
+        },
+        {
+          "candidate_id": 726,
+          "candidate_value": {
+            "assessed_on": null,
+            "assessment_key": "rob2_assignment_post_factorial_multidomain_v1",
+            "assessment_status": "reviewed_complete",
+            "assessor": null,
+            "contrast_id": null,
+            "effect_estimate_id": null,
+            "estimand_or_result_scope": "Effects of randomized factorial assignment to Baduanjin and/or cognitive training on the post-intervention executive-function, language and visuospatial results represented by this normalized outcome bundle.",
+            "framework_key": "rob2",
+            "framework_version": "22 August 2019",
+            "notes": "The normalized Registry outcome bundles several author-reported cognitive domains that share the same randomized factorial design and appraisal pattern. This assessment does not imply that the measures are one composite estimand; it records the common RoB pattern for the currently normalized bundle. D3 and D5 remain some concerns for the same reasons as the other post-intervention results.",
+            "outcome_id": 16,
+            "overall_judgement": "some_concerns",
+            "result_rob_assessment_id": 11
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: The normalized Registry outcome bundles several author-reported cognitive domains that share the same randomized factorial design and appraisal pattern. This assessment does not imply that the measures are one composite estimand; it records the common RoB pattern for the currently normalized bundle. D3 and D5 remain some concerns for the same reasons as the other post-intervention results.",
+          "field_path": "legacy_seed_review.result_risk_of_bias_assessment",
+          "primary_key": {
+            "result_rob_assessment_id": 11
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "8cb6c6374b7c6cfaa64d1dc2b4422c7f5311c931ed321709268cfae5e9925de3",
+          "surface_mode": "ordinary",
+          "table_name": "result_risk_of_bias_assessment"
+        },
+        {
+          "candidate_id": 722,
+          "candidate_value": {
+            "assessment_status": "reviewed_complete",
+            "notes": "quality_q1_rt006 candidate result-specific RoB appraisal complete; human approval required.",
+            "outcome_id": 16
+          },
+          "context": {
+            "component_id": null,
+            "component_name": null,
+            "outcome_id": 16,
+            "outcome_name": "executive/language/visuospatial domains",
+            "source_id": "rt-2026-006",
+            "source_title": "Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+            "study_id": 6
+          },
+          "dimension": null,
+          "evidence_basis": "notes: quality_q1_rt006 candidate result-specific RoB appraisal complete; human approval required.",
+          "field_path": "legacy_seed_review.result_rob_status",
+          "primary_key": {
+            "outcome_id": 16
+          },
+          "proposed_action": "approve",
+          "row_snapshot_sha256": "c545ea77388b9ab48e75eb1f5f4a9a97c5fbb1e8629c734e1fe8b38eb5551e22",
+          "surface_mode": "ordinary",
+          "table_name": "result_rob_status"
+        }
+      ],
+      "label": "rt-2026-006 — Effects of combined Baduanjin and cognitive training on cognitive function in cognitively normal older adults",
+      "unit_key": "source:rt-2026-006"
+    }
+  ]
+}
