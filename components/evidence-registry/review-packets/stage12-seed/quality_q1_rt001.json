@@ -3,7 +3,7 @@
   "batch_label": "Q1 rt-2026-001 study quality and result-specific RoB 2 appraisal",
   "bridge_processing_run_id": 5,
   "decision_count": 28,
-  "generated_from_git_commit": "08e3ec740599159dad5f48274d9f444a6e492fb9",
+  "generated_from_git_commit": "683d74d8bf405f60f86203633ec999e1b5855a49",
   "governance_notes": [
     "Packet preparation does not approve scientific state.",
     "Detailed historical model/prompt metadata for pre-Stage-11 candidates is unavailable and has not been fabricated.",
@@ -11,10 +11,10 @@
     "Approval must verify the exact packet hash, stable scientific-decision hash and unchanged scientific revision."
   ],
   "historical_release_id": "2026-08-23",
-  "packet_sha256": "76a0b4b7cd425606aff59f467c842e115495082d0e0440e0860e737cb8cff9dc",
+  "packet_sha256": "061a81a6b27f20deaa8e34412b6dad50d2dde426ab5851bf04eea17c60df86b4",
   "review_unit_count": 1,
   "schema_version": "stage12-review-surface-v2",
-  "scientific_state_revision": 2946,
+  "scientific_state_revision": 2974,
   "units": [
     {
       "context": {
@@ -56,7 +56,7 @@
             "assessment_domain_judgement_id": 1
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "03b0641f8e0584f4df9cc77a7a7ccb1709a182fa8217bd381b6fbb6107abff0f",
+          "row_snapshot_sha256": "54a8b38c21212507a1862b254c9fd0138c53d1af4a5a8427798cb441853ba14e",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -89,7 +89,7 @@
             "assessment_domain_judgement_id": 2
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "8126b0c02d7c3b4fd4a49c88da2f898d891e0cb1cefb511c05fb97d2b1449ef5",
+          "row_snapshot_sha256": "bfa0d04e61cd408c0f903e18d36f1dd27ce5345b5d96ce698e9bb3b5abde24e5",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -122,7 +122,7 @@
             "assessment_domain_judgement_id": 3
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "4afc7eb0ee59de2090069263226d1721f1b53477a57902ce08cdd34bbcd21927",
+          "row_snapshot_sha256": "93e9c26ad25e32c5b95804a2195160ee7d68ff35867295acdcd84d76b0bd6b6b",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -155,12 +155,12 @@
             "assessment_domain_judgement_id": 4
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "7b64e276cf08dbca1c85fd4794fb2bc14b11b5d113997a18457dc76c0f335a89",
+          "row_snapshot_sha256": "204c4989eb80dfc5874d4d2e65c3bdc027abc5169e280dba993a6d5787f89696",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
         {
-          "candidate_id": 680,
+          "candidate_id": 694,
           "candidate_value": {
             "assessment_domain_judgement_id": 5,
             "domain_key": "analysis_registration_transparency",
@@ -170,7 +170,7 @@
             "order_index": 5,
             "result_rob_assessment_id": null,
             "study_quality_assessment_id": 1,
-            "supporting_text": "Trial registration, preregistration statement, open data/code/materials and analysis descriptions are reported, but the preserved preregistered analysis specification has not yet been compared line-by-line with the reported mixed-model/model-selection procedure."
+            "supporting_text": "The public trial record prespecifies the three behavioral outcome families, PRE/POST timing and expected SPECTRA-specific improvement pattern, and the paper reports these outcomes plus non-significant companion subresults. However, the public registry does not preserve a detailed mixed-model/model-selection specification; the record was first submitted 26 October 2023 after the recorded study start of 22 September 2023, so low selective-analysis risk cannot be established from registration alone."
           },
           "context": {
             "component_id": null,
@@ -188,7 +188,7 @@
             "assessment_domain_judgement_id": 5
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "bae7ce5452a51a10c35a1f089c7ba4f0d8a7672dd70d060125acbaa49a4bbdfa",
+          "row_snapshot_sha256": "5d0e2ed0c5a9e217af2a081ac573c4d66a0a9d1fd32bc945449a4cd5d56ba5f7",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -223,7 +223,7 @@
             "study_quality_assessment_id": 1
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "62b8fad17b9ee6a550d50928a5004b93b5dcf034ffe941c34a282b01f2ce170c",
+          "row_snapshot_sha256": "70b1fa758d5cd1a8c5d4402abdd7722337c4797a599896160f0c5352f81c8258",
           "surface_mode": "ordinary",
           "table_name": "study_quality_assessment"
         },
@@ -250,12 +250,12 @@
             "study_id": 1
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "7845f5f3b17bfa7c4765236c9cab580a042f20652525e69638c7e918a59ed7fb",
+          "row_snapshot_sha256": "6c1211a76b00c971a13f31e079e6ab4cc570541535ba4fd5428b62bd27ee6956",
           "surface_mode": "ordinary",
           "table_name": "study_quality_status"
         },
         {
-          "candidate_id": 685,
+          "candidate_id": 695,
           "candidate_value": {
             "assessment_domain_judgement_id": 10,
             "domain_key": "D5_selection_reported_result",
@@ -265,7 +265,7 @@
             "order_index": 5,
             "result_rob_assessment_id": 1,
             "study_quality_assessment_id": null,
-            "supporting_text": "Prospective registration and open-science statements reduce concern, but direct comparison of the preregistered analysis specification with reported mixed-model/model-selection choices remains unresolved."
+            "supporting_text": "ClinicalTrials.gov prespecifies free recall as the nearest-transfer primary behavioral outcome with PRE/POST timing and the expected SPECTRA-specific improvement pattern. The paper reports that outcome and its planned induction/time/group structure, but the public registry does not preserve the detailed mixed-model/model-selection specification and was first submitted after study start; multiple eligible analyses therefore cannot be ruled out."
           },
           "context": {
             "component_id": null,
@@ -283,7 +283,7 @@
             "assessment_domain_judgement_id": 10
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "218e0c30fe4c72fbf9d7ff1151c0d393f51bdaba81fa846a9406d48b75949486",
+          "row_snapshot_sha256": "614ef69bd7629f52e791be79bedc196037fecb01cb8e456035a365d725a02f88",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -316,7 +316,7 @@
             "assessment_domain_judgement_id": 6
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "e0b97d5ef26b572e62cf785675cccec223bebb326e8c1c0c35895fab999c913a",
+          "row_snapshot_sha256": "732256eb21386fd2b82851c0824a128f3ab6d7859ea1da8ec370bc01fbb929d8",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -349,7 +349,7 @@
             "assessment_domain_judgement_id": 7
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "eb0f469aad7541c82e36ef5c10bdbf7e18d2e6a055c829e3a18a75e8b24878ab",
+          "row_snapshot_sha256": "331391e312b1cf5765fe4fbd8d386e0fc818d584d3d0fab66ccf0761d3485047",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -382,7 +382,7 @@
             "assessment_domain_judgement_id": 8
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "e86180eb5ed563c7d2dea2b10275d6b0a8f92590898a77150b5137af6a65994d",
+          "row_snapshot_sha256": "76a950d467fbabe60d36433d329a37eb10272807dd1e670b35c23085408acef7",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -415,12 +415,12 @@
             "assessment_domain_judgement_id": 9
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "498724a95397f4fb3870883af244e6d66d56295cdd62728f589ad71fbefe26dc",
+          "row_snapshot_sha256": "ae58bc3b6c16ebf6735c2dee807067e77314e556c25f448dda7c8f7bc1e9b258",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
         {
-          "candidate_id": 668,
+          "candidate_id": 691,
           "candidate_value": {
             "assessed_on": null,
             "assessment_key": "rob2_assignment_post_spectra_vs_asso_v1",
@@ -431,7 +431,7 @@
             "estimand_or_result_scope": "Effect of assignment to SPECTRA versus ASSO on post-intervention free recall.",
             "framework_key": "rob2",
             "framework_version": "22 August 2019",
-            "notes": "RoB 2 appraisal candidate based on the full report and available registration/transparency information. Domain 3 is some concerns because all three missing randomized participants were from SPECTRA and one withdrew after exposure for lack of motivation. Domain 5 remains some concerns because the exact preregistered analysis specification was not directly compared with the reported model-selection procedure.",
+            "notes": "RoB 2 appraisal candidate based on the full report and direct comparison with the available ClinicalTrials.gov record. Domain 3 is some concerns because all three missing randomized participants were from SPECTRA and one withdrew after exposure for lack of motivation. Domain 5 remains some concerns because the registry prespecifies the outcome families, timing and expected direction but does not preserve the detailed mixed-model/model-selection specification; registration was first submitted after the recorded study start.",
             "outcome_id": 1,
             "overall_judgement": "some_concerns",
             "result_rob_assessment_id": 1
@@ -446,13 +446,13 @@
             "study_id": 1
           },
           "dimension": null,
-          "evidence_basis": "notes: RoB 2 appraisal candidate based on the full report and available registration/transparency information. Domain 3 is some concerns because all three missing randomized participants were from SPECTRA and one withdrew after exposure for lack of motivation. Domain 5 remains some concerns because the exact preregistered analysis specification was not directly compared with the reported model-selection procedure.",
+          "evidence_basis": "notes: RoB 2 appraisal candidate based on the full report and direct comparison with the available ClinicalTrials.gov record. Domain 3 is some concerns because all three missing randomized participants were from SPECTRA and one withdrew after exposure for lack of motivation. Domain 5 remains some concerns because the registry prespecifies the outcome families, timing and expected direction but does not preserve the detailed mixed-model/model-selection specification; registration was first submitted after the recorded study start.",
           "field_path": "legacy_seed_review.result_risk_of_bias_assessment",
           "primary_key": {
             "result_rob_assessment_id": 1
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "3674f0181b2175ac5df7d552917742ef8f76a5092584567991bc1242444f9263",
+          "row_snapshot_sha256": "41637de32e7b8c7e612191a44913c28a72119e33a7ce523ee5f904b9e25b5d93",
           "surface_mode": "ordinary",
           "table_name": "result_risk_of_bias_assessment"
         },
@@ -479,7 +479,7 @@
             "outcome_id": 1
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "a42e428a409f8f66c4bd79f080c3349e88b894410d2a366187687473aa7319a2",
+          "row_snapshot_sha256": "ab0dc9cf5b87f16bf200067107621f9737e630d8b2bf7235f2e218a3806831d7",
           "surface_mode": "ordinary",
           "table_name": "result_rob_status"
         },
@@ -512,7 +512,7 @@
             "assessment_domain_judgement_id": 11
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "1be422827b5a230c08855e8934be0ee5f306ca9827c8297bbe52100996e1bae6",
+          "row_snapshot_sha256": "ef9cd3789ce64f15dd92b8cdcd318e4a68180350880a18c1b0366274697c9504",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -545,7 +545,7 @@
             "assessment_domain_judgement_id": 12
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "451520c8b355a8bbe5dbee897e44740a93a6dade4113ba2b4e3a93360a49e122",
+          "row_snapshot_sha256": "34b62c797296ce2f30faffd6b9244dcfe37147c83590b2edbf38bb4b3c5a00f1",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -578,7 +578,7 @@
             "assessment_domain_judgement_id": 13
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "6d91c3052a5a93cdf87c169f7d9a6ce23f45760f63637b334ddd45bed141fc9a",
+          "row_snapshot_sha256": "4ee8eee9784ed4039dc4079059db01b24f105adc8c0f9d36df707da253b759db",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -611,12 +611,12 @@
             "assessment_domain_judgement_id": 14
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "cc32b8b96fa069eb0d63dc330a5fd33ccbb57ef37cb0b091d54503926562a395",
+          "row_snapshot_sha256": "a693b93943074c0de612778f61b97ea3d06990c32af7f1abcb70caa6e9a64ce7",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
         {
-          "candidate_id": 686,
+          "candidate_id": 696,
           "candidate_value": {
             "assessment_domain_judgement_id": 15,
             "domain_key": "D5_selection_reported_result",
@@ -626,7 +626,7 @@
             "order_index": 5,
             "result_rob_assessment_id": 2,
             "study_quality_assessment_id": null,
-            "supporting_text": "Prospective registration and open-science statements reduce concern, but direct comparison of the preregistered analysis specification with reported mixed-model/model-selection choices remains unresolved."
+            "supporting_text": "ClinicalTrials.gov prespecifies recognition discriminability as a near-transfer behavioral outcome with PRE/POST timing and the expected SPECTRA-specific improvement pattern. The paper reports spatial, action and visual recognition results, including non-significant companion outcomes, but the registry does not preserve the detailed model-selection specification and was first submitted after study start; some selective-analysis uncertainty remains."
           },
           "context": {
             "component_id": null,
@@ -644,12 +644,12 @@
             "assessment_domain_judgement_id": 15
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "ba4df1d910ee5cfed4e8ccc1b8b96a5c613d54e30c92edf7dc3c24f09eb95997",
+          "row_snapshot_sha256": "c925452c4ea9801158d37535299b575e686677cb57b3a9c422a0f1075a54d5f1",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
         {
-          "candidate_id": 669,
+          "candidate_id": 692,
           "candidate_value": {
             "assessed_on": null,
             "assessment_key": "rob2_assignment_post_spectra_vs_asso_v1",
@@ -660,7 +660,7 @@
             "estimand_or_result_scope": "Effect of assignment to SPECTRA versus ASSO on post-intervention spatial recognition.",
             "framework_key": "rob2",
             "framework_version": "22 August 2019",
-            "notes": "Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to programmed spatial-recognition performance.",
+            "notes": "Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to programmed spatial-recognition performance. Domain 5 remains some concerns after comparison with the available registry because recognition discriminability and PRE/POST timing were prespecified, but the detailed analysis/model-selection specification was not preserved in the public record.",
             "outcome_id": 2,
             "overall_judgement": "some_concerns",
             "result_rob_assessment_id": 2
@@ -675,13 +675,13 @@
             "study_id": 1
           },
           "dimension": null,
-          "evidence_basis": "notes: Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to programmed spatial-recognition performance.",
+          "evidence_basis": "notes: Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to programmed spatial-recognition performance. Domain 5 remains some concerns after comparison with the available registry because recognition discriminability and PRE/POST timing were prespecified, but the detailed analysis/model-selection specification was not preserved in the public record.",
           "field_path": "legacy_seed_review.result_risk_of_bias_assessment",
           "primary_key": {
             "result_rob_assessment_id": 2
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "30ca08ecbb7f2c48107c768da157d675e66a9b2be8b6eae5f04332123698f9bf",
+          "row_snapshot_sha256": "8c173f5d9005f6326d0b9547ef18a0f0561ffd4631e6edf0be908a0eec5a9314",
           "surface_mode": "ordinary",
           "table_name": "result_risk_of_bias_assessment"
         },
@@ -708,7 +708,7 @@
             "outcome_id": 2
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "03759a58109cb832771e768796470e691926eff37c3bd1aefaf8536a0444aacf",
+          "row_snapshot_sha256": "48856b1ca986b09a9dca001ae813071b09a7e66f947f8142dd84936aa4e13637",
           "surface_mode": "ordinary",
           "table_name": "result_rob_status"
         },
@@ -741,7 +741,7 @@
             "assessment_domain_judgement_id": 16
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "64d702b3c8a2b2e9a8034ff0d37de9ff0dc3cb17aa43265eb2c5e36d9bc707a2",
+          "row_snapshot_sha256": "fbf8befc89c89ad28f0107dee2696b82486d03746c0b53e783c6f838d1fda9cb",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -774,7 +774,7 @@
             "assessment_domain_judgement_id": 17
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "29c7390e785e719389df619af33e742c99453ba04b64e2e5fde45daaccc4b090",
+          "row_snapshot_sha256": "9684eaf02f4b46ed330fd22e04a63891330018f7af564663e960d5b0c908a428",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -807,7 +807,7 @@
             "assessment_domain_judgement_id": 18
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "721e8d5d6d747fceb8bae4ef3c02cbbe4ce197e50e6fd094095b3693896f2815",
+          "row_snapshot_sha256": "fb37a6ceca03fe93dfc3dc50061b6c89c2039990f97398f3fbdc580a50d72a4d",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
@@ -840,12 +840,12 @@
             "assessment_domain_judgement_id": 19
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "71e1755bde572306776627f06500812c80e85a06f3e7aa1740065db7d8cb4038",
+          "row_snapshot_sha256": "c1dd52a9ddc8b3d816777a8db0d4910eaecfb4377b33d52426649c028941c472",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
         {
-          "candidate_id": 687,
+          "candidate_id": 697,
           "candidate_value": {
             "assessment_domain_judgement_id": 20,
             "domain_key": "D5_selection_reported_result",
@@ -855,7 +855,7 @@
             "order_index": 5,
             "result_rob_assessment_id": 3,
             "study_quality_assessment_id": null,
-            "supporting_text": "Prospective registration and open-science statements reduce concern, but direct comparison of the preregistered analysis specification with reported mixed-model/model-selection choices remains unresolved."
+            "supporting_text": "ClinicalTrials.gov prespecifies the number of relevant problem-solving steps as a far-transfer behavioral outcome with PRE/POST timing and the expected SPECTRA-specific improvement pattern. The paper reports relevant and other-step results, including a null companion outcome, but the registry does not preserve the detailed model-selection specification and was first submitted after study start; some selective-analysis uncertainty remains."
           },
           "context": {
             "component_id": null,
@@ -873,12 +873,12 @@
             "assessment_domain_judgement_id": 20
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "d206dbba90af997e6c9c8552eede6d00364e459b7da947941e01c9bd6acbcde2",
+          "row_snapshot_sha256": "e1bbd36249fac86f3b084fcdb8b10073577f8af7ef7694c62b106d0e7dcf6129",
           "surface_mode": "ordinary",
           "table_name": "assessment_domain_judgement"
         },
         {
-          "candidate_id": 670,
+          "candidate_id": 693,
           "candidate_value": {
             "assessed_on": null,
             "assessment_key": "rob2_assignment_post_spectra_vs_asso_v1",
@@ -889,7 +889,7 @@
             "estimand_or_result_scope": "Effect of assignment to SPECTRA versus ASSO on post-intervention social problem solving.",
             "framework_key": "rob2",
             "framework_version": "22 August 2019",
-            "notes": "Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to recorded/scored problem-solving responses.",
+            "notes": "Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to recorded/scored problem-solving responses. Domain 5 remains some concerns after comparison with the available registry because the number of relevant steps and PRE/POST timing were prespecified, but the detailed analysis/model-selection specification was not preserved in the public record.",
             "outcome_id": 3,
             "overall_judgement": "some_concerns",
             "result_rob_assessment_id": 3
@@ -904,13 +904,13 @@
             "study_id": 1
           },
           "dimension": null,
-          "evidence_basis": "notes: Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to recorded/scored problem-solving responses.",
+          "evidence_basis": "notes: Same trial-level RoB structure as the other post-intervention outcomes; outcome-measurement evidence is specific to recorded/scored problem-solving responses. Domain 5 remains some concerns after comparison with the available registry because the number of relevant steps and PRE/POST timing were prespecified, but the detailed analysis/model-selection specification was not preserved in the public record.",
           "field_path": "legacy_seed_review.result_risk_of_bias_assessment",
           "primary_key": {
             "result_rob_assessment_id": 3
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "69f5dce7d8c88a4d07641c27504c5ecdebf8179cd5886bb9ee99c536b5e4a99c",
+          "row_snapshot_sha256": "eecf29671d1ad81afae237d50e4a32302d82dbaa8655e7e7656d62f7d3ebb740",
           "surface_mode": "ordinary",
           "table_name": "result_risk_of_bias_assessment"
         },
@@ -937,7 +937,7 @@
             "outcome_id": 3
           },
           "proposed_action": "approve",
-          "row_snapshot_sha256": "15de24cd81121c9e86244288c1c071e134376489cfb59872de5be023d56b506e",
+          "row_snapshot_sha256": "d0f70ec8f6ee3816d4296aa1069c15b6cdd67b83fe2c1804a5505bcb3cd5cd90",
           "surface_mode": "ordinary",
           "table_name": "result_rob_status"
         }
