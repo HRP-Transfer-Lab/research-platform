@@ -7,6 +7,7 @@
     "Keep life stage, role, health context, cognitive status, education, setting, delivery and geography orthogonal.",
     "Do not infer provider or delivery context from study setting alone.",
     "Do not infer geography from institution names unless geography is explicit.",
+    "Population nationality or ethnicity does not establish study geography.",
     "Unmapped facets remain not_yet_extracted rather than being treated as absent."
   ],
   "study_mappings": [
@@ -73,7 +74,6 @@
     {"source_id":"rt-2026-015","term_id":"pc_role_university_student","relationship":"entire_sample","evidence_basis":"Population summary: Chinese undergraduates."},
     {"source_id":"rt-2026-015","term_id":"pc_edu_higher","relationship":"entire_sample","evidence_basis":"Participants explicitly described as undergraduates in university classes."},
     {"source_id":"rt-2026-015","term_id":"pc_setting_university_classroom","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as university classroom."},
-    {"source_id":"rt-2026-015","term_id":"pc_geo_china","relationship":"entire_sample","evidence_basis":"Population explicitly described as Chinese undergraduates; no finer geographic inference made."},
 
     {"source_id":"rt-2026-016","term_id":"pc_life_adult","relationship":"entire_sample","evidence_basis":"Population summary: Adult participants completing simple cognitive work tasks."},
     {"source_id":"rt-2026-016","term_id":"pc_setting_online","relationship":"study_context","evidence_basis":"Study setting explicitly recorded as online behavioral study."},
