@@ -1,0 +1,106 @@
+{
+  "schema_version": "stage12-quality-rob-candidate-v1",
+  "batch_id": "quality_q1_rt002",
+  "source_id": "rt-2026-002",
+  "mapping_source": "agent_candidate",
+  "review_status": "proposed",
+  "source_material": [
+    "Full 2026 BMC Psychology accepted manuscript / article-in-press PDF",
+    "Published participant, design, blinding, analysis and outcome sections",
+    "Published ethics and data-availability statements"
+  ],
+  "study_assessment": {
+    "assessment_key": "hrp_q1_methodological_pilot_v1",
+    "assessment_kind": "methodological_quality",
+    "framework_key": "custom",
+    "framework_version": "HRP-QA-Q1-pilot-v1",
+    "overall_judgement": "methodologically_adequate_with_documented_limitations",
+    "assessment_status": "reviewed_complete",
+    "notes": "Custom study-level appraisal complementing result-specific RoB 2. Random allocation is stated but sequence generation/concealment are not described; assessor/analyst masking and objective outcome measurement are strong; missing data are handled with multiple imputation under an unverified MAR assumption; no prospective registry/SAP was identified. This is not a validated external quality score.",
+    "domains": [
+      {
+        "domain_key": "design_randomization_documentation",
+        "domain_label": "Design and randomization documentation",
+        "judgement": "minor_concern",
+        "supporting_text": "Ninety-three eligible children were described as randomly allocated 31 per group, but the report does not describe sequence generation or allocation concealment.",
+        "order_index": 1
+      },
+      {
+        "domain_key": "masking_assessment_separation",
+        "domain_label": "Masking and assessment separation",
+        "judgement": "strong",
+        "supporting_text": "Research assistants conducting pre-, post- and follow-up assessments were separate from intervention delivery and unaware of group assignment; primary data analysts were also blinded.",
+        "order_index": 2
+      },
+      {
+        "domain_key": "missing_data_strategy",
+        "domain_label": "Missing-data strategy",
+        "judgement": "minor_concern",
+        "supporting_text": "All 93 randomized participants were included using 20-fold multiple imputation. Little's MCAR test was significant and imputation assumed MAR without a reported MNAR sensitivity analysis.",
+        "order_index": 3
+      },
+      {
+        "domain_key": "outcome_measurement_documentation",
+        "domain_label": "Outcome measurement documentation",
+        "judgement": "strong",
+        "supporting_text": "Prospective memory was measured with a standardized computerized dual-task paradigm at pre-, post- and six-month follow-up by blinded assessment staff.",
+        "order_index": 4
+      },
+      {
+        "domain_key": "analysis_registration_transparency",
+        "domain_label": "Analysis, registration and transparency",
+        "judgement": "minor_concern",
+        "supporting_text": "The article specifies its LMM, covariate, covariance, Rubin-pooling and multiplicity procedures, but no prospective trial registration or preserved statistical-analysis plan was identified.",
+        "order_index": 5
+      }
+    ]
+  },
+  "result_assessments": [
+    {
+      "outcome_name": "prospective memory",
+      "legacy_rung": "separate_measure",
+      "raw_timepoint": "post",
+      "contrast_key": null,
+      "assessment_key": "rob2_assignment_pm_post_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effect of randomized group assignment on post-training prospective-memory performance in the CT/BT/control design.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "Outcome-scoped RoB 2 appraisal. Stage 5 has no approved contrast because the earlier rapid seed did not safely normalize one; this appraisal does not silently rewrite Stage 5. D1 is some concerns because randomization is stated without sequence/concealment detail. D3 is some concerns because MI assumes MAR after MCAR was rejected. D5 is some concerns because no prospective registry/SAP was identified.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"some_concerns","supporting_text":"The report states random allocation of 93 children, 31 per group, but does not describe sequence generation or allocation concealment.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Assessment and primary-analysis staff were blinded; no systematic trial-context crossover, contamination or other assignment-related deviation affecting the comparison was identified.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"All 93 randomized participants entered analyses through 20-fold multiple imputation; Little's MCAR test was significant and the MAR assumption was not supported by a reported MNAR sensitivity analysis.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Post-training prospective memory was measured using the standardized computerized dual-task procedure by assessment staff blinded to randomized group.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"The paper specifies outcome families, timepoints and the reported LMM procedure, but no prospective registration/SAP was identified despite multiple eligible outcomes, endpoint metrics and timepoints.","order_index":5}
+      ]
+    },
+    {
+      "outcome_name": "prospective memory",
+      "legacy_rung": "delayed",
+      "raw_timepoint": "6_months",
+      "contrast_key": null,
+      "assessment_key": "rob2_assignment_pm_6m_v1",
+      "framework_key": "rob2",
+      "framework_version": "22 August 2019",
+      "estimand_or_result_scope": "Effect of randomized group assignment on six-month prospective-memory performance in the CT/BT/control design.",
+      "overall_judgement": "some_concerns",
+      "assessment_status": "reviewed_complete",
+      "notes": "Delayed outcome-scoped RoB 2 appraisal. D1 and D5 share the trial-level concerns of the post-training result. D3 remains some concerns because the six-month result relies on multiple imputation under MAR after MCAR was rejected, with no reported sensitivity analysis for departures from MAR.",
+      "domains": [
+        {"domain_key":"D1_randomization_process","domain_label":"Bias arising from the randomization process","judgement":"some_concerns","supporting_text":"The report states random allocation of 93 children, 31 per group, but does not describe sequence generation or allocation concealment.","order_index":1},
+        {"domain_key":"D2_deviations_intended_interventions","domain_label":"Bias due to deviations from intended interventions","judgement":"low","supporting_text":"Follow-up assessment staff and primary analysts were blinded; no systematic trial-context deviations from randomized assignment were identified.","order_index":2},
+        {"domain_key":"D3_missing_outcome_data","domain_label":"Bias due to missing outcome data","judgement":"some_concerns","supporting_text":"The six-month analysis included all randomized participants through multiple imputation, but MCAR was rejected and the MAR assumption was not stress-tested with a reported sensitivity analysis; delayed missingness is therefore not demonstrably ignorable.","order_index":3},
+        {"domain_key":"D4_measurement_outcome","domain_label":"Bias in measurement of the outcome","judgement":"low","supporting_text":"Six-month prospective memory replicated the standardized computerized assessment procedure and was administered by staff blinded to randomized group.","order_index":4},
+        {"domain_key":"D5_selection_reported_result","domain_label":"Bias in selection of the reported result","judgement":"some_concerns","supporting_text":"The six-month timepoint is explicitly described in the report, but without a prospective registry/SAP selection among eligible outcomes, metrics and analyses cannot be ruled out.","order_index":5}
+      ]
+    }
+  ],
+  "governance_notes": [
+    "All inserted rows must remain agent_candidate/proposed until explicit human approval.",
+    "reviewed_complete describes proposed appraisal completeness, not human authority.",
+    "No Stage 5 contrast is created or changed by this quality/RoB manifest.",
+    "No historical release or CSI Gateway object may be mutated."
+  ]
+}
