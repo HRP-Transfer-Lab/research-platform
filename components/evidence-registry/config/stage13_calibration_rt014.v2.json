@@ -1,0 +1,317 @@
+{
+  "profile_id": "stage13-rt014-core-extraction-calibration-v2",
+  "source_id": "rt-2026-014",
+  "title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+  "expected_pdf_pages": 73,
+  "purpose": "Calibrate parser-owned span retrieval, local structured extraction and deterministic registration-ID resolution against reviewed rt-2026-014 fields.",
+  "span_generation": {
+    "target_characters": 900,
+    "maximum_characters": 1400,
+    "minimum_characters": 180
+  },
+  "tasks": [
+    {
+      "task_id": "design_randomisation",
+      "fields": [
+        "study_design",
+        "randomisation_unit",
+        "randomised_factors",
+        "assignment_probability"
+      ],
+      "maximum_spans": 10,
+      "maximum_spans_per_page": 3,
+      "maximum_characters": 8500,
+      "retrieval_phrases": [
+        "randomized field experiment",
+        "randomised field experiment",
+        "randomized individually",
+        "individual registration",
+        "individual level",
+        "three dimensions",
+        "topic assignment",
+        "AI assignment",
+        "mastery assignment",
+        "equal chance",
+        "2 x 2 x 2 design",
+        "teachers and students did not know assignments in advance"
+      ],
+      "field_notes": {
+        "study_design": "Use randomised_field_experiment when intervention assignment was randomised and delivery occurred in ordinary school/classroom practice. This may be inferred from explicit design and setting evidence.",
+        "randomisation_unit": "Return individual_student only when assignment occurred separately for students rather than by classroom or school.",
+        "randomised_factors": "Return every independently randomised factor supported: topic assignment, AI support and mastery progression. Do not omit a factor because it is later pooled in analysis.",
+        "assignment_probability": "Return equal only when the source states equal chance/probability across the relevant assignment options."
+      }
+    },
+    {
+      "task_id": "analysis_and_outcomes",
+      "fields": [
+        "analysis_approaches",
+        "delayed_assessment_timepoint",
+        "reported_outcomes"
+      ],
+      "maximum_spans": 14,
+      "maximum_spans_per_page": 4,
+      "maximum_characters": 10500,
+      "retrieval_phrases": [
+        "intent-to-treat regressions",
+        "main experimental estimates",
+        "post-mistake recovery",
+        "each mistake event",
+        "next attempt was correct",
+        "mistake-conditioned sample",
+        "mechanism evidence rather than the primary causal effect",
+        "stacked analysis of mistake events",
+        "one week later",
+        "delayed assessment",
+        "practiced and unpracticed",
+        "practised and unpractised",
+        "four main classes of outcomes",
+        "delayed-test performance"
+      ],
+      "field_notes": {
+        "analysis_approaches": "Include intent_to_treat when effects are estimated from original random assignment. Include event_conditioned when an analysis is restricted to observed post-randomisation mistake events or a mistake-conditioned sample. More than one approach may apply.",
+        "delayed_assessment_timepoint": "Return one_week when the delayed assessment was administered one week later or during week 2 following week-1 activity.",
+        "reported_outcomes": "Include next_attempt_correctness_after_mistakes when the paper analyses whether the next attempt following an observed mistake was correct. Include delayed_practised_unpractised_math_assessment when delayed outcomes compare practised/practiced and unpractised/unpracticed material."
+      }
+    },
+    {
+      "task_id": "sample_flow_and_registration",
+      "fields": [
+        "week1_platform_entrants",
+        "delayed_assessment_completers",
+        "registration_id"
+      ],
+      "maximum_spans": 14,
+      "maximum_spans_per_page": 4,
+      "maximum_characters": 10000,
+      "retrieval_phrases": [
+        "week-1 NUMI activity",
+        "week 1 platform",
+        "logged into the week-1",
+        "sample composition",
+        "observations",
+        "delayed assessment",
+        "taking the week-2 delayed assessment",
+        "completed the delayed assessment",
+        "AEA RCT Registry",
+        "trial number",
+        "registered with",
+        "registration"
+      ],
+      "field_notes": {
+        "week1_platform_entrants": "Return the full week-1 platform analysis count, not a subgroup count and not the delayed-test sample.",
+        "delayed_assessment_completers": "Return the number in the delayed-test analysis sample who took/completed the delayed assessment.",
+        "registration_id": "Return only an explicit trial-registration identifier. EdWorkingPaper numbers, DOIs and report identifiers are not registration IDs."
+      }
+    }
+  ],
+  "deterministic_fields": {
+    "registration_id": {
+      "rule_id": "trial-registry-id-regex-v1",
+      "regex": "\\bAEARCTR-\\d{7}\\b",
+      "group": 0,
+      "maximum_evidence_spans": 2
+    }
+  },
+  "gold": {
+    "study_design": "randomised_field_experiment",
+    "randomisation_unit": "individual_student",
+    "randomised_factors": [
+      "ai_support",
+      "mastery_progression",
+      "topic_assignment"
+    ],
+    "assignment_probability": "equal",
+    "analysis_approaches": [
+      "event_conditioned",
+      "intent_to_treat"
+    ],
+    "week1_platform_entrants": 6997,
+    "delayed_assessment_completers": 6327,
+    "registration_id": "AEARCTR-0018678",
+    "delayed_assessment_timepoint": "one_week",
+    "reported_outcomes": [
+      "delayed_practised_unpractised_math_assessment",
+      "next_attempt_correctness_after_mistakes"
+    ]
+  },
+  "support_rules": {
+    "study_design": {
+      "all_groups": [
+        [
+          "randomized field experiment",
+          "randomised field experiment",
+          "randomized individually",
+          "randomised individually"
+        ],
+        [
+          "school",
+          "classroom",
+          "students"
+        ]
+      ]
+    },
+    "randomisation_unit": {
+      "all_groups": [
+        [
+          "students were randomized individually",
+          "students were randomised individually",
+          "individual level",
+          "individually randomized at login"
+        ],
+        [
+          "student",
+          "students"
+        ]
+      ]
+    },
+    "randomised_factors": {
+      "all_groups": [
+        [
+          "topic assignment",
+          "math topics",
+          "topic bundles"
+        ],
+        [
+          "ai assignment",
+          "ai versus cal-only",
+          "ai or cal-only"
+        ],
+        [
+          "mastery assignment",
+          "mastery versus non-mastery",
+          "mastery or non-mastery"
+        ]
+      ]
+    },
+    "assignment_probability": {
+      "all_groups": [
+        [
+          "equal chance",
+          "equal probability",
+          "equally likely"
+        ]
+      ]
+    },
+    "analysis_approaches": {
+      "all_groups": [
+        [
+          "intent-to-treat",
+          "intent to treat"
+        ],
+        [
+          "mistake event",
+          "mistake events",
+          "mistake-conditioned sample",
+          "conditional on"
+        ],
+        [
+          "next attempt",
+          "next-attempt"
+        ]
+      ]
+    },
+    "week1_platform_entrants": {
+      "all_groups": [
+        [
+          "6,997",
+          "6997",
+          "6 997"
+        ],
+        [
+          "week-1",
+          "week 1",
+          "logging into",
+          "logged into"
+        ]
+      ]
+    },
+    "delayed_assessment_completers": {
+      "all_groups": [
+        [
+          "6,327",
+          "6327",
+          "6 327"
+        ],
+        [
+          "delayed assessment",
+          "delayed-test",
+          "week-2"
+        ]
+      ]
+    },
+    "registration_id": {
+      "all_groups": [
+        [
+          "aearctr-0018678"
+        ],
+        [
+          "aea rct registry",
+          "trial number",
+          "registered with"
+        ]
+      ]
+    },
+    "delayed_assessment_timepoint": {
+      "all_groups": [
+        [
+          "one week later",
+          "one-week",
+          "week-2",
+          "week 2"
+        ],
+        [
+          "delayed assessment",
+          "delayed-test"
+        ]
+      ]
+    },
+    "reported_outcomes": {
+      "all_groups": [
+        [
+          "post-mistake recovery",
+          "mistake event",
+          "mistake events"
+        ],
+        [
+          "next attempt was correct",
+          "next-attempt correctness",
+          "next attempt correct"
+        ],
+        [
+          "delayed assessment",
+          "delayed-test performance"
+        ],
+        [
+          "practiced",
+          "practised"
+        ],
+        [
+          "unpracticed",
+          "unpractised"
+        ]
+      ]
+    }
+  },
+  "thresholds": {
+    "minimum_hybrid_field_accuracy": 0.8,
+    "minimum_span_reference_validity": 1.0,
+    "minimum_supported_field_accuracy": 0.8,
+    "automatic_workhorse_candidate_hybrid_field_accuracy": 0.9,
+    "automatic_workhorse_candidate_span_reference_validity": 1.0,
+    "automatic_workhorse_candidate_supported_field_accuracy": 0.9
+  },
+  "governance": {
+    "calibration_only": true,
+    "may_create_human_authority": false,
+    "may_mutate_registry": false,
+    "may_mutate_historical_release": false,
+    "may_mutate_csi_gateway": false,
+    "notes": [
+      "The model selects parser-owned span identifiers; software supplies the exact text and page metadata.",
+      "Registration identifiers are resolved deterministically when one unique explicit registry identifier is found.",
+      "A passing one-source calibration does not approve a model for all fields, source families, quality appraisals or recommendation use.",
+      "Routine study-level human QA remains capped by the Stage 13 ten per cent policy."
+    ]
+  }
+}
