@@ -1,0 +1,114 @@
+{
+  "profile_id": "stage13-rt014-core-extraction-calibration-v1",
+  "source_id": "rt-2026-014",
+  "title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+  "expected_pdf_pages": 73,
+  "purpose": "Calibrate local models on explicit study-design, randomisation, sample-flow, registration, analysis and outcome fields already reviewed for rt-2026-014.",
+  "retrieval": {
+    "maximum_pages": 10,
+    "maximum_characters": 32000,
+    "groups": [
+      {
+        "group_id": "design_randomisation",
+        "max_pages": 3,
+        "phrases": [
+          "randomized",
+          "randomised",
+          "2 x 2 x 2",
+          "2 × 2 × 2",
+          "equal probability",
+          "topic assignment",
+          "AI assignment",
+          "mastery assignment",
+          "initial platform registration"
+        ]
+      },
+      {
+        "group_id": "analysis",
+        "max_pages": 2,
+        "phrases": [
+          "intent-to-treat",
+          "intent to treat",
+          "mistake events",
+          "next-attempt correctness",
+          "next attempt correctness",
+          "mastery students"
+        ]
+      },
+      {
+        "group_id": "participant_flow",
+        "max_pages": 3,
+        "phrases": [
+          "6,997",
+          "6997",
+          "6,327",
+          "6327",
+          "delayed assessment",
+          "week 1",
+          "one-week"
+        ]
+      },
+      {
+        "group_id": "registration",
+        "max_pages": 1,
+        "phrases": [
+          "AEARCTR-0018678",
+          "AEA RCT Registry",
+          "preregistered",
+          "pre-registered"
+        ]
+      },
+      {
+        "group_id": "reported_outcomes",
+        "max_pages": 2,
+        "phrases": [
+          "practiced and unpracticed",
+          "practised and unpractised",
+          "next attempt after a mistake",
+          "next-attempt correctness",
+          "one week later"
+        ]
+      }
+    ]
+  },
+  "gold": {
+    "study_design.value": "randomised_field_experiment",
+    "randomisation_unit.value": "individual_student",
+    "randomised_factors.value": [
+      "ai_support",
+      "mastery_progression",
+      "topic_assignment"
+    ],
+    "assignment_probability.value": "equal",
+    "analysis_approaches.value": [
+      "event_conditioned",
+      "intent_to_treat"
+    ],
+    "week1_platform_entrants.value": 6997,
+    "delayed_assessment_completers.value": 6327,
+    "registration_id.value": "AEARCTR-0018678",
+    "delayed_assessment_timepoint.value": "one_week",
+    "reported_outcomes.value": [
+      "delayed_practised_unpractised_math_assessment",
+      "next_attempt_correctness_after_mistakes"
+    ]
+  },
+  "thresholds": {
+    "minimum_field_accuracy": 0.8,
+    "minimum_anchor_validity": 0.8,
+    "automatic_workhorse_candidate_field_accuracy": 0.9,
+    "automatic_workhorse_candidate_anchor_validity": 0.9
+  },
+  "governance": {
+    "calibration_only": true,
+    "may_create_human_authority": false,
+    "may_mutate_registry": false,
+    "may_mutate_historical_release": false,
+    "may_mutate_csi_gateway": false,
+    "notes": [
+      "The gold values are derived from the reviewed rt-2026-014 appraisal and the registered 73-page paper.",
+      "Passing this compact calibration does not approve a model for all fields, source families or recommendation use.",
+      "The 4B and 9B models must be compared on unsupported assertions, anchors and field-level errors before the model cascade is promoted."
+    ]
+  }
+}
