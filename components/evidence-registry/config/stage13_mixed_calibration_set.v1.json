@@ -1,0 +1,109 @@
+{
+  "schema_version": "stage13-mixed-calibration-set-v1",
+  "calibration_set_id": "stage13-mixed-source-calibration-2026-09-v1",
+  "release_id": "2026-08-23",
+  "purpose": "Acquire and calibrate a heterogeneous ten-source set before any 50-100-study machine-screened run.",
+  "existing_verified_sources": [
+    {
+      "source_id": "rt-2026-014",
+      "review_bucket": "C_human_ai_activity_system",
+      "source_kind": "working_paper",
+      "role": "Completed same-source engineering calibration and human-reviewed reference source"
+    }
+  ],
+  "acquisition_targets": [
+    {
+      "source_id": "rt-2026-006",
+      "review_bucket": "A_direct_intervention",
+      "source_kind": "journal_article",
+      "calibration_role": "Randomised 2x2 factorial intervention; multi-arm participant flow and combined intervention"
+    },
+    {
+      "source_id": "rt-2026-007",
+      "review_bucket": "A_direct_intervention",
+      "source_kind": "systematic_review_meta_analysis",
+      "calibration_role": "Evidence-synthesis layout; multiple studies, outcomes and follow-up timepoints"
+    },
+    {
+      "source_id": "rt-2026-008",
+      "review_bucket": "B_measurement_mechanism",
+      "source_kind": "scoping_review",
+      "calibration_role": "Measurement review; explicit missingness and no intervention-arm structure"
+    },
+    {
+      "source_id": "rt-2026-009",
+      "review_bucket": "B_measurement_mechanism",
+      "source_kind": "journal_article",
+      "calibration_role": "Within-participant graph learning with delayed neuroimaging sessions"
+    },
+    {
+      "source_id": "rt-2026-011",
+      "review_bucket": "B_measurement_mechanism",
+      "source_kind": "journal_article",
+      "calibration_role": "Behavioural retrieval-practice experiment with confidence and fMRI"
+    },
+    {
+      "source_id": "rt-2026-012",
+      "review_bucket": "B_measurement_mechanism",
+      "source_kind": "journal_article",
+      "calibration_role": "Acute-stress experimental mechanism study with statistical learning and fMRI"
+    },
+    {
+      "source_id": "rt-2026-013",
+      "review_bucket": "B_measurement_mechanism",
+      "source_kind": "journal_article",
+      "calibration_role": "Three controlled learning experiments and negative/null intervention evidence"
+    },
+    {
+      "source_id": "rt-2026-015",
+      "review_bucket": "C_human_ai_activity_system",
+      "source_kind": "journal_article",
+      "calibration_role": "Quasi-experimental classroom study with intact classes, AI conditions and independent no-AI follow-up"
+    },
+    {
+      "source_id": "rt-2026-018",
+      "review_bucket": "C_human_ai_activity_system",
+      "source_kind": "journal_article",
+      "calibration_role": "Three-wave longitudinal observational survey with self-report constructs"
+    }
+  ],
+  "coverage_summary": {
+    "total_sources_including_existing_verified": 10,
+    "acquisition_targets": 9,
+    "review_bucket_counts": {
+      "A_direct_intervention": 2,
+      "B_measurement_mechanism": 5,
+      "C_human_ai_activity_system": 3
+    },
+    "design_families": [
+      "randomised factorial controlled trial",
+      "systematic review and meta-analysis",
+      "scoping review",
+      "within-participant experimental study",
+      "behavioural and neuroimaging experiment",
+      "acute-stress experimental study",
+      "multiple controlled experiments",
+      "randomised field experiment",
+      "quasi-experimental classroom study",
+      "longitudinal observational survey"
+    ]
+  },
+  "selection_basis": {
+    "discovery_requirement": "preferred direct-PDF candidate in a Stage 13 OA discovery manifest",
+    "access_requirement": "lawful open-access or repository route; no institutional credentials",
+    "identity_requirement": "downloaded PDF must match expected DOI or title before registration",
+    "exclusions": [
+      "rt-2026-014 is already full-text verified and is not redownloaded",
+      "rt-2026-016 and rt-2026-017 had discovery errors and no direct-PDF candidate",
+      "blocked or closed sources remain outside this calibration acquisition batch"
+    ]
+  },
+  "governance": {
+    "calibration_only": true,
+    "creates_human_authority": false,
+    "mutates_historical_release": false,
+    "mutates_csi_gateway": false,
+    "production_scale_ready_after_acquisition": false,
+    "next_gate": "mixed-source parse and field-level calibration"
+  }
+}
