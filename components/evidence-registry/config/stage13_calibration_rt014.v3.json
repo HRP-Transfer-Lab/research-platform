@@ -1,0 +1,182 @@
+{
+  "profile_id": "stage13-rt014-core-extraction-calibration-v3",
+  "base_profile": "stage13_calibration_rt014.v2.json",
+  "source_id": "rt-2026-014",
+  "title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+  "expected_pdf_pages": 73,
+  "purpose": "Test the production-like division of labour: local LLM extraction for semantic design/outcome fields, deterministic contextual extraction for explicit participant-flow counts and registry identifiers, and parser-owned evidence spans throughout.",
+  "model_fields": [
+    "study_design",
+    "randomisation_unit",
+    "randomised_factors",
+    "assignment_probability",
+    "analysis_approaches",
+    "delayed_assessment_timepoint",
+    "reported_outcomes"
+  ],
+  "deterministic_field_names": [
+    "week1_platform_entrants",
+    "delayed_assessment_completers",
+    "registration_id"
+  ],
+  "contextual_deterministic_fields": {
+    "week1_platform_entrants": {
+      "rule_id": "full-week1-student-cohort-context-v1",
+      "minimum_value": 1000,
+      "maximum_value": 20000,
+      "exclude_years": true,
+      "local_window_characters": 260,
+      "strong_positive_phrases": [
+        "week-1 NUMI activity",
+        "week 1 NUMI activity",
+        "week-1 analysis sample",
+        "week 1 analysis sample",
+        "logged into the week-1",
+        "logged into week-1",
+        "sample composition"
+      ],
+      "positive_phrases": [
+        "week-1 NUMI activity",
+        "week 1 NUMI activity",
+        "week-1 analysis sample",
+        "week 1 analysis sample",
+        "logged into the week-1",
+        "logged into week-1",
+        "week-1",
+        "week 1",
+        "NUMI",
+        "students",
+        "participants",
+        "sample composition",
+        "analysis sample"
+      ],
+      "negative_phrases": [
+        "delayed assessment",
+        "delayed-test",
+        "week-2",
+        "week 2",
+        "post-mistake",
+        "mistake event",
+        "next attempt",
+        "questions attempted",
+        "practiced unpracticed",
+        "practised unpractised",
+        "CAL-only mean",
+        "AI mean",
+        "AI difference",
+        "mastery students"
+      ],
+      "local_count_labels": [
+        "observations",
+        "students",
+        "participants",
+        "sample",
+        "logged into"
+      ],
+      "strong_phrase_weight": 18,
+      "positive_phrase_weight": 4,
+      "local_positive_bonus": 8,
+      "local_label_weight": 11,
+      "negative_phrase_weight": 2,
+      "local_negative_bonus": 12,
+      "narrative_bonus": 8,
+      "observations_label_bonus": 3,
+      "minimum_score": 14,
+      "minimum_score_margin": 1,
+      "prefer_largest_on_tie": true,
+      "maximum_evidence_spans": 3,
+      "diagnostic_limit": 12,
+      "confidence": 0.98
+    },
+    "delayed_assessment_completers": {
+      "rule_id": "full-delayed-assessment-cohort-context-v1",
+      "minimum_value": 1000,
+      "maximum_value": 20000,
+      "exclude_years": true,
+      "local_window_characters": 260,
+      "strong_positive_phrases": [
+        "taking the week-2 delayed assessment",
+        "took the week-2 delayed assessment",
+        "completed the delayed assessment",
+        "week-2 delayed assessment",
+        "week 2 delayed assessment",
+        "delayed-test analysis sample",
+        "delayed assessment sample",
+        "sample composition"
+      ],
+      "positive_phrases": [
+        "taking the week-2 delayed assessment",
+        "took the week-2 delayed assessment",
+        "completed the delayed assessment",
+        "week-2 delayed assessment",
+        "week 2 delayed assessment",
+        "delayed-test analysis sample",
+        "delayed assessment sample",
+        "delayed assessment",
+        "delayed-test",
+        "week-2",
+        "week 2",
+        "students",
+        "participants",
+        "sample composition",
+        "analysis sample"
+      ],
+      "negative_phrases": [
+        "post-mistake",
+        "mistake event",
+        "next attempt",
+        "questions attempted",
+        "CAL-only mean",
+        "AI mean",
+        "AI difference",
+        "mastery students",
+        "AI within mastery"
+      ],
+      "local_count_labels": [
+        "observations",
+        "students",
+        "participants",
+        "sample",
+        "completed",
+        "taking the",
+        "took the"
+      ],
+      "strong_phrase_weight": 18,
+      "positive_phrase_weight": 4,
+      "local_positive_bonus": 8,
+      "local_label_weight": 11,
+      "negative_phrase_weight": 2,
+      "local_negative_bonus": 12,
+      "narrative_bonus": 8,
+      "observations_label_bonus": 3,
+      "minimum_score": 14,
+      "minimum_score_margin": 1,
+      "prefer_largest_on_tie": true,
+      "maximum_evidence_spans": 3,
+      "diagnostic_limit": 12,
+      "confidence": 0.98
+    }
+  },
+  "thresholds": {
+    "minimum_hybrid_field_accuracy": 0.8,
+    "minimum_span_reference_validity": 1.0,
+    "minimum_supported_field_accuracy": 0.8,
+    "automatic_workhorse_candidate_hybrid_field_accuracy": 0.9,
+    "automatic_workhorse_candidate_span_reference_validity": 1.0,
+    "automatic_workhorse_candidate_supported_field_accuracy": 0.9
+  },
+  "governance": {
+    "calibration_only": true,
+    "reuses_frozen_v2_model_output": true,
+    "may_create_human_authority": false,
+    "may_mutate_registry": false,
+    "may_mutate_historical_release": false,
+    "may_mutate_csi_gateway": false,
+    "notes": [
+      "No expected cohort number is encoded in either contextual extraction rule.",
+      "Counts are selected from generic integer candidates using source wording, full-sample versus subgroup context, source spans and a cross-field monotonicity guard.",
+      "The same-source rescore is an engineering calibration, not independent model validation.",
+      "Routine study-level human QA remains capped by the Stage 13 ten per cent policy."
+    ]
+  }
+}
