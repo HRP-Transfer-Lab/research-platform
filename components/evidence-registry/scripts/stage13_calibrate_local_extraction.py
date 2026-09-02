@@ -657,6 +657,13 @@ def main() -> int:
                 and field_accuracy >= float(thresholds["minimum_field_accuracy"])
                 and anchor_rate >= float(thresholds["minimum_anchor_validity"])
             )
+            workhorse_candidate = (
+                schema_valid
+                and field_accuracy
+                >= float(thresholds["automatic_workhorse_candidate_field_accuracy"])
+                and anchor_rate
+                >= float(thresholds["automatic_workhorse_candidate_anchor_validity"])
+            )
 
             prompt_seconds = ns_to_seconds(raw.get("prompt_eval_duration"))
             output_seconds = ns_to_seconds(raw.get("eval_duration"))
@@ -687,6 +694,7 @@ def main() -> int:
                     "anchor_attempted": anchor_attempted,
                     "anchor_validity": anchor_rate,
                     "passed": passed,
+                    "workhorse_candidate": workhorse_candidate,
                 },
                 "performance": {
                     "wall_seconds": elapsed,
@@ -741,6 +749,7 @@ def main() -> int:
                     result["performance"]["output_tokens_per_second"], 3
                 ),
                 "passed": passed,
+                "workhorse_candidate": workhorse_candidate,
                 "result_path": str(filename),
             }
             summaries.append(summary)
@@ -758,6 +767,7 @@ def main() -> int:
                 "prompt_tokens_per_second": 0.0,
                 "output_tokens_per_second": 0.0,
                 "passed": False,
+                "workhorse_candidate": False,
                 "error": str(exc),
             }
             summaries.append(summary)
@@ -786,6 +796,10 @@ def main() -> int:
         if "error" in summary:
             print(f"error|{summary['error']}")
         print(f"calibration_pass|{1 if summary['passed'] else 0}")
+        print(
+            f"workhorse_candidate|"
+            f"{1 if summary['workhorse_candidate'] else 0}"
+        )
 
     summary_manifest = {
         "schema_version": "stage13-local-calibration-summary-v1",
@@ -811,7 +825,11 @@ def main() -> int:
     )
 
     passed_models = [item["model"] for item in summaries if item["passed"]]
+    workhorse_candidates = [
+        item["model"] for item in summaries if item["workhorse_candidate"]
+    ]
     print(f"passed_models|{','.join(passed_models)}")
+    print(f"workhorse_candidates|{','.join(workhorse_candidates)}")
     print(f"summary_path|{summary_path}")
     print("REGISTRY_MUTATED|0")
     print("SCIENTIFIC_STATE_MUTATED|0")
