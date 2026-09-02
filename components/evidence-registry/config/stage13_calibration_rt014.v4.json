@@ -28,6 +28,11 @@
       "row_labels": [
         "Observations"
       ],
+      "evidence_context_phrases": [
+        "week-1 NUMI activity",
+        "week-1 analysis sample",
+        "recorded as logging into the week-1"
+      ],
       "exclude_page_phrases": [
         "robustness checks",
         "demographic + test-score sample",
@@ -39,7 +44,7 @@
       "row_window_characters": 520,
       "minimum_repetitions": 3,
       "minimum_frequency_margin": 2,
-      "maximum_evidence_spans": 4,
+      "maximum_evidence_spans": 5,
       "confidence": 0.995
     },
     "delayed_assessment_completers": {
@@ -49,6 +54,11 @@
       ],
       "row_labels": [
         "Observations"
+      ],
+      "evidence_context_phrases": [
+        "taking the week-2 delayed assessment",
+        "week-2 delayed assessment",
+        "delayed-test outcome"
       ],
       "exclude_page_phrases": [
         "alternative control sets and samples",
@@ -61,7 +71,7 @@
       "row_window_characters": 520,
       "minimum_repetitions": 3,
       "minimum_frequency_margin": 2,
-      "maximum_evidence_spans": 4,
+      "maximum_evidence_spans": 5,
       "confidence": 0.995
     }
   },
@@ -89,6 +99,7 @@
     "notes": [
       "The table rules contain no expected participant counts.",
       "A numeric candidate is emitted only from a physical page containing the configured main-table heading and a repeated observations row.",
+      "The evidence bundle retains the table heading, repeated count row and text defining the sample represented by that row.",
       "Appendix robustness and subgroup tables cannot qualify merely because they contain the words week-1, delayed assessment or observations.",
       "For this same-source engineering calibration, all three deterministic fields and all ten hybrid fields must be correct before the result is called PASS.",
       "A single-source PASS permits progression to mixed-source calibration only; it does not qualify the pipeline for 100-1,000-study ingestion."
