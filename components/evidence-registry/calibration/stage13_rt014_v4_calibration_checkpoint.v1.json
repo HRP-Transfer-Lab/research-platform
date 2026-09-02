@@ -1,0 +1,73 @@
+{
+  "schema_version": "stage13-calibration-checkpoint-v1",
+  "checkpoint_id": "stage13-rt014-v4-2026-09-02",
+  "source_id": "rt-2026-014",
+  "profile_id": "stage13-rt014-core-extraction-calibration-v4",
+  "pipeline": {
+    "semantic_model": "qwen3.5:4b",
+    "model_runtime": "ollama_cpu",
+    "model_inference_reused_from": "stage13-local-calibration-v2",
+    "parser": "pdftotext-layout",
+    "evidence_anchor_strategy": "parser_owned_spans",
+    "deterministic_strategies": [
+      "unique_trial_registry_regex",
+      "main_table_heading_scoped_repeated_integer"
+    ]
+  },
+  "source_artifact": {
+    "filename": "ai26-1552.pdf",
+    "pdf_sha256": "6a3702549e1c493d88f05213301ca81fd17488bbd556c0217e8bb294cfb50a62",
+    "pdf_pages": 73,
+    "licensed_bytes_in_git": false
+  },
+  "reported_local_result": {
+    "ollama_calls": 0,
+    "parser_owned_spans": 213,
+    "semantic_model_field_matches": 7,
+    "semantic_model_field_total": 7,
+    "deterministic_field_matches": 3,
+    "deterministic_field_total": 3,
+    "hybrid_field_matches": 10,
+    "hybrid_field_total": 10,
+    "span_reference_valid": 10,
+    "span_reference_attempted": 10,
+    "supported_field_matches": 10,
+    "supported_field_total": 10,
+    "schema_valid": true,
+    "calibration_pass": true,
+    "single_source_pipeline_candidate": true,
+    "production_scale_ready": false,
+    "next_gate": "mixed_source_calibration"
+  },
+  "resolved_deterministic_values": {
+    "week1_platform_entrants": {
+      "value": 6997,
+      "physical_pdf_page": 37,
+      "table_heading": "Table 4: Exercise 1 and Exercise 2 Outcomes by Mastery Status and AI Assignment"
+    },
+    "delayed_assessment_completers": {
+      "value": 6327,
+      "physical_pdf_page": 39,
+      "table_heading": "Table 5: Main Delayed-Test Learning Effects"
+    },
+    "registration_id": {
+      "value": "AEARCTR-0018678"
+    }
+  },
+  "governance": {
+    "same_source_engineering_calibration": true,
+    "independent_validation": false,
+    "may_create_human_authority": false,
+    "registry_mutated": false,
+    "scientific_state_mutated": false,
+    "historical_release_mutated": false,
+    "csi_gateway_mutated": false,
+    "routine_study_review_ceiling_rate": 0.1
+  },
+  "interpretation": [
+    "The V4 hybrid pipeline passed all ten same-source calibration fields with valid parser-owned evidence spans.",
+    "The result supports progression to a mixed-source calibration set; it does not validate production ingestion across arbitrary study designs or publication layouts.",
+    "The 4B model remains the provisional semantic first-pass model. Larger-model use remains exception-driven rather than universal.",
+    "Routine source-level human review remains capped by the Stage 13 sampling policy; human authority is concentrated at recommendation, proposition, exception and consequential-use boundaries."
+  ]
+}
