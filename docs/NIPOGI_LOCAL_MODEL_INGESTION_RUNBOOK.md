@@ -1,190 +1,263 @@
 # NiPoGi Local Model Ingestion Runbook
 
-**Status:** Stage 13 implementation runbook  
-**Date:** 1 September 2026  
+**Status:** Stage 13 active implementation runbook  
+**Updated:** 2 September 2026  
 **Target host:** NiPoGi / `kastel-mini`  
-**Assumed hardware:** 32 GB system memory, Ryzen-class CPU, no discrete NVIDIA GPU  
-**Purpose:** Install and benchmark a local document-processing and model stack for scaling the HRP Transfer Evidence Registry from 18 sources towards 100–1,000 sources.
+**Observed runtime:** Ollama on CPU for Qwen 3.5 models  
+**Purpose:** Scale the HRP Transfer Evidence Registry from the 18-source calibration set towards 100–1,000 machine-screened studies while preserving evidence provenance, targeted human review and CSI recommendation governance.
 
-## 1. Operating principle
+## 1. Operating rule
 
-Use deterministic software for identity, access, hashing, parsing and schema validation. Use local language models for semantic extraction, classification, comparison and draft recommendation support.
+Use deterministic software for source identity, acquisition, hashing, parsing, schema checks and release bookkeeping. Use local language models for semantic extraction, classification, comparison and candidate generation.
 
 ```text
 metadata APIs / source files
 → canonical identity and deduplication
 → acquisition + SHA-256
 → deterministic PDF parsing
-→ section/chunk manifest
-→ local structured extraction
-→ automatic quality gates
+→ section/page retrieval
+→ local schema-constrained extraction
+→ source-anchor validation
+→ model agreement / exception routing
 → machine-screened working corpus
 → CSI recommendation review
-→ targeted scientific correction/promotion
+→ targeted scientific correction or promotion
 ```
 
-Do not use the local model as an unstructured web browser or as an automatic scientific authority.
+A local model may create a candidate. It may not create human authority, silently overwrite a reviewed value, publish a formal scientific claim or make a consequential CSI decision.
 
-## 2. Initial model set
+## 2. Measured NiPoGi model benchmark
 
-### Workhorse extraction model
+The first CPU benchmark used an approximately 150-word generation task at an 8,192-token context.
+
+| Model | Wall time | Prompt tokens/s | Output tokens/s |
+|---|---:|---:|---:|
+| `qwen3.5:4b` | 32.72 s | 30.55 | 9.32 |
+| `qwen3.5:9b` | 50.89 s | 16.54 | 5.86 |
+
+Derived result:
+
+```text
+4B end-to-end speed-up over 9B: 1.555×
+4B wall-time reduction:            35.7%
+4B prompt-processing speed-up:     1.847×
+4B output-generation speed-up:     1.590×
+```
+
+This establishes `qwen3.5:4b` as the **provisional first-pass candidate on speed only**. Scientific adequacy depends on field accuracy, missingness behaviour, source-anchor validity and unsupported-assertion rates.
+
+The machine-readable decision is stored in:
+
+```text
+components/evidence-registry/config/stage13_nipogi_model_cascade.v1.json
+```
+
+## 3. Current model cascade
+
+### Tier 0 — deterministic
+
+Use ordinary software for:
+
+- DOI and identifier normalisation;
+- source-version resolution and deduplication;
+- access status;
+- file hashing and page count;
+- PDF-to-text conversion;
+- schema and taxonomy validation;
+- numerical and cross-field consistency checks.
+
+### Tier 1 — routine local extraction
+
+```text
+qwen3.5:4b
+```
+
+Provisional uses:
+
+- schema-constrained study and population extraction;
+- intervention, mechanism, route and outcome candidates;
+- evidence-span selection;
+- explicit missingness;
+- first-pass classification.
+
+It becomes the routine workhorse only if it reaches the stricter calibration threshold across several source types.
+
+### Tier 2 — selective local verification
 
 ```text
 qwen3.5:9b
 ```
 
-Use for:
+Invoke when one or more of these applies:
 
-- study-design and population extraction;
-- intervention/component classification;
-- outcome/timepoint extraction;
-- transfer-route and CSI tag candidates;
-- evidence-span selection;
-- missingness detection;
-- first-pass quality/RoB signalling evidence;
-- draft proposition and recommendation support.
+```text
+schema failure after retry
+low field confidence
+weak or invalid source anchor
+deterministic cross-check disagreement
+4B/9B disagreement
+novel study design or taxonomy class
+decision-relevant field
+single-source recommendation dependence
+recommendation correction
+targeted QA sample
+```
 
-### Embedding model
+Do not run 9B on every field by default unless calibration shows that the 4B model is inadequate without universal verification.
+
+### Retrieval model
 
 ```text
 qwen3-embedding:0.6b
 ```
 
-Use for:
+Use after the core extraction calibration for:
 
-- chunk indexing;
-- semantic source retrieval;
+- section and chunk retrieval;
 - similar-study retrieval;
-- evidence-query expansion;
-- candidate duplicate detection support.
+- duplicate-candidate support;
+- evidence-query expansion.
 
-### Optional second-pass model
-
-Do not download initially unless the 9B calibration shows a material gap.
-
-Candidate:
+### Larger model
 
 ```text
 qwen3:30b
 ```
 
-This is a larger local model for disagreement resolution and difficult extractions. It should be invoked selectively, not on every paper.
+Do not download yet. Add it only if measured improvements in difficult extraction, contradiction detection or recommendation-level error justify the memory and latency cost.
 
-## 3. Install Ollama
-
-Check whether it is already installed:
+## 4. Installed service checks
 
 ```bash
 ollama --version
-```
-
-If the command is not found:
-
-```bash
-curl -fsSL https://ollama.com/install.sh | sh
-```
-
-Enable and start the service:
-
-```bash
-sudo systemctl enable --now ollama
-sudo systemctl status ollama --no-pager
-```
-
-## 4. Pull the initial models
-
-```bash
-ollama pull qwen3.5:9b
-ollama pull qwen3-embedding:0.6b
+systemctl is-active ollama
+curl -s http://127.0.0.1:11434/api/tags | python3 -m json.tool
 ollama list
 ```
 
-Expected approximate model storage:
+The API should remain bound to localhost unless an authenticated network boundary is deliberately configured.
+
+## 5. First scientific calibration: `rt-2026-014`
+
+The first real calibration uses the registered 73-page `ai26-1552.pdf` and ten fields from its reviewed Registry appraisal.
+
+Tracked calibration assets:
 
 ```text
-qwen3.5:9b             ~6.6 GB
-qwen3-embedding:0.6b   ~0.6 GB
+components/evidence-registry/config/
+  stage13_calibration_rt014.v1.json
+
+components/evidence-registry/scripts/
+  stage13_calibrate_local_extraction.py
 ```
 
-## 5. Smoke-test the model API
+The script:
+
+1. verifies the 73-page PDF;
+2. calculates its SHA-256;
+3. parses it using `pdftotext -layout`;
+4. retrieves high-relevance pages within an input-character budget;
+5. sends the same anchored JSON extraction task to 4B and 9B;
+6. validates structure;
+7. verifies that each short supporting quotation occurs on the stated physical PDF page;
+8. compares ten values with the reviewed calibration record;
+9. writes local parse, extraction and validation manifests; and
+10. leaves PostgreSQL, scientific authority, the historical release and CSI Gateway untouched.
+
+Run:
 
 ```bash
-curl -s http://localhost:11434/api/chat \
-  -H 'Content-Type: application/json' \
-  -d '{
-    "model": "qwen3.5:9b",
-    "stream": false,
-    "messages": [
-      {"role": "user", "content": "Return only JSON with keys status and purpose. status must be ok; purpose must be evidence extraction."}
-    ],
-    "format": {
-      "type": "object",
-      "properties": {
-        "status": {"type": "string"},
-        "purpose": {"type": "string"}
-      },
-      "required": ["status", "purpose"]
-    },
-    "options": {
-      "temperature": 0,
-      "seed": 42,
-      "num_ctx": 8192
-    }
-  }' | python3 -m json.tool
+python3 -u components/evidence-registry/scripts/stage13_calibrate_local_extraction.py \
+  --pdf "$HOME/hrp-lab/source-corpus/rt-2026-014/ai26-1552.pdf"
 ```
 
-Check the loaded model and context allocation:
+No Python packages beyond the standard library are required for this first runner. `pdfinfo` and `pdftotext` are required from `poppler-utils`.
 
-```bash
-ollama ps
+Outputs are written outside Git:
+
+```text
+$HOME/hrp-lab/source-corpus/rt-2026-014/
+  parsed/
+    ai26-1552.layout.txt
+  manifests/stage13-local-calibration/
+    parse-manifest.json
+    qwen3.5_4b.json
+    qwen3.5_9b.json
+    summary.json
 ```
 
-## 6. Python environment
+## 6. Calibration interpretation
 
-Create a separate environment outside the repository source tree:
+Minimum compact calibration pass:
 
-```bash
-python3 -m venv "$HOME/hrp-lab/venvs/evidence-ingestion"
-source "$HOME/hrp-lab/venvs/evidence-ingestion/bin/activate"
-python -m pip install --upgrade pip wheel
-python -m pip install ollama pydantic httpx tenacity orjson
+```text
+schema valid
+field accuracy ≥ 8/10
+anchor validity ≥ 80%
 ```
 
-Later parser/index dependencies should be pinned in a repository requirements or lock file after the first benchmark.
+Stricter single-source workhorse-candidate signal:
 
-## 7. Document parsing cascade
+```text
+schema valid
+field accuracy ≥ 9/10
+anchor validity ≥ 90%
+```
 
-### Fast baseline
+Even a 10/10 result on `rt-014` does not authorise a general extraction model. Promotion requires a multi-source set containing different study designs, publication layouts, intervention types and missingness patterns.
 
-Use existing command-line tools for every PDF:
+Interpret results as follows:
+
+### 4B passes the stricter threshold and approximates 9B
+
+Use 4B for routine first-pass extraction. Route only flagged fields and sampled cases to 9B.
+
+### 4B passes the minimum threshold but 9B is materially better
+
+Use 4B to prefill straightforward fields and 9B for decision-relevant fields until the prompt/retrieval pipeline improves.
+
+### 9B offers no material scientific gain
+
+Retain it only for targeted disagreement and novelty cases rather than paying its latency on every source.
+
+### Both models fail
+
+Do not jump immediately to a 30B model. First inspect:
+
+```text
+retrieved pages
+context truncation
+schema design
+prompt ambiguity
+PDF parse quality
+field ontology
+quote-anchor normalisation
+```
+
+Fix the production line, rerun the affected cohort and resample.
+
+The runner may exit with code `2` and print `REVIEW` if neither model reaches the minimum compact threshold. That is a calibration finding, not a Registry or database failure.
+
+## 7. Parsing cascade
+
+### Fast born-digital baseline
 
 ```bash
 pdfinfo paper.pdf
 pdftotext -layout paper.pdf paper.txt
 ```
 
-These provide a quick integrity and text-coverage check.
+### Academic structure
 
-### Academic-paper structure
+Use local GROBID when structured sections, bibliography and citation metadata are required.
 
-Use a local GROBID CPU container when structured sections, references and citation metadata are required:
+### Layout and table fallback
 
-```bash
-docker run --rm --init --ulimit core=0 \
-  -p 8070:8070 \
-  grobid/grobid:0.9.1-crf
-```
+Use Docling only where the fast/GROBID route does not preserve required layout, tables, equations or reading order.
 
-### Layout/table fallback
+### OCR
 
-Use Docling for papers whose layout, tables, formulas or reading order are not adequately represented by the fast/GROBID path. Install it only after the baseline environment is working:
-
-```bash
-source "$HOME/hrp-lab/venvs/evidence-ingestion/bin/activate"
-python -m pip install docling
-```
-
-OCR should be used only for genuinely scanned documents and must be flagged in parse provenance.
+Use OCR only for genuinely scanned documents. Label OCR provenance separately and treat low OCR quality as an exception signal.
 
 ## 8. Local corpus layout
 
@@ -208,164 +281,146 @@ $HOME/hrp-lab/source-corpus/
       validation.json
 ```
 
-The Registry stores hashes, provenance and locators. Licensed source bytes remain outside Git.
+Current `rt-014` has its PDF directly under the source directory; the calibration runner supports that path. Licensed PDF bytes and parsed full text must remain outside Git.
 
-## 9. Structured-output rule
+## 9. Structured extraction contract
 
-Every extraction call must use a versioned JSON schema and validate the response with Pydantic or equivalent.
-
-Every material value should include:
+Every material extracted field should retain:
 
 ```text
 value
 status: extracted | inferred | not_reported | unresolved
-source_anchor
-verbatim_support_or_span
-model_confidence
-model_name
-model_digest
-prompt_version
-schema_version
+physical PDF page or section anchor
+short supporting source span
+model confidence
+model name and digest
+prompt version
+extraction schema version
+parser version
+source hash
 ```
 
-Use `temperature=0` for extraction and classification. Preserve raw model output for debugging, but admit only validated structured output to the candidate layer.
+Use temperature zero for extraction and classification. Preserve raw model output for debugging, but admit only validated structured output to the candidate layer.
 
-## 10. Chunking rule
+## 10. Scaling sequence
 
-Do not send an entire long paper repeatedly.
-
-Create section-aware chunks with:
+### 18 → 100
 
 ```text
-source_version_id
-page_start/page_end
-section_path
-chunk_index
-text_sha256
-parser_version
+rt-014 single-paper calibration
+→ 10-paper mixed-design calibration
+→ automatic admission and exception gates
+→ Evidence Operations Dashboard
+→ focused 50–100-source ingestion
 ```
-
-Recommended initial target:
-
-```text
-1,000–2,500 tokens per chunk
-small overlap only where section continuity requires it
-```
-
-Retrieve the relevant sections before each field extraction. Methods, results, appendices, protocols and registration materials should remain separately addressable.
-
-## 11. Two-pass extraction
-
-### Pass A — field extraction
-
-Run the workhorse model on retrieved sections and return schema-constrained candidates with anchors.
-
-### Pass B — verification
-
-Use one or more of:
-
-- repeat extraction with a different prompt view;
-- deterministic parser/metadata comparison;
-- contradiction and missingness check;
-- optional larger-model review;
-- targeted human exception review.
-
-Only fields passing the automatic gate become machine-screened.
-
-## 12. First calibration benchmark
-
-Use the existing 18-source Registry as the ontology/reference set, with special full-text quality cases such as the completed `rt-2026-001`, `rt-2026-002`, `rt-2026-006` and `rt-2026-014` appraisal work where source material is available.
 
 Measure:
 
 ```text
-JSON/schema pass rate
+schema pass rate
 source-anchor validity
-study-design accuracy
-population extraction accuracy
-intervention route accuracy
-outcome/timepoint accuracy
+field precision / recall / F1
+controlled-vocabulary accuracy
 missingness accuracy
 unsupported-assertion rate
-field-level agreement with reviewed Registry values
-runtime and memory per paper
+4B/9B disagreement
+runtime and failures per source
+recommendation acceptance/correction/abstention
 ```
 
-Do not tune and score on exactly the same fields. Preserve a small held-out set and rotate held-out sources while the corpus is small.
+### 100 → 300
 
-## 13. Acceptance gates for the first 100-source run
+Add:
 
-Minimum initial targets should be set empirically after the calibration run, but the pipeline must at least require:
+- embedding-based section retrieval;
+- model-cohort comparison;
+- internal working evidence retrieval for CSI pilots;
+- recommendation-level review and correction;
+- proposition/synthesis families;
+- outcome-linked feedback.
 
-- near-perfect schema validity after retry;
-- no admission of unanchored decision-relevant fields;
-- zero silent overwrite of human authority;
-- explicit unresolved/missing states;
-- reproducible model/prompt/schema provenance;
-- a bounded unsupported-assertion rate;
-- automatic exception routing;
-- stable throughput and recoverable failures.
+### 300 → 1,000
 
-## 14. When to add the larger model
+Add:
 
-Pull the optional second-pass model only when the 9B benchmark shows that it materially improves one or more of:
+- continuous discovery and acquisition;
+- scheduled parser/model cohorts;
+- risk-weighted sampling;
+- demand-led source prioritisation;
+- batch promotion rather than paper-by-paper approval;
+- system-learning dashboards.
 
-- source-anchor correctness;
-- complex design extraction;
-- contradiction detection;
-- route or mechanism classification;
-- recommendation correction rate.
+## 11. Human review budget
 
-Then:
-
-```bash
-ollama pull qwen3:30b
-```
-
-Because it is approximately 19 GB, run it at a conservative context length and one job at a time on a 32 GB host.
-
-## 15. Resource controls
-
-Initial worker settings:
+Routine source-level human review is capped at:
 
 ```text
-qwen3.5:9b extraction concurrency: 1
-embedding batch size: small, then benchmark upward
-PDF parser concurrency: 1–2
-second-pass 30B concurrency: 1
-context: retrieve sections; do not default to maximum context
+ceiling(10% of eligible machine-screened studies)
 ```
 
-Log:
+Allocate approximately:
 
 ```text
-wall-clock time
-prompt/evaluation token counts
-peak memory if available
-retry count
-failure reason
+5% stratified random sample
+5% targeted risk / novelty / recommendation-feedback sample
 ```
 
-## 16. Security and governance
-
-- Bind Ollama to localhost unless an authenticated network boundary is deliberately configured.
-- Do not place publisher credentials, cookies or institutional tokens in prompts or manifests.
-- Do not copy licensed PDFs into Git.
-- Do not allow a local model to create human-reviewed or release-approved provenance.
-- Do not send CSI person/session data into the scientific Registry.
-- Use recommendation review and sanitised correction signals for feedback.
-
-## 17. Immediate implementation sequence
+If the sample reveals a systematic defect:
 
 ```text
-1. Install Ollama.
-2. Pull qwen3.5:9b and qwen3-embedding:0.6b.
-3. Verify structured JSON output.
-4. Create the ingestion Python environment.
-5. Build a one-paper parser/extractor for rt-2026-014.
-6. Compare extraction to the reviewed rt-014 Registry state.
-7. Generalise to a 10-paper calibration batch.
-8. Add automatic admission/exception gates.
-9. Add Evidence Operations Dashboard views.
-10. Ingest the first focused 50–100-source corpus.
+quarantine affected cohort
+→ correct parser/prompt/model/schema/rule
+→ rerun cohort
+→ draw a fresh sample
+```
+
+Do not turn the remaining 90% into a universal manual backlog.
+
+Human authority is concentrated on:
+
+- CSI recommendations;
+- exceptions implicated in mis-recommendations;
+- promoted propositions, syntheses and public claims;
+- consequential uses;
+- the bounded 10% quality sample.
+
+## 12. CSI integration boundary
+
+The existing approved CSI Evidence Gateway remains release-pinned and read-only. Machine-screened evidence should enter a separately labelled authenticated working index for internal pilots; it must not masquerade as approved evidence.
+
+CSI recommendations should expose:
+
+```text
+evidence bundle fingerprint
+release-approved / human-reviewed / machine-screened composition
+source/card IDs
+material anchors
+required caveats
+excluded low-confidence fields
+model and rule versions
+abstention rationale
+```
+
+Recommendation review then provides:
+
+```text
+approve
+correct
+reject
+defer
+abstain
+```
+
+A sanitised source/field correction signal may return to the Registry. Raw person, employee, client, organisation or workflow-session data must not.
+
+## 13. Immediate next actions
+
+```text
+1. Run the rt-014 4B/9B scientific extraction calibration.
+2. Inspect field errors and invalid anchors.
+3. Freeze or revise the first-pass/verification cascade.
+4. Generalise the runner to a 10-paper mixed-design batch.
+5. Add automatic machine-screening and quarantine records.
+6. Add the Evidence Operations Dashboard.
+7. Ingest the first focused 50–100-source corpus.
 ```
