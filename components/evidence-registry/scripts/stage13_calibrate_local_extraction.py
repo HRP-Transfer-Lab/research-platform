@@ -166,23 +166,26 @@ def select_pages(
             index,
         ),
     )[:maximum_pages]
-    ranked.sort()
 
-    chunks: list[str] = []
-    used: list[int] = []
+    chosen: list[int] = []
     total = 0
     for index in ranked:
         page_text = pages[index - 1].strip()
-        block = f"[PDF_PAGE {index}]\n{page_text}\n[/PDF_PAGE {index}]"
-        if chunks and total + len(block) > maximum_characters:
+        block_length = len(f"[PDF_PAGE {index}]\n{page_text}\n[/PDF_PAGE {index}]")
+        if chosen and total + block_length > maximum_characters:
             continue
-        chunks.append(block)
-        used.append(index)
-        total += len(block)
+        chosen.append(index)
+        total += block_length
 
-    if not chunks:
+    if not chosen:
         raise RuntimeError("Selected pages exceeded the configured context limit")
-    return used, "\n\n".join(chunks)
+
+    chosen.sort()
+    chunks = [
+        f"[PDF_PAGE {index}]\n{pages[index - 1].strip()}\n[/PDF_PAGE {index}]"
+        for index in chosen
+    ]
+    return chosen, "\n\n".join(chunks)
 
 
 def evidence_object_schema(value_schema: dict[str, Any]) -> dict[str, Any]:
