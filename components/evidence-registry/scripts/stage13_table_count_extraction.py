@@ -84,6 +84,9 @@ def table_scoped_integer_candidates(
         headings = [str(value) for value in rule.get("table_heading_phrases", [])]
         row_labels = [str(value) for value in rule.get("row_labels", ["observations"])]
         exclusions = [str(value) for value in rule.get("exclude_page_phrases", [])]
+        context_phrases = [
+            str(value) for value in rule.get("evidence_context_phrases", [])
+        ]
         number_pattern = re.compile(str(rule.get("number_regex", DEFAULT_INTEGER_REGEX)))
         minimum = int(rule.get("minimum_value", 1))
         maximum = int(rule.get("maximum_value", 10**9))
@@ -217,14 +220,21 @@ def table_scoped_integer_candidates(
         page_spans = pages[selected_page]
         evidence_ids: list[str] = []
 
-        # Prefer spans carrying the table heading, row label and selected value.
+        # Retain the heading, row/value and semantic table-context spans. This
+        # lets downstream support checks verify both the number and what sample
+        # the number denotes without asking an LLM to manufacture a quotation.
         for span in page_spans:
             text = str(_get(span, "text"))
             carries_heading = any(_contains_phrase(text, phrase) for phrase in headings)
             carries_label = any(_contains_phrase(text, label) for label in row_labels)
             carries_value = any(form in text for form in _value_forms(selected_value))
-            if carries_heading or carries_label or carries_value:
-                evidence_ids.append(str(_get(span, "span_id")))
+            carries_context = any(
+                _contains_phrase(text, phrase) for phrase in context_phrases
+            )
+            if carries_heading or carries_label or carries_value or carries_context:
+                span_id = str(_get(span, "span_id"))
+                if span_id not in evidence_ids:
+                    evidence_ids.append(span_id)
             if len(evidence_ids) >= maximum_evidence_spans:
                 break
 
