@@ -6,7 +6,7 @@
   "purpose": "Calibrate local models on explicit study-design, randomisation, sample-flow, registration, analysis and outcome fields already reviewed for rt-2026-014.",
   "retrieval": {
     "maximum_pages": 10,
-    "maximum_characters": 32000,
+    "maximum_characters": 23000,
     "groups": [
       {
         "group_id": "design_randomisation",
