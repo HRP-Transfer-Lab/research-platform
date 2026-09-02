@@ -1,0 +1,97 @@
+{
+  "profile_id": "stage13-rt014-core-extraction-calibration-v4",
+  "base_profile": "stage13_calibration_rt014.v2.json",
+  "source_id": "rt-2026-014",
+  "title": "Making AI Tutoring Productive: Evidence from a Mastery-Based Math Practice Experiment",
+  "expected_pdf_pages": 73,
+  "purpose": "Test a safer production division of labour: frozen local-LLM extraction for semantic fields, unique-regex extraction for the trial identifier, and table-heading-scoped repeated-row extraction for explicit study-level participant counts.",
+  "model_fields": [
+    "study_design",
+    "randomisation_unit",
+    "randomised_factors",
+    "assignment_probability",
+    "analysis_approaches",
+    "delayed_assessment_timepoint",
+    "reported_outcomes"
+  ],
+  "deterministic_field_names": [
+    "week1_platform_entrants",
+    "delayed_assessment_completers",
+    "registration_id"
+  ],
+  "table_deterministic_fields": {
+    "week1_platform_entrants": {
+      "rule_id": "main-week1-itt-table-observations-v1",
+      "table_heading_phrases": [
+        "Table 4: Exercise 1 and Exercise 2 Outcomes by Mastery Status and AI Assignment"
+      ],
+      "row_labels": [
+        "Observations"
+      ],
+      "exclude_page_phrases": [
+        "robustness checks",
+        "demographic + test-score sample",
+        "mastery sample only"
+      ],
+      "minimum_value": 1000,
+      "maximum_value": 20000,
+      "exclude_years": true,
+      "row_window_characters": 520,
+      "minimum_repetitions": 3,
+      "minimum_frequency_margin": 2,
+      "maximum_evidence_spans": 4,
+      "confidence": 0.995
+    },
+    "delayed_assessment_completers": {
+      "rule_id": "main-delayed-test-table-observations-v1",
+      "table_heading_phrases": [
+        "Table 5: Main Delayed-Test Learning Effects"
+      ],
+      "row_labels": [
+        "Observations"
+      ],
+      "exclude_page_phrases": [
+        "alternative control sets and samples",
+        "full mastery sample only",
+        "heterogeneity"
+      ],
+      "minimum_value": 1000,
+      "maximum_value": 20000,
+      "exclude_years": true,
+      "row_window_characters": 520,
+      "minimum_repetitions": 3,
+      "minimum_frequency_margin": 2,
+      "maximum_evidence_spans": 4,
+      "confidence": 0.995
+    }
+  },
+  "thresholds": {
+    "minimum_semantic_model_field_accuracy": 1.0,
+    "minimum_deterministic_field_accuracy": 1.0,
+    "minimum_hybrid_field_accuracy": 1.0,
+    "minimum_span_reference_validity": 1.0,
+    "minimum_supported_field_accuracy": 1.0,
+    "single_source_candidate_semantic_field_accuracy": 1.0,
+    "single_source_candidate_deterministic_field_accuracy": 1.0,
+    "single_source_candidate_hybrid_field_accuracy": 1.0,
+    "single_source_candidate_span_reference_validity": 1.0,
+    "single_source_candidate_supported_field_accuracy": 1.0
+  },
+  "governance": {
+    "calibration_only": true,
+    "reuses_frozen_v2_model_output": true,
+    "may_create_human_authority": false,
+    "may_mutate_registry": false,
+    "may_mutate_historical_release": false,
+    "may_mutate_csi_gateway": false,
+    "production_scale_ready_after_single_source_pass": false,
+    "next_gate": "mixed-source calibration",
+    "notes": [
+      "The table rules contain no expected participant counts.",
+      "A numeric candidate is emitted only from a physical page containing the configured main-table heading and a repeated observations row.",
+      "Appendix robustness and subgroup tables cannot qualify merely because they contain the words week-1, delayed assessment or observations.",
+      "For this same-source engineering calibration, all three deterministic fields and all ten hybrid fields must be correct before the result is called PASS.",
+      "A single-source PASS permits progression to mixed-source calibration only; it does not qualify the pipeline for 100-1,000-study ingestion."
+    ]
+  }
+}
