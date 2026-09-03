@@ -1,0 +1,82 @@
+{
+  "schema_version": "stage13-overnight-psychology-search-v1",
+  "search_id": "psychology-interventions-csi-v1",
+  "purpose": "Discover and locally classify a diverse candidate set of psychology intervention, mechanism, measurement and human-AI activity-system papers relevant to HRP Transfer Lab and CSI.",
+  "provider": "europe_pmc",
+  "date_from": "2021-01-01",
+  "date_to": "2026-09-03",
+  "candidate_target": 140,
+  "classification_target": 100,
+  "minimum_abstract_characters": 300,
+  "maximum_results_per_query": 40,
+  "prefer_open_access": true,
+  "query_families": [
+    {
+      "query_id": "cognitive_training_transfer",
+      "label": "Cognitive training and transfer",
+      "query": "(\"cognitive training\" OR \"working memory training\" OR \"executive function training\") AND (intervention OR trial OR randomized OR randomised) AND (transfer OR cognition OR performance)"
+    },
+    {
+      "query_id": "attention_cognitive_control",
+      "label": "Attention and cognitive-control interventions",
+      "query": "(\"attention training\" OR \"cognitive control training\" OR \"executive control training\") AND (intervention OR trial OR randomized OR randomised)"
+    },
+    {
+      "query_id": "reasoning_problem_solving",
+      "label": "Reasoning and problem-solving interventions",
+      "query": "(\"reasoning training\" OR \"problem solving training\" OR \"critical thinking intervention\") AND (trial OR intervention OR training)"
+    },
+    {
+      "query_id": "metacognition_learning_strategy",
+      "label": "Metacognition and learning-strategy interventions",
+      "query": "(metacognitive OR metacognition OR \"learning strategy\") AND (intervention OR training OR randomized OR randomised) AND (learning OR memory OR education)"
+    },
+    {
+      "query_id": "self_regulation_implementation",
+      "label": "Self-regulation and implementation interventions",
+      "query": "(\"self-regulation\" OR \"implementation intention\" OR \"goal management training\") AND (intervention OR trial OR randomized OR randomised)"
+    },
+    {
+      "query_id": "stress_emotion_cognition",
+      "label": "Stress, emotion regulation and cognitive performance",
+      "query": "(\"stress regulation\" OR \"emotion regulation training\" OR \"resilience training\") AND (cognitive OR attention OR memory OR decision) AND (intervention OR trial)"
+    },
+    {
+      "query_id": "digital_psychological_intervention",
+      "label": "Digital psychological and behavioural interventions",
+      "query": "(\"digital intervention\" OR \"digital psychological intervention\" OR \"computerized intervention\" OR \"computerised intervention\") AND (cognitive OR behaviour OR behavioral OR self-regulation) AND (trial OR evaluation)"
+    },
+    {
+      "query_id": "human_ai_cognition",
+      "label": "Human-AI cognition and learning interventions",
+      "query": "(\"generative AI\" OR \"artificial intelligence\" OR chatbot) AND (learning OR cognition OR reasoning OR decision OR \"cognitive offloading\") AND (intervention OR experiment OR trial OR training)"
+    },
+    {
+      "query_id": "workplace_cognitive_workflow",
+      "label": "Workplace cognitive and workflow interventions",
+      "query": "(workplace OR employee OR \"knowledge work\") AND (attention OR interruption OR cognition OR decision OR workload) AND (intervention OR experiment OR redesign)"
+    },
+    {
+      "query_id": "behaviour_change_function",
+      "label": "Behaviour-change and functional interventions",
+      "query": "(\"behavior change intervention\" OR \"behaviour change intervention\") AND (self-regulation OR cognition OR adherence OR functioning) AND (trial OR randomized OR randomised)"
+    }
+  ],
+  "classification": {
+    "model": "qwen3.5:4b",
+    "context": 8192,
+    "temperature": 0,
+    "seed": 42,
+    "timeout_seconds": 900,
+    "minimum_include_confidence": 0.6,
+    "maximum_abstract_characters": 12000
+  },
+  "governance": {
+    "creates_scientific_authority": false,
+    "creates_machine_screened_status": false,
+    "mutates_registry": false,
+    "mutates_historical_release": false,
+    "mutates_csi_gateway": false,
+    "notes": "Outputs are discovery and abstract-screening candidates only. Abstract classification cannot establish efficacy, quality, RoB, certainty, transfer or recommendation authority."
+  }
+}
