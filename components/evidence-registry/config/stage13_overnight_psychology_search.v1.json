@@ -1,65 +1,131 @@
 {
   "schema_version": "stage13-overnight-psychology-search-v1",
-  "search_id": "psychology-interventions-csi-v1",
-  "purpose": "Discover and locally classify a diverse candidate set of psychology intervention, mechanism, measurement and human-AI activity-system papers relevant to HRP Transfer Lab and CSI.",
+  "search_id": "psychology-interventions-three-csi-domains-v2",
+  "purpose": "Discover and locally classify a balanced candidate portfolio of psychology interventions and intervention-relevant evidence across performance/work, personal, and health/clinical-adjacent CSI domains.",
   "provider": "europe_pmc",
   "date_from": "2021-01-01",
   "date_to": "2026-09-03",
-  "candidate_target": 140,
+  "candidate_target": 180,
   "classification_target": 100,
   "minimum_abstract_characters": 300,
   "maximum_results_per_query": 40,
   "prefer_open_access": true,
+  "csi_domains": [
+    {
+      "domain_id": "performance_work",
+      "label": "Performance, work motivation and workplace wellbeing",
+      "classification_target": 34,
+      "scope": "Cognitive performance, motivation, engagement, wellbeing, resilience, workload, workflow, decision systems and human-AI work."
+    },
+    {
+      "domain_id": "personal",
+      "label": "Personal adaptive cognition and wellbeing",
+      "classification_target": 33,
+      "scope": "Self-directed cognition, learning, reasoning, habits, self-regulation, resilience, cognitive ageing and everyday functioning."
+    },
+    {
+      "domain_id": "health_clinical_adjacent",
+      "label": "Health-related and clinical-adjacent support",
+      "classification_target": 33,
+      "scope": "Psychological, cognitive, behavioural, rehabilitative, self-management and digital support relevant to symptoms, functioning, adherence and quality of life; not drug/device-only treatment evidence."
+    }
+  ],
+  "domain_shortlist_target": 75,
+  "domain_shortlist_minimums": {
+    "performance_work": 20,
+    "personal": 20,
+    "health_clinical_adjacent": 20
+  },
   "query_families": [
     {
-      "query_id": "cognitive_training_transfer",
-      "label": "Cognitive training and transfer",
-      "query": "(\"cognitive training\" OR \"working memory training\" OR \"executive function training\") AND (intervention OR trial OR randomized OR randomised) AND (transfer OR cognition OR performance)"
+      "query_id": "work_cognitive_performance",
+      "csi_domain": "performance_work",
+      "label": "Workplace cognitive performance interventions",
+      "query": "(workplace OR employee OR occupational OR \"knowledge worker\") AND (\"cognitive performance\" OR attention OR reasoning OR decision OR interruption) AND (intervention OR trial OR experiment OR training OR redesign)"
     },
     {
-      "query_id": "attention_cognitive_control",
-      "label": "Attention and cognitive-control interventions",
-      "query": "(\"attention training\" OR \"cognitive control training\" OR \"executive control training\") AND (intervention OR trial OR randomized OR randomised)"
+      "query_id": "personal_cognitive_training_transfer",
+      "csi_domain": "personal",
+      "label": "Personal cognitive training and transfer",
+      "query": "(\"cognitive training\" OR \"working memory training\" OR \"executive function training\") AND (healthy OR adult OR student OR older) AND (intervention OR trial OR randomized OR randomised) AND (transfer OR cognition OR performance)"
     },
     {
-      "query_id": "reasoning_problem_solving",
-      "label": "Reasoning and problem-solving interventions",
-      "query": "(\"reasoning training\" OR \"problem solving training\" OR \"critical thinking intervention\") AND (trial OR intervention OR training)"
+      "query_id": "health_chronic_pain_psychological",
+      "csi_domain": "health_clinical_adjacent",
+      "label": "Psychological and behavioural support for chronic pain",
+      "query": "(\"chronic pain\" OR \"primary pain\") AND (psychological OR cognitive OR behavioural OR behavioral OR self-management) AND (intervention OR trial OR program OR programme)"
     },
     {
-      "query_id": "metacognition_learning_strategy",
+      "query_id": "work_motivation_engagement",
+      "csi_domain": "performance_work",
+      "label": "Work motivation and engagement interventions",
+      "query": "(workplace OR employee OR occupational) AND (motivation OR engagement OR \"job crafting\" OR autonomy OR \"self determination\") AND (intervention OR trial OR program OR programme)"
+    },
+    {
+      "query_id": "personal_self_regulation_goals",
+      "csi_domain": "personal",
+      "label": "Personal self-regulation and goal-management interventions",
+      "query": "(\"self-regulation\" OR \"self regulation\" OR \"implementation intention\" OR \"goal management training\" OR habit) AND (intervention OR trial OR randomized OR randomised) AND (adult OR student OR community)"
+    },
+    {
+      "query_id": "health_anxiety_depression_support",
+      "csi_domain": "health_clinical_adjacent",
+      "label": "Anxiety and depression psychological support",
+      "query": "(anxiety OR depression OR distress) AND (psychological OR cognitive OR behavioural OR behavioral OR digital) AND (intervention OR trial OR therapy OR self-management)"
+    },
+    {
+      "query_id": "work_wellbeing_stress_resilience",
+      "csi_domain": "performance_work",
+      "label": "Workplace wellbeing, stress and resilience interventions",
+      "query": "(workplace OR employee OR occupational) AND (wellbeing OR \"well-being\" OR stress OR burnout OR resilience OR recovery) AND (intervention OR trial OR program OR programme)"
+    },
+    {
+      "query_id": "personal_metacognition_learning",
+      "csi_domain": "personal",
       "label": "Metacognition and learning-strategy interventions",
-      "query": "(metacognitive OR metacognition OR \"learning strategy\") AND (intervention OR training OR randomized OR randomised) AND (learning OR memory OR education)"
+      "query": "(metacognitive OR metacognition OR \"learning strategy\" OR \"self-regulated learning\") AND (intervention OR training OR randomized OR randomised) AND (learning OR memory OR education OR student)"
     },
     {
-      "query_id": "self_regulation_implementation",
-      "label": "Self-regulation and implementation interventions",
-      "query": "(\"self-regulation\" OR \"implementation intention\" OR \"goal management training\") AND (intervention OR trial OR randomized OR randomised)"
+      "query_id": "health_cognitive_rehabilitation",
+      "csi_domain": "health_clinical_adjacent",
+      "label": "Cognitive rehabilitation and neuropsychological support",
+      "query": "(\"cognitive rehabilitation\" OR \"cognitive remediation\" OR \"neuropsychological rehabilitation\" OR \"memory rehabilitation\") AND (intervention OR trial OR program OR programme)"
     },
     {
-      "query_id": "stress_emotion_cognition",
-      "label": "Stress, emotion regulation and cognitive performance",
-      "query": "(\"stress regulation\" OR \"emotion regulation training\" OR \"resilience training\") AND (cognitive OR attention OR memory OR decision) AND (intervention OR trial)"
+      "query_id": "work_human_ai_cognition",
+      "csi_domain": "performance_work",
+      "label": "Human-AI cognition and work interventions",
+      "query": "(workplace OR employee OR \"knowledge work\") AND (\"artificial intelligence\" OR \"generative AI\" OR chatbot OR automation) AND (cognition OR decision OR learning OR wellbeing OR workload) AND (experiment OR intervention OR evaluation)"
     },
     {
-      "query_id": "digital_psychological_intervention",
-      "label": "Digital psychological and behavioural interventions",
-      "query": "(\"digital intervention\" OR \"digital psychological intervention\" OR \"computerized intervention\" OR \"computerised intervention\") AND (cognitive OR behaviour OR behavioral OR self-regulation) AND (trial OR evaluation)"
+      "query_id": "personal_reasoning_decision",
+      "csi_domain": "personal",
+      "label": "Reasoning, problem-solving and decision interventions",
+      "query": "(\"reasoning training\" OR \"problem solving training\" OR \"critical thinking intervention\" OR \"decision making training\") AND (trial OR intervention OR training OR experiment)"
     },
     {
-      "query_id": "human_ai_cognition",
-      "label": "Human-AI cognition and learning interventions",
-      "query": "(\"generative AI\" OR \"artificial intelligence\" OR chatbot) AND (learning OR cognition OR reasoning OR decision OR \"cognitive offloading\") AND (intervention OR experiment OR trial OR training)"
+      "query_id": "health_adherence_self_management",
+      "csi_domain": "health_clinical_adjacent",
+      "label": "Health adherence and self-management interventions",
+      "query": "(adherence OR \"self-management\" OR \"self management\" OR rehabilitation) AND (psychological OR cognitive OR behavioural OR behavioral OR motivational) AND (health OR illness OR patient) AND (intervention OR trial OR program OR programme)"
     },
     {
-      "query_id": "workplace_cognitive_workflow",
-      "label": "Workplace cognitive and workflow interventions",
-      "query": "(workplace OR employee OR \"knowledge work\") AND (attention OR interruption OR cognition OR decision OR workload) AND (intervention OR experiment OR redesign)"
+      "query_id": "work_workflow_decision_redesign",
+      "csi_domain": "performance_work",
+      "label": "Workflow, interruption and decision-system interventions",
+      "query": "(workflow OR \"work design\" OR interruption OR \"task switching\" OR \"decision support\") AND (workplace OR employee OR organisation OR organization) AND (intervention OR redesign OR experiment OR trial)"
     },
     {
-      "query_id": "behaviour_change_function",
-      "label": "Behaviour-change and functional interventions",
-      "query": "(\"behavior change intervention\" OR \"behaviour change intervention\") AND (self-regulation OR cognition OR adherence OR functioning) AND (trial OR randomized OR randomised)"
+      "query_id": "personal_wellbeing_resilience_digital",
+      "csi_domain": "personal",
+      "label": "Personal wellbeing, resilience and digital self-help interventions",
+      "query": "(resilience OR wellbeing OR \"well-being\" OR stress OR \"digital self-help\" OR \"digital self help\") AND (cognitive OR psychological OR self-regulation OR behavioural OR behavioral) AND (intervention OR trial OR training) AND NOT workplace"
+    },
+    {
+      "query_id": "health_functioning_fatigue_sleep",
+      "csi_domain": "health_clinical_adjacent",
+      "label": "Health-related functioning, fatigue and sleep support",
+      "query": "(fatigue OR sleep OR \"functional impairment\" OR \"quality of life\") AND (psychological OR cognitive OR behavioural OR behavioral) AND (intervention OR trial OR self-management OR rehabilitation)"
     }
   ],
   "classification": {
@@ -77,6 +143,7 @@
     "mutates_registry": false,
     "mutates_historical_release": false,
     "mutates_csi_gateway": false,
+    "clinical_boundary": "Health-domain inclusion is for evidence discovery and intervention design. It does not authorise diagnosis, treatment recommendations, clinical claims or autonomous consequential use.",
     "notes": "Outputs are discovery and abstract-screening candidates only. Abstract classification cannot establish efficacy, quality, RoB, certainty, transfer or recommendation authority."
   }
 }
