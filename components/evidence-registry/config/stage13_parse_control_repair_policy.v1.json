@@ -1,0 +1,66 @@
+{
+  "schema_version": "stage13-parse-control-repair-policy-v1",
+  "policy_id": "stage13-mixed-source-control-repair-v1",
+  "purpose": "Create source-specific canonical text derivatives for verified PDF font-encoding artefacts without altering raw parsed text or scientific authority.",
+  "sources": {
+    "rt-2026-007": {
+      "rules": [
+        {
+          "rule_id": "frontiers-running-header-backspace",
+          "codepoint": "U+0008",
+          "replacement": "",
+          "replacement_label": "REMOVE_HEADER_ARTEFACT",
+          "expected_count": 12,
+          "previous_context_regex": "Wang et al\\.$",
+          "following_context_regex": "^\\s",
+          "interpretation": "Font-encoding artefact after the author running header; removal preserves the visible text."
+        }
+      ]
+    },
+    "rt-2026-015": {
+      "rules": [
+        {
+          "rule_id": "mediation-direct-effect-prime",
+          "codepoint": "U+0002",
+          "replacement": "′",
+          "replacement_label": "U+2032_PRIME",
+          "expected_count": 4,
+          "previous_context_regex": "c$",
+          "following_context_regex": "^(?:\\s|\\()",
+          "interpretation": "The source renders the mediation direct-effect path as c-prime; replace the malformed font code with U+2032 PRIME."
+        }
+      ]
+    },
+    "rt-2026-018": {
+      "rules": [
+        {
+          "rule_id": "model-comparison-delta",
+          "codepoint": "U+0004",
+          "replacement": "Δ",
+          "replacement_label": "U+0394_GREEK_CAPITAL_DELTA",
+          "expected_count": 9,
+          "previous_context_regex": ".*$",
+          "following_context_regex": "^(?:χ|df)",
+          "interpretation": "The source renders model-comparison differences as delta chi-squared and delta degrees of freedom; replace the malformed font code with U+0394 DELTA."
+        }
+      ]
+    }
+  },
+  "guards": {
+    "require_exact_source_id": true,
+    "require_exact_codepoint_count": true,
+    "require_every_occurrence_context_match": true,
+    "require_zero_unexpected_controls_after_repair": true,
+    "require_raw_text_hash_unchanged": true,
+    "write_canonical_derivative_only": true,
+    "regenerate_parser_owned_spans": true
+  },
+  "governance": {
+    "creates_scientific_authority": false,
+    "creates_machine_screened_status": false,
+    "mutates_registry": false,
+    "mutates_historical_release": false,
+    "mutates_csi_gateway": false,
+    "notes": "The repair is a technical text-normalisation operation. It preserves raw parser output and records every source-specific substitution."
+  }
+}
