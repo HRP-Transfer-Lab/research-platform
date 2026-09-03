@@ -1,0 +1,36 @@
+{
+  "schema_version": "stage13-parse-quality-policy-v1",
+  "policy_id": "stage13-born-digital-pdf-parse-v1",
+  "purpose": "Gate verified local source PDFs into mixed-source extraction without creating scientific authority.",
+  "identity_pages": 8,
+  "minimum_page_characters": 80,
+  "span_generation": {
+    "target_characters": 900,
+    "maximum_characters": 1400,
+    "minimum_characters": 180
+  },
+  "thresholds": {
+    "minimum_nonempty_page_ratio": 0.8,
+    "maximum_low_text_page_ratio": 0.45,
+    "minimum_total_text_characters": 4000,
+    "minimum_median_page_characters": 200,
+    "maximum_replacement_character_rate": 0.002,
+    "minimum_alphabetic_character_ratio": 0.25,
+    "require_database_hash_match": true,
+    "require_database_page_count_match": true,
+    "require_physical_page_alignment": true,
+    "require_identity_match_for_admission": true
+  },
+  "routing": {
+    "pass": "eligible_for_local_extraction_calibration",
+    "review": "quarantine_and_inspect_parser_or_identity",
+    "fail": "quarantine_and_reacquire_or_repair"
+  },
+  "governance": {
+    "creates_scientific_authority": false,
+    "mutates_historical_release": false,
+    "mutates_csi_gateway": false,
+    "permits_machine_screened_status": false,
+    "notes": "Passing this gate means only that parser-owned source spans are technically usable for calibration. It is not scientific review, RoB approval, synthesis or release approval."
+  }
+}
