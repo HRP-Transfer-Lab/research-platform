@@ -23,6 +23,76 @@ The provisional corpus is currently distributed across the principal CSI demo do
 
 The public UI keeps these evidence states visibly distinct. The demo corpus is **not** an approved evidence release or a systematic review.
 
+## Demo pathways
+
+The standalone Gateway now includes three one-click evidence-backed product demonstrations:
+
+```text
+Personal CSI
+Work CSI
+Health CSI
+```
+
+Each pathway:
+
+1. applies a real Gateway evidence filter;
+2. produces a bounded demo recommendation;
+3. shows the exact evidence records used;
+4. displays Approved versus Provisional status beside each source;
+5. exposes a machine-readable CSI demo query;
+6. supports deep links back into the filtered Gateway.
+
+The scenario definitions are versioned in:
+
+```text
+apps/evidence-gateway/demo-recommendations.v1.json
+components/evidence-registry/gateway/demo-recommendations.v1.json
+```
+
+They are product-development demonstrations, not approved scientific, organisational or clinical guidelines.
+
+## CSI Explorer integration
+
+A reusable browser-safe demo client is available at:
+
+```text
+components/evidence-registry/gateway/csi-demo-client.v1.js
+```
+
+and its query contract at:
+
+```text
+components/evidence-registry/gateway/csi-demo-query-contract.v1.json
+```
+
+See:
+
+```text
+docs/CSI_EVIDENCE_DEMO_INTEGRATION.md
+```
+
+for sample queries, deep links and the recommended CSI result provenance shape.
+
+The intended integration boundary is:
+
+```text
+CSI Explorer demo
+        ↓
+csi-demo-client.v1.js
+        ↓
+public.hrp_evidence_gateway_demo
+        ↓
+Approved + Provisional evidence with status labels
+
+Production / claims-safe CSI
+        ↓
+csi-evidence-v1
+        ↓
+public.v_csi_gateway_evidence_v1
+        ↓
+Approved release only
+```
+
 ## Data boundary
 
 The browser reads only:
@@ -66,12 +136,39 @@ The machine-readable contract is:
 components/evidence-registry/gateway/demo-contract.v1.json
 ```
 
+## Shareable deep links
+
+The Gateway understands these query parameters:
+
+```text
+scenario
+q
+domain
+status
+role
+priority
+sort
+```
+
+Examples after deployment:
+
+```text
+?scenario=personal
+?scenario=work
+?scenario=health
+?domain=performance_work&q=AI&priority=high
+```
+
+This lets CSI prototypes expose a **View evidence** link that opens the same human-readable evidence request.
+
 ## Local preview
 
 From this directory:
 
 ```bash
-python3 -m http.server 4173
+npm install
+npm run build
+python3 -m http.server 4173 --directory dist
 ```
 
 Then open:
@@ -85,7 +182,8 @@ http://localhost:4173
 The demo has its own Worker identity and does not replace the authenticated Evidence Workbench.
 
 ```bash
-npx wrangler@4.129.0 deploy
+npm install
+npm run deploy
 ```
 
 Worker name:
