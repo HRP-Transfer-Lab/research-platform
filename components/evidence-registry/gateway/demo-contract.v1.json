@@ -1,0 +1,56 @@
+{
+  "contract_version": "hrp-evidence-gateway-demo-v1",
+  "product_name": "HRP Evidence Gateway",
+  "snapshot_release": "hrp-evidence-gateway-demo-2026-09-04",
+  "mode": "demo",
+  "claims_safe": false,
+  "contains_provisional_evidence": true,
+  "source_relation": "public.hrp_evidence_gateway_demo",
+  "access": {
+    "anonymous_read": true,
+    "write": false,
+    "raw_registry_exposed": false,
+    "reviewer_data_exposed": false,
+    "audit_data_exposed": false
+  },
+  "status_semantics": {
+    "approved": "Human-reviewed evidence from the current approved seed release.",
+    "provisional": "Screening-level evidence awaiting human verification, deeper extraction and approval.",
+    "excluded": "Transparent boundary/scope record retained for demo and review purposes; not treated as included intervention evidence."
+  },
+  "fields": [
+    "source_id",
+    "title",
+    "publication_date",
+    "publication_year",
+    "venue",
+    "doi",
+    "pmid",
+    "source_url",
+    "evidence_status",
+    "authority",
+    "review_status",
+    "review_bucket",
+    "paper_role",
+    "study_design",
+    "primary_domain",
+    "domains",
+    "health_scope",
+    "priority",
+    "evidence_note",
+    "snapshot_release",
+    "updated_at"
+  ],
+  "consumer_modes": {
+    "demo": {
+      "use": "Standalone HRP Evidence Gateway and CSI Explorer demonstrations",
+      "relation": "public.hrp_evidence_gateway_demo",
+      "expected_record_count": 100
+    },
+    "production": {
+      "use": "Claims-safe CSI evidence retrieval",
+      "relation": "public.v_csi_gateway_evidence_v1",
+      "approved_only": true
+    }
+  }
+}
