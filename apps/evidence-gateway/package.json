@@ -1,11 +1,11 @@
 {
   "name": "hrp-evidence-gateway",
   "private": true,
-  "version": "0.2.0",
+  "version": "0.1.0",
   "type": "module",
   "scripts": {
     "dev": "python3 -m http.server 4173",
-    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css iqm-product-theme.css evidence-lifecycle.css app.js gateway-client.js eml.js demo-pathways.js demo-pathways.css demo-recommendations.v1.json dist/",
+    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css iqm-product-theme.css site-nav.css app.js gateway-client.js demo-pathways.js demo-pathways.css demo-recommendations.v1.json evidence-lifecycle.css eml.js dist/",
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
