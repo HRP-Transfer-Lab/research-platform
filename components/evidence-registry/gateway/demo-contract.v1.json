@@ -41,6 +41,14 @@
     "snapshot_release",
     "updated_at"
   ],
+  "demo_integration": {
+    "query_contract": "csi-evidence-demo-query-v1",
+    "query_contract_file": "components/evidence-registry/gateway/csi-demo-query-contract.v1.json",
+    "client_file": "components/evidence-registry/gateway/csi-demo-client.v1.js",
+    "recommendations_file": "components/evidence-registry/gateway/demo-recommendations.v1.json",
+    "deep_link_parameters": ["scenario", "q", "domain", "status", "role", "priority", "sort"],
+    "scenarios": ["personal", "work", "health"]
+  },
   "consumer_modes": {
     "demo": {
       "use": "Standalone HRP Evidence Gateway and CSI Explorer demonstrations",
