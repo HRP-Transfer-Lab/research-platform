@@ -3,7 +3,7 @@
   "compatibility_date": "2026-09-04",
   "workers_dev": true,
   "build": {
-    "command": "rm -rf dist && mkdir -p dist && cp index.html styles.css app.js gateway-client.js dist/"
+    "command": "rm -rf dist && mkdir -p dist && cp index.html styles.css app.js gateway-client.js demo-pathways.js demo-pathways.css demo-recommendations.v1.json dist/"
   },
   "assets": {
     "directory": "./dist",
