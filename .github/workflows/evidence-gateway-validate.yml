@@ -1,0 +1,40 @@
+name: HRP Evidence Gateway validation
+
+on:
+  pull_request:
+    paths:
+      - "apps/evidence-gateway/**"
+      - "components/evidence-registry/gateway/**"
+      - "docs/CSI_EVIDENCE_DEMO_INTEGRATION.md"
+      - ".github/workflows/evidence-gateway-validate.yml"
+  workflow_dispatch:
+
+permissions:
+  contents: read
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: apps/evidence-gateway
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 22
+      - run: npm install
+      - run: npm run build
+      - name: Verify demo assets
+        run: |
+          test -f dist/index.html
+          test -f dist/app.js
+          test -f dist/gateway-client.js
+          test -f dist/demo-pathways.js
+          test -f dist/demo-pathways.css
+          test -f dist/demo-recommendations.v1.json
+          grep -q 'HRP Evidence Gateway' dist/index.html
+          grep -q 'Personal CSI' dist/demo-recommendations.v1.json
+          grep -q 'Work CSI' dist/demo-recommendations.v1.json
+          grep -q 'Health CSI' dist/demo-recommendations.v1.json
+      - run: npx wrangler deploy --dry-run
