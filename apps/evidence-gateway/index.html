@@ -3,8 +3,10 @@
 <head>
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="HRP Evidence Gateway — curated evidence for adaptive cognition, cognitive interventions and human–AI systems." />
-  <title>HRP Evidence Gateway</title>
+  <meta name="description" content="HRP Evidence Gateway — curated evidence for adaptive cognition, cognitive interventions, human performance and human–AI systems." />
+  <meta name="robots" content="index,follow" />
+  <meta name="theme-color" content="#f7fbff" />
+  <title>HRP Evidence Gateway | IQ Mindware</title>
   <link rel="stylesheet" href="./styles.css" />
   <link rel="stylesheet" href="./demo-pathways.css" />
   <link rel="stylesheet" href="./iqm-product-theme.css" />
@@ -15,12 +17,12 @@
       <div class="brand-block">
         <div class="brand-mark" aria-hidden="true">H</div>
         <div>
-          <div class="eyebrow">HRP TRANSFER LAB</div>
+          <div class="eyebrow">HRP TRANSFER LAB · IQ MINDWARE</div>
           <h1>HRP Evidence Gateway</h1>
         </div>
       </div>
       <div class="header-meta">
-        <span class="demo-pill">WORKING DEMO</span>
+        <span class="demo-pill">RESEARCH PREVIEW</span>
         <span id="snapshotLabel" class="snapshot-label">Loading evidence snapshot…</span>
       </div>
     </header>
@@ -28,126 +30,66 @@
     <main>
       <section class="hero">
         <div class="hero-copy">
-          <p class="hero-kicker">Evidence intelligence for adaptive cognition</p>
-          <h2>Curated evidence for cognitive interventions, human performance and human–AI systems.</h2>
-          <p class="hero-intro">Explore a working evidence corpus supporting HRP Transfer Lab, IQ Mindware and CSI Explorer prototypes. Approved and provisional evidence are kept visibly distinct.</p>
+          <p class="hero-kicker">Shared evidence intelligence for CSI</p>
+          <h2>See the evidence, its maturity, its scope—and what is still unknown.</h2>
+          <p class="hero-intro">The Gateway supplies the shared evidence layer beneath Personal CSI, Work CSI and authorised Health pathways. Human-approved evidence and research-watchlist records remain visibly distinct.</p>
         </div>
         <div class="governance-card">
           <div class="governance-icon" aria-hidden="true">✓</div>
           <div>
-            <strong>Governance-aware demo</strong>
-            <p>Provisional records are screening-level evidence and are not presented as human-approved scientific claims.</p>
+            <strong>Evidence maturity stays visible</strong>
+            <p>Screening records are useful for discovery and product research, but they do not become approved scientific or clinical claims until deeper extraction, appraisal and human review are complete.</p>
           </div>
         </div>
       </section>
 
       <section class="metrics" aria-label="Evidence corpus summary">
-        <article class="metric"><span>Total records</span><strong id="totalMetric">—</strong></article>
+        <article class="metric"><span>Total research records</span><strong id="totalMetric">—</strong></article>
         <article class="metric approved"><span>Human approved</span><strong id="approvedMetric">—</strong></article>
-        <article class="metric provisional"><span>Provisional</span><strong id="provisionalMetric">—</strong></article>
+        <article class="metric provisional"><span>Research watchlist</span><strong id="provisionalMetric">—</strong></article>
         <article class="metric excluded"><span>Boundary / excluded</span><strong id="excludedMetric">—</strong></article>
+      </section>
+
+      <section class="evidence-lifecycle" aria-label="Evidence lifecycle">
+        <div><span>1</span><strong>Discover & screen</strong><small>Find relevant research and classify its role/domain.</small></div>
+        <div><span>2</span><strong>Retrieve & extract</strong><small>Capture intervention, population, outcomes, transfer and boundary conditions.</small></div>
+        <div><span>3</span><strong>Appraise & synthesise</strong><small>Separate quality, effect, maturity, transfer and context fit.</small></div>
+        <div><span>4</span><strong>Human approve & release</strong><small>Only approved releases can support claims-safe CSI use.</small></div>
       </section>
 
       <section class="gateway-layout">
         <aside class="filters" aria-label="Evidence filters">
           <div class="filter-title">Explore evidence</div>
-          <label>
-            <span>Search</span>
-            <input id="searchInput" type="search" placeholder="Title, DOI, topic…" autocomplete="off" />
-          </label>
-          <label>
-            <span>Evidence status</span>
-            <select id="statusFilter">
-              <option value="all">All statuses</option>
-              <option value="approved">Approved</option>
-              <option value="provisional">Provisional</option>
-              <option value="excluded">Boundary / excluded</option>
-            </select>
-          </label>
-          <label>
-            <span>CSI domain</span>
-            <select id="domainFilter">
-              <option value="all">All domains</option>
-              <option value="personal">Personal</option>
-              <option value="performance_work">Performance & work</option>
-              <option value="health_clinical_adjacent">Health & clinical-adjacent</option>
-              <option value="legacy">Approved seed · not backfilled</option>
-            </select>
-          </label>
-          <label>
-            <span>Paper role</span>
-            <select id="roleFilter">
-              <option value="all">All roles</option>
-              <option value="direct_intervention">Direct intervention</option>
-              <option value="evidence_synthesis">Evidence synthesis</option>
-              <option value="protocol">Protocol</option>
-              <option value="mechanism">Mechanism</option>
-              <option value="legacy">Approved seed · not backfilled</option>
-            </select>
-          </label>
-          <label>
-            <span>Full-text priority</span>
-            <select id="priorityFilter">
-              <option value="all">All priorities</option>
-              <option value="high">High</option>
-              <option value="medium">Medium</option>
-              <option value="low">Low</option>
-              <option value="legacy">Approved seed · not backfilled</option>
-            </select>
-          </label>
-          <label>
-            <span>Sort</span>
-            <select id="sortFilter">
-              <option value="newest">Newest first</option>
-              <option value="oldest">Oldest first</option>
-              <option value="title">Title A–Z</option>
-            </select>
-          </label>
+          <label><span>Search</span><input id="searchInput" type="search" placeholder="Title, DOI, topic…" autocomplete="off" /></label>
+          <label><span>Evidence status</span><select id="statusFilter"><option value="all">All statuses</option><option value="approved">Human approved</option><option value="provisional">Research watchlist</option><option value="excluded">Boundary / excluded</option></select></label>
+          <label><span>CSI domain</span><select id="domainFilter"><option value="all">All domains</option><option value="personal">Personal</option><option value="performance_work">Performance & work</option><option value="health_clinical_adjacent">Health & clinical-adjacent</option><option value="legacy">Approved seed · not backfilled</option></select></label>
+          <label><span>Paper role</span><select id="roleFilter"><option value="all">All roles</option><option value="direct_intervention">Direct intervention</option><option value="evidence_synthesis">Evidence synthesis</option><option value="protocol">Protocol</option><option value="mechanism">Mechanism</option><option value="legacy">Approved seed · not backfilled</option></select></label>
+          <label><span>Full-text priority</span><select id="priorityFilter"><option value="all">All priorities</option><option value="high">High</option><option value="medium">Medium</option><option value="low">Low</option><option value="legacy">Approved seed · not backfilled</option></select></label>
+          <label><span>Sort</span><select id="sortFilter"><option value="newest">Newest first</option><option value="oldest">Oldest first</option><option value="title">Title A–Z</option></select></label>
           <button id="clearFilters" class="secondary-button" type="button">Clear filters</button>
-          <div class="filter-note">The public demo surface contains bibliographic and screening fields only. Reviewer notes, audit data and raw Registry extraction remain private.</div>
+          <div class="filter-note">Public cards expose bibliographic and evidence-maturity fields only. Reviewer identity, audit history, raw Registry extraction and unrestricted scientific tables remain private.</div>
         </aside>
 
         <section class="results-panel" aria-live="polite">
-          <div class="results-header">
-            <div><strong id="resultCount">—</strong> <span>records</span></div>
-            <div class="legend">
-              <span><i class="dot approved-dot"></i> Approved</span>
-              <span><i class="dot provisional-dot"></i> Provisional</span>
-              <span><i class="dot excluded-dot"></i> Boundary</span>
-            </div>
-          </div>
+          <div class="results-header"><div><strong id="resultCount">—</strong> <span>records</span></div><div class="legend"><span><i class="dot approved-dot"></i> Approved</span><span><i class="dot provisional-dot"></i> Watchlist</span><span><i class="dot excluded-dot"></i> Boundary</span></div></div>
           <div id="loadingState" class="loading-state">Loading the HRP Evidence Gateway…</div>
           <div id="errorState" class="error-state" hidden></div>
           <div id="resultsList" class="results-list"></div>
         </section>
 
         <aside id="detailPanel" class="detail-panel" aria-label="Evidence record detail">
-          <div class="empty-detail">
-            <div class="empty-detail-icon">↗</div>
-            <h3>Select an evidence record</h3>
-            <p>Review its status, study role, CSI relevance and screening rationale.</p>
-          </div>
+          <div class="empty-detail"><div class="empty-detail-icon">↗</div><h3>Select an evidence record</h3><p>Review its authority, current maturity, CSI relevance and screening rationale.</p></div>
         </aside>
       </section>
 
       <section class="about-strip">
-        <div>
-          <h3>How to read this demo</h3>
-          <p><strong>Approved</strong> records belong to the current human-reviewed seed release. <strong>Provisional</strong> records are assistant-researched or assistant-adjudicated screening records awaiting later human verification and deeper extraction. <strong>Boundary / excluded</strong> records are retained to make scope decisions transparent.</p>
-        </div>
-        <div>
-          <h3>Intended use</h3>
-          <p>This Gateway is an evidence-discovery and product-development demonstration. It is not a systematic review, medical advice, or a source of independently approved clinical claims.</p>
-        </div>
+        <div><h3>How to read the Gateway</h3><p><strong>Human approved</strong> records belong to the current approved seed release. <strong>Research watchlist</strong> records are screening-level research leads awaiting human verification and deeper extraction. <strong>Boundary / excluded</strong> records are retained so scope decisions remain transparent.</p></div>
+        <div><h3>What it does not claim</h3><p>The Gateway is an evidence-discovery and CSI evidence-supply product. It is not itself a systematic review, medical advice, treatment selector, or a licence to turn screening records into decision-facing claims.</p></div>
       </section>
     </main>
 
-    <footer>
-      <span>HRP Evidence Gateway · HRP Transfer Lab</span>
-      <span>Demo data · provenance-aware · read-only</span>
-    </footer>
+    <footer><span>HRP Evidence Gateway · HRP Transfer Lab / IQ Mindware</span><span>Provenance-aware · read-only · claims-gated</span></footer>
   </div>
-
   <script type="module" src="./app.js"></script>
   <script type="module" src="./demo-pathways.js"></script>
 </body>
