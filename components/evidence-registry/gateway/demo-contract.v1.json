@@ -45,7 +45,7 @@
     "demo": {
       "use": "Standalone HRP Evidence Gateway and CSI Explorer demonstrations",
       "relation": "public.hrp_evidence_gateway_demo",
-      "expected_record_count": 100
+      "expected_record_count": 152
     },
     "production": {
       "use": "Claims-safe CSI evidence retrieval",
