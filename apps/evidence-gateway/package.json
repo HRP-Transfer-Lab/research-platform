@@ -5,7 +5,7 @@
   "type": "module",
   "scripts": {
     "dev": "python3 -m http.server 4173",
-    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css app.js gateway-client.js demo-pathways.js demo-pathways.css demo-recommendations.v1.json dist/",
+    "build": "rm -rf dist && mkdir -p dist && cp index.html styles.css iqm-product-theme.css app.js gateway-client.js demo-pathways.js demo-pathways.css demo-recommendations.v1.json dist/",
     "deploy": "wrangler deploy"
   },
   "devDependencies": {
