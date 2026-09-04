@@ -1,0 +1,46 @@
+{
+  "contract_version": "csi-evidence-demo-query-v1",
+  "purpose": "Status-labelled evidence retrieval for Personal, Work and Health CSI demonstrations.",
+  "mode": "demo",
+  "claims_safe": false,
+  "source_relation": "public.hrp_evidence_gateway_demo",
+  "production_relation": "public.v_csi_gateway_evidence_v1",
+  "allowed_domains": [
+    "personal",
+    "performance_work",
+    "health_clinical_adjacent"
+  ],
+  "default_query": {
+    "statuses": ["approved", "provisional"],
+    "roles": [],
+    "priorities": [],
+    "limit": 12
+  },
+  "query_fields": {
+    "domain": "Optional CSI domain filter.",
+    "q": "Optional free-text search over public-safe card fields.",
+    "statuses": "Evidence status filter. Demo defaults to approved + provisional.",
+    "roles": "Optional paper-role filter.",
+    "priorities": "Optional full-text-priority filter.",
+    "source_ids": "Optional explicit evidence IDs; preserves caller order.",
+    "limit": "Maximum evidence cards returned after demo ranking."
+  },
+  "response": {
+    "contract_version": "csi-evidence-demo-query-v1",
+    "mode": "demo",
+    "query": "Echo of the resolved query.",
+    "evidence": "Public-safe evidence-card array with status labels.",
+    "governance": {
+      "claims_safe": false,
+      "provisional_evidence_may_be_present": true,
+      "production_claims_require_approved_gateway": true,
+      "production_relation": "public.v_csi_gateway_evidence_v1"
+    }
+  },
+  "status_semantics": {
+    "approved": "Human-reviewed evidence in the approved seed release.",
+    "provisional": "Screening-level evidence available for demos and hypothesis generation but not approved scientific claims.",
+    "excluded": "Boundary/scope record; never returned by the demo client as recommendation evidence."
+  },
+  "consumer_rule": "CSI demos may display provisional evidence only when the evidence status is visible. Production claims-safe CSI outputs must use the approved Gateway relation."
+}
