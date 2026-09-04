@@ -1,19 +1,19 @@
 # HRP Evidence Gateway
 
-Public, read-only working demo of the HRP evidence corpus.
+Public, read-only research evidence surface for HRP Transfer Lab and IQ Mindware Cognitive Systems Intelligence.
 
 > **Public name:** HRP Evidence Gateway  
 > **Descriptor:** Curated evidence for adaptive cognition, cognitive interventions and human–AI systems.
 
-## Current demo corpus
+## Current research snapshot
 
-The `hrp-evidence-gateway-demo-2026-09-04` snapshot contains **258 records**:
+The `hrp-evidence-gateway-demo-2026-09-04` research snapshot contains **258 records**:
 
 - 18 human-approved seed records;
-- 238 assistant-researched or assistant-adjudicated provisional screening records;
+- 238 assistant-researched or assistant-adjudicated research-watchlist records;
 - 2 explicit boundary/excluded records.
 
-The provisional corpus is currently distributed across the principal CSI demo domains approximately as follows:
+Approximate current domain coverage:
 
 - 89 health / clinical-adjacent records;
 - 75 performance / work records;
@@ -21,99 +21,77 @@ The provisional corpus is currently distributed across the principal CSI demo do
 - 18 approved legacy seed records not yet backfilled with Stage 13 CSI-domain labels;
 - 2 explicit not-applicable boundary records.
 
-The public UI keeps these evidence states visibly distinct. The demo corpus is **not** an approved evidence release or a systematic review.
+The public UI keeps authority and maturity visible. The expanded snapshot is **not** an approved evidence release or a systematic review.
 
-## Current product milestone
-
-The current demo now covers the complete first demonstration chain:
+## Role in the CSI product family
 
 ```text
-258-paper evidence corpus
-        ↓
-standalone HRP Evidence Gateway
-        ↓
-useful searchable evidence cards
-        ↓
-CSI demo query/deep-link contract
-        ↓
-evidence-backed recommendation bundle
-        ↓
-Personal / Work / Health CSI demonstrations
+HRP TRANSFER LAB GOVERNED REGISTRY
+        ↓ human review / release gate
+HRP EVIDENCE GATEWAY
+        ├── Personal CSI
+        ├── Work / Organisational CSI
+        └── authorised Health pathways
 ```
 
-The next major step is to plug the reusable demo client into the actual CSI Explorer frontends, then resume corpus expansion toward 300+ after the live demo UX has been reviewed.
+The Gateway is Flow 1 — **Shared Evidence Intelligence**. Personal, employee, service-user and operational pathway data do not enter the scientific Registry merely because a CSI application queries the Gateway.
 
-## Demo pathways
+## Evidence lifecycle
 
-The standalone Gateway includes three one-click evidence-backed product demonstrations:
+The public product now exposes the intended evidence lifecycle:
 
 ```text
-Personal CSI
-Work CSI
-Health CSI
+DISCOVER & SCREEN
+→ RETRIEVE & STRUCTURED EXTRACTION
+→ APPRAISE & SYNTHESISE
+→ HUMAN APPROVE & RELEASE
 ```
 
-Each pathway:
+A paper can therefore be useful for research discovery without being claims-safe.
 
-1. applies a real Gateway evidence filter;
-2. produces a bounded demo recommendation;
-3. shows the exact evidence records used;
-4. displays Approved versus Provisional status beside each source;
-5. exposes a machine-readable CSI demo query;
-6. supports deep links back into the filtered Gateway.
+## Two independent evidence signals
 
-The scenario definitions are versioned in:
+Do not collapse **record authority** and **effectiveness evidence**.
+
+### 1. Record authority / status
+
+- **Human approved** — belongs to an approved seed/release state.
+- **Research watchlist** — screening-level research lead awaiting further verification/extraction/appraisal.
+- **Boundary / excluded** — retained to make scope decisions transparent.
+
+### 2. HRP Evidence Maturity Level (EML v1)
+
+EML describes the maturity of evidence relevant to an intervention/effectiveness proposition:
+
+| EML | Label | Public colour |
+|---:|---|---|
+| 0 | Rationale only | Grey / neutral |
+| 1 | Mechanism / paradigm support | Blue |
+| 2 | Initial direct demonstration | Indigo |
+| 3 | Replicated direct evidence | Teal |
+| 4 | Convergent body | Emerald |
+| 5 | Transfer & durability | Green |
+| 6 | Real-world effectiveness | Lime |
+| 7 | Generalised / scale-ready | Gold |
+
+### Screening-only rule
+
+For the current research-watchlist corpus, screening metadata can support only a conservative **provisional source-contribution EML**:
 
 ```text
-apps/evidence-gateway/demo-recommendations.v1.json
-components/evidence-registry/gateway/demo-recommendations.v1.json
+protocol                 → provisional EML 0
+mechanism / measurement  → provisional EML 1
+direct intervention      → provisional EML 2
+evidence synthesis       → body-level EML pending appraisal
 ```
 
-They are product-development demonstrations, not approved scientific, organisational or clinical guidelines.
+A systematic-review/scoping-review label does **not** automatically create EML 4. EML 3–7 require structured extraction and appraisal demonstrating replication, convergence, transfer/durability, real-world effectiveness or generalisation/scale readiness.
 
-## CSI Explorer integration
+The core rule is:
 
-A reusable browser-safe demo client is available at:
+> **A source-contribution EML is not a body-level effectiveness rating.**
 
-```text
-components/evidence-registry/gateway/csi-demo-client.v1.js
-```
-
-and its query contract at:
-
-```text
-components/evidence-registry/gateway/csi-demo-query-contract.v1.json
-```
-
-See:
-
-```text
-docs/CSI_EVIDENCE_DEMO_INTEGRATION.md
-```
-
-for sample queries, deep links and the recommended CSI result provenance shape.
-
-The intended integration boundary is:
-
-```text
-CSI Explorer demo
-        ↓
-csi-demo-client.v1.js
-        ↓
-public.hrp_evidence_gateway_demo
-        ↓
-Approved + Provisional evidence with status labels
-
-Production / claims-safe CSI
-        ↓
-csi-evidence-v1
-        ↓
-public.v_csi_gateway_evidence_v1
-        ↓
-Approved release only
-```
-
-## Data boundary
+## Public-safe data boundary
 
 The browser reads only:
 
@@ -121,7 +99,7 @@ The browser reads only:
 public.hrp_evidence_gateway_demo
 ```
 
-This is a public-safe snapshot containing bibliographic and screening/display fields only. It does not expose:
+This relation contains bibliographic and screening/display fields only. It does not expose:
 
 - raw Registry extraction JSON;
 - Workbench membership;
@@ -130,35 +108,42 @@ This is a public-safe snapshot containing bibliographic and screening/display fi
 - unrestricted scientific tables;
 - service-role or secret credentials.
 
-The browser uses the Supabase publishable key, which is intentionally safe for public client code and remains constrained by Postgres grants and RLS.
+The browser uses a Supabase publishable key constrained by the database grants/RLS model.
 
-## Demo versus production consumers
-
-```text
-DEMO MODE
-HRP Evidence Gateway / CSI Explorer demos
-        ↓
-hrp_evidence_gateway_demo
-        ↓
-258 records, status-labelled
-
-PRODUCTION / CLAIMS-SAFE MODE
-CSI Explorers
-        ↓
-v_csi_gateway_evidence_v1
-        ↓
-18 human-approved records in the current approved release
-```
-
-The machine-readable contract is:
+## Research-preview versus claims-safe consumers
 
 ```text
-components/evidence-registry/gateway/demo-contract.v1.json
+RESEARCH PREVIEW / EARLY-ACCESS CSI
+        ↓
+public.hrp_evidence_gateway_demo
+        ↓
+258 status-labelled records
+
+PRODUCTION / CLAIMS-SAFE CSI
+        ↓
+csi-evidence-v1
+        ↓
+public.v_csi_gateway_evidence_v1
+        ↓
+human-approved release only
 ```
 
-## Shareable deep links
+## CSI integration
 
-The Gateway understands these query parameters:
+Reusable research-preview assets remain in:
+
+```text
+components/evidence-registry/gateway/
+  csi-demo-client.v1.js
+  csi-demo-query-contract.v1.json
+  demo-recommendations.v1.json
+  demo-contract.v1.json
+  contract.v1.json
+```
+
+See `docs/CSI_EVIDENCE_DEMO_INTEGRATION.md` for query/provenance examples.
+
+The public Gateway understands:
 
 ```text
 scenario
@@ -170,20 +155,9 @@ priority
 sort
 ```
 
-Examples after deployment:
+This lets a CSI result expose a human-readable **View evidence** route while separately recording the exact evidence source IDs and release/snapshot used.
 
-```text
-?scenario=personal
-?scenario=work
-?scenario=health
-?domain=performance_work&q=AI&priority=high
-```
-
-This lets CSI prototypes expose a **View evidence** link that opens the same human-readable evidence request.
-
-## Local preview
-
-From this directory:
+## Local build
 
 ```bash
 npm install
@@ -191,29 +165,18 @@ npm run build
 python3 -m http.server 4173 --directory dist
 ```
 
-Then open:
-
-```text
-http://localhost:4173
-```
-
-## Cloudflare deployment
-
-The demo has its own Worker identity and does not replace the authenticated Evidence Workbench.
+## Standalone Worker preview
 
 ```bash
-npm install
 npm run deploy
 ```
 
-Worker name:
+Worker identity remains `hrp-evidence-gateway-demo` as an engineering preview/fallback. The intended business-facing route is:
 
 ```text
-hrp-evidence-gateway-demo
+https://www.iqmindware.com/evidence/
 ```
-
-No environment secrets are required.
 
 ## Governance
 
-This application is designed for evidence discovery, product demonstrations and CSI prototype integration. Provisional records should not be transformed into approved scientific or clinical claims merely because they are accessible through the demo UI.
+The Gateway supports evidence discovery, research prioritisation, product development and CSI evidence retrieval. Visibility in the Gateway does not make a source an approved scientific, organisational or clinical claim. Human approval remains required for claims-safe releases and consequential use.
