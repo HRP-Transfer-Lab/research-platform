@@ -45,12 +45,18 @@
     "demo": {
       "use": "Standalone HRP Evidence Gateway and CSI Explorer demonstrations",
       "relation": "public.hrp_evidence_gateway_demo",
-      "expected_record_count": 152
+      "expected_record_count": 258,
+      "status_counts": {
+        "approved": 18,
+        "provisional": 238,
+        "excluded": 2
+      }
     },
     "production": {
       "use": "Claims-safe CSI evidence retrieval",
       "relation": "public.v_csi_gateway_evidence_v1",
-      "approved_only": true
+      "approved_only": true,
+      "current_record_count": 18
     }
   }
 }
