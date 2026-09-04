@@ -7,11 +7,19 @@ Public, read-only working demo of the HRP evidence corpus.
 
 ## Current demo corpus
 
-The `hrp-evidence-gateway-demo-2026-09-04` snapshot contains **152 records**:
+The `hrp-evidence-gateway-demo-2026-09-04` snapshot contains **258 records**:
 
 - 18 human-approved seed records;
-- 132 assistant-researched or assistant-adjudicated provisional screening records;
+- 238 assistant-researched or assistant-adjudicated provisional screening records;
 - 2 explicit boundary/excluded records.
+
+The provisional corpus is currently distributed across the principal CSI demo domains approximately as follows:
+
+- 89 health / clinical-adjacent records;
+- 75 performance / work records;
+- 74 personal records;
+- 18 approved legacy seed records not yet backfilled with Stage 13 CSI-domain labels;
+- 2 explicit not-applicable boundary records.
 
 The public UI keeps these evidence states visibly distinct. The demo corpus is **not** an approved evidence release or a systematic review.
 
@@ -42,14 +50,14 @@ HRP Evidence Gateway / CSI Explorer demos
         ↓
 hrp_evidence_gateway_demo
         ↓
-152 records, status-labelled
+258 records, status-labelled
 
 PRODUCTION / CLAIMS-SAFE MODE
 CSI Explorers
         ↓
 v_csi_gateway_evidence_v1
         ↓
-approved release only
+18 human-approved records in the current approved release
 ```
 
 The machine-readable contract is:
