@@ -23,9 +23,29 @@ The provisional corpus is currently distributed across the principal CSI demo do
 
 The public UI keeps these evidence states visibly distinct. The demo corpus is **not** an approved evidence release or a systematic review.
 
+## Current product milestone
+
+The current demo now covers the complete first demonstration chain:
+
+```text
+258-paper evidence corpus
+        ↓
+standalone HRP Evidence Gateway
+        ↓
+useful searchable evidence cards
+        ↓
+CSI demo query/deep-link contract
+        ↓
+evidence-backed recommendation bundle
+        ↓
+Personal / Work / Health CSI demonstrations
+```
+
+The next major step is to plug the reusable demo client into the actual CSI Explorer frontends, then resume corpus expansion toward 300+ after the live demo UX has been reviewed.
+
 ## Demo pathways
 
-The standalone Gateway now includes three one-click evidence-backed product demonstrations:
+The standalone Gateway includes three one-click evidence-backed product demonstrations:
 
 ```text
 Personal CSI
