@@ -1,5 +1,5 @@
 import { useMemo, useState } from 'react'
-import { Archive, Clipboard, FileSearch, Plus, RefreshCw, Upload } from 'lucide-react'
+import { Archive, Clipboard, Download, FileSearch, Plus, RefreshCw, Upload } from 'lucide-react'
 import { supabase } from './lib/supabase'
 import { humanize, type AuditRow, type RegistryData, type Release, type ResearchCandidate, type Role, type WorkbenchMember } from './workbench'
 import { EditInput } from './WorkbenchUi'
@@ -342,6 +342,67 @@ export function ContentBriefPage({
     setTimeout(() => setCopied(false), 1600)
   }
 
+  function exportIqMindwareBrief() {
+    const payload = {
+      schema_version: '0.1',
+      topic_id: topic.id,
+      topic_label: topic.label,
+      release_stream: topic.stream,
+      generated_at: new Date().toISOString(),
+      query_terms: terms,
+      approved_evidence: approved.map(({ source, score }) => ({
+        source_id: source.source_id,
+        title: source.title,
+        venue: source.venue,
+        publication_date: source.publication_date,
+        publication_year: source.publication_year,
+        source_url: source.source_url,
+        doi: source.doi,
+        pmid: source.pmid,
+        review_status: source.review_status,
+        review_bucket: source.review_bucket,
+        primary_classification: source.raw_record?.review?.primary_classification ?? null,
+        relevance_score: score,
+      })),
+      reviewing_corpus: reviewing.map(({ source, score }) => ({
+        source_id: source.source_id,
+        title: source.title,
+        venue: source.venue,
+        publication_date: source.publication_date,
+        publication_year: source.publication_year,
+        source_url: source.source_url,
+        doi: source.doi,
+        pmid: source.pmid,
+        review_status: source.review_status,
+        review_bucket: source.review_bucket,
+        primary_classification: source.raw_record?.review?.primary_classification ?? null,
+        relevance_score: score,
+      })),
+      recent_discovery: recent.map(({ candidate, score }) => ({
+        candidate_id: candidate.candidate_id,
+        title: candidate.title,
+        source: candidate.source,
+        source_url: candidate.source_url,
+        topic_family: candidate.topic_family,
+        discovery_status: candidate.discovery_status,
+        relevance_terms: candidate.relevance_terms,
+        relevance_score: score,
+        claim_status: candidate.claim_status,
+      })),
+      claim_boundary: 'Approved evidence only may support public evidence claims, and only within the reviewed population, design, route, outcome, maturity and caveats. Reviewing records are internal synthesis inputs. Discovery signals are freshness/novelty inputs only.',
+      seo_policy: 'WHOLE_REGISTRY_BASELINE_THEN_RECENT_DELTA_THEN_SEARCH_DEMAND',
+    }
+    const blob = new Blob([JSON.stringify(payload, null, 2) + '\n'], { type: 'application/json' })
+    const url = URL.createObjectURL(blob)
+    const a = document.createElement('a')
+    a.href = url
+    a.download = `hrp-evidence-brief-${topic.id}.json`
+    document.body.appendChild(a)
+    a.click()
+    a.remove()
+    URL.revokeObjectURL(url)
+  }
+
   return <main className="wide-page">
     <div className="page-heading with-action">
       <div>
@@ -349,7 +410,10 @@ export function ContentBriefPage({
         <h2>Evidence-to-content brief</h2>
         <p>Use the whole relevant Registry as the scientific baseline, then layer on the recent scout delta. Status boundaries remain visible so reviewing papers do not silently become public evidence claims.</p>
       </div>
-      <button className="secondary-button" onClick={() => void copyBrief()}><Clipboard size={15} /> {copied ? 'Copied' : 'Copy brief'}</button>
+      <div className="page-heading-actions">
+        <button className="secondary-button" onClick={exportIqMindwareBrief}><Download size={15} /> Download IQM JSON</button>
+        <button className="secondary-button" onClick={() => void copyBrief()}><Clipboard size={15} /> {copied ? 'Copied' : 'Copy brief'}</button>
+      </div>
     </div>
 
     <section className="content-brief-controls">
