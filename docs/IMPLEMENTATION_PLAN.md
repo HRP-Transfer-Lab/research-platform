@@ -69,13 +69,15 @@ Exit criteria:
 ## Phase 5 (Week 6+): Computational modeling and research agents
 
 1. Implement model-run job system (queued execution, parameter sweeps, artifact tracking).
-2. Add paper scout agents for PubMed/arXiv/bioRxiv/Semantic Scholar.
-3. Add critique agent that challenges summaries and hypothesis claims.
-4. Add human review gate for auto-generated graph links and hypotheses.
+2. **Shared paper-scout MVP implemented:** PubMed + Crossref metadata discovery, title-anchor relevance filtering, deduplication, and a local review queue. The scout is discovery-only and cannot write canonical evidence.
+3. Add the remaining source adapters: OpenAlex, arXiv, bioRxiv and Semantic Scholar.
+4. Add critique/synthesis agents that challenge summaries and hypothesis claims.
+5. Connect discovery candidates to an explicit Evidence Workbench screening/import queue without bypassing human review.
 
 Exit criteria:
 - reproducible model run from saved config
-- nightly scout run opens review-ready updates
+- scout run opens review-ready updates
+- no discovered paper reaches the Evidence Registry/Gateway without the Workbench review lifecycle
 
 ## Suggested order for your first 10-hour prototype
 

@@ -1,0 +1,189 @@
+{
+  "schema_version": "0.1",
+  "scout_id": "hrp-shared-research-scout-v1",
+  "cadence": {
+    "lookback_days": 21,
+    "max_results_per_query": 5,
+    "max_candidates_per_scan": 120
+  },
+  "policy": {
+    "discovery_only": true,
+    "human_review_required": true,
+    "canonical_write_enabled": false,
+    "no_claim_from_metadata": true,
+    "output_path": ".local/research-intel-agents/review-queue-latest.json"
+  },
+  "sources": {
+    "crossref": {
+      "enabled": true,
+      "api_base": "https://api.crossref.org",
+      "contact_email_env": "HRP_RESEARCH_CONTACT_EMAIL"
+    },
+    "pubmed": {
+      "enabled": true,
+      "api_base": "https://eutils.ncbi.nlm.nih.gov/entrez/eutils",
+      "contact_email_env": "PUBMED_EMAIL"
+    },
+    "semantic_scholar": {
+      "enabled": false,
+      "note": "Reserved adapter; key already documented as SEMANTIC_SCHOLAR_API_KEY."
+    },
+    "arxiv": {
+      "enabled": false,
+      "note": "Reserved adapter for Phase 2 shared scout."
+    },
+    "biorxiv": {
+      "enabled": false,
+      "note": "Reserved adapter for Phase 2 shared scout."
+    },
+    "openalex": {
+      "enabled": false,
+      "note": "Reserved adapter for Phase 2 shared scout."
+    }
+  },
+  "topic_families": {
+    "attention_control": {
+      "consumers": [
+        "IQM",
+        "SWI",
+        "CSI"
+      ],
+      "anchors": [
+        "attention control",
+        "attentional control",
+        "executive attention",
+        "cognitive control",
+        "inhibitory control",
+        "interference control",
+        "executive control"
+      ],
+      "queries": [
+        "attention control cognitive training",
+        "executive attention interference control",
+        "cognitive control training transfer"
+      ]
+    },
+    "relational_memory": {
+      "consumers": [
+        "IQM",
+        "CSI"
+      ],
+      "anchors": [
+        "relational memory",
+        "relational integration",
+        "relational reasoning",
+        "associative memory",
+        "episodic memory",
+        "cognitive map"
+      ],
+      "queries": [
+        "relational memory relational integration",
+        "relational reasoning working memory"
+      ]
+    },
+    "binding_memory": {
+      "consumers": [
+        "IQM",
+        "CSI"
+      ],
+      "anchors": [
+        "memory binding",
+        "working memory binding",
+        "feature binding",
+        "relational binding",
+        "associative binding"
+      ],
+      "queries": [
+        "working memory binding feature binding",
+        "relational binding memory"
+      ]
+    },
+    "reasoning": {
+      "consumers": [
+        "IQM",
+        "SWI",
+        "CSI"
+      ],
+      "anchors": [
+        "fluid intelligence",
+        "abstract reasoning",
+        "inductive reasoning",
+        "deductive reasoning",
+        "relational reasoning",
+        "reasoning training"
+      ],
+      "queries": [
+        "fluid intelligence reasoning training",
+        "inductive reasoning cognitive training"
+      ]
+    },
+    "transfer_mutualism": {
+      "consumers": [
+        "IQM",
+        "CSI"
+      ],
+      "anchors": [
+        "far transfer",
+        "near transfer",
+        "cognitive transfer",
+        "general intelligence",
+        "positive manifold",
+        "mutualism intelligence",
+        "cognitive network"
+      ],
+      "queries": [
+        "cognitive training far transfer intelligence",
+        "mutualism intelligence cognitive development",
+        "network theory intelligence learning"
+      ]
+    },
+    "human_ai": {
+      "consumers": [
+        "IQM",
+        "SWI",
+        "CSI"
+      ],
+      "anchors": [
+        "cognitive offloading",
+        "human ai",
+        "human-ai",
+        "generative ai",
+        "critical thinking",
+        "automation bias",
+        "algorithmic reliance",
+        "ai-assisted",
+        "human judgement",
+        "human judgment"
+      ],
+      "queries": [
+        "artificial intelligence cognitive offloading critical thinking",
+        "generative AI learning retained capability",
+        "AI verification burden human judgement",
+        "human AI collaboration cognitive performance"
+      ]
+    },
+    "work_design": {
+      "consumers": [
+        "SWI",
+        "CSI"
+      ],
+      "anchors": [
+        "workload",
+        "work design",
+        "workplace interruption",
+        "role clarity",
+        "organisational change",
+        "organizational change",
+        "work intensification",
+        "employee autonomy",
+        "job demands"
+      ],
+      "queries": [
+        "workplace interruptions attention productivity",
+        "workload cognitive performance work design",
+        "role clarity organisational change wellbeing",
+        "AI work intensification verification workload"
+      ]
+    }
+  }
+}
