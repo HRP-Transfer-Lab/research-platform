@@ -5,7 +5,7 @@ import { supabase } from './lib/supabase'
 import { LoginScreen, PendingAccess } from './AuthViews'
 import { MaturityBadge, type MaturityAssessment, type MaturityDefinition } from './EvidenceMaturity'
 import { SourceDetailWithMaturity } from './SourceDetailWithMaturity'
-import { AccessPage, AuditPage, DiscoveryPage, ReleasesPage } from './WorkbenchPages'
+import { AccessPage, AuditPage, ContentBriefPage, DiscoveryPage, ReleasesPage } from './WorkbenchPages'
 import { BucketPill, CenteredLoader, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
 import { emptyData, humanize, primaryClassification, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type ResearchCandidate, type Study, type Tab, type WorkbenchMember } from './workbench'
 
@@ -201,6 +201,7 @@ function App() {
         </div>
         <nav className="topnav" aria-label="Workbench sections">
           <NavButton active={tab === 'discovery'} onClick={() => switchTab('discovery')} icon={<FileSearch size={16} />} label="Discovery" />
+          <NavButton active={tab === 'content_brief'} onClick={() => switchTab('content_brief')} icon={<Sparkles size={16} />} label="Content Brief" />
           <NavButton active={tab === 'library'} onClick={() => switchTab('library')} icon={<BookOpen size={16} />} label="Evidence" />
           <NavButton active={tab === 'releases'} onClick={() => switchTab('releases')} icon={<Archive size={16} />} label="Releases" />
           {canEdit && <NavButton active={tab === 'audit'} onClick={() => switchTab('audit')} icon={<Activity size={16} />} label="Audit" />}
@@ -216,6 +217,8 @@ function App() {
       {error && <div className="error-banner"><span>{error}</span><button onClick={() => setError(null)}><X size={16} /></button></div>}
 
       {tab === 'discovery' && <DiscoveryPage rows={candidates} canEdit={canEdit} currentUserId={session.user.id} onRefresh={loadCandidates} onError={setError} />}
+
+      {tab === 'content_brief' && <ContentBriefPage data={data} candidates={candidates} />}
 
       {tab === 'library' && (
         <main className="library-page">

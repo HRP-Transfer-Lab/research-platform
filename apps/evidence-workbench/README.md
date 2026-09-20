@@ -92,3 +92,17 @@ The Discovery page includes an on-screen operating guide covering:
 3. how to use the file picker on Kastel Mini;
 4. the meaning of each screening state;
 5. the boundary that `include_for_review` is not approved evidence.
+
+
+## Evidence-to-content brief
+
+The Workbench includes a **Content Brief** tab for release and SEO work. It does not
+replace scientific review. Instead it separates:
+
+1. approved Registry evidence — possible public evidence support within existing caveats;
+2. the full reviewing corpus — internal landscape, mechanisms, tensions and candidate sources;
+3. recent Research Scout signals — freshness only, no public claim.
+
+The brief can be copied as Markdown and paired with Search Console intent data in the
+IQ Mindware release/SEO cycle. The default policy is: whole Registry baseline first,
+recent research delta second, search demand third.

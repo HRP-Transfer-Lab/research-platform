@@ -1,5 +1,5 @@
 export type Role = 'viewer' | 'editor' | 'owner'
-export type Tab = 'discovery' | 'library' | 'releases' | 'audit' | 'access'
+export type Tab = 'discovery' | 'content_brief' | 'library' | 'releases' | 'audit' | 'access'
 
 export type ResearchCandidate = {
   candidate_id: string

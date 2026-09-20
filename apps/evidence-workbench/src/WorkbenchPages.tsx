@@ -1,5 +1,5 @@
-import { useState } from 'react'
-import { Archive, FileSearch, Plus, RefreshCw, Upload } from 'lucide-react'
+import { useMemo, useState } from 'react'
+import { Archive, Clipboard, FileSearch, Plus, RefreshCw, Upload } from 'lucide-react'
 import { supabase } from './lib/supabase'
 import { humanize, type AuditRow, type RegistryData, type Release, type ResearchCandidate, type Role, type WorkbenchMember } from './workbench'
 import { EditInput } from './WorkbenchUi'
@@ -165,5 +165,245 @@ export function DiscoveryPage({
       </article>)}
       {rows.length === 0 && <div className="empty-state">No discovery candidates imported yet.</div>}
     </div>
+  </main>
+}
+
+
+const contentBriefTopics = [
+  {
+    id: 'attention_control',
+    label: 'Attention Control',
+    stream: 'SYNERGY_IQ',
+    terms: ['attention control','attentional control','executive attention','cognitive control','inhibitory control','interference control','executive function'],
+  },
+  {
+    id: 'relational_memory',
+    label: 'Relational Memory',
+    stream: 'SYNERGY_IQ',
+    terms: ['relational memory','relational integration','relational reasoning','associative memory','episodic memory','cognitive map'],
+  },
+  {
+    id: 'binding_memory',
+    label: 'Binding Memory',
+    stream: 'SYNERGY_IQ',
+    terms: ['memory binding','working memory binding','feature binding','relational binding','associative binding'],
+  },
+  {
+    id: 'path_horizon',
+    label: 'Path Horizon',
+    stream: 'SYNERGY_IQ',
+    terms: ['planning horizon','prospective planning','multi-step planning','graph reasoning','lookahead','planning depth','prospective memory'],
+  },
+  {
+    id: 'knowledge_access',
+    label: 'Knowledge Access',
+    stream: 'SYNERGY_IQ',
+    terms: ['crystallized intelligence','crystallised intelligence','semantic memory','semantic retrieval','knowledge retrieval','retrieval practice'],
+  },
+  {
+    id: 'generative_search',
+    label: 'Generative Search',
+    stream: 'SYNERGY_IQ',
+    terms: ['divergent thinking','idea generation','hypothesis generation','creative ideation','creative thinking'],
+  },
+  {
+    id: 'reasoning',
+    label: 'Reasoning',
+    stream: 'SYNERGY_IQ',
+    terms: ['fluid intelligence','abstract reasoning','inductive reasoning','deductive reasoning','relational reasoning','reasoning training','clinical reasoning'],
+  },
+  {
+    id: 'transfer_mutualism',
+    label: 'Transfer & Mutualism',
+    stream: 'SYNERGY_IQ',
+    terms: ['far transfer','near transfer','cognitive transfer','general intelligence','positive manifold','mutualism','mutualistic','cognitive network'],
+  },
+  {
+    id: 'human_ai',
+    label: 'Human Intelligence × AI',
+    stream: 'SYNERGY_IQ_AND_SWI',
+    terms: ['cognitive offloading','human ai','human-ai','generative ai','critical thinking','automation bias','algorithmic reliance','ai-assisted','human judgement','human judgment'],
+  },
+  {
+    id: 'swi_work',
+    label: 'SWI Work Design',
+    stream: 'SWI_BETA',
+    terms: ['workload','work design','workplace interruption','role clarity','organisational change','organizational change','work intensification','employee autonomy','job demands','verification burden'],
+  },
+] as const
+
+function normalise(value: unknown) {
+  return String(value ?? '').toLowerCase().replaceAll('-', ' ').replace(/\s+/g, ' ').trim()
+}
+
+function evidenceHaystack(source: any, data: RegistryData) {
+  const study = data.studies.find((item) => item.source_id === source.source_id)
+  const components = data.components.filter((item) => item.study_id === study?.study_id)
+  const outcomes = data.outcomes.filter((item) => item.study_id === study?.study_id)
+  const products = data.products.filter((item) => item.source_id === source.source_id)
+  const tags = Array.isArray(source.raw_record?.tags) ? source.raw_record.tags : []
+  return normalise([
+    source.title,
+    source.venue,
+    source.route_rationale,
+    source.raw_record?.review?.primary_classification,
+    ...tags,
+    ...(study?.population_tags ?? []),
+    study?.population_summary,
+    ...components.flatMap((item) => [item.route, item.secondary_route, item.target_summary, item.method_summary]),
+    ...outcomes.flatMap((item) => [item.outcome_name, item.functional_domain, item.result_summary, ...(item.transfer_axes ?? [])]),
+    ...products.flatMap((item) => [item.product, item.support_scope, item.rationale]),
+  ].filter(Boolean).join(' | '))
+}
+
+function matchScore(text: string, terms: readonly string[]) {
+  return terms.reduce((score, term) => score + (text.includes(normalise(term)) ? 1 : 0), 0)
+}
+
+export function ContentBriefPage({
+  data,
+  candidates,
+}: {
+  data: RegistryData
+  candidates: ResearchCandidate[]
+}) {
+  const [topicId, setTopicId] = useState<(typeof contentBriefTopics)[number]['id']>('attention_control')
+  const [extraTerms, setExtraTerms] = useState('')
+  const [copied, setCopied] = useState(false)
+
+  const topic = contentBriefTopics.find((item) => item.id === topicId) ?? contentBriefTopics[0]
+  const terms = useMemo(() => {
+    const custom = extraTerms.split(',').map((item) => item.trim()).filter(Boolean)
+    return [...topic.terms, ...custom]
+  }, [topic, extraTerms])
+
+  const matched = useMemo(() => {
+    return data.sources
+      .map((source) => ({ source, score: matchScore(evidenceHaystack(source, data), terms) }))
+      .filter((item) => item.score > 0)
+      .sort((a, b) => b.score - a.score || String(b.source.publication_date ?? b.source.publication_year ?? '').localeCompare(String(a.source.publication_date ?? a.source.publication_year ?? '')))
+  }, [data, terms])
+
+  const approved = matched.filter(({ source }) => ['approved_seed','approved_release'].includes(source.review_status))
+  const reviewing = matched.filter(({ source }) => !['approved_seed','approved_release'].includes(source.review_status))
+
+  const recent = useMemo(() => {
+    return candidates
+      .map((candidate) => {
+        const text = normalise([candidate.title, candidate.topic_family, ...(candidate.relevance_terms ?? [])].join(' | '))
+        const score = candidate.topic_family === topic.id ? 5 + matchScore(text, terms) : matchScore(text, terms)
+        return { candidate, score }
+      })
+      .filter((item) => item.score > 0 && !['exclude','duplicate'].includes(item.candidate.discovery_status))
+      .sort((a, b) => b.score - a.score)
+  }, [candidates, topic, terms])
+
+  function sourceLine(source: any) {
+    const date = source.publication_date ?? source.publication_year ?? 'date unknown'
+    return `- ${source.title} — ${source.venue ?? source.source_kind} (${date}) [${source.review_status}]`
+  }
+
+  const briefText = useMemo(() => {
+    const approvedLines = approved.slice(0, 12).map(({ source }) => sourceLine(source))
+    const reviewLines = reviewing.slice(0, 20).map(({ source }) => sourceLine(source))
+    const recentLines = recent.slice(0, 12).map(({ candidate }) => `- ${candidate.title} — ${candidate.source} [${candidate.discovery_status}; no public claim]`)
+    return [
+      `# HRP Evidence-to-Content Brief — ${topic.label}`,
+      '',
+      `Release stream: ${topic.stream}`,
+      `Topic terms: ${terms.join(', ')}`,
+      `Registry matches: ${matched.length} total · ${approved.length} approved · ${reviewing.length} reviewing`,
+      `Recent discovery matches: ${recent.length}`,
+      '',
+      '## Approved evidence baseline',
+      'These records may inform public evidence claims only within their reviewed scope, caveats and evidence maturity.',
+      ...(approvedLines.length ? approvedLines : ['- No approved matching record found.']),
+      '',
+      '## Full review corpus',
+      'Use these records to identify themes, mechanisms, tensions, counterevidence and papers worth checking. Do not silently treat them as approved claim support.',
+      ...(reviewLines.length ? reviewLines : ['- No reviewing match found.']),
+      '',
+      '## Recent research delta',
+      'Discovery signals are freshness/novelty inputs only until screened, extracted, verified and appraised.',
+      ...(recentLines.length ? recentLines : ['- No current discovery match found.']),
+      '',
+      '## Content / claim boundary',
+      '- Start from the whole relevant evidence landscape, not only recent publications.',
+      '- Distinguish approved evidence from reviewing evidence and discovery signals in drafting.',
+      '- Do not infer product efficacy, far transfer or IQ change from literature relevance alone.',
+      '- Pair this evidence brief with Search Console intent/query evidence before deciding CREATE / MERGE / REFRESH / DERIVE / DO_NOT_CREATE.',
+      '- Prefer refreshing an existing high-value IQ Mindware page before creating a competing page.',
+    ].join('\n')
+  }, [topic, terms, matched.length, approved, reviewing, recent])
+
+  async function copyBrief() {
+    await navigator.clipboard.writeText(briefText)
+    setCopied(true)
+    setTimeout(() => setCopied(false), 1600)
+  }
+
+  return <main className="wide-page">
+    <div className="page-heading with-action">
+      <div>
+        <div className="eyebrow">EVIDENCE → RELEASE → SEO</div>
+        <h2>Evidence-to-content brief</h2>
+        <p>Use the whole relevant Registry as the scientific baseline, then layer on the recent scout delta. Status boundaries remain visible so reviewing papers do not silently become public evidence claims.</p>
+      </div>
+      <button className="secondary-button" onClick={() => void copyBrief()}><Clipboard size={15} /> {copied ? 'Copied' : 'Copy brief'}</button>
+    </div>
+
+    <section className="content-brief-controls">
+      <label>
+        <span className="field-label">Release / topic</span>
+        <select className="select-input" value={topicId} onChange={(event) => setTopicId(event.target.value as (typeof contentBriefTopics)[number]['id'])}>
+          {contentBriefTopics.map((item) => <option key={item.id} value={item.id}>{item.label} · {item.stream}</option>)}
+        </select>
+      </label>
+      <label>
+        <span className="field-label">Optional extra search terms</span>
+        <input className="text-input" value={extraTerms} onChange={(event) => setExtraTerms(event.target.value)} placeholder="e.g. task switching, interruption, verification" />
+      </label>
+    </section>
+
+    <section className="brief-summary-grid">
+      <div className="brief-summary-card approved"><span>Approved baseline</span><strong>{approved.length}</strong><small>reviewed records that may support claims within their existing boundaries</small></div>
+      <div className="brief-summary-card reviewing"><span>Review corpus</span><strong>{reviewing.length}</strong><small>use for themes, tensions and candidate evidence — not automatic claim support</small></div>
+      <div className="brief-summary-card recent"><span>Recent delta</span><strong>{recent.length}</strong><small>new scout signals awaiting the normal review lifecycle</small></div>
+      <div className="brief-summary-card total"><span>Total topic landscape</span><strong>{matched.length}</strong><small>matched Registry records before the recent discovery layer</small></div>
+    </section>
+
+    <section className="content-brief-grid">
+      <div className="content-brief-panel">
+        <div className="content-brief-panel-head"><div><div className="eyebrow">1 · BASELINE</div><h3>Approved evidence</h3></div><span>{approved.length}</span></div>
+        <p className="content-brief-note">Use only within the record's reviewed population, design, route, outcome and claim caveats.</p>
+        <div className="brief-source-list">
+          {approved.slice(0, 12).map(({ source, score }) => <a key={source.source_id} className="brief-source" href={source.source_url} target="_blank" rel="noreferrer"><strong>{source.title}</strong><span>{source.venue ?? humanize(source.source_kind)} · match {score} · {humanize(source.review_status)}</span></a>)}
+          {approved.length === 0 && <div className="empty-state">No approved Registry records matched this topic. Treat this as a claim-gap, not permission to use reviewing papers as substitutes.</div>}
+        </div>
+      </div>
+
+      <div className="content-brief-panel">
+        <div className="content-brief-panel-head"><div><div className="eyebrow">2 · LANDSCAPE</div><h3>Full review corpus</h3></div><span>{reviewing.length}</span></div>
+        <p className="content-brief-note">Use to identify mechanisms, disagreements, boundary conditions and papers that deserve verification before publication.</p>
+        <div className="brief-source-list">
+          {reviewing.slice(0, 20).map(({ source, score }) => <a key={source.source_id} className="brief-source" href={source.source_url} target="_blank" rel="noreferrer"><strong>{source.title}</strong><span>{source.venue ?? humanize(source.source_kind)} · match {score} · {humanize(source.review_status)}</span></a>)}
+          {reviewing.length === 0 && <div className="empty-state">No reviewing Registry records matched this topic.</div>}
+        </div>
+      </div>
+
+      <div className="content-brief-panel">
+        <div className="content-brief-panel-head"><div><div className="eyebrow">3 · DELTA</div><h3>Recent scout signals</h3></div><span>{recent.length}</span></div>
+        <p className="content-brief-note">Freshness signal only. These candidates cannot support a public claim until they pass the Workbench review lifecycle.</p>
+        <div className="brief-source-list">
+          {recent.slice(0, 12).map(({ candidate }) => <a key={candidate.candidate_id} className="brief-source" href={candidate.source_url ?? '#'} target="_blank" rel="noreferrer"><strong>{candidate.title}</strong><span>{candidate.source} · {humanize(candidate.discovery_status)} · no public claim</span></a>)}
+          {recent.length === 0 && <div className="empty-state">No recent scout candidates match this topic.</div>}
+        </div>
+      </div>
+    </section>
+
+    <section className="content-brief-boundary">
+      <strong>How this feeds the release cycle</strong>
+      <span>Whole Registry baseline → recent research delta → Search Console query/intent evidence → existing-page/cannibalisation check → evidence-led content brief → Problem → Science → Method → Product → release → +7/+14/+28 SEO learning.</span>
+    </section>
   </main>
 }
