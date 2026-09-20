@@ -81,3 +81,14 @@ separate from `evidence_source`.
 
 A screening decision of `include_for_review` still does **not** create an Evidence
 Registry record. Promotion requires the normal extraction/review/release workflow.
+
+
+### Discovery Inbox operating guide
+
+The Discovery page includes an on-screen operating guide covering:
+
+1. the scout command;
+2. the default local queue path;
+3. how to use the file picker on Kastel Mini;
+4. the meaning of each screening state;
+5. the boundary that `include_for_review` is not approved evidence.

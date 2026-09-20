@@ -89,6 +89,10 @@ export function DiscoveryPage({
     else await onRefresh()
   }
 
+  const unscreened = rows.filter((row) => row.discovery_status === 'discovered_unscreened').length
+  const screening = rows.filter((row) => row.discovery_status === 'screening').length
+  const included = rows.filter((row) => row.discovery_status === 'include_for_review').length
+
   return <main className="wide-page">
     <div className="page-heading with-action">
       <div>
@@ -105,6 +109,34 @@ export function DiscoveryPage({
         }} />
       </label>}
     </div>
+
+    <section className="discovery-guide">
+      <div className="discovery-guide-head">
+        <div>
+          <div className="eyebrow">HOW TO USE THIS INBOX</div>
+          <h3>Scout → import → screen → full evidence review</h3>
+        </div>
+        <div className="discovery-counts">
+          <span><strong>{unscreened}</strong> unscreened</span>
+          <span><strong>{screening}</strong> screening</span>
+          <span><strong>{included}</strong> included for review</span>
+        </div>
+      </div>
+      <div className="discovery-steps">
+        <div className="discovery-step"><strong>1 · Run the scout</strong><span>From the research-platform repo:</span><code>python3 components/research-intel-agents/research_scout.py scan</code></div>
+        <div className="discovery-step"><strong>2 · Import the queue</strong><span>Click <b>Import scout queue</b>. On Kastel Mini the file is:</span><code>~/hrp-lab/research-platform/.local/research-intel-agents/review-queue-latest.json</code><span>If the file picker opens in Desktop, press <b>Ctrl+L</b>, paste the path, then press Enter.</span></div>
+        <div className="discovery-step"><strong>3 · Screen each paper</strong><span>Open the source and choose the most appropriate screening decision below.</span></div>
+        <div className="discovery-step"><strong>4 · Keep the evidence boundary</strong><span><b>Include for review</b> only means “worth a full scientific review”. It does not create an Evidence Registry record or support a public claim.</span></div>
+      </div>
+      <div className="screening-key">
+        <span><b>Unscreened</b> not assessed yet</span>
+        <span><b>Screening</b> currently checking the source</span>
+        <span><b>Include for review</b> relevant enough for extraction/appraisal</span>
+        <span><b>Exclude</b> out of scope or not useful for this evidence question</span>
+        <span><b>Duplicate</b> already represented elsewhere</span>
+      </div>
+    </section>
+
     <div className="release-grid">
       {rows.map((candidate) => <article className="release-card" key={candidate.candidate_id}>
         <div className="release-card-head">
