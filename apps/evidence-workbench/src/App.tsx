@@ -5,9 +5,9 @@ import { supabase } from './lib/supabase'
 import { LoginScreen, PendingAccess } from './AuthViews'
 import { MaturityBadge, type MaturityAssessment, type MaturityDefinition } from './EvidenceMaturity'
 import { SourceDetailWithMaturity } from './SourceDetailWithMaturity'
-import { AccessPage, AuditPage, ReleasesPage } from './WorkbenchPages'
+import { AccessPage, AuditPage, DiscoveryPage, ReleasesPage } from './WorkbenchPages'
 import { BucketPill, CenteredLoader, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
-import { emptyData, humanize, primaryClassification, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type Study, type Tab, type WorkbenchMember } from './workbench'
+import { emptyData, humanize, primaryClassification, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type ResearchCandidate, type Study, type Tab, type WorkbenchMember } from './workbench'
 
 function App() {
   const [session, setSession] = useState<Session | null>(null)
@@ -19,6 +19,7 @@ function App() {
   const [maturityDefinitions, setMaturityDefinitions] = useState<MaturityDefinition[]>([])
   const [audit, setAudit] = useState<AuditRow[]>([])
   const [members, setMembers] = useState<WorkbenchMember[]>([])
+  const [candidates, setCandidates] = useState<ResearchCandidate[]>([])
   const [loading, setLoading] = useState(false)
   const [error, setError] = useState<string | null>(null)
   const [tab, setTab] = useState<Tab>('library')
@@ -51,6 +52,7 @@ function App() {
   useEffect(() => {
     if (!member) return
     void loadRegistry()
+    void loadCandidates()
   }, [member?.user_id])
 
   async function checkMembership(userId: string) {
@@ -114,6 +116,15 @@ function App() {
     else setAudit((rows ?? []) as AuditRow[])
   }
 
+  async function loadCandidates() {
+    const { data: rows, error: candidateError } = await supabase
+      .from('research_candidate')
+      .select('*')
+      .order('last_seen_at', { ascending: false })
+    if (candidateError) setError(candidateError.message)
+    else setCandidates((rows ?? []) as ResearchCandidate[])
+  }
+
   async function loadMembers() {
     const { data: rows, error: membersError } = await supabase
       .from('workbench_member')
@@ -125,6 +136,7 @@ function App() {
 
   function switchTab(next: Tab) {
     setTab(next)
+    if (next === 'discovery') void loadCandidates()
     if (next === 'audit') void loadAudit()
     if (next === 'access') void loadMembers()
   }
@@ -188,6 +200,7 @@ function App() {
           <div><div className="eyebrow">HRP TRANSFER LAB</div><h1>Evidence Workbench</h1></div>
         </div>
         <nav className="topnav" aria-label="Workbench sections">
+          <NavButton active={tab === 'discovery'} onClick={() => switchTab('discovery')} icon={<FileSearch size={16} />} label="Discovery" />
           <NavButton active={tab === 'library'} onClick={() => switchTab('library')} icon={<BookOpen size={16} />} label="Evidence" />
           <NavButton active={tab === 'releases'} onClick={() => switchTab('releases')} icon={<Archive size={16} />} label="Releases" />
           {canEdit && <NavButton active={tab === 'audit'} onClick={() => switchTab('audit')} icon={<Activity size={16} />} label="Audit" />}
@@ -201,6 +214,8 @@ function App() {
       </header>
 
       {error && <div className="error-banner"><span>{error}</span><button onClick={() => setError(null)}><X size={16} /></button></div>}
+
+      {tab === 'discovery' && <DiscoveryPage rows={candidates} canEdit={canEdit} currentUserId={session.user.id} onRefresh={loadCandidates} onError={setError} />}
 
       {tab === 'library' && (
         <main className="library-page">

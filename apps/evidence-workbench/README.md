@@ -4,6 +4,7 @@ Internal reviewer UI for the hosted **HRP Transfer Evidence Registry**.
 
 ## MVP capabilities
 
+- Discovery Inbox for importing shared HRP Research Scout review queues without treating candidates as approved evidence.
 - Supabase passwordless authentication.
 - Explicit `viewer` / `editor` / `owner` membership enforced by PostgreSQL RLS.
 - Evidence library with search and filters for evidence class, route and product relevance.
@@ -70,3 +71,13 @@ Vite runs on `http://localhost:3000` to align with a conventional Supabase local
 ## Configuration
 
 `.env.example` documents the optional Vite variables. The source includes the same project URL and a publishable browser key as zero-config defaults; both are intentionally public frontend values and can be overridden by deployment environment variables.
+
+
+## Research Scout → Discovery Inbox
+
+The shared scout writes a local review queue. Editors can import that JSON file through
+the **Discovery** tab. Imported rows land in `research_candidate`, which is deliberately
+separate from `evidence_source`.
+
+A screening decision of `include_for_review` still does **not** create an Evidence
+Registry record. Promotion requires the normal extraction/review/release workflow.

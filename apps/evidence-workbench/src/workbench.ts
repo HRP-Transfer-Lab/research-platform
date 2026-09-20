@@ -1,5 +1,26 @@
 export type Role = 'viewer' | 'editor' | 'owner'
-export type Tab = 'library' | 'releases' | 'audit' | 'access'
+export type Tab = 'discovery' | 'library' | 'releases' | 'audit' | 'access'
+
+export type ResearchCandidate = {
+  candidate_id: string
+  source: string
+  title: string
+  identifiers: Record<string, string | null>
+  published_raw: string | null
+  venue: string | null
+  source_url: string | null
+  topic_family: string
+  consumers: string[]
+  relevance_terms: string[]
+  discovery_status: 'discovered_unscreened' | 'screening' | 'include_for_review' | 'exclude' | 'duplicate'
+  claim_status: 'no_public_claim'
+  exclusion_reason: string | null
+  raw_candidate: any
+  first_seen_at: string
+  last_seen_at: string
+  screened_at: string | null
+  screened_by: string | null
+}
 
 export type WorkbenchMember = {
   user_id: string
