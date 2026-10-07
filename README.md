@@ -52,6 +52,15 @@ Ground-truth and protocol sources:
 - proposal generation for concept links and hypotheses
 - review gate to prevent unverified auto-writes
 
+8. Adaptive G-Loop learning kernel
+- trajectory-aware research and intervention learning
+- explicit tuning versus reopening decisions when gains flatten or models fail
+- prospective prediction, bounded testing, changed-condition validation and conservative banking
+- context-sensitive recall of previously banked methods and invariants before new search
+- multi-timescale learning across event, session, study and programme levels
+
+Canonical description: `docs/G_LOOP_ADAPTIVE_LEARNING_KERNEL.md`.
+
 ## Repository map
 
 ```text
@@ -59,6 +68,7 @@ research-platform/
   README.md
   docs/
     ARCHITECTURE.md
+    G_LOOP_ADAPTIVE_LEARNING_KERNEL.md
     IMPLEMENTATION_PLAN.md
   components/
     knowledge-bank/
@@ -105,11 +115,14 @@ research-platform/
 3. Keep Obsidian as an exploration UI; keep canonical metadata in DB + git-tracked files.
 4. Require human approval for publish actions and high-impact graph updates.
 5. Maintain audit logs for sync jobs, retrieval runs, and agent actions.
+6. Treat research programmes as adaptive trajectories: exploit/tune while productive, reopen deliberately when warranted, validate changed-condition performance, and bank only bounded structure.
+7. Recall relevant banked structure before generating materially new search; similarity alone is not evidence of transfer.
 
 ## Where to start
 
 1. Review architecture: `docs/ARCHITECTURE.md`
-2. Start with actionable first steps: `docs/FIRST_STEPS_IMPLEMENTATION_PLAN.md`
-3. Use the full roadmap: `docs/IMPLEMENTATION_PLAN.md`
-4. Review deployment placement: `docs/DUAL_MACHINE_IMPLEMENTATION.md`
-5. Configure integration secrets: `configs/env/README.md`
+2. Review the adaptive learning kernel: `docs/G_LOOP_ADAPTIVE_LEARNING_KERNEL.md`
+3. Start with actionable first steps: `docs/FIRST_STEPS_IMPLEMENTATION_PLAN.md`
+4. Use the full roadmap: `docs/IMPLEMENTATION_PLAN.md`
+5. Review deployment placement: `docs/DUAL_MACHINE_IMPLEMENTATION.md`
+6. Configure integration secrets: `configs/env/README.md`
