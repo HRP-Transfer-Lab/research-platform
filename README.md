@@ -55,8 +55,11 @@ Ground-truth and protocol sources:
 8. Adaptive G-Loop learning kernel
 - trajectory-aware research and intervention learning
 - explicit tuning versus reopening decisions when gains flatten or models fail
-- prospective prediction, bounded testing, changed-condition validation and conservative banking
 - context-sensitive recall of previously banked methods and invariants before new search
+- a bounded working hypothesis workspace for holding a small set of recalled, adapted, recombined or newly generated candidates
+- counterfactual forecasting of expected futures before commitment
+- explicit comparison of value, cost, risk, reversibility, learning value and optionality
+- prospective prediction, bounded testing, changed-condition validation and conservative banking
 - multi-timescale learning across event, session, study and programme levels
 
 Canonical description: `docs/G_LOOP_ADAPTIVE_LEARNING_KERNEL.md`.
@@ -117,6 +120,8 @@ research-platform/
 5. Maintain audit logs for sync jobs, retrieval runs, and agent actions.
 6. Treat research programmes as adaptive trajectories: exploit/tune while productive, reopen deliberately when warranted, validate changed-condition performance, and bank only bounded structure.
 7. Recall relevant banked structure before generating materially new search; similarity alone is not evidence of transfer.
+8. Keep a small, explicit live hypothesis set between recall/generation and commitment so competing explanations and counterfactual futures can be compared under the current goal and constraints.
+9. Do not confuse a forecasted future with observed evidence; commitment thresholds should scale with cost, downside, reversibility and uncertainty.
 
 ## Where to start
 
