@@ -18,8 +18,11 @@ The G-Loop is the cross-cutting research-control layer. It treats each programme
 ```text
 SENSE
 → LOCATE
-→ RECALL
-→ PREDICT
+→ RECALL / GENERATE
+→ BOUNDED HYPOTHESIS WORKSPACE
+→ FORECAST COUNTERFACTUAL FUTURES
+→ EVALUATE
+→ COMMIT / PREDICT
 → ACT / TEST
 → COMPARE
 → ADAPT
@@ -28,6 +31,8 @@ SENSE
 ```
 
 It distinguishes productive local tuning from deliberate reopening of the search space when returns flatten, the model stops fitting, or changed conditions invalidate a previously reliable strategy. Banked methods remain context-bounded and can be recalled, adapted, recombined or revalidated when structurally similar situations arise.
+
+Between long-term banked memory and commitment, the architecture includes a **bounded hypothesis workspace**. This is a temporary coordination layer that holds a small set of live candidate methods or explanations, keeps each candidate bound to the current goal and assumptions, forecasts counterfactual consequences, and compares candidates under evidence, cost, risk, reversibility, viability, learning value and optionality constraints. It is functionally analogous to a working-memory workspace, but no claim is made that the software literally instantiates human working memory.
 
 ## Shared data backbone
 
@@ -61,7 +66,14 @@ As the G-Loop layer is implemented, the canonical data model should additionally
 - bounded lessons / banked rules;
 - applicability conditions and failure boundaries;
 - changed-condition transfer tests;
-- strategy recall/applicability judgements.
+- strategy recall/applicability judgements;
+- bounded hypothesis-workspace records;
+- candidate source: recalled / adapted / recombined / newly generated;
+- candidate assumptions and supporting/conflicting evidence;
+- forecasted counterfactual futures;
+- cost, risk, reversibility, learning-value and optionality fields;
+- candidate status: live / rejected / selected / deferred;
+- discriminating observations or tests used to compare candidates.
 
 A learned causal graph is not required for the first implementation. The platform should remain graph-ready without representing sparse observational associations as causal facts.
 
@@ -74,6 +86,9 @@ A learned causal graph is not required for the first implementation. The platfor
 - Agent outputs are proposals until they pass review rules.
 - G-Loop strategy recall proposes potentially relevant prior methods; retrieval or semantic similarity does not itself establish transfer or authorise reuse.
 - Reopening proposals must name the dimension being changed and remain prospective/testable.
+- The live hypothesis workspace must remain bounded and reviewable; more alternatives are not automatically better.
+- Counterfactual forecasts remain distinct from observed evidence.
+- Candidate selection should be explicit about the current objective, hard constraints, cost, downside, reversibility and information value.
 
 ## Adaptive learning boundary
 
@@ -112,3 +127,6 @@ A large prospective prediction mismatch may trigger earlier diagnosis/reopening 
 - No semantic similarity treated as evidence of transfer.
 - No automatic inference that a behavioural plateau is a neural criticality transition.
 - Preserve provenance, counter-evidence, failed tests and reopening triggers.
+- No unbounded hypothesis proliferation.
+- No candidate selected merely because it was recalled first or generated most fluently.
+- No counterfactual forecast represented as an observed result.
