@@ -1,7 +1,7 @@
 # HRP Transfer Lab — Adaptive G-Loop Learning Kernel
 
-**Version:** 1.0  
-**Date:** 7 October 2026  
+**Version:** 1.1  
+**Date:** 8 October 2026  
 **Status:** canonical high-level learning-loop description for the HRP Transfer Lab  
 **Scope:** research design, intervention development, computational modelling, evidence synthesis and protocol optimisation
 
@@ -23,6 +23,10 @@ The loop therefore aims to preserve reliable structure while maintaining enough 
 SENSE
 → LOCATE
 → RECALL
+→ GENERATE / SELECT CANDIDATES
+→ FORECAST FUTURES
+→ EVALUATE VALUE / COST / RISK / OPTIONALITY
+→ COMMIT
 → PREDICT
 → ACT / TEST
 → COMPARE
@@ -40,8 +44,20 @@ Determine where the current method sits on its trajectory, at the relevant times
 ### RECALL
 Retrieve previously banked methods, rules, invariants or failure signatures that may apply to the present situation.
 
+### GENERATE / SELECT CANDIDATES
+Identify feasible candidate methods after recall and hard constraints.
+
+### FORECAST FUTURES
+Represent the plausible successor outcomes that matter for each serious candidate over the relevant horizon.
+
+### EVALUATE VALUE / COST / RISK / OPTIONALITY
+Compare candidates using expected benefit, resource cost, downside severity, reversibility, viability, learning value and the effect on future experimental or intervention options.
+
+### COMMIT
+Select a proportionate next move. Cheap, reversible, information-rich tests can justify action under more uncertainty than high-downside or hard-to-reverse changes.
+
 ### PREDICT
-State prospectively what should happen if the current or proposed method is approximately right.
+State prospectively what observable result should follow if the committed method is approximately right.
 
 ### ACT / TEST
 Run a bounded intervention, model comparison, experiment, wrapper swap, simulation or evidence probe.
@@ -120,6 +136,51 @@ Reopening must be **controlled**, not random. It should name:
 - why this opens a genuinely different search region;
 - the prospective prediction;
 - the stopping or rejection condition.
+
+## 5. Expected futures, cost, risk and learning value
+
+Alternative generation answers **what could be tried**. It is not sufficient for choosing what should be tried.
+
+For serious candidates, the G-Loop should represent the futures that matter:
+
+- expected benefit or improvement;
+- probability or confidence where defensible;
+- financial, computational, participant, staff and time costs;
+- downside severity;
+- reversibility;
+- viability / safety / ethics constraints;
+- information or learning value;
+- effect on future research or intervention options.
+
+Unknown values remain unknown.
+
+Costs operate twice:
+
+1. as feasibility constraints that can rule out an alternative before deeper comparison;
+2. as trade-off variables when comparing feasible alternatives.
+
+Expected value alone is insufficient where downside severity, irreversibility or viability risk differs materially.
+
+The evidence threshold for commitment should rise with downside severity, irreversibility, viability threat and uncertainty.
+
+Conversely, a cheap reversible experiment can be rational even when its immediate payoff is modest if it has high **learning value**: it distinguishes hypotheses, reduces important uncertainty, or changes which future experiments are worth running.
+
+Optionality also matters. A method may improve the immediate target while narrowing later possibilities through technical, sample, theoretical or resource lock-in. This should remain visible rather than being hidden inside one scalar objective.
+
+The v1 research kernel therefore uses an explicit decision profile rather than one opaque utility score:
+
+```text
+candidate
+→ plausible futures
+→ expected benefit
+→ costs
+→ downside / risk
+→ reversibility
+→ viability / ethics
+→ learning value
+→ optionality
+→ proportionate commitment
+```
 
 ## 5. Entropy and constraint
 
@@ -324,6 +385,9 @@ SENSE
 → LOCATE
 → RECALL
 → TUNE OR REOPEN
+→ FORECAST FUTURES
+→ EVALUATE VALUE / COST / RISK / OPTIONALITY
+→ COMMIT
 → PREDICT
 → TEST
 → COMPARE
