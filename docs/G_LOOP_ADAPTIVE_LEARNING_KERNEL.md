@@ -1,6 +1,6 @@
 # HRP Transfer Lab — Adaptive G-Loop Learning Kernel
 
-**Version:** 1.1  
+**Version:** 1.2  
 **Date:** 8 October 2026  
 **Status:** canonical high-level learning-loop description for the HRP Transfer Lab  
 **Scope:** research design, intervention development, computational modelling, evidence synthesis and protocol optimisation
@@ -24,7 +24,8 @@ SENSE
 → LOCATE
 → RECALL
 → GENERATE / SELECT CANDIDATES
-→ FORECAST FUTURES
+→ HOLD IN BOUNDED HYPOTHESIS WORKSPACE
+→ FORECAST COUNTERFACTUAL FUTURES
 → EVALUATE VALUE / COST / RISK / OPTIONALITY
 → COMMIT
 → PREDICT
@@ -47,8 +48,13 @@ Retrieve previously banked methods, rules, invariants or failure signatures that
 ### GENERATE / SELECT CANDIDATES
 Identify feasible candidate methods after recall and hard constraints.
 
-### FORECAST FUTURES
-Represent the plausible successor outcomes that matter for each serious candidate over the relevant horizon.
+### HOLD IN BOUNDED HYPOTHESIS WORKSPACE
+Maintain a small live set of candidate hypotheses, methods or policies long enough to compare them relationally before commitment. Each candidate remains bound to the current goal, assumptions, supporting/conflicting evidence, constraints and predicted consequences.
+
+This is a functional working-memory layer: temporary, limited-capacity and updateable. It is distinct from the long-term knowledge bank. Its purpose is not to preserve knowledge indefinitely, but to coordinate recalled and newly generated structure under the current problem.
+
+### FORECAST COUNTERFACTUAL FUTURES
+For each serious candidate, represent the plausible successor outcomes that matter over the relevant horizon: what would be expected if the candidate were approximately right, what alternative outcomes remain possible, and which observation would discriminate among them.
 
 ### EVALUATE VALUE / COST / RISK / OPTIONALITY
 Compare candidates using expected benefit, resource cost, downside severity, reversibility, viability, learning value and the effect on future experimental or intervention options.
@@ -181,6 +187,60 @@ candidate
 → optionality
 → proportionate commitment
 ```
+
+## 5.1 Bounded hypothesis workspace and counterfactual reasoning
+
+The G-Loop requires a temporary **working hypothesis workspace** between long-term memory and commitment.
+
+Long-term banked structure answers:
+
+> **What have we already learned?**
+
+The hypothesis workspace answers:
+
+> **Which small set of possibilities is live now, how do they differ, and what follows if each is true or chosen?**
+
+A workspace entry may be:
+
+- a directly recalled banked method;
+- a transfer candidate;
+- an adapted method;
+- a recombination of banked elements;
+- a genuinely new hypothesis or strategy.
+
+For each live candidate, retain only the smallest sufficient bundle:
+
+```text
+CANDIDATE
+→ source: recalled / adapted / recombined / newly generated
+→ current goal
+→ key assumptions
+→ supporting evidence
+→ conflicting evidence
+→ hard constraints
+→ expected future(s)
+→ cost / risk / reversibility
+→ discriminating observation
+→ status: LIVE / REJECTED / SELECTED / DEFERRED
+```
+
+The workspace should remain deliberately bounded. Too few candidates risks premature closure and capture by the first plausible explanation. Too many candidates increase comparison cost, dilute discriminating evidence and encourage unproductive search.
+
+The aim is therefore not maximum option count but a **small discriminable set** that can be compared under the current objective and constraints.
+
+This layer performs relational coordination:
+
+- keep the current goal active;
+- bind each hypothesis to its predicted consequences;
+- preserve competing explanations long enough to compare them;
+- update one candidate without silently overwriting the others;
+- use costs, risks and constraints to rule out infeasible futures;
+- identify the observation with the highest discriminating or learning value;
+- commit when one candidate is sufficiently supported for the stakes involved.
+
+In Trident-G terms, this is the research-system analogue of **working-memory-supported Gf coordination over reusable Gc structure**. That mapping is an architectural analogy, not a claim that the software literally implements human working memory.
+
+The first implementation does not require a learned cognitive model. A simple structured candidate set with explicit fields is sufficient.
 
 ## 5. Entropy and constraint
 
@@ -359,18 +419,22 @@ stable validated structure
 
 ## 13. Implementation invariants
 
-1. No plateau from a single flat observation.
+1. No unbounded candidate proliferation; the live hypothesis workspace must remain reviewable and purpose-bound.
+2. No candidate enters the workspace without a stated relation to the current objective or problem.
+3. No counterfactual forecast treated as observed evidence.
+4. No candidate selected solely because it was recalled first or generated most fluently.
+5. No plateau from a single flat observation.
 2. No reopening without a named changed dimension.
 3. No architectural revision from weak local evidence.
 4. No prospective prediction written after the outcome.
-5. No banked rule from one unreplicated success.
-6. No transfer claim without a changed-condition test.
-7. No semantic similarity treated as evidence of transfer.
-8. No recombination of banked strategies treated as already validated.
-9. No banked rule treated as permanently true.
-10. No large revision before checking data quality, execution failure and temporary shocks.
-11. No automatic inference that a behavioural plateau is a neural criticality transition.
-12. Preserve provenance, counter-evidence and failed tests.
+9. No banked rule from one unreplicated success.
+10. No transfer claim without a changed-condition test.
+11. No semantic similarity treated as evidence of transfer.
+12. No recombination of banked strategies treated as already validated.
+13. No banked rule treated as permanently true.
+14. No large revision before checking data quality, execution failure and temporary shocks.
+15. No automatic inference that a behavioural plateau is a neural criticality transition.
+16. Preserve provenance, counter-evidence and failed tests.
 
 ## 14. Final compression
 
@@ -385,7 +449,8 @@ SENSE
 → LOCATE
 → RECALL
 → TUNE OR REOPEN
-→ FORECAST FUTURES
+→ HOLD A SMALL LIVE HYPOTHESIS SET
+→ FORECAST COUNTERFACTUAL FUTURES
 → EVALUATE VALUE / COST / RISK / OPTIONALITY
 → COMMIT
 → PREDICT
