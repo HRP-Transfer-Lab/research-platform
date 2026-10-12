@@ -1,9 +1,11 @@
 # HRP Transfer Lab — Adaptive G-Loop Learning Kernel
 
-**Version:** 1.2  
-**Date:** 8 October 2026  
-**Status:** canonical high-level learning-loop description for the HRP Transfer Lab  
+**Version:** 1.3  
+**Date:** 12 October 2026  
+**Status:** canonical high-level learning-loop description for the HRP Transfer Lab; revised architecture specified, implementation and validation pending  
 **Scope:** research design, intervention development, computational modelling, evidence synthesis and protocol optimisation
+
+**v1.3 alignment:** Incorporates the supplied cognitive-stack, integrated-system and CSI requirements into the existing research G-loop: predictive calibration, metacognitive regulation, constraint-localised interventions and distinct learning destinations. It adds no mandatory strategic hierarchy and changes no executable protocol thresholds. Existing implemented subsets remain as described in section 11; the extensions below are not implemented or validated by this document.
 
 ## 1. Purpose
 
@@ -20,9 +22,11 @@ The loop therefore aims to preserve reliable structure while maintaining enough 
 ## 2. Canonical loop
 
 ```text
-SENSE
+CURRENT MODEL / EXPECTATIONS
+→ SENSE
 → LOCATE
 → RECALL
+→ ASSESS APPLICABILITY
 → GENERATE / SELECT CANDIDATES
 → HOLD IN BOUNDED HYPOTHESIS WORKSPACE
 → FORECAST COUNTERFACTUAL FUTURES
@@ -32,6 +36,7 @@ SENSE
 → ACT / TEST
 → COMPARE
 → ADAPT
+→ UPDATE MODEL / BELIEFS
 → BANK
 ↺
 ```
@@ -44,6 +49,9 @@ Determine where the current method sits on its trajectory, at the relevant times
 
 ### RECALL
 Retrieve previously banked methods, rules, invariants or failure signatures that may apply to the present situation.
+
+### ASSESS APPLICABILITY
+Classify recalled material using section 8. Source evidence and similarity do not establish validity in the new context; transferred or recombined material remains a candidate.
 
 ### GENERATE / SELECT CANDIDATES
 Identify feasible candidate methods after recall and hard constraints.
@@ -73,6 +81,9 @@ Compare the observed result with the prospective prediction and identify the sca
 
 ### ADAPT
 Continue, tune, transfer-test, reopen, switch, abandon or revert according to the evidence.
+
+### UPDATE MODEL / BELIEFS
+Update the versioned model only as warranted by available evidence. Preserve historical predictions, uncertainty, rival explanations and the distinction between outcome effects and mechanisms.
 
 ### BANK
 Retain only structure whose context, evidence status, boundary conditions and reopening trigger remain explicit.
@@ -417,6 +428,38 @@ stable validated structure
 → conservative banking
 ```
 
+## 12A. Predictive control, constraint localisation and learning ownership
+
+The cognitive-control sequence—state, predict, calibrate, extract, accumulate, commit, compare, update/reopen, transfer and bank—describes functions within this existing research loop. Model expectations precede observations; the later PREDICT operation locks the chosen test's forecast before execution. Distinguish expectation content, precision/reliability, current evidence and commitment threshold. Do not use an assimilated outcome as independent support for its own prediction.
+
+A continuous metacognitive regulator selects **STABILISE, OPEN, CONSTRAIN, COMMIT or REVIEW**. Its recurring checks are coherence, openness to disconfirmation, evidence sufficiency, update scale and justification for reopening. These modes are neither trajectory states nor experiment permissions. Exhausted compute or time may require defer; it does not make a hypothesis sufficient. Local errors prompt local review before programme-wide revision. Compare the regulator with simpler equal-budget stopping rules before asserting benefit.
+
+Keep readiness, hypothesised Trident regime and behavioural control profiles separate. Regulated, Slow compensatory, Fast brittle and Globally overloaded are candidate patterns rather than diagnoses. A profile does not uniquely identify a regime, and useful routines need not remain near-critical. The K/C/V operating envelope and PC/A/T predictive-control variables motivate software functions without equating budgets, covariance or controller performance with human psychometrics.
+
+The representational stack remains Attention Control, Relational Memory, Binding Memory, Path Prediction and Reasoning. Signal Control, Evidence Control and Decision Timing are human task components; predictive calibration is cross-cutting, mainly in the latter two. Implicit predictive learning and explicit reasoning retain separate evidence and can dissociate.
+
+### Intervene at the supported locus
+
+Distinguish task demand, capacity estimates, observed performance, contextual mismatch, constraint hypotheses and supported bottlenecks. Keep capacity, coupling, niche and mixed explanations visible before selecting DEVELOP, COUPLE, REDESIGN or COMBINE. A niche map includes cues, resources, workload, incentives, authority, action opportunity, AI roles and feedback. A useful policy may exist while the environment prevents its use.
+
+Record support, counter-evidence, stakeholder context and a bounded discriminating test. These classes may overlap; mixed hypotheses specify interactions. Qualitative confidence is not a numerical posterior. Formal Bayesian inference requires declared models, likelihoods and dependence handling. Combined interventions do not identify individual components without an adequate design; before/after changes do not alone establish causation.
+
+### Distinct learning and outcome records
+
+Separate human-owned learning, computational relational/procedural Gc and institutional knowledge. A memory write is not human consolidation; a productivity improvement is not improved human capacity. Bank enabling cues, permissions, supports and feedback conditions with the policy. Changed conditions trigger applicability review.
+
+For portable human-policy claims, prespecify relevant wrapper, layer, niche and delayed tests. Protect held-out compositions, use fresh delayed evidence and document supported, failed, untested or justified not-applicable dimensions. Human explanation/reconstruction and reduced-assistance probes may test retention, but no universal threshold is asserted. Numerical-controller transfer and human cognitive transfer require separate validation.
+
+Track AI efficiency, human augmentation and system adaptation separately. Institutional studies also specify applicable autonomy, mastery, retained capability, voice/contestability, recovery and role-clarity outcomes. Person-level cognitive data remain private by default, with purpose/role-based access, appropriate consent/authorisation, aggregate-first institutional views and human review. Participants need correction and contestability routes. Do not infer personal deficits or create unsupported consequential rankings from workflow performance.
+
+Keep Conceptual, External evidence, Observed institutional association, Pilot-supported, Controlled evidence and Replicated deployment evidence distinct from implementation/test status. Synthetic experiments can qualify software contracts; human studies are needed for human efficacy and transfer claims. The existing executable protocol retains its numerical rules.
+
+### Source and acceptance boundary
+
+This alignment draws on the owner-supplied Adaptive Intelligence Cognitive Stack Overview, Integrated Cognitive Systems Overview v1.0, CSI Technical Framework v1.2, strategic vision and capability/brand documents, cognitive-stack diagram and supporting transfer protocol. The separate strategic-method attachment supplies functional governor details without imposing its named hierarchy.
+
+Pending conformance cases include: no permission change from mode selection; no deficit inference from a performance drop; no component attribution from an undifferentiated mixed test; no human-learning pass from software banking; no held-out training leakage; no private evidence leak through institutional summaries; and no double counting across learning destinations. These are specification requirements, not completed tests.
+
 ## 13. Implementation invariants
 
 1. No unbounded candidate proliferation; the live hypothesis workspace must remain reviewable and purpose-bound.
@@ -424,9 +467,9 @@ stable validated structure
 3. No counterfactual forecast treated as observed evidence.
 4. No candidate selected solely because it was recalled first or generated most fluently.
 5. No plateau from a single flat observation.
-2. No reopening without a named changed dimension.
-3. No architectural revision from weak local evidence.
-4. No prospective prediction written after the outcome.
+6. No reopening without a named changed dimension.
+7. No architectural revision from weak local evidence.
+8. No prospective prediction written after the outcome.
 9. No banked rule from one unreplicated success.
 10. No transfer claim without a changed-condition test.
 11. No semantic similarity treated as evidence of transfer.
@@ -445,7 +488,8 @@ The HRP Transfer Lab G-Loop is:
 In compact form:
 
 ```text
-SENSE
+CURRENT MODEL / EXPECTATIONS
+→ SENSE
 → LOCATE
 → RECALL
 → TUNE OR REOPEN
@@ -460,3 +504,4 @@ SENSE
 → BANK
 → START THE NEXT SEARCH RICHER
 ```
+
