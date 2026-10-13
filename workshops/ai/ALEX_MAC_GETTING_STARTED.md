@@ -1,13 +1,15 @@
 # Into the Matrix — Mac setup and first uploads
 
 **Learner-facing guide (suitable for Alex)**  
-**Version:** 0.1 | **Date:** 13 October 2026  
+**Version:** 0.2 | **Date:** 13 October 2026  
 **Status:** Initial setup instructions; not yet confirmed on Alex's particular Mac.  
 **Goal for session 0:** Open the course material, create a Cloudflare project and display “Hello World” on the Mac. **Do not deploy or upload sensitive information yet.**
 
 ## What you need
 
-A Mac, internet access, a web browser, and about **45–90 minutes** for the initial setup. The Cloudflare Wrangler CLI currently requires **macOS 13.5 or newer**. Apple silicon (M-series) and Intel Macs are both suitable provided the operating system is supported. No dedicated graphics card, local model, Python, Docker, Homebrew, paid AI subscription or database is needed initially.
+A Mac, internet access, a browser, **ChatGPT and Terminal** are the learning interface. Allow about **45–90 minutes** for initial setup. The Cloudflare Wrangler CLI currently requires **macOS 13.5 or newer**. Apple silicon (M-series) and Intel Macs can both be used if their operating system is supported. No graphics card, local model, VS Code, GitHub Desktop, Git, Python, Docker, Homebrew, paid AI subscription or database is required for the first exercise.
+
+**Teaching approach:** ChatGPT explains each step and prepares commands/code; Alex runs commands in Terminal, pastes back non-secret results and asks why things worked (or failed). She should understand and review what commands change. ChatGPT does not automatically operate her Terminal just because she is chatting to it.
 
 ### A. Check the Mac first (5 minutes)
 
@@ -20,71 +22,75 @@ uname -m
 
 Record the two outputs. `arm64` means Apple silicon; `x86_64` means Intel. If the macOS version is earlier than **13.5**, stop and ask the workshop instructor about updating macOS or using a browser-hosted development environment.
 
-### B. Install only these essentials (15–30 minutes)
+### B. Install the minimum (15–30 minutes)
 
-| Install / access | Official link | What it is for |
+| Install / access | Official link | Why |
 | --- | --- | --- |
-| **Visual Studio Code (VS Code)** | https://code.visualstudio.com/download | Editing and reading workshop code and Markdown. Choose the Mac build compatible with your processor, if offered. |
-| **Node.js — current LTS release** | https://nodejs.org/en/download | Lets your Mac run the Cloudflare setup tools. Choose the official macOS installer; it includes npm. |
-| **GitHub Desktop** (recommended for beginners) | https://desktop.github.com/download/ | Open and update GitHub repositories using a graphical interface. Terminal Git is an alternative. |
-| **GitHub account** | https://github.com/signup | Optional for reading public workshop files; useful for saving your own project or collaborating. |
-| **Cloudflare account** | https://dash.cloudflare.com/sign-up | Needed when connecting the model or eventually deploying a Worker. Use your own learning account, not the live IQMindware account. |
+| **ChatGPT** (browser) | https://chatgpt.com/ | Provides beginner-friendly explanations, stepwise commands, code and troubleshooting. |
+| **Terminal** (already on the Mac) | Applications → Utilities → Terminal | Runs the instructions and checks the application. |
+| **Node.js — current LTS release** | https://nodejs.org/en/download | Installs `node` and `npm` to run Cloudflare tools. Choose the official macOS installer. |
+| **Cloudflare account** (for the AI stage) | https://dash.cloudflare.com/sign-up | Needed for remote Gemma inference, AI Search and public deployment. Use a workshop account, never the live IQMindware account. |
 
-**Optional:** Use the Mac's built-in **TextEdit** or VS Code to read the provided Markdown. You do not need to install Python, Docker, Postgres, Cloudflare R2, vector database software or an AI model.
+**Entirely optional:** [GitHub Desktop](https://desktop.github.com/download/), [VS Code](https://code.visualstudio.com/download), a GitHub account, and Git. The course documents are publicly readable on GitHub and can be downloaded with `curl` in Terminal. A text editor is optional; ChatGPT can supply commands to display and update project files. Python, Docker, Postgres, R2 and a locally installed model are not needed at this stage.
 
 After installing Node.js, **close and reopen Terminal**, then run:
 
 ```bash
 node --version
 npm --version
-git --version
 ```
 
-The first two should display version numbers. If Git is missing, macOS may offer to install Apple Command Line Tools; alternatively install GitHub Desktop. If a new installation is not found, quit/reopen Terminal before troubleshooting. **Do not post account tokens, passwords or credential screenshots.**
+Both should return version numbers. If Node is missing, reopen Terminal or revisit the installer. Never paste passwords, API tokens, account cookies or credential screenshots into ChatGPT or a public support thread.
 
-## 1. Download the course files (5–10 minutes)
+## 1. Get the workshop files — no Git installation (5–10 minutes)
 
-Repository (public workshop materials):  
+All course documents are public:  
 https://github.com/HRP-Transfer-Lab/research-platform/tree/main/workshops/ai
 
-**Recommended no-code method:**
-1. Open [GitHub Desktop](https://desktop.github.com/download/).
-2. Choose **File → Clone Repository → URL**.
-3. Enter `https://github.com/HRP-Transfer-Lab/research-platform.git`.
-4. Save it in `Documents/AgenticAIWorkshop/research-platform`.
-5. In GitHub Desktop choose **Repository → Open in Visual Studio Code** (or open the folder manually in VS Code).
-6. Read `workshops/ai/INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md`.
+**Simplest route:** open the links in the browser and read the [curriculum](./INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md) and this guide. The instructor can provide the three small sample Markdown files separately when it is time to upload them.
 
-**Terminal alternative:**
+**To put the files on the Mac using Terminal**, paste this complete block (it downloads only public documents from the workshop folder; it does not run them):
 
 ```bash
-mkdir -p ~/Documents/AgenticAIWorkshop
-cd ~/Documents/AgenticAIWorkshop
-git clone https://github.com/HRP-Transfer-Lab/research-platform.git
+mkdir -p ~/Documents/AgenticAIWorkshop/workshop-files/starter-data
+cd ~/Documents/AgenticAIWorkshop/workshop-files
+BASE='https://raw.githubusercontent.com/HRP-Transfer-Lab/research-platform/main/workshops/ai'
+curl -fL "$BASE/README.md" -o README.md
+curl -fL "$BASE/INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md" -o INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md
+curl -fL "$BASE/ALEX_MAC_GETTING_STARTED.md" -o ALEX_MAC_GETTING_STARTED.md
+curl -fL "$BASE/starter-data/01_demo_catalogue.md" -o starter-data/01_demo_catalogue.md
+curl -fL "$BASE/starter-data/02_demo_faq.md" -o starter-data/02_demo_faq.md
+curl -fL "$BASE/starter-data/03_demo_evidence_rules.md" -o starter-data/03_demo_evidence_rules.md
+ls -l starter-data
 ```
 
-Reading/cloning this public repository does not give you write permissions to the organisation. Do not commit changes to the shared repository without explicit permission.
+To read a file in Terminal:
 
-### First files to locate
+```bash
+less INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md
+```
+
+Press **q** to exit the viewer. You can also open Markdown files with any text editor already on the Mac. GitHub Desktop, Git and VS Code are optional if Alex later wants source control or a visual editor.
+
+### The first six files
 
 ```text
-research-platform/
-  workshops/
-    ai/
-      README.md                               ← workshop catalogue
-      INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md  ← full curriculum
-      ALEX_MAC_GETTING_STARTED.md             ← this guide
-      starter-data/
-        01_demo_catalogue.md                  ← fictitious product information
-        02_demo_faq.md                        ← fictitious support facts
-        03_demo_evidence_rules.md             ← scientific claim boundaries
+AgenticAIWorkshop/
+  workshop-files/
+    README.md                               ← workshop catalogue
+    INTO_THE_MATRIX_AGENTIC_AI_WORKSHOP.md  ← full curriculum
+    ALEX_MAC_GETTING_STARTED.md             ← this guide
+    starter-data/
+      01_demo_catalogue.md                  ← fictitious product information
+      02_demo_faq.md                        ← fictitious support facts
+      03_demo_evidence_rules.md             ← evidence/claim boundaries
 ```
 
-These **starter-data files are deliberately fictional teaching fixtures**, not live IQMindware data or validated scientific evidence. They are safe to read locally and later upload to a *separate learning-only AI Search instance*.
+These **starter-data files are fictional teaching fixtures**, not current IQMindware facts or validated efficacy evidence. They can later be uploaded to a separate learning-only AI Search instance. Public files may be read without logging in to GitHub.
 
 ## 2. Create the first app on your Mac (10–20 minutes)
 
-**Important:** Put the new app **beside** `research-platform`, not inside it. This keeps your experiments separate from the organisation's repository.
+**Important:** Put the app **beside** `workshop-files`, not inside it, to separate learning materials from code that can change.
 
 In Terminal:
 
@@ -98,7 +104,7 @@ If asked whether to install the setup package, accept. For the prompts, choose:
 - **Hello World example**
 - **Worker only**
 - **TypeScript**
-- **Use Git for version control:** Yes
+- **Use Git for version control:** No (for the first lesson, unless Git is already installed and desired)
 - **Add AGENTS.md:** Yes, if offered
 - **Deploy now:** **No**
 
@@ -114,7 +120,14 @@ npx wrangler dev
 
 Open the URL printed by Wrangler, usually **http://localhost:8787**. You should see a Hello World response. If not, copy the **non-secret error text** for the instructor. Leave the Terminal window running while testing; press **Control-C** to stop it.
 
-**Success criterion for session 0:** You can open `alex-first-agent` in VS Code, see the source files and load a locally running Worker in the browser. Nothing has been publicly deployed and no AI inference has been required.
+**Success criterion for session 0:** You can open a locally running Worker in the browser and inspect the project files **in Terminal**, for example:
+
+```bash
+ls
+sed -n '1,100p' src/index.ts
+```
+
+If `src/index.ts` has a different name in the wizard's template, ask ChatGPT to help locate the actual file. Nothing has been publicly deployed and no AI inference has been required.
 
 ## 3. First model call — instructor-led next step
 
@@ -122,7 +135,7 @@ After the local Worker succeeds, follow the current [Cloudflare Workers AI tutor
 
 The model is **cloud-hosted**, so it does not run on the Mac. **Cloudflare warns that Workers AI calls are remote and may incur usage charges even while using local development**. Before the first call, check plan eligibility, quotas and spending controls with the instructor. Use a teaching account, not IQMindware production.
 
-The instructor should provide a known-good Worker starter and a limited test budget for this stage. Do **not** run `npx wrangler deploy` until a public deployment has been explicitly approved. A successful model response is **stage 1**, not yet a RAG chatbot or agent.
+The instructor should provide a known-good Worker starter and a limited test budget for this stage. **No graphical editor is required:** Alex can paste the current `src/index.ts` and `wrangler.jsonc` contents (with all secrets removed) into ChatGPT, ask it to explain the edit, then use a reviewed Terminal command to save the change. Before replacing a file, keep a backup, e.g. `cp src/index.ts src/index.ts.bak`. Do **not** run `npx wrangler deploy` until public deployment is explicitly approved. A successful model response is **stage 1**, not yet a RAG chatbot or agent.
 
 ## 4. First *uploads* — three knowledge-base documents (stage 2, not day 0)
 
@@ -157,7 +170,6 @@ Mac version (sw_vers -productVersion):
 Mac processor (uname -m):
 Node version (node --version):
 npm version (npm --version):
-Git version (git --version):
 Cloudflare Wrangler version (npx wrangler --version):
 Local Hello World visible in browser? Yes / No
 Any non-secret error message:
@@ -168,11 +180,16 @@ Any non-secret error message:
 ## 6. Common Mac problems
 
 - **“command not found: node”** — make sure the macOS Node.js LTS installer finished, then reopen Terminal.
-- **“command not found: git”** — follow Apple's Command Line Tools prompt or use GitHub Desktop.
 - **Wrangler says unsupported macOS** — check the OS version and the [current Wrangler requirements](https://developers.cloudflare.com/workers/wrangler/install-and-update/).
 - **Cannot open the local URL** — check that `npx wrangler dev` is still running and use the *exact* address it prints.
 - **Cloudflare asks you to authenticate during AI use** — use your own learning account and the normal browser login; do not share credentials.
 - **Mac permissions or package errors** — do not use `sudo npm install -g`; ask the instructor to review the error and Node installation.
+
+## One-time ChatGPT coaching prompt
+
+Paste this into a new ChatGPT conversation when starting the workshop:
+
+> I am following HRP Transfer Lab's *Into the Matrix* beginner workshop on a Mac. I am using **ChatGPT + Terminal only**, without VS Code, GitHub Desktop or previous coding experience. Give me one safe Terminal command or short command block at a time, explain what it does and what output to expect, then wait for my result. Do not assume you can control my computer or read files I have not provided. Keep all AI keys server-side, never ask me to paste secrets, back up files before replacing them, and do not deploy publicly or incur AI usage charges without explaining the step first. Help me understand the model, retrieval, tools and agent-loop components, not merely copy commands.
 
 ## Instructor notes and original documentation
 
