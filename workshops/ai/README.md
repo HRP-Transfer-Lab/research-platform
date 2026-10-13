@@ -4,6 +4,12 @@
 
 This folder collects practical, inspectable workshops on language models, RAG, tools, agent design, computational modelling and adaptive human–AI systems.
 
+## New participant: first steps on a Mac
+
+Start with **[Mac setup and first uploads (Alex / beginner guide)](./ALEX_MAC_GETTING_STARTED.md)**. It covers the four essential prerequisites, a local Cloudflare Hello World check, and the first three synthetic documents to upload to AI Search. No Python, Docker or live IQMindware credentials are required for the initial setup.
+
+**[Starter data](./starter-data/01_demo_catalogue.md):** three small, public, fictional knowledge-base files for the first RAG activity. Never confuse their invented product prices or refund terms with the real business.
+
 ## Workshop catalogue
 
 | Workshop | Scope | Status |
