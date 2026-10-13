@@ -42,7 +42,7 @@ PERSON → CLAUDE CODE (coding agent) → proposes/edits/tests local project
                                      HUMAN REVIEW
                                            │
                                            ▼
-                                    CLOUDFlARE WORKER
+                                    CLOUDFLARE WORKER
                                   (Gemma + RAG + tools)
 ```
 
