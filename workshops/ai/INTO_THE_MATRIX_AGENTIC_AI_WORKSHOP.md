@@ -1,12 +1,13 @@
 # INTO THE MATRIX — Build, Deploy and Understand Your First AI Agent
 
 **Working title:** Into the Matrix: From Using AI to Engineering AI Systems  
-**Version:** 0.1 | **Prepared:** 13 October 2026  
+**Version:** 0.2 | **Prepared:** 13 October 2026  
 **Status:** WORKSHOP CONCEPT / CURRICULUM PLAN — not yet built, tested or delivered  
 **Owner:** HRP Transfer Lab  
 **Reference implementation:** IQMindware AI Guide (Cloudflare, Gemma, RAG)  
 **Primary audience:** professionals, entrepreneurs, researchers, educators and capable beginners  
-**Delivery format:** one practical day or two half-days, with optional follow-on workshops
+**Delivery format:** one practical day or two half-days, with optional follow-on workshops  
+**Default Mac pilot environment:** Claude Code + Terminal (see [Alex's Mac setup](./ALEX_MAC_GETTING_STARTED.md)); no VS Code needed
 
 > **Central promise:** Go from talking to AI to understanding and building AI agents. Construct a working system, give it knowledge and tools, deploy it to the web, and learn how to inspect and control what it does.
 
@@ -27,6 +28,29 @@ The key educational shift is from treating AI as an opaque conversational oracle
 7. Test grounding, hallucinations, tool choice and failure recovery, rather than inferring intelligence from fluent output.
 
 **Pedagogical rule:** every module produces a visible, working increment, and participants inspect both the user-facing response *and the behind-the-scenes sequence*.
+
+### How the Mac pilot is built: Claude Code + Terminal
+
+**Claude Code is the development assistant, not the target agent.** Participants use Claude Code to inspect local project files, propose/edit code and run project commands *with human approval*. The application they build remains a separate Cloudflare Worker using Gemma, RAG and bounded tools. Account access and charges for Claude Code are independent of Cloudflare model and infrastructure usage.
+
+The instructor should demonstrate the distinction explicitly:
+
+```text
+PERSON → CLAUDE CODE (coding agent) → proposes/edits/tests local project
+                                           │
+                                           ▼
+                                     HUMAN REVIEW
+                                           │
+                                           ▼
+                                    CLOUDFlARE WORKER
+                                  (Gemma + RAG + tools)
+```
+
+Course procedure: first review proposed actions, then authorise a small edit or local command, inspect the result and trace, and explain how it changed the system. No automatic public deployment, production-account access, live customer data, unrestricted command execution or unapproved paid calls. The coding agent may make mistakes: participants need to verify its output and understand the operating boundary.
+
+For the beginner setup, follow [Alex's Claude Code Mac guide](./ALEX_MAC_GETTING_STARTED.md). Node.js is needed for the Cloudflare tooling, but not to run the native Claude Code installer. Claude Code requires an eligible paid subscription or billed Console account; a free Claude chat account alone is insufficient. The Cloudflare skills plugin is optional and can be introduced later when account permissions are understood.
+
+The curriculum remains *conceptually tool-independent*, so equivalent coding assistants may be substituted in future editions; this version's **default practical implementation is Claude Code + Terminal**.
 
 ## 2. The progression: six build stages
 
@@ -151,7 +175,7 @@ Browser (chat interface + inspector)
 
 **Prerequisites:** a laptop/browser, basic familiarity with files and web applications, starter code, and a ready-made sandbox environment. No neural-network mathematics is required; the instructor should not expect novices to build retrieval or agent orchestration entirely from scratch during a single day.
 
-**Instructor preparation:** pre-test all Cloudflare accounts/permissions, provide seeded knowledge data, starter repositories or templates, example traces, a functioning fallback demonstration and a cost cap. Where self-service Cloudflare account creation is a barrier, provide a preconfigured instructor-hosted sandbox with isolated learner credentials and quotas.
+**Instructor preparation:** pre-test Claude Code installation/login and approval prompts on a supported Mac, plus all Cloudflare accounts/permissions; provide seeded knowledge data, starter repositories or templates, example traces, a functioning fallback demonstration and separate Claude/Cloudflare cost caps. Where self-service Cloudflare account creation is a barrier, provide a preconfigured instructor-hosted sandbox with isolated learner credentials and quotas.
 
 **Security and privacy:** no live customer data; no unrestricted external actions; no access to production accounts; do not log identifiable conversations by default; enforce rate limits and budgets; avoid account linking, payments or public autonomous messaging. Approve any public deployment explicitly and remove or constrain demo endpoints after the course.
 
