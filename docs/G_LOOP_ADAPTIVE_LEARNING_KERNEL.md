@@ -1,8 +1,8 @@
 # HRP Transfer Lab — Adaptive G-Loop Learning Kernel
 
-**Version:** 1.3  
-**Date:** 12 October 2026  
-**Status:** canonical high-level learning-loop description for the HRP Transfer Lab; revised architecture specified, implementation and validation pending  
+**Version:** 1.4-SENSE (proposed documentation update)  
+**Date:** 14 October 2026  
+**Status:** proposed clarification of canonical v1.3, on a separate review branch; `main` remains v1.3 and no implementation/validation or protocol-threshold change is claimed  
 **Scope:** research design, intervention development, computational modelling, evidence synthesis and protocol optimisation
 
 **v1.3 alignment:** Incorporates the supplied cognitive-stack, integrated-system and CSI requirements into the existing research G-loop: predictive calibration, metacognitive regulation, constraint-localised interventions and distinct learning destinations. It adds no mandatory strategic hierarchy and changes no executable protocol thresholds. Existing implemented subsets remain as described in section 11; the extensions below are not implemented or validated by this document.
@@ -42,10 +42,12 @@ CURRENT MODEL / EXPECTATIONS
 ```
 
 ### SENSE
-Collect the smallest sufficient set of observations needed to understand the current research or intervention state.
+Maintain a bounded, **open-world awareness** of both the current research/intervention state **and the evolving scientific, social and environmental landscape**. Combine (i) observations selected to discriminate a specific research question, with (ii) ongoing, source-scoped discovery of new methods, contrary results, failed replications, theoretical changes, external niche conditions, emerging challenges and opportunities that the current protocol does not yet represent. An observation or literature report is not automatically an established mechanism; preserve dates, provenance, coverage and unknowns.
 
-### LOCATE
-Determine where the current method sits on its trajectory, at the relevant timescale.
+The **smallest sufficient set of observations** remains appropriate for a **defined experiment or inference decision**. It is not a rule against background horizon scanning or research enquiry capable of discovering a new problem.
+
+### LOCATE (ORIENT)
+Use what was sensed to form a provisional, inspectable research situation: where the current method lies on its adaptive trajectory, what expectations or assumptions are now questionable, what is changing in the target niche, what remains unknown, and which previously unrepresented research/implementation opportunities may now matter. Distinguish observation, trend hypothesis, new research proposition, potential intervention and actual demonstrated result. Do not infer a phase change or causal effect from a surprising paper or stakeholder story alone.
 
 ### RECALL
 Retrieve previously banked methods, rules, invariants or failure signatures that may apply to the present situation.
@@ -89,6 +91,25 @@ Update the versioned model only as warranted by available evidence. Preserve his
 Retain only structure whose context, evidence status, boundary conditions and reopening trigger remain explicit.
 
 BANK is not the endpoint. Banked structure changes the starting point of future search.
+
+## 2A. Open sensing and situational awareness are part of research intelligence (proposed)
+
+A research G-Loop must **look beyond its existing hypotheses**. Scientific and practical progress may arise because new findings or circumstances reveal something previously outside the experiment's measurement scheme—not because the existing protocol has reached a plateau.
+
+**Two complementary sensing lanes:**
+
+1. **Receptive discovery:** bounded literature searches, methodological and cross-disciplinary monitoring, negative and replicated findings, field observations, practitioner/participant experience where permitted, emerging technological options and changes in research/implementation conditions. Include deliberately different keywords, sources, communities and opposing viewpoints to expose coverage blind spots.
+2. **Decision-specific discrimination:** targeted evidence sampling to resolve a named uncertainty, assess current methods or design a prospective test with adequate sources, controls and review.
+
+**Relationship to canonical operations:** Perceptual *openness to the environment* is a continuing obligation of SENSE. Metacognitive `OPEN` is a bounded process for testing alternative representations and hypotheses. `REOPENING` is a separately governed adaptive trajectory state, not a synonym for noticing an unexpected fact. `RECALL` looks up existing tested research methods; external searching for genuinely new studies and conditions belongs to SENSE. Recall-before-reopening continues to govern major methodological revisions, without blocking new evidence discovery.
+
+**Orientation record (conceptual):** current model/hypotheses and expected observations; scope and horizon; source and search coverage; publication/event/availability/ingestion time; new or disconfirming signal; rival explanations; altered niche/agent coupling and study feasibility; candidate research opportunities; UNKNOWNs; decision to monitor, inspect further, propose a bounded test or defer. A source finding may initiate an evidence review but cannot silently rewrite preregistered protocols, retrospective cutoffs or outcome histories.
+
+**Failure modes and testing:** contrast current-data-only research with bounded outward discovery under comparable cost; detect missed novel methods, unexplained contradictions, selection/availability bias, repeated reports counted as independent studies, false trends, source staleness, confirmation-biased keywords and excessive exploration. A useful discovery changes subsequent research choices only after independent evidence and review. Unresolved/no-action outcomes are valid.
+
+**Cross-domain compatibility:** this research principle is the scientific analogue of Kastel's SENSE → LOCATE/ORIENT contract, and applies across Trident-G, IQMindware, SWI, independent-business Kastel and Trident Alpha's literature/market research. Each domain retains its own privacy, professional scope, technical and approval boundaries.
+
+**Status:** proposed clarification only. No scheduled search, crawling, software inference, new study participants, expenditure, protocol update, new trajectory state or live trial is enabled.
 
 ## 3. Adaptive trajectory states
 
