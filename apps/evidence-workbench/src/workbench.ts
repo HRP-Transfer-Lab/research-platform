@@ -1,5 +1,5 @@
 export type Role = 'viewer' | 'editor' | 'owner'
-export type Tab = 'library' | 'releases' | 'audit' | 'access'
+export type Tab = 'library' | 'review' | 'releases' | 'audit' | 'access'
 
 export type WorkbenchMember = {
   user_id: string

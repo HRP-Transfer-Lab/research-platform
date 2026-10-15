@@ -1,0 +1,98 @@
+{
+  "schema_version": "hrp-evidence-demo-recommendations-v1",
+  "snapshot_release": "hrp-evidence-gateway-demo-2026-09-04",
+  "governance": {
+    "demo_only": true,
+    "claims_safe": false,
+    "provisional_evidence_allowed": true,
+    "human_approval_required_for_production_claims": true
+  },
+  "scenarios": [
+    {
+      "id": "personal",
+      "label": "Personal CSI",
+      "title": "Build self-directed learning without confusing practice gains with transfer",
+      "situation": "A learner or knowledge worker wants stronger self-regulation, cognitive performance and resilience while retaining independent capability.",
+      "domain": "personal",
+      "gateway_filters": {
+        "domain": "personal",
+        "status": "all",
+        "priority": "high",
+        "role": "all"
+      },
+      "recommendation": "Use a layered intervention rather than a single generic brain-training prescription: explicit plan-monitor-reflect routines, targeted cognitive practice where a bottleneck is identified, and a separate stress/attention-regulation component. Treat transfer as something to measure independently rather than infer from trained-task improvement.",
+      "actions": [
+        "Use explicit goal setting, monitoring, retrieval checks and post-task calibration as the core self-regulated-learning loop.",
+        "Add targeted executive or memory practice only when a specific capacity bottleneck is identified; test outcomes on separate tasks or real activities.",
+        "Use mindfulness or self-compassion practices as a regulation adjunct for stress and attentional stability, not as a substitute for task-specific learning.",
+        "Include a delayed or no-support re-check to distinguish supported performance from retained capability."
+      ],
+      "evidence_source_ids": [
+        "rt-2026-001",
+        "stage13-00d596089e03",
+        "hrpeg-demo-050",
+        "pubmed-42057149"
+      ],
+      "caveat": "This is a product-development demo recommendation. Several supporting sources are provisional screening records and have not yet completed full human appraisal."
+    },
+    {
+      "id": "work",
+      "label": "Work CSI",
+      "title": "Adopt GenAI without quietly offloading the judgement you still need",
+      "situation": "A high-demand professional team wants AI productivity gains without losing independent reasoning, calibration or decision quality.",
+      "domain": "performance_work",
+      "gateway_filters": {
+        "domain": "performance_work",
+        "status": "all",
+        "priority": "high",
+        "role": "all"
+      },
+      "recommendation": "Use a scaffolded human-AI workflow: keep purpose, problem framing, evidence judgement and final decisions human-owned; use AI selectively for alternatives, retrieval and structured support; and preserve independent no-AI checkpoints. Monitor workload and recovery because apparent speed-up can coexist with hidden cognitive or supervisory cost.",
+      "actions": [
+        "Require a human-first problem representation or decision criterion before AI assistance begins for consequential tasks.",
+        "Use AI for bounded support such as alternatives, source organisation, feedback or drafting rather than default delegation of core judgement.",
+        "Add independent no-AI checks, delayed retrieval or explanation-from-memory when retained human capability matters.",
+        "Track effort, error checking, rework and supervisory load rather than assuming faster task completion means lower workload.",
+        "For persistently high-load roles, pair workflow redesign with a brief evidence-informed recovery or autonomic-regulation intervention."
+      ],
+      "evidence_source_ids": [
+        "rt-2026-014",
+        "rt-2026-015",
+        "rt-2026-016",
+        "rt-2026-018",
+        "gateway-demo-095",
+        "hrpeg-demo-063"
+      ],
+      "caveat": "The AI/offloading sources include human-approved seed evidence; workplace intervention sources in this demo may still be provisional. Organisational deployment should be treated as a bounded experiment with outcome monitoring."
+    },
+    {
+      "id": "health",
+      "label": "Health CSI",
+      "title": "Design cognitive support around functional goals, strategy use and maintenance",
+      "situation": "A service is considering cognitive or executive-function support after neurological illness or acquired cognitive difficulty.",
+      "domain": "health_clinical_adjacent",
+      "gateway_filters": {
+        "domain": "health_clinical_adjacent",
+        "status": "all",
+        "priority": "high",
+        "role": "all"
+      },
+      "recommendation": "Prioritise goal-management and strategy-based rehabilitation linked to functional participation, with computerised or telehealth delivery used as a delivery mechanism rather than the intervention claim itself. Measure maintenance and real-world function separately from trained cognitive-task gains.",
+      "actions": [
+        "Anchor training to personally or clinically meaningful functional goals rather than cognitive scores alone.",
+        "Use goal-management, metacognitive or compensatory strategy practice to support cueing, planning and task completion.",
+        "Choose remote, computerised or face-to-face delivery according to access, support needs and fidelity rather than assuming one medium is intrinsically superior.",
+        "Track participation, everyday functioning and delayed maintenance alongside proximal cognitive outcomes.",
+        "Keep clinical selection and treatment decisions under qualified human oversight; the Gateway supports evidence exploration, not medical prescribing."
+      ],
+      "evidence_source_ids": [
+        "stage13-934f78fcf9ed",
+        "gateway-demo-070",
+        "gateway-demo-077",
+        "gateway-demo-069",
+        "pubmed-41566722"
+      ],
+      "caveat": "Health CSI demo outputs are not medical advice. The cited records shown here are provisional unless the Gateway explicitly labels them Approved."
+    }
+  ]
+}

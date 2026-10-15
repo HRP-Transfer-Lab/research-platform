@@ -1,0 +1,36 @@
+{
+  "schema_version": "hrp-evidence-demo-recommendations-v1",
+  "snapshot_release": "hrp-evidence-gateway-demo-2026-09-04",
+  "governance": {
+    "demo_only": true,
+    "claims_safe": false,
+    "provisional_evidence_allowed": true,
+    "human_approval_required_for_production_claims": true
+  },
+  "scenarios": [
+    {
+      "id": "personal",
+      "label": "Personal CSI",
+      "domain": "personal",
+      "title": "Build self-directed learning without confusing practice gains with transfer",
+      "recommendation": "Use explicit self-regulated-learning routines, targeted cognitive practice when a bottleneck is identified, and a separate stress/attention-regulation component; measure transfer independently.",
+      "evidence_source_ids": ["rt-2026-001", "stage13-00d596089e03", "hrpeg-demo-050", "pubmed-42057149"]
+    },
+    {
+      "id": "work",
+      "label": "Work CSI",
+      "domain": "performance_work",
+      "title": "Adopt GenAI without quietly offloading the judgement you still need",
+      "recommendation": "Use scaffolded human-AI workflows with human-owned framing, evidence judgement and final decisions; preserve independent no-AI checkpoints and monitor hidden workload as well as speed.",
+      "evidence_source_ids": ["rt-2026-014", "rt-2026-015", "rt-2026-016", "rt-2026-018", "gateway-demo-095", "hrpeg-demo-063"]
+    },
+    {
+      "id": "health",
+      "label": "Health CSI",
+      "domain": "health_clinical_adjacent",
+      "title": "Design cognitive support around functional goals, strategy use and maintenance",
+      "recommendation": "Prioritise goal-management and strategy-based rehabilitation linked to functional participation; treat computerised or telehealth delivery as delivery mechanisms and measure maintenance and everyday function separately from trained-task gains.",
+      "evidence_source_ids": ["stage13-934f78fcf9ed", "gateway-demo-070", "gateway-demo-077", "gateway-demo-069", "pubmed-41566722"]
+    }
+  ]
+}

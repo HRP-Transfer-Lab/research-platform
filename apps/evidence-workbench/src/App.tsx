@@ -1,10 +1,11 @@
 import { useEffect, useMemo, useState } from 'react'
-import { Activity, Archive, BookOpen, ChevronRight, ClipboardCheck, Database, FileSearch, Filter, FlaskConical, LogOut, RefreshCw, Search, ShieldCheck, Sparkles, Users, X } from 'lucide-react'
+import { Activity, Archive, BookOpen, ChevronRight, ClipboardCheck, ClipboardList, Database, FileSearch, Filter, FlaskConical, LogOut, RefreshCw, Search, ShieldCheck, Sparkles, Users, X } from 'lucide-react'
 import type { Session } from '@supabase/supabase-js'
 import { supabase } from './lib/supabase'
 import { LoginScreen, PendingAccess } from './AuthViews'
 import { MaturityBadge, type MaturityAssessment, type MaturityDefinition } from './EvidenceMaturity'
 import { SourceDetailWithMaturity } from './SourceDetailWithMaturity'
+import { ReviewQueuePage } from './ReviewQueuePage'
 import { AccessPage, AuditPage, ReleasesPage } from './WorkbenchPages'
 import { BucketPill, CenteredLoader, Metric, NavButton, RoutePill, SelectField } from './WorkbenchUi'
 import { emptyData, humanize, primaryClassification, routeOptions, type AuditRow, type Component, type EvidenceSource, type Outcome, type ProductRelevance, type QualityAssessment, type RegistryData, type Release, type Study, type Tab, type WorkbenchMember } from './workbench'
@@ -189,6 +190,7 @@ function App() {
         </div>
         <nav className="topnav" aria-label="Workbench sections">
           <NavButton active={tab === 'library'} onClick={() => switchTab('library')} icon={<BookOpen size={16} />} label="Evidence" />
+          <NavButton active={tab === 'review'} onClick={() => switchTab('review')} icon={<ClipboardList size={16} />} label="Review" />
           <NavButton active={tab === 'releases'} onClick={() => switchTab('releases')} icon={<Archive size={16} />} label="Releases" />
           {canEdit && <NavButton active={tab === 'audit'} onClick={() => switchTab('audit')} icon={<Activity size={16} />} label="Audit" />}
           {isOwner && <NavButton active={tab === 'access'} onClick={() => switchTab('access')} icon={<Users size={16} />} label="Access" />}
@@ -270,6 +272,7 @@ function App() {
         </main>
       )}
 
+      {tab === 'review' && <ReviewQueuePage data={data} canEdit={canEdit} onRefresh={loadRegistry} onError={setError} />}
       {tab === 'releases' && <ReleasesPage data={data} isOwner={isOwner} onRefresh={loadRegistry} onError={setError} />}
       {tab === 'audit' && canEdit && <AuditPage rows={audit} onRefresh={loadAudit} />}
       {tab === 'access' && isOwner && <AccessPage rows={members} currentUserId={session.user.id} onRefresh={loadMembers} onError={setError} />}
