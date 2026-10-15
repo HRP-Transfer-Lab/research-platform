@@ -1,0 +1,154 @@
+<!doctype html>
+<html lang="en-GB">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="HRP Evidence Gateway — curated evidence for adaptive cognition, cognitive interventions and human–AI systems." />
+  <title>HRP Evidence Gateway</title>
+  <link rel="stylesheet" href="./styles.css" />
+  <link rel="stylesheet" href="./demo-pathways.css" />
+  <link rel="stylesheet" href="./iqm-product-theme.css" />
+</head>
+<body>
+  <div class="app-shell">
+    <header class="site-header">
+      <div class="brand-block">
+        <div class="brand-mark" aria-hidden="true">H</div>
+        <div>
+          <div class="eyebrow">HRP TRANSFER LAB</div>
+          <h1>HRP Evidence Gateway</h1>
+        </div>
+      </div>
+      <div class="header-meta">
+        <span class="demo-pill">WORKING DEMO</span>
+        <span id="snapshotLabel" class="snapshot-label">Loading evidence snapshot…</span>
+      </div>
+    </header>
+
+    <main>
+      <section class="hero">
+        <div class="hero-copy">
+          <p class="hero-kicker">Evidence intelligence for adaptive cognition</p>
+          <h2>Curated evidence for cognitive interventions, human performance and human–AI systems.</h2>
+          <p class="hero-intro">Explore a working evidence corpus supporting HRP Transfer Lab, IQ Mindware and CSI Explorer prototypes. Approved and provisional evidence are kept visibly distinct.</p>
+        </div>
+        <div class="governance-card">
+          <div class="governance-icon" aria-hidden="true">✓</div>
+          <div>
+            <strong>Governance-aware demo</strong>
+            <p>Provisional records are screening-level evidence and are not presented as human-approved scientific claims.</p>
+          </div>
+        </div>
+      </section>
+
+      <section class="metrics" aria-label="Evidence corpus summary">
+        <article class="metric"><span>Total records</span><strong id="totalMetric">—</strong></article>
+        <article class="metric approved"><span>Human approved</span><strong id="approvedMetric">—</strong></article>
+        <article class="metric provisional"><span>Provisional</span><strong id="provisionalMetric">—</strong></article>
+        <article class="metric excluded"><span>Boundary / excluded</span><strong id="excludedMetric">—</strong></article>
+      </section>
+
+      <section class="gateway-layout">
+        <aside class="filters" aria-label="Evidence filters">
+          <div class="filter-title">Explore evidence</div>
+          <label>
+            <span>Search</span>
+            <input id="searchInput" type="search" placeholder="Title, DOI, topic…" autocomplete="off" />
+          </label>
+          <label>
+            <span>Evidence status</span>
+            <select id="statusFilter">
+              <option value="all">All statuses</option>
+              <option value="approved">Approved</option>
+              <option value="provisional">Provisional</option>
+              <option value="excluded">Boundary / excluded</option>
+            </select>
+          </label>
+          <label>
+            <span>CSI domain</span>
+            <select id="domainFilter">
+              <option value="all">All domains</option>
+              <option value="personal">Personal</option>
+              <option value="performance_work">Performance & work</option>
+              <option value="health_clinical_adjacent">Health & clinical-adjacent</option>
+              <option value="legacy">Approved seed · not backfilled</option>
+            </select>
+          </label>
+          <label>
+            <span>Paper role</span>
+            <select id="roleFilter">
+              <option value="all">All roles</option>
+              <option value="direct_intervention">Direct intervention</option>
+              <option value="evidence_synthesis">Evidence synthesis</option>
+              <option value="protocol">Protocol</option>
+              <option value="mechanism">Mechanism</option>
+              <option value="legacy">Approved seed · not backfilled</option>
+            </select>
+          </label>
+          <label>
+            <span>Full-text priority</span>
+            <select id="priorityFilter">
+              <option value="all">All priorities</option>
+              <option value="high">High</option>
+              <option value="medium">Medium</option>
+              <option value="low">Low</option>
+              <option value="legacy">Approved seed · not backfilled</option>
+            </select>
+          </label>
+          <label>
+            <span>Sort</span>
+            <select id="sortFilter">
+              <option value="newest">Newest first</option>
+              <option value="oldest">Oldest first</option>
+              <option value="title">Title A–Z</option>
+            </select>
+          </label>
+          <button id="clearFilters" class="secondary-button" type="button">Clear filters</button>
+          <div class="filter-note">The public demo surface contains bibliographic and screening fields only. Reviewer notes, audit data and raw Registry extraction remain private.</div>
+        </aside>
+
+        <section class="results-panel" aria-live="polite">
+          <div class="results-header">
+            <div><strong id="resultCount">—</strong> <span>records</span></div>
+            <div class="legend">
+              <span><i class="dot approved-dot"></i> Approved</span>
+              <span><i class="dot provisional-dot"></i> Provisional</span>
+              <span><i class="dot excluded-dot"></i> Boundary</span>
+            </div>
+          </div>
+          <div id="loadingState" class="loading-state">Loading the HRP Evidence Gateway…</div>
+          <div id="errorState" class="error-state" hidden></div>
+          <div id="resultsList" class="results-list"></div>
+        </section>
+
+        <aside id="detailPanel" class="detail-panel" aria-label="Evidence record detail">
+          <div class="empty-detail">
+            <div class="empty-detail-icon">↗</div>
+            <h3>Select an evidence record</h3>
+            <p>Review its status, study role, CSI relevance and screening rationale.</p>
+          </div>
+        </aside>
+      </section>
+
+      <section class="about-strip">
+        <div>
+          <h3>How to read this demo</h3>
+          <p><strong>Approved</strong> records belong to the current human-reviewed seed release. <strong>Provisional</strong> records are assistant-researched or assistant-adjudicated screening records awaiting later human verification and deeper extraction. <strong>Boundary / excluded</strong> records are retained to make scope decisions transparent.</p>
+        </div>
+        <div>
+          <h3>Intended use</h3>
+          <p>This Gateway is an evidence-discovery and product-development demonstration. It is not a systematic review, medical advice, or a source of independently approved clinical claims.</p>
+        </div>
+      </section>
+    </main>
+
+    <footer>
+      <span>HRP Evidence Gateway · HRP Transfer Lab</span>
+      <span>Demo data · provenance-aware · read-only</span>
+    </footer>
+  </div>
+
+  <script type="module" src="./app.js"></script>
+  <script type="module" src="./demo-pathways.js"></script>
+</body>
+</html>
