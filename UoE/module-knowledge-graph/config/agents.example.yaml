@@ -1,0 +1,76 @@
+version: 0.1
+
+factory:
+  name: uoe-knowledge-factory
+  orchestrator: agno
+  canonical_graph_write_policy: human_approval
+
+models:
+  embedding:
+    provider: ollama
+    model: qwen3-embedding:0.6b
+  reasoning:
+    provider: ollama
+    model: flint:latest
+
+agents:
+  unit_supervisor:
+    role: orchestration
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  ingest_structure:
+    role: document_structure
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  embedding:
+    role: semantic_index
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  knowledge_extraction:
+    role: candidate_extraction
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  semantic_reconciliation:
+    role: concept_reconciliation
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  graph_critic:
+    role: quality_control
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+    output: review_queue
+
+  pedagogy:
+    role: derived_views
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+authority:
+  automatic:
+    - read_authorised_sources
+    - extract_passages
+    - create_embeddings
+    - create_candidate_nodes
+    - create_candidate_edges
+    - propose_merges
+    - generate_candidate_views
+
+  human_approval_required:
+    - promote_candidate_node_to_reviewed
+    - promote_candidate_edge_to_reviewed
+    - merge_canonical_concepts
+    - alter_ontology
+    - alter_learning_outcomes
+    - alter_assessment_interpretation
+
+privacy:
+  commit_source_documents_to_git: false
+  commit_full_extracted_text_to_git: false
+  commit_embeddings_to_git: false
+  allow_identifiable_student_data: false
