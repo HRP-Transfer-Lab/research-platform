@@ -25,6 +25,7 @@ relations:
     - NARROWER_THAN
     - SAME_CONCEPT
     - RELATED_TO
+    - COMMENTS_ON
 
   dependency:
     - REQUIRES
