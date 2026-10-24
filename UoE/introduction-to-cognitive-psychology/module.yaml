@@ -1,0 +1,11 @@
+module_id: introduction-to-cognitive-psychology
+title: Introduction to Cognitive Psychology
+status: active
+
+knowledge_graph:
+  engine: ../module-knowledge-graph
+  unit_graphs: true
+  module_graph: planned
+
+units:
+  - unit-03
