@@ -1,0 +1,81 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hrp-transfer-lab.local/uoe/knowledge_graph.schema.json",
+  "title": "UoE Module Knowledge Graph",
+  "type": "object",
+  "required": ["graph_id", "unit_id", "nodes", "edges"],
+  "properties": {
+    "graph_id": {"type": "string", "minLength": 1},
+    "unit_id": {"type": "string", "minLength": 1},
+    "version": {"type": "string", "default": "0.1"},
+    "nodes": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/node"}
+    },
+    "edges": {
+      "type": "array",
+      "items": {"$ref": "#/$defs/edge"}
+    }
+  },
+  "$defs": {
+    "provenance": {
+      "type": "object",
+      "required": ["reading_id", "passage_id"],
+      "properties": {
+        "reading_id": {"type": "string"},
+        "source_path": {"type": ["string", "null"]},
+        "citation_id": {"type": ["string", "null"]},
+        "section": {"type": ["string", "null"]},
+        "page": {"type": ["integer", "null"]},
+        "passage_id": {"type": "string"},
+        "text_hash": {"type": ["string", "null"]},
+        "quote": {"type": ["string", "null"]}
+      },
+      "additionalProperties": false
+    },
+    "node": {
+      "type": "object",
+      "required": ["id", "type", "label", "review_status"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "type": {
+          "type": "string",
+          "enum": ["concept", "construct", "theory", "claim", "mechanism", "study", "measure", "finding", "limitation", "method", "debate", "learning_outcome", "assessment_criterion", "reading", "passage"]
+        },
+        "label": {"type": "string", "minLength": 1},
+        "definition": {"type": ["string", "null"]},
+        "aliases": {"type": "array", "items": {"type": "string"}},
+        "importance": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "review_status": {"type": "string", "enum": ["candidate", "reviewed", "rejected"]},
+        "provenance": {
+          "type": "array",
+          "items": {"$ref": "#/$defs/provenance"}
+        }
+      },
+      "additionalProperties": false
+    },
+    "edge": {
+      "type": "object",
+      "required": ["id", "source", "relation", "target", "epistemic_status", "review_status", "provenance"],
+      "properties": {
+        "id": {"type": "string", "minLength": 1},
+        "source": {"type": "string", "minLength": 1},
+        "relation": {"type": "string", "minLength": 1},
+        "target": {"type": "string", "minLength": 1},
+        "epistemic_status": {
+          "type": "string",
+          "enum": ["E1_EXPLICIT", "E2_SYNTHESISED", "E3_PEDAGOGICAL", "UNRESOLVED"]
+        },
+        "confidence": {"type": ["number", "null"], "minimum": 0, "maximum": 1},
+        "review_status": {"type": "string", "enum": ["candidate", "reviewed", "rejected"]},
+        "provenance": {
+          "type": "array",
+          "minItems": 1,
+          "items": {"$ref": "#/$defs/provenance"}
+        }
+      },
+      "additionalProperties": false
+    }
+  },
+  "additionalProperties": false
+}
