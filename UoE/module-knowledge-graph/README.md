@@ -117,3 +117,16 @@ The first milestone is intentionally modest:
 5. export graph projections once reviewed.
 
 PDF/DOCX extraction, Ollama embedding calls, automatic clustering and LLM extraction are subsequent adapters rather than assumptions embedded in the core schema.
+
+## Agentic implementation
+
+The planned Agno orchestration layer is specified in:
+
+- `docs/AGNO_KNOWLEDGE_FACTORY_PLAN.md`
+- `config/agents.example.yaml`
+
+The commercialisation path is documented in:
+
+- `docs/COMMERCIALISATION_PATH.md`
+
+Agno orchestrates specialised agents around the canonical graph; it does not replace the provenance, ontology, schemas or human review gate.
