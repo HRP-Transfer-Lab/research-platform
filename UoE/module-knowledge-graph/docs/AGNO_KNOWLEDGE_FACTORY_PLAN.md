@@ -792,3 +792,255 @@ Human academic
 ```
 
 That division should remain stable even if individual models or agent frameworks are later replaced.
+
+
+---
+
+## 16. AI content-building agents
+
+The system should treat teaching-content generation as a first-class workflow alongside knowledge extraction, assessment design and grading.
+
+All generated teaching artefacts must be grounded in:
+
+```text
+official standards
+→ module aims/outcomes
+→ competency graph
+→ reviewed knowledge graph
+→ unit position in module progression
+→ downstream assessment demands
+```
+
+The lecturer remains the approving academic.
+
+### 16.1 Unit Content Builder Agent
+
+Purpose:
+
+Generate or revise the core learning content for a unit/week.
+
+Inputs:
+
+- module specification;
+- unit learning outcomes;
+- prerequisite concepts;
+- reviewed core readings;
+- canonical knowledge graph;
+- competency targets;
+- seminar/lecturecast plan where available;
+- assessment links;
+- institutional style/template requirements.
+
+Responsibilities:
+
+- propose the unit narrative and sequence;
+- identify essential versus enrichment content;
+- organise concepts from prerequisite to higher-order use;
+- integrate theory, evidence, methods, debates and limitations;
+- generate explanations, examples and worked applications;
+- identify misconceptions and boundary cases;
+- propose formative checks/exercises;
+- preserve explicit links to source readings and learning outcomes;
+- flag unsupported gaps rather than silently filling them.
+
+Outputs:
+
+- unit overview;
+- structured unit content;
+- key-concept sections;
+- evidence/debate boxes;
+- examples/applications;
+- formative activities;
+- summary and retrieval questions;
+- source/provenance map.
+
+### 16.2 Seminar / Workshop Builder Agent
+
+Purpose:
+
+Create live-session teaching that actively practises the knowledge and competencies required by the module.
+
+Inputs:
+
+- unit graph;
+- unit content;
+- seminar guidance/template;
+- learning outcomes;
+- target competencies;
+- known misconceptions;
+- assessment requirements;
+- available session duration.
+
+Default design logic:
+
+```text
+activate prior knowledge
+→ retrieve core concepts
+→ apply to a problem/case
+→ compare evidence/theories
+→ practise target academic skill
+→ connect to assessment
+→ exit check
+```
+
+Responsibilities:
+
+- produce a timed seminar/workshop plan;
+- design interactive tasks rather than duplicate unit prose;
+- create discussion questions and case problems;
+- specify expected reasoning or answer structure;
+- include tutor prompts and likely misconceptions;
+- connect each activity to a concept/competency node;
+- include formative assessment where useful;
+- generate handout/slides/task-sheet content when requested.
+
+### 16.3 Lecturecast Builder Agent
+
+Purpose:
+
+Create concise asynchronous lecturecasts that explain and organise the highest-value material in a unit.
+
+Inputs:
+
+- reviewed knowledge graph;
+- unit progression;
+- prerequisite graph;
+- learning outcomes;
+- target assessment competencies;
+- source readings;
+- desired duration.
+
+Suggested structure:
+
+```text
+orientation / why this matters
+→ prerequisite activation
+→ core model or concept
+→ evidence / worked example
+→ comparison / limitation
+→ application
+→ retrieval summary
+```
+
+Responsibilities:
+
+- generate a spoken script;
+- produce slide/visual prompts;
+- mark where diagrams, tables or figures are needed;
+- distinguish core knowledge from enrichment;
+- include source citations in production notes;
+- avoid introducing material not supported by the approved unit graph unless explicitly marked as external enrichment;
+- produce a short student-facing recap.
+
+### 16.4 Formative Learning Activity Agent
+
+Purpose:
+
+Generate low-stakes activities that prepare students for later assessment.
+
+Possible outputs:
+
+- retrieval questions;
+- concept sorting;
+- theory comparison;
+- evidence appraisal;
+- methods critique;
+- worked examples;
+- short data interpretation;
+- argument mapping;
+- application scenarios;
+- mini reflective exercises.
+
+Every activity should identify:
+
+- target concept(s);
+- target competency;
+- expected response;
+- feedback rationale;
+- later assessment relevance.
+
+---
+
+## 17. Teaching artefact graph
+
+Teaching artefacts should become explicit nodes in the curriculum graph rather than unstructured files.
+
+Canonical relationships include:
+
+```text
+UNIT
+  TEACHES → CONCEPT
+
+UNIT
+  DEVELOPS → COMPETENCY
+
+LECTURECAST
+  EXPLAINS → CONCEPT
+  PREPARES_FOR → SEMINAR
+  SUPPORTS → LEARNING_OUTCOME
+
+SEMINAR
+  PRACTISES → COMPETENCY
+  APPLIES → CONCEPT
+  PREPARES_FOR → ASSESSMENT
+
+FORMATIVE_ACTIVITY
+  PRACTISES → SUBCRITERION_SKILL
+
+ASSESSMENT
+  ASSESSES → CONCEPT
+  ASSESSES → COMPETENCY
+
+RUBRIC_SUBCRITERION
+  MEASURES → COMPETENCY
+```
+
+This enables constructive-alignment auditing across teaching and assessment.
+
+---
+
+## 18. Content-generation review gates
+
+Generated teaching material should move through:
+
+```text
+candidate content
+→ automated provenance/alignment checks
+→ lecturer review
+→ approved teaching artefact
+```
+
+Automated checks should include:
+
+- all core claims trace to approved sources;
+- required learning outcomes are covered;
+- prerequisite knowledge is not assumed without support;
+- assessment-relevant competencies are practised before summative assessment;
+- seminars do not merely repeat asynchronous content;
+- lecturecasts do not introduce unsupported claims;
+- formative activities have explicit expected reasoning/feedback;
+- terminology is consistent across unit, seminar, lecturecast and rubric.
+
+The lecturer may approve, edit, reject or request regeneration.
+
+---
+
+## 19. Expanded Agno teaching team
+
+The planned teaching-design team should include:
+
+| Agent | Main responsibility |
+|---|---|
+| Module Design Supervisor | Coordinates module-level construction and alignment |
+| Unit Content Builder | Builds/revises asynchronous unit learning content |
+| Seminar Builder | Creates live seminar/workshop activities |
+| Lecturecast Builder | Creates lecturecast scripts and visual plans |
+| Formative Activity Builder | Creates low-stakes practice and exercises |
+| Assessment Designer | Designs summative/formative assessments |
+| Rubric Generator | Generates assessment-specific subcriteria |
+| Alignment Critic | Checks constructive alignment across all artefacts |
+| Standards Checker | Checks QAA/institution/programme requirements |
+| Grading Agent | Applies approved subcriteria to submissions |
+| Grading Calibration Agent | Applies cohort norming/calibration after independent scoring |
+
+The Module Design Supervisor should coordinate these agents against one canonical module graph.
