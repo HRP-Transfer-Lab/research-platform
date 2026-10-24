@@ -1,0 +1,10 @@
+module_id: health-psychology
+title: Health Psychology
+status: active
+
+knowledge_graph:
+  engine: ../module-knowledge-graph
+  unit_graphs: true
+  module_graph: planned
+
+units: []
