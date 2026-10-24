@@ -51,6 +51,71 @@ agents:
     may_write_candidate_graph: false
     may_write_canonical_graph: false
 
+
+  module_design_supervisor:
+    role: module_orchestration
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  unit_content_builder:
+    role: teaching_content_generation
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  seminar_builder:
+    role: live_teaching_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  lecturecast_builder:
+    role: asynchronous_teaching_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  formative_activity_builder:
+    role: formative_learning_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  assessment_designer:
+    role: assessment_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  rubric_generator:
+    role: rubric_subcriteria_generation
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  alignment_critic:
+    role: constructive_alignment_quality_control
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+    output: review_queue
+
+  standards_checker:
+    role: standards_alignment
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  grading_agent:
+    role: assessment_grading
+    source: approved_rubric_and_module_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  grading_calibration_agent:
+    role: cohort_norming
+    source: independent_subcriterion_scores
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
 authority:
   automatic:
     - read_authorised_sources
