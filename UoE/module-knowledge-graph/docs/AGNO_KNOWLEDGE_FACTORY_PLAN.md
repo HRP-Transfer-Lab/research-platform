@@ -1044,3 +1044,27 @@ The planned teaching-design team should include:
 | Grading Calibration Agent | Applies cohort norming/calibration after independent scoring |
 
 The Module Design Supervisor should coordinate these agents against one canonical module graph.
+
+
+---
+
+## 20. AI-era assessment evidence architecture
+
+The assessment subsystem must not rely on a polished essay/report as sufficient evidence that a student independently possesses the target competence.
+
+Detailed design is specified in:
+
+- `docs/ASSESSMENT_EVIDENCE_ARCHITECTURE.md`
+
+Key principles:
+
+- assess competence through converging evidence channels rather than product alone;
+- distinguish HUMAN_INDEPENDENT from HUMAN_AI_AUGMENTED competence;
+- use source-specific core-reading engagement as one authentication layer, not as a complete solution;
+- support seven evidence channels: RETRIEVAL, EXPLANATION, APPLICATION, PROCESS, DIALOGUE, PRODUCT and AI_JUDGEMENT;
+- generate authentication profiles for important competencies;
+- support cumulative quizzes, viva-lite, processfolios, transfer probes, data/figure interpretation, parameterised variants, supervised synthesis and evidential reflection;
+- make AI-use policy explicit per assessment;
+- use an Assessment Authentication Critic to flag product-only or weakly authenticated high-stakes competencies.
+
+The target product position is **assessment validity for the AI era**, not merely AI-resistant assessment.
