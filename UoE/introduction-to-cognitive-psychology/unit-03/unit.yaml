@@ -1,0 +1,57 @@
+unit_id: introduction-to-cognitive-psychology-unit-03
+module_id: introduction-to-cognitive-psychology
+title: Unit 3
+week: 3
+
+learning_outcomes: []
+assessment_criteria: []
+
+readings:
+  - reading_id: U3-R1
+    title: "What's new in neuroimaging methods?"
+    authors:
+      - Bandettini, P. A.
+    year: 2009
+    role: review
+    source_path: readings/U3-R1.md
+    citation_id: "Bandettini2009"
+
+  - reading_id: U3-R2
+    title: "Animal research in neuroscience: a duty to engage"
+    authors:
+      - Bennett, A. J.
+      - Ringach, D. L.
+    year: 2016
+    role: critique
+    source_path: readings/U3-R2.md
+    citation_id: "BennettRingach2016"
+
+  - reading_id: U3-R3
+    title: "A Madness to the Methods in Cognitive Neuroscience?"
+    authors:
+      - Chatterjee, A.
+    year: 2005
+    role: critique
+    source_path: readings/U3-R3.md
+    citation_id: "Chatterjee2005"
+
+  - reading_id: U3-R4
+    title: "Method matters: an empirical study of methods on impact"
+    authors:
+      - Fellows, L. K.
+      - Heberlein, A. S.
+      - Morales, D. A.
+      - Shivde, G.
+      - Waller, S.
+      - Wu, D. H.
+    year: 2005
+    role: empirical
+    source_path: readings/U3-R4.md
+    citation_id: "FellowsEtAl2005"
+
+declared_reading_relations:
+  - source_reading_id: U3-R3
+    relation: COMMENTS_ON
+    target_reading_id: U3-R4
+    epistemic_status: E1_EXPLICIT
+    note: "Unit guidance explicitly directs students to Chatterjee's comments on the Fellows et al. paper."

@@ -1,0 +1,90 @@
+version: 0.1
+
+node_types:
+  - concept
+  - construct
+  - theory
+  - claim
+  - mechanism
+  - study
+  - measure
+  - finding
+  - limitation
+  - method
+  - debate
+  - learning_outcome
+  - assessment_criterion
+  - reading
+  - passage
+
+relations:
+  taxonomy:
+    - IS_A
+    - PART_OF
+    - BROADER_THAN
+    - NARROWER_THAN
+    - SAME_CONCEPT
+    - RELATED_TO
+    - COMMENTS_ON
+
+  dependency:
+    - REQUIRES
+    - BUILDS_ON
+    - NEEDED_TO_UNDERSTAND
+    - PRECEDES
+
+  theory:
+    - EXPLAINS
+    - PREDICTS
+    - EXTENDS
+    - CONTRASTS_WITH
+    - CHALLENGES
+    - SUPPORTS
+
+  measurement:
+    - OPERATIONALISED_BY
+    - MEASURED_BY
+    - INDICATES
+
+  evidence:
+    - TESTS
+    - SUPPORTS_CLAIM
+    - CHALLENGES_CLAIM
+    - QUALIFIES
+    - LIMITS
+    - REPLICATES
+    - FAILS_TO_REPLICATE
+    - ALTERNATIVE_EXPLANATION
+
+  teaching:
+    - DISCUSSES
+    - CENTRAL_TO
+    - ASSESSES
+    - ADDRESSES
+    - EXEMPLIFIES
+
+epistemic_status:
+  - E1_EXPLICIT
+  - E2_SYNTHESISED
+  - E3_PEDAGOGICAL
+  - UNRESOLVED
+
+review_status:
+  - candidate
+  - reviewed
+  - rejected
+
+merge_decisions:
+  - SAME_CONCEPT
+  - RELATED_BUT_DISTINCT
+  - BROADER_THAN
+  - NARROWER_THAN
+  - UNCERTAIN
+
+rules:
+  - Every reviewed substantive edge must cite at least one provenance record.
+  - E1_EXPLICIT edges must be supported by a passage that states the relationship.
+  - E2_SYNTHESISED edges must cite all passages required for the synthesis.
+  - E3_PEDAGOGICAL edges must be labelled as pedagogical and must not be presented as source claims.
+  - Embedding similarity may propose merge candidates but cannot decide concept identity.
+  - Construct, operationalisation, measure and observed score must remain distinguishable.

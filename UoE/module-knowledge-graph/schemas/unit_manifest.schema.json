@@ -1,0 +1,49 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://hrp-transfer-lab.local/uoe/unit_manifest.schema.json",
+  "title": "UoE Unit Manifest",
+  "type": "object",
+  "required": ["unit_id", "title", "readings"],
+  "properties": {
+    "unit_id": {"type": "string", "minLength": 1},
+    "module_id": {"type": ["string", "null"]},
+    "title": {"type": "string", "minLength": 1},
+    "week": {"type": ["integer", "string", "null"]},
+    "learning_outcomes": {"type": "array", "items": {"type": "string"}},
+    "assessment_criteria": {"type": "array", "items": {"type": "string"}},
+    "readings": {
+      "type": "array",
+      "minItems": 1,
+      "items": {
+        "type": "object",
+        "required": ["reading_id", "title", "source_path"],
+        "properties": {
+          "reading_id": {"type": "string", "minLength": 1},
+          "title": {"type": "string", "minLength": 1},
+          "authors": {"type": "array", "items": {"type": "string"}},
+          "year": {"type": ["integer", "null"]},
+          "role": {"type": "string", "enum": ["textbook", "foundational_theory", "empirical", "review", "critique", "other"]},
+          "source_path": {"type": "string", "minLength": 1},
+          "citation_id": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    },
+    "declared_reading_relations": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["source_reading_id", "relation", "target_reading_id", "epistemic_status"],
+        "properties": {
+          "source_reading_id": {"type": "string", "minLength": 1},
+          "relation": {"type": "string", "minLength": 1},
+          "target_reading_id": {"type": "string", "minLength": 1},
+          "epistemic_status": {"type": "string", "enum": ["E1_EXPLICIT", "E2_SYNTHESISED", "E3_PEDAGOGICAL", "UNRESOLVED"]},
+          "note": {"type": ["string", "null"]}
+        },
+        "additionalProperties": false
+      }
+    }
+  },
+  "additionalProperties": false
+}

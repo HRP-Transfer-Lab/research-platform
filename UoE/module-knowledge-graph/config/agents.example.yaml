@@ -1,0 +1,184 @@
+version: 0.1
+
+factory:
+  name: uoe-knowledge-factory
+  orchestrator: agno
+  canonical_graph_write_policy: human_approval
+
+models:
+  embedding:
+    provider: ollama
+    model: qwen3-embedding:0.6b
+  reasoning:
+    provider: ollama
+    model: flint:latest
+
+agents:
+  unit_supervisor:
+    role: orchestration
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  ingest_structure:
+    role: document_structure
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  embedding:
+    role: semantic_index
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  knowledge_extraction:
+    role: candidate_extraction
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  semantic_reconciliation:
+    role: concept_reconciliation
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  graph_critic:
+    role: quality_control
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+    output: review_queue
+
+  pedagogy:
+    role: derived_views
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+
+  module_design_supervisor:
+    role: module_orchestration
+    may_write_candidate_graph: true
+    may_write_canonical_graph: false
+
+  unit_content_builder:
+    role: teaching_content_generation
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  seminar_builder:
+    role: live_teaching_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  lecturecast_builder:
+    role: asynchronous_teaching_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  formative_activity_builder:
+    role: formative_learning_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  assessment_designer:
+    role: assessment_design
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  rubric_generator:
+    role: rubric_subcriteria_generation
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  alignment_critic:
+    role: constructive_alignment_quality_control
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+    output: review_queue
+
+  standards_checker:
+    role: standards_alignment
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  grading_agent:
+    role: assessment_grading
+    source: approved_rubric_and_module_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  grading_calibration_agent:
+    role: cohort_norming
+    source: independent_subcriterion_scores
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+
+  assessment_evidence_designer:
+    role: competence_evidence_architecture
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  quiz_retrieval_agent:
+    role: retrieval_and_application_item_generation
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  viva_agent:
+    role: oral_authentication
+    source: submission_plus_rubric_plus_module_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  processfolio_agent:
+    role: process_evidence_design
+    source: assessment_workflow
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  transfer_probe_agent:
+    role: novel_application_and_boundary_testing
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  ai_judgement_assessment_agent:
+    role: human_ai_augmented_competence_assessment
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  assessment_authentication_critic:
+    role: assessment_validity_quality_control
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+    output: review_queue
+
+authority:
+  automatic:
+    - read_authorised_sources
+    - extract_passages
+    - create_embeddings
+    - create_candidate_nodes
+    - create_candidate_edges
+    - propose_merges
+    - generate_candidate_views
+
+  human_approval_required:
+    - promote_candidate_node_to_reviewed
+    - promote_candidate_edge_to_reviewed
+    - merge_canonical_concepts
+    - alter_ontology
+    - alter_learning_outcomes
+    - alter_assessment_interpretation
+
+privacy:
+  commit_source_documents_to_git: false
+  commit_full_extracted_text_to_git: false
+  commit_embeddings_to_git: false
+  allow_identifiable_student_data: false

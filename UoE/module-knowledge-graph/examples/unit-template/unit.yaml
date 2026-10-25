@@ -1,0 +1,42 @@
+unit_id: example-week-01
+module_id: EXAMPLE-MODULE
+title: Example teaching unit
+week: 1
+
+learning_outcomes:
+  - Explain the main concepts introduced in the unit.
+  - Compare the principal theoretical accounts.
+  - Evaluate relevant empirical evidence.
+
+assessment_criteria:
+  - Knowledge and understanding
+  - Critical evaluation
+  - Use of evidence
+
+readings:
+  - reading_id: R1
+    title: Core textbook chapter
+    authors:
+      - Example Author
+    year: 2026
+    role: textbook
+    source_path: readings/R1.md
+    citation_id: null
+
+  - reading_id: R2
+    title: Foundational theory reading
+    authors:
+      - Example Author
+    year: 2020
+    role: foundational_theory
+    source_path: readings/R2.md
+    citation_id: null
+
+  - reading_id: R3
+    title: Empirical study
+    authors:
+      - Example Author
+    year: 2024
+    role: empirical
+    source_path: readings/R3.md
+    citation_id: null

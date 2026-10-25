@@ -1,0 +1,10 @@
+module_id: biological-psychology
+title: Biological Psychology
+status: active
+
+knowledge_graph:
+  engine: ../module-knowledge-graph
+  unit_graphs: true
+  module_graph: planned
+
+units: []

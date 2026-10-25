@@ -1,0 +1,19 @@
+embedding:
+  provider: ollama
+  model: qwen3-embedding:0.6b
+  base_url: http://localhost:11434
+
+extraction:
+  provider: configurable
+  model: null
+  base_url: null
+
+reconciliation:
+  provider: configurable
+  model: null
+  base_url: null
+
+policy:
+  store_embeddings_in_git: false
+  store_source_documents_in_git: false
+  require_human_review_for_graph_writes: true
