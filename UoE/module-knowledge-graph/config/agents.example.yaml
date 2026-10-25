@@ -116,6 +116,49 @@ agents:
     may_write_candidate_graph: false
     may_write_canonical_graph: false
 
+
+  assessment_evidence_designer:
+    role: competence_evidence_architecture
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  quiz_retrieval_agent:
+    role: retrieval_and_application_item_generation
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  viva_agent:
+    role: oral_authentication
+    source: submission_plus_rubric_plus_module_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  processfolio_agent:
+    role: process_evidence_design
+    source: assessment_workflow
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  transfer_probe_agent:
+    role: novel_application_and_boundary_testing
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  ai_judgement_assessment_agent:
+    role: human_ai_augmented_competence_assessment
+    source: reviewed_canonical_graph
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+
+  assessment_authentication_critic:
+    role: assessment_validity_quality_control
+    may_write_candidate_graph: false
+    may_write_canonical_graph: false
+    output: review_queue
+
 authority:
   automatic:
     - read_authorised_sources
