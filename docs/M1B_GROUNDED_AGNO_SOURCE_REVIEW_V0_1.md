@@ -1,6 +1,6 @@
 # HRP Research Factory — M1b Grounded Agno Source Review v0.1
 
-**Date:** 13 November 2026. **Status:** implementation for review; validation pending.
+**Date:** 13 November 2026. **Status:** implementation and CI validation complete on draft PR #15; independent real-source and model pilot still pending.
 **Dependencies:** M0 and M1a are merged into research-platform/main.
 **First paper:** TG-COMP-001 — Homeostatic Adaptive Intelligence.
 
@@ -104,7 +104,7 @@ A03 quotes that are not exact matches are rejected and withheld from A04. A04 ca
 - [x] A02/A03/A04 structured Agno constructors.
 - [x] Deterministic quote gate and fabricated/misattributed citation refusal.
 - [x] Offline fictional demo and tests for source mutation, malformed quotes and blocked hosting.
-- [ ] Validate M1b tests and real Agno SDK construction in GitHub CI.
+- [x] Validate M1b tests and real Agno SDK construction in GitHub CI.
 - [ ] Run one authorised real source and a confirmed installed local model.
 - [ ] Independently check original article identity, full context, methods and limitations.
 - [ ] Integrate Zotero/OSF and any other authorised primary-text sources.
@@ -112,6 +112,8 @@ A03 quotes that are not exact matches are rejected and withheld from A04. A04 ca
 - [ ] PI approves original-source review before model freeze or publication claims.
 
 **Scope limit:** M1b is a functioning source-grounded agent workflow, not full M1 scientific verification. Source identity and semantic support are not established by an LLM. No journal or preprint submission is enabled.
+
+**Validation proof:** [GitHub Actions run 43465641046](https://github.com/HRP-Transfer-Lab/research-platform/actions/runs/43465641046) completed successfully on the M1b code: **52 offline tests passed**, **4 optional Agno tests skipped in that job**; the separate Agno-SDK job **passed 4 constructor tests** without inference. The short-lived artefact `TG-COMP-001-M1b-fictional-grounded-review-packet` is entirely fictional and is not source evidence.
 
 ## 9. Documentation references
 
