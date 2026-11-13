@@ -79,6 +79,26 @@ hrp-factory evidence-dossier configs/TG-COMP-001.json \
 
 See the [M1 implementation boundary and acceptance checklist](../../docs/M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md). This does not yet integrate live Agno literature-reading agents, Zotero/OSF, user records, or a publication workflow. The stacked M1 PR targets the unmerged M0 feature branch, so **neither M0 nor M1 has been merged to main**.
 
+## M1b — source-grounded Agno roles (review branch)
+
+See [M1b Grounded Source Review](../../docs/M1B_GROUNDED_AGNO_SOURCE_REVIEW_V0_1.md). This optional next step implements A02 Evidence Librarian, A03 Source Verifier and A04 Competing-Theory Analyst with structured Agno outputs, deterministic quote checking, and a local-only Europe PMC open-access importer. Model runs and public full-text lookups require separate explicit opt-in. No interpretation is approved automatically.
+
+### Offline fictional smoke test
+
+```bash
+python scripts/demo_source_review.py
+```
+
+### Optional local-source inspection
+
+```bash
+hrp-factory source-review configs/TG-COMP-001.json \
+  --candidates configs/TG-COMP-001-evidence-candidates.json \
+  --source-bundle runs/oa-src-004/source-bundle.json --out runs
+```
+
+The provided source bundle must first be imported or authorised and pinned; the command does not magically retrieve full text. Hosted models cannot receive local-only sources. Human original-source context and DOI/rights review are still required.
+
 ## Next steps
 
 1. Have the PI review the M0 PR and the publication contract.
