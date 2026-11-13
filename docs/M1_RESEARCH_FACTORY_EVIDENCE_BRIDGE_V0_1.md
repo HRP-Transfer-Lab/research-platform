@@ -1,6 +1,6 @@
 # Research Factory M1 — First Evidence Bridge Implementation v0.1
 
-**Status:** M1 first vertical slice on a stacked draft branch, pending CI and PI review (13 November 2026).  
+**Status:** M1a vertical slice implemented and CI-validated; **pending PI review** (13 November 2026).  
 **Parent:** Research Factory M0 draft PR #13.  
 **Initial paper:** `TG-COMP-001` — *Homeostatic Adaptive Intelligence*.  
 **Scientific authority:** Human PI and verified original studies, **not** the agent-generated dossier.
@@ -117,6 +117,18 @@ runs/TG-COMP-001/<run_id>/
 - **A06 Independent Reviewer:** receives the unresolved claim report and an explicit human evidence-approval checklist.
 
 The current code implements **deterministic role-aligned steps**, not a multi-agent team performing independent research.
+
+## 5a. Tested reference output and reproducibility status
+
+The first GitHub Actions run using the M1a branch succeeded:
+[**CI run 43455335139**](https://github.com/HRP-Transfer-Lab/research-platform/actions/runs/43455335139).
+
+- **37 offline tests passed; 2 optional Agno tests skipped in the offline job** (the SDK is deliberately not installed there).
+- **2 separate Agno workflow-construction smoke tests passed**; they do not invoke a model.
+- The workflow generated an **offline, unverified TG-COMP-001 review packet** and uploaded it as the short-lived Actions artifact named `TG-COMP-001-M1a-unverified-evidence-packet` (7-day retention).
+- The packet contains a candidate evidence matrix, source/review status, list of rival models, empty approved bibliography, unresolved claims, and a human approval checklist. It contains no reviewed original source passages and makes **no claim of empirical support**.
+
+These tests validate code and fail-closed status handling. They are **not tests of full-text scholarly interpretation**, actual provider availability, agent reasoning quality or human scientific agreement. A live Crossref/OpenAlex lookup remains optional and is not part of the default CI job.
 
 ## 6. M1 next steps and stop/go gate
 
