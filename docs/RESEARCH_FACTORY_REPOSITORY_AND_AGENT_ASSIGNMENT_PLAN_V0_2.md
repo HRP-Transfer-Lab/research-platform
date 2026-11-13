@@ -41,7 +41,7 @@ HUMAN PUBLICATION GATE (no automatic external submission)
 
 ## 2. GitHub organisation — canonical ownership
 
-The following are **existing** repositories; proposed folder paths are explicitly labelled below.
+The following are **existing** repositories; proposed folder paths are explicitly labelled below. The companion [machine-readable role and paper manifest](../components/research-factory/configs/agent_assignments.v0.2.json) records 16 proposed role definitions, the current three M0 agent constructors, six track assignments and human-only release gates. It is **documentation, not runtime permissions**.
 
 | Existing repository | Exclusive or primary ownership | Factory access | Forbidden from the factory |
 |---|---|---|---|
@@ -92,7 +92,7 @@ research-platform/
       AGENTS.md, README.md, pyproject.toml
       configs/
         TG-COMP-001.json                        EXISTS on M0 branch
-        agent_assignments.v0.2.json             PROPOSED DECLARATIVE PLAN
+        agent_assignments.v0.2.json             EXISTS: planning-only; not executable
         model_routing.yaml                      PLANNED M2/M5
       src/hrp_research_factory/
         contracts.py, pipeline.py, cli.py       EXISTS on M0 branch
