@@ -18,8 +18,8 @@ jobs:
       run:
         working-directory: components/research-factory
     steps:
-      - uses: actions/checkout@v4
-      - uses: actions/setup-python@v5
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
         with:
           python-version: "3.12"
       - name: Install factory and tests (no optional model SDKs)
@@ -28,3 +28,18 @@ jobs:
         run: hrp-factory validate configs/TG-COMP-001.json
       - name: Run offline tests
         run: python -m pytest -q
+
+  agno-sdk-construction-smoke:
+    runs-on: ubuntu-latest
+    defaults:
+      run:
+        working-directory: components/research-factory
+    steps:
+      - uses: actions/checkout@v5
+      - uses: actions/setup-python@v6
+        with:
+          python-version: "3.12"
+      - name: Install optional Agno models (no model API calls)
+        run: python -m pip install -e ".[agents,dev]"
+      - name: Construct Agno workflows without calling models
+        run: python -m pytest tests/test_agno_constructor.py -q
