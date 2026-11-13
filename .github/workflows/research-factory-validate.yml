@@ -1,9 +1,10 @@
-name: Research factory M0 + M1 evidence validation
+name: Research factory M0/M1 grounded evidence validation
 
 on:
   push:
     branches:
       - "feature/hrp-factory-m1-evidence-bridge"
+      - "feature/hrp-factory-m1b-grounded-agno-source-review"
     paths:
       - "components/research-factory/**"
       - "docs/M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md"
@@ -41,6 +42,15 @@ jobs:
           hrp-factory evidence-dossier configs/TG-COMP-001.json \
             --candidates configs/TG-COMP-001-evidence-candidates.json \
             --out runs
+      - name: Run fictional local-source review (no model calls or live articles)
+        run: python scripts/demo_source_review.py
+      - name: Upload synthetic-only exact-source review packet
+        uses: actions/upload-artifact@v4
+        with:
+          name: TG-COMP-001-M1b-fictional-grounded-review-packet
+          path: components/research-factory/runs/TG-COMP-001/*/source_review/
+          if-no-files-found: error
+          retention-days: 7
       - name: Upload candidate-only dossier for human review
         uses: actions/upload-artifact@v4
         with:
@@ -62,4 +72,4 @@ jobs:
       - name: Install optional Agno models (no model API calls)
         run: python -m pip install -e ".[agents,dev]"
       - name: Construct Agno workflows without calling models
-        run: python -m pytest tests/test_agno_constructor.py -q
+        run: python -m pytest tests/test_agno_constructor.py tests/test_grounded_agno_constructor.py -q
