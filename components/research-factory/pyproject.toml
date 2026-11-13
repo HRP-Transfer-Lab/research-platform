@@ -11,7 +11,7 @@ dependencies = []
 
 [project.optional-dependencies]
 dev = ["pytest>=8,<10"]
-agents = ["agno[openai,sqlite]>=2.6,<3", "ollama>=0.5"]
+agents = ["agno[openai,sqlite]>=2.6,<3", "ollama>=0.5", "sqlalchemy[asyncio]>=2,<3"]
 
 [project.scripts]
 hrp-factory = "hrp_research_factory.cli:main"
