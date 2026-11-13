@@ -1,6 +1,13 @@
-name: Research factory M0 validation
+name: Research factory M0 + M1 evidence validation
 
 on:
+  push:
+    branches:
+      - "feature/hrp-factory-m1-evidence-bridge"
+    paths:
+      - "components/research-factory/**"
+      - "docs/M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md"
+      - ".github/workflows/research-factory-validate.yml"
   pull_request:
     types: [opened, synchronize, reopened, edited]
     paths:
