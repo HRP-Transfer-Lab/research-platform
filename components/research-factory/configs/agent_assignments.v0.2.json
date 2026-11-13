@@ -1,0 +1,416 @@
+{
+  "schema_version": "hrp-factory-agent-assignment-plan-v0.2",
+  "document": "docs/RESEARCH_FACTORY_REPOSITORY_AND_AGENT_ASSIGNMENT_PLAN_V0_2.md",
+  "status": "declarative_planning_only_not_runtime_agent_registration",
+  "owning_repository": "HRP-Transfer-Lab/research-platform",
+  "linked_factory_development_plan": "docs/RESEARCH_PUBLICATION_FACTORY_DEVELOPMENT_PLAN_V0_1.md",
+  "human_authority": "Principal investigator approves source, scope, frozen scientific designs, analysis interpretation and public release.",
+  "m0_actual_execution": "Offline contract and dossier workflows are implemented; three opt-in no-tool Agno agents are construction-tested only; no model inference, citation retrieval or remote code execution validated.",
+  "existing_research_programme_rules": [
+    "Do not mutate frozen M-series scientific definitions or results.",
+    "No unapproved private or participant data in hosted LLMs or public Git.",
+    "No automatic publication, email sending or journal submission.",
+    "Never equate model-generated argument with verified scientific evidence."
+  ],
+  "roles": [
+    {
+      "id": "A01",
+      "name": "Research Director",
+      "team": "coordination",
+      "status": "m0_constructor_no_tools",
+      "first_milestone": "M0",
+      "allowed_future_tasks": [
+        "contract_read",
+        "scope_proposal",
+        "review_queue_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A02",
+      "name": "Evidence Librarian",
+      "team": "evidence",
+      "status": "planned",
+      "first_milestone": "M1",
+      "allowed_future_tasks": [
+        "approved_public_metadata_read",
+        "approved_local_corpus_read",
+        "bibliography_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A03",
+      "name": "Source & Citation Verifier",
+      "team": "evidence",
+      "status": "planned",
+      "first_milestone": "M1",
+      "allowed_future_tasks": [
+        "source_metadata_verify",
+        "original_passage_verify",
+        "provenance_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A04",
+      "name": "Competing-Theory Analyst",
+      "team": "evidence",
+      "status": "planned",
+      "first_milestone": "M1",
+      "allowed_future_tasks": [
+        "verified_source_read",
+        "rival_theory_matrix_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A05",
+      "name": "Theoretical Formaliser",
+      "team": "coordination",
+      "status": "m0_constructor_no_tools",
+      "first_milestone": "M0",
+      "allowed_future_tasks": [
+        "contract_read",
+        "formalisation_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A06",
+      "name": "Independent Adversarial Reviewer",
+      "team": "review",
+      "status": "m0_constructor_no_tools",
+      "first_milestone": "M0",
+      "allowed_future_tasks": [
+        "contract_read",
+        "critical_review_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A07",
+      "name": "Experimental Designer",
+      "team": "science",
+      "status": "planned",
+      "first_milestone": "M2",
+      "allowed_future_tasks": [
+        "design_proposal",
+        "simulation_protocol_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A08",
+      "name": "Computational Engineer (Codex)",
+      "team": "science",
+      "status": "planned",
+      "first_milestone": "M2",
+      "allowed_future_tasks": [
+        "approved_coding_work_order",
+        "isolated_branch_code_pr"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A09",
+      "name": "Statistical Auditor",
+      "team": "science",
+      "status": "planned",
+      "first_milestone": "M2",
+      "allowed_future_tasks": [
+        "approved_results_read",
+        "independent_reproduction_report"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A10",
+      "name": "Neuroscience Specialist",
+      "team": "science",
+      "status": "planned",
+      "first_milestone": "M4",
+      "allowed_future_tasks": [
+        "neuroscience_sources_read",
+        "factorial_task_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A11",
+      "name": "Psychometric / Learnability Specialist",
+      "team": "science",
+      "status": "planned",
+      "first_milestone": "M4",
+      "allowed_future_tasks": [
+        "longitudinal_methods_proposal",
+        "psychometric_review"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A12",
+      "name": "Philosophical Scholar",
+      "team": "philosophy",
+      "status": "planned",
+      "first_milestone": "M4",
+      "allowed_future_tasks": [
+        "primary_text_read",
+        "philosophy_bibliography_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A13",
+      "name": "Conceptual / Argument Analyst",
+      "team": "philosophy",
+      "status": "planned",
+      "first_milestone": "M4",
+      "allowed_future_tasks": [
+        "argument_map_proposal"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A14",
+      "name": "Philosophical Counterargument Reviewer",
+      "team": "philosophy",
+      "status": "planned",
+      "first_milestone": "M4",
+      "allowed_future_tasks": [
+        "independent_argument_critique"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A15",
+      "name": "Publication Editor",
+      "team": "publication",
+      "status": "planned",
+      "first_milestone": "M3",
+      "allowed_future_tasks": [
+        "approved_manuscript_draft",
+        "reference_formatting"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    },
+    {
+      "id": "A16",
+      "name": "Publication Integrity Reviewer",
+      "team": "publication",
+      "status": "planned",
+      "first_milestone": "M3",
+      "allowed_future_tasks": [
+        "verified_evidence_audit",
+        "figure_and_claim_check"
+      ],
+      "access": "propose_only_or_read_only_until_authorised",
+      "approval_authority": false,
+      "publish_authority": false
+    }
+  ],
+  "publication_assignments": [
+    {
+      "paper_id": "TG-COMP-001",
+      "track": "computational",
+      "lead": [
+        "A05",
+        "A07"
+      ],
+      "evidence": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "implementation": [
+        "A08",
+        "A09"
+      ],
+      "independent_review": [
+        "A06"
+      ],
+      "manuscript": [
+        "A15",
+        "A16"
+      ],
+      "data_tier": "public_or_synthetic"
+    },
+    {
+      "paper_id": "TG-NEURO-001",
+      "track": "empirical_neuroscience",
+      "lead": [
+        "A10"
+      ],
+      "evidence": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "implementation": [
+        "A07",
+        "A08",
+        "A09"
+      ],
+      "independent_review": [
+        "A06"
+      ],
+      "manuscript": [
+        "A15",
+        "A16"
+      ],
+      "data_tier": "research_protocol_dependent"
+    },
+    {
+      "paper_id": "TG-TRANSFER-001",
+      "track": "learnability_transfer",
+      "lead": [
+        "A11"
+      ],
+      "evidence": [
+        "A02",
+        "A03",
+        "A04"
+      ],
+      "implementation": [
+        "A08",
+        "A09"
+      ],
+      "independent_review": [
+        "A06"
+      ],
+      "manuscript": [
+        "A15",
+        "A16"
+      ],
+      "data_tier": "research_protocol_dependent"
+    },
+    {
+      "paper_id": "TG-SHARED-001",
+      "track": "shared_intentionality",
+      "lead": [
+        "A05",
+        "A13"
+      ],
+      "evidence": [
+        "A02",
+        "A03",
+        "A12"
+      ],
+      "implementation": [
+        "A08",
+        "A09"
+      ],
+      "independent_review": [
+        "A06",
+        "A14"
+      ],
+      "manuscript": [
+        "A15",
+        "A16"
+      ],
+      "data_tier": "public_or_synthetic"
+    },
+    {
+      "paper_id": "TG-PHIL-001",
+      "track": "philosophical",
+      "lead": [
+        "A12",
+        "A13"
+      ],
+      "evidence": [
+        "A02",
+        "A03"
+      ],
+      "implementation": [],
+      "independent_review": [
+        "A14",
+        "A16"
+      ],
+      "manuscript": [
+        "A15"
+      ],
+      "data_tier": "approved_sources"
+    },
+    {
+      "paper_id": "TG-PSYCH-001",
+      "track": "psychometric",
+      "lead": [
+        "A11"
+      ],
+      "evidence": [
+        "A02",
+        "A03"
+      ],
+      "implementation": [
+        "A08",
+        "A09"
+      ],
+      "independent_review": [
+        "A06"
+      ],
+      "manuscript": [
+        "A15",
+        "A16"
+      ],
+      "data_tier": "research_protocol_dependent",
+      "conditional": true
+    }
+  ],
+  "gates": [
+    {
+      "stage": "scope",
+      "owner": "PI",
+      "auto_approve": false
+    },
+    {
+      "stage": "source_verification",
+      "owner": "human_evidence_reviewer",
+      "auto_approve": false
+    },
+    {
+      "stage": "confirmatory_protocol_freeze",
+      "owner": "PI",
+      "auto_approve": false
+    },
+    {
+      "stage": "scientific_results_interpretation",
+      "owner": "PI",
+      "auto_approve": false
+    },
+    {
+      "stage": "public_release",
+      "owner": "PI_only",
+      "auto_approve": false
+    }
+  ]
+}
