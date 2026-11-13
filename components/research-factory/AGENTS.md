@@ -2,6 +2,8 @@
 
 Applies to everything under this folder; also read:
 - ../../docs/RESEARCH_PUBLICATION_FACTORY_DEVELOPMENT_PLAN_V0_1.md
+- ../../docs/RESEARCH_FACTORY_REPOSITORY_AND_AGENT_ASSIGNMENT_PLAN_V0_2.md
+- configs/agent_assignments.v0.2.json (declarative assignment plan; no runtime permission)
 - ../../docs/G_LOOP_ADAPTIVE_LEARNING_KERNEL.md
 - ../../docs/DUAL_MACHINE_IMPLEMENTATION.md
 - HRP-Transfer-Lab/trident-control-architecture-validation/AGENTS.md before touching its code.
@@ -18,6 +20,8 @@ Applies to everything under this folder; also read:
 8. Show tests and exact reproducibility metadata; no numerical result without a run manifest.
 9. Submit proposals and code on a review branch/PR. A human PI approves scientific protocols and publication.
 10. Do not silently revise the scope, rival models, primary outcome, seeds or stopping rules after inspection.
+
+Roles listed in the v0.2 agent plan remain **planned** unless the M0 workflow constructor and tests actually implement them. The manifest must not be interpreted as granting tool access or approval.
 
 ## M0 implementation boundary
 
