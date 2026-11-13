@@ -1,0 +1,26 @@
+{
+  "schema_version": "hrp-publication-contract-v0.1",
+  "paper_id": "TG-COMP-001",
+  "track": "computational",
+  "title": "Homeostatic Adaptive Intelligence: A Minimal Controller Comparison",
+  "explanandum": "adaptive_intelligence",
+  "theory_source": {
+    "repo": "HRP-Transfer-Lab/Trident-G-theory",
+    "path": "theory-nov-2026/Trident-G-Theory.md",
+    "commit": "f74576bfae66c28e02ba75e61037a8adb522bb03"
+  },
+  "primary_hypothesis": "State-dependent adaptive control may predict switching and recovery across changing task demands beyond matched smooth and reinforcement-learning alternatives.",
+  "rival_models": [
+    "model_free_reinforcement_learning",
+    "smooth_adaptive_control",
+    "hidden_state_switching"
+  ],
+  "falsification_tests": [
+    "Compare held-out switching behaviour, not just cusp-generated synthetic data.",
+    "Examine settings in which unnecessary switching, excess exploration or poor recovery harms the Trident-inspired controller.",
+    "Use independent synthetic null worlds and register model-complexity penalties."
+  ],
+  "data_tier": "public_or_synthetic",
+  "claim_status": "hypothesis",
+  "release_policy": "human_only"
+}
