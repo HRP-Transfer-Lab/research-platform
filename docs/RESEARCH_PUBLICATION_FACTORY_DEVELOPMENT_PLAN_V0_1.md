@@ -1,12 +1,14 @@
 # HRP Research & Publication Factory — Development Plan v0.1
 
-**Status:** proposed architecture; Milestone 0 implementation underway.  
+**Status:** M0 implementation and CI checks completed on a draft branch; awaiting PI review before merge or M1 execution.  
 **Owner and scientific approval:** Mark Ashton Smith (human principal investigator).  
 **Date:** 13 November 2026.  
 **Location:** HRP Transfer Lab / research-platform.  
 **Purpose:** Turn versioned Trident-G hypotheses into *independently challengeable* computational, empirical, developmental and philosophical publications, without confusing an AI-produced manuscript with a verified scholarly result.
 
 ## 1. Decision and inherited architecture
+
+**Canonical detailed implementation map:** [Research Factory Repository Structure and Agent Assignment Plan v0.2](RESEARCH_FACTORY_REPOSITORY_AND_AGENT_ASSIGNMENT_PLAN_V0_2.md), including source-of-truth ownership, role IDs, paper routing, permissions, model allocation and M1 acceptance tests. Its companion JSON assignment manifest is [here](../components/research-factory/configs/agent_assignments.v0.2.json) (declarative only, not an active agent registry).
 
 The factory is a component of **research-platform**, not a new competing lab stack. Its programme control follows the existing G-Loop Adaptive Learning Kernel and the research platform's three-way separation of theory/protocol, runtime and evidence. The existing Cloud Lab dual-machine plan governs private/public execution.
 
