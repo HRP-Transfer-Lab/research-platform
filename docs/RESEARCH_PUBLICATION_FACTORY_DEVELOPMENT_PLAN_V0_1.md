@@ -131,6 +131,8 @@ For the first milestone, statuses are *not* treated as authentication or proof o
 
 **Gate:** reviewer can trace each central claim to a verifiable original paper and see competing evidence.
 
+**M1b source-review development:** [M1b Grounded Agno Source Review](M1B_GROUNDED_AGNO_SOURCE_REVIEW_V0_1.md) adds bounded original-source text ingestion, Europe PMC OA access and A02/A03/A04 tool-free Agno roles. The deterministic quote gate prevents invented quotations being promoted to a rival-analysis input. Human semantic verification, original source identity and full M1 release gates are **not complete**.
+
 ### M2 — First computational paper and Codex delegation
 
 - [ ] Freeze paper scope and competing model assumptions in a versioned research contract.
