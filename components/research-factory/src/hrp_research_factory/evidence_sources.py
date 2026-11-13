@@ -18,7 +18,7 @@ import re
 from typing import Any, Callable
 from urllib.error import HTTPError, URLError
 from urllib.parse import quote, urlparse
-from urllib.request import Request, urlopen
+from urllib.request import HTTPRedirectHandler, Request, build_opener
 
 DOI_PATTERN = re.compile(r"^10\.[0-9]{4,9}/[-._;()/:a-z0-9]+$", re.IGNORECASE)
 MAX_JSON_BYTES = 1_000_000
@@ -35,7 +35,7 @@ def normalise_doi(value: str) -> str:
     doi = value.strip()
     doi = re.sub(r"^https?://(?:dx\.)?doi\.org/", "", doi, flags=re.I)
     doi = re.sub(r"^doi:\s*", "", doi, flags=re.I).lower()
-    if not DOI_PATTERN.fullmatch(doi):
+    if not DOI_PATTERN.fullmatch(doi) or any(part in {".", "..", ""} for part in doi.split("/")):
         raise SourceMetadataError("Invalid DOI; rejecting unsafe/ambiguous identifier.")
     return doi
 
@@ -78,9 +78,13 @@ def _bounded_json_http(url: str, headers: dict[str, str], *, timeout: float = 8)
     parsed = urlparse(url)
     if parsed.scheme != "https" or parsed.netloc not in ALLOWED_HOSTS or parsed.username or parsed.password:
         raise SourceMetadataError("Metadata request host/scheme is not allowed.")
+    class _RejectRedirects(HTTPRedirectHandler):
+        def redirect_request(self, req, fp, code, msg, headers, newurl):
+            return None
+
     request = Request(url, headers=headers, method="GET")
     try:
-        with urlopen(request, timeout=timeout) as response:
+        with build_opener(_RejectRedirects).open(request, timeout=timeout) as response:
             # Followed redirects could create an unsafe destination: reject if host changed.
             resolved = urlparse(response.geturl())
             if resolved.scheme != "https" or resolved.netloc not in ALLOWED_HOSTS:
