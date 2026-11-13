@@ -294,6 +294,8 @@ Until authenticated publishing/approval infrastructure exists, generated packets
 
 **M1 exit gate:** An independent reviewer can trace every substantial claim to its verified original source or a conspicuous unresolved status, see credible competitors, and approve or reject the proposed experiment. This is a stricter requirement than formatting a bibliography.
 
+**M1b implementation note (13 November 2026):** [Grounded Agno Source Review v0.1](M1B_GROUNDED_AGNO_SOURCE_REVIEW_V0_1.md) implements A02/A03/A04 with opt-in local source text, a deterministic exact-quote gate and an optional Europe PMC OA import. These are executable bounded roles, **not** independent human source verification. Original context and semantic claim-support review remain pending.
+
 ## 8. Implementation sequence and stop rules
 
 | Milestone | Priority | Delivery | Cannot advance before |
