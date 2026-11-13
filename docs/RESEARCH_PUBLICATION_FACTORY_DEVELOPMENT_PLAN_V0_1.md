@@ -112,7 +112,7 @@ For the first milestone, statuses are *not* treated as authentication or proof o
 - [x] Run tests, add CI and open a draft PR.
 - [ ] PI reviews and approves M1 scope; do **not** merge automatically.
 
-**M0 verification:** The first public/synthetic-only Python 3.12 CI run passed **17 offline tests** (GitHub Actions run 43445312256). A separate opt-in Agno SDK construction smoke check is included in CI; it constructs workflows without calling any model, but must pass before claiming SDK integration is validated. No participant data, model credentials or publication actions are involved.
+**M0 verification:** The first public/synthetic-only Python 3.12 CI run passed **17 offline tests** (GitHub Actions run 43445312256). A second CI validation successfully **constructed both OpenAI and local-Ollama Agno workflows (2 passing smoke tests)**, without any model calls (GitHub Actions run 43446444748). This verifies SDK construction, **not** actual model quality, external execution, scholarly accuracy, or deployment. No participant data, model credentials or publication actions are involved.
 
 **M0 definition of done:** from a clean checkout, a user can validate a pinned contract, produce a reviewable run dossier **without network/model credentials**, and run an isolated test suite. The factory cannot publish or alter theory or external research programmes.
 
