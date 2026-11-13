@@ -37,6 +37,10 @@ Allowed: a strict curated DOI/claim seed; **fixed-host, read-only Crossref/OpenA
 
 All text intended for human publication must pass actual source and claim review. Local run artefacts (including downloaded public metadata if enabled) remain under Git-ignored runs/. The CI artefact is public/synthetic candidate material and must be clearly labelled *UNVERIFIED*.
 
+## M1b additional model/source safeguards
+
+Treat every DOI-identified source as **untrusted external material**. Source ingestion, Europe PMC API calls, quote matching, and permissions are deterministic Python operations, not model decisions. A02/A03/A04 Agno agents operate without tools and cannot read arbitrary files, execute commands, publish, or change code. Only authorised local text may reach Ollama; hosted text requires independent permissions for **every** source and the exact hosted-source opt-in variable. A literal quotation match is **not** a claim-support evaluation. No private article text or intellectual property may be exposed through CI artefacts or public repositories; tests use fictional fixtures. Avoid assuming that selecting a source or producing a quote confers scientific authorisation.
+
 ## Handover contract
 
 A work order must record the paper ID, pinned source commit, primary explanandum, competing accounts, failure conditions, provenance, data tier, code/compute budget and human review gate.
