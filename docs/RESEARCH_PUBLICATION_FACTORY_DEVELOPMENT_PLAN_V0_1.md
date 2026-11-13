@@ -118,6 +118,8 @@ For the first milestone, statuses are *not* treated as authentication or proof o
 
 **M0 definition of done:** from a clean checkout, a user can validate a pinned contract, produce a reviewable run dossier **without network/model credentials**, and run an isolated test suite. The factory cannot publish or alter theory or external research programmes.
 
+**M1 status (first slice in progress):** see [M1 Evidence Bridge v0.1](M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md), developed in [stacked draft PR #14](https://github.com/HRP-Transfer-Lab/research-platform/pull/14). Candidate sources, DOI metadata connectors, a read-only public registry inspector and unresolved-evidence dossier generation have been implemented. **This does not yet verify original article content**, connect Zotero/OSF or constitute a completed M1 evidence review.
+
 ### M1 — Evidence and literature bridge
 
 - [ ] Review access to the existing Evidence Registry; add claim-to-source reading with scoped permissions.
