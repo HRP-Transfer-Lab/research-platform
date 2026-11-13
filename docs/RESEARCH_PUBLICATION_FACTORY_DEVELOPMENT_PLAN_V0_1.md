@@ -104,13 +104,15 @@ For the first milestone, statuses are *not* treated as authentication or proof o
 - [x] Identify source-of-truth, red/blue and evidence-governance contracts.
 - [x] Identify the existing M-series recovery results and protect them from silent changes.
 - [x] Draft this plan and create an isolated review branch.
-- [ ] Add a self-contained **research-factory** Python component and offline-first CLI.
-- [ ] Add strict publication-contract validation and an example pinned TG-COMP-001 contract.
-- [ ] Implement deterministic *proposals only* run creation and auditable local manifest.
-- [ ] Add an opt-in Agno agent-workflow adapter with **no autonomous tools**.
-- [ ] Add tests for invalid sources/claims, reproducibility and publish-denial.
-- [ ] Run tests, add CI and open a draft PR.
+- [x] Add a self-contained **research-factory** Python component and offline-first CLI.
+- [x] Add strict publication-contract validation and an example pinned TG-COMP-001 contract.
+- [x] Implement deterministic *proposals only* run creation and auditable local manifest.
+- [x] Add an opt-in Agno agent-workflow adapter with **no autonomous tools**.
+- [x] Add tests for invalid sources/claims, reproducibility and publish-denial.
+- [x] Run tests, add CI and open a draft PR.
 - [ ] PI reviews and approves M1 scope; do **not** merge automatically.
+
+**M0 verification:** The first public/synthetic-only Python 3.12 CI run passed **17 offline tests** (GitHub Actions run 43445312256). A separate opt-in Agno SDK construction smoke check is included in CI; it constructs workflows without calling any model, but must pass before claiming SDK integration is validated. No participant data, model credentials or publication actions are involved.
 
 **M0 definition of done:** from a clean checkout, a user can validate a pinned contract, produce a reviewable run dossier **without network/model credentials**, and run an isolated test suite. The factory cannot publish or alter theory or external research programmes.
 
