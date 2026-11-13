@@ -2,7 +2,7 @@
 
 The factory sits inside the existing Trident Cloud Lab, using its G-Loop as a **research control framework**. It does not replace the operational Evidence Registry, the Trident-G theory repository, the model-validation M-series or the established private/public data boundaries.
 
-**Current status:** implemented M0 *proposal-only bootstrap* (not a deployed or fully autonomous research team). See [development plan](../../docs/RESEARCH_PUBLICATION_FACTORY_DEVELOPMENT_PLAN_V0_1.md).
+**Current status:** implemented M0 *proposal-only bootstrap* (not a deployed or fully autonomous research team). See [development plan](../../docs/RESEARCH_PUBLICATION_FACTORY_DEVELOPMENT_PLAN_V0_1.md), [repository and agent assignment plan v0.2](../../docs/RESEARCH_FACTORY_REPOSITORY_AND_AGENT_ASSIGNMENT_PLAN_V0_2.md), and the [declarative agent-assignment manifest](configs/agent_assignments.v0.2.json).
 
 ## What is actually implemented
 
@@ -13,6 +13,7 @@ The factory sits inside the existing Trident Cloud Lab, using its G-Loop as a **
 - An Agno adapter for OpenAI (hosted) or Ollama (loopback local) but **no installed model, credential or service is assumed**.
 - Tests for invalid contracts, source mutability, restricted-cloud denial, opt-in permissions and publication blocks.
 - GitHub Actions test job using public/synthetic test fixtures.
+- A **declarative-only** 16-role / six-paper assignment plan; this is not an executable multi-agent registration or an authorisation grant.
 
 The factory cannot publish, write to external research repositories, read private data or autonomously launch simulations. These are future gated milestones.
 
