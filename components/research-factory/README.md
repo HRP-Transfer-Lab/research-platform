@@ -56,6 +56,29 @@ These examples do not set up credentials or launch models. An Agno draft has **n
 
 **TG-COMP-001 — Homeostatic Adaptive Intelligence.** Source-pinned theory v0.4; primary explanandum = adaptive intelligence. The first dossier recommends fair continuous/RL/hidden-state alternatives and falsifying tests. It must not claim explanation of psychometric g or human neural criticality from an engineering smoke test.
 
+## M1a Evidence Bridge — first vertical slice (stacked draft PR #14)
+
+The first **read-only evidence integration** builds on M0. It has a strict curated `TG-COMP-001` DOI seed and creates a review-ready claim/evidence dossier. Crossref/OpenAlex metadata lookups are possible **only with explicit network permission**; the existing public Evidence Registry release can be inspected locally without mutation. **No source-support claims are verified** from metadata alone, and every claim remains unresolved until original methods/results are checked.
+
+From this folder, after installing with `pip install -e ".[dev]"`:
+
+```bash
+hrp-factory evidence-dossier configs/TG-COMP-001.json \
+  --candidates configs/TG-COMP-001-evidence-candidates.json \
+  --out runs
+```
+
+Optional **public metadata only**:
+
+```bash
+export HRP_ALLOW_PUBLIC_METADATA_LOOKUP=YES
+hrp-factory evidence-dossier configs/TG-COMP-001.json \
+  --candidates configs/TG-COMP-001-evidence-candidates.json \
+  --public-metadata --out runs
+```
+
+See the [M1 implementation boundary and acceptance checklist](../../docs/M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md). This does not yet integrate live Agno literature-reading agents, Zotero/OSF, user records, or a publication workflow. The stacked M1 PR targets the unmerged M0 feature branch, so **neither M0 nor M1 has been merged to main**.
+
 ## Next steps
 
 1. Have the PI review the M0 PR and the publication contract.

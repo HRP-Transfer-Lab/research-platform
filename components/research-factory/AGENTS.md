@@ -29,6 +29,14 @@ Allowed: publication-contract validation, offline review dossiers, optional non-
 
 Not yet allowed: AgentOS internet deployment, automated citation verification, unsupervised Codex shell execution, public scholarly submissions, computational confirmatory jobs or arbitrary database mutations.
 
+## M1a evidence bridge boundary (stacked feature branch)
+
+Allowed: a strict curated DOI/claim seed; **fixed-host, read-only Crossref/OpenAlex metadata** with explicit `HRP_ALLOW_PUBLIC_METADATA_LOOKUP=YES`; an approved *public-release* Evidence Registry snapshot inspector; source identity consistency checks; a candidate-only evidence dossier and local human review packet; synthetic/fixture-based tests.
+
+**No original scientific claim is verified by metadata.** Full-text methods/results, contradiction adjudication, Zotero/OSF access and agent-based scholarly reading are outside this first slice. The Evidence Registry remains operationally authoritative for its own intervention data; never overwrite it or interpret its approved routes as validation of a Trident-G causal claim.
+
+All text intended for human publication must pass actual source and claim review. Local run artefacts (including downloaded public metadata if enabled) remain under Git-ignored runs/. The CI artefact is public/synthetic candidate material and must be clearly labelled *UNVERIFIED*.
+
 ## Handover contract
 
 A work order must record the paper ID, pinned source commit, primary explanandum, competing accounts, failure conditions, provenance, data tier, code/compute budget and human review gate.

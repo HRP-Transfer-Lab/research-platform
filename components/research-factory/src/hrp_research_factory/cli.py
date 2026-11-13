@@ -19,6 +19,17 @@ def parser() -> argparse.ArgumentParser:
     kickoff = sub.add_parser("kickoff", help="Generate a local run manifest and scope-review dossier; no AI calls.")
     kickoff.add_argument("contract")
     kickoff.add_argument("--out", default=os.getenv("HRP_FACTORY_RUN_ROOT", "runs"))
+    evidence = sub.add_parser(
+        "evidence-dossier",
+        help="M1: generate candidate-only evidence review packet; offline unless explicitly opted in.",
+    )
+    evidence.add_argument("contract")
+    evidence.add_argument("--candidates", required=True, help="Strict candidate DOI/claim seed JSON.")
+    evidence.add_argument("--out", default=os.getenv("HRP_FACTORY_RUN_ROOT", "runs"))
+    evidence.add_argument("--public-metadata", action="store_true",
+                          help="Allow Crossref/OpenAlex public metadata GETs after separate env opt-in.")
+    evidence.add_argument("--registry-release", default=None,
+                          help="Optional local path to an existing approved public registry snapshot.")
     draft = sub.add_parser("agno-draft", help="OPT-IN unverified agent drafting; never publishes or edits GitHub.")
     draft.add_argument("contract")
     draft.add_argument("--provider", choices=("openai", "ollama"), default="openai")
@@ -38,6 +49,16 @@ def main(argv: list[str] | None = None) -> int:
             dest = write_run(contract, args.out)
             print(f"PROPOSAL ONLY: {dest / 'review_packet.md'}")
             print("Status: awaiting_scope_approval; no model or network calls.")
+            return 0
+        if args.command == "evidence-dossier":
+            from .evidence_pipeline import EvidenceDossierError, produce_evidence_dossier
+            folder = produce_evidence_dossier(
+                contract, args.candidates, args.out,
+                live_public_metadata=args.public_metadata,
+                registry_release=args.registry_release,
+            )
+            print(f"M1 EVIDENCE CANDIDATES: {folder / 'evidence' / 'evidence_matrix.json'}")
+            print("All original claim-support checks remain UNRESOLVED; review/approval required.")
             return 0
         if args.command == "agno-draft":
             # Refuse before creating a run, importing Agno, or making a model call.

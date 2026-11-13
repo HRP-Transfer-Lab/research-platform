@@ -1,0 +1,67 @@
+{
+  "schema_version": "hrp-evidence-candidates-v0.1",
+  "paper_id": "TG-COMP-001",
+  "status": "candidate_identifiers_only_no_original_full_text_review",
+  "claims": [
+    {
+      "claim_id": "TG-COMP-001-C01",
+      "text": "A cusp-regulated control policy may predict adaptive switching or hysteresis beyond smooth or reinforcement-learning rivals.",
+      "status": "Trident_G_hypothesis_unestablished"
+    },
+    {
+      "claim_id": "TG-COMP-001-C02",
+      "text": "Network heterogeneity and criticality may contribute to flexible cognition, but a Griffiths phase and its adaptive advantage remain unconfirmed.",
+      "status": "Trident_G_mechanistic_hypothesis"
+    },
+    {
+      "claim_id": "TG-COMP-001-C03",
+      "text": "A regulatory controller may contribute to individual differences or development, but this does not by itself establish psychometric g.",
+      "status": "link_between_explananda_unproven"
+    }
+  ],
+  "candidate_sources": [
+    {
+      "source_id": "SRC-001",
+      "doi": "10.1016/j.tics.2017.10.001",
+      "claim_id": "TG-COMP-001-C03",
+      "role": "competing_account",
+      "reason": "Network Neuroscience Theory of intelligence"
+    },
+    {
+      "source_id": "SRC-002",
+      "doi": "10.1080/1047840X.2016.1153946",
+      "claim_id": "TG-COMP-001-C03",
+      "role": "competing_account",
+      "reason": "Process Overlap Theory of psychometric g"
+    },
+    {
+      "source_id": "SRC-003",
+      "doi": "10.1037/0033-295X.113.4.842",
+      "claim_id": "TG-COMP-001-C03",
+      "role": "competing_account",
+      "reason": "Mutualism account of positive manifold"
+    },
+    {
+      "source_id": "SRC-004",
+      "doi": "10.1038/ncomms3521",
+      "claim_id": "TG-COMP-001-C02",
+      "role": "theoretical_neighbour",
+      "reason": "Hierarchical modular Griffiths-phase model"
+    },
+    {
+      "source_id": "SRC-005",
+      "doi": "10.1038/s42003-020-0774-y",
+      "claim_id": "TG-COMP-001-C02",
+      "role": "empirical_context",
+      "reason": "Fluid intelligence and proximity to a modelled critical boundary"
+    },
+    {
+      "source_id": "SRC-006",
+      "doi": "10.3389/fnsys.2014.00108",
+      "claim_id": "TG-COMP-001-C02",
+      "role": "boundary_or_counterevidence",
+      "reason": "Evidence consistent with slightly subcritical population dynamics"
+    }
+  ],
+  "caveat": "Identifiers and labels are candidates for examination; source interpretation, claim support and verification of the original paper have not been completed."
+}

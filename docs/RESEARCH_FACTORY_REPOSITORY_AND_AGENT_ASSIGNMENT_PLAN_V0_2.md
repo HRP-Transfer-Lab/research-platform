@@ -241,6 +241,8 @@ local Ollama on loopback               approved cloud parameter sweeps
 
 Workstation: VS Code/Codex development, synthetic testing and review. Trusted red node: restricted research data and documents. Cloud workers: *only* approved public/synthetic or appropriately classified workloads. Object storage should persist run artefacts with checksums, retention and source commits; CI logs are not a permanent data archive.
 
+**Implementation status note:** the initial metadata/claim-dossier *deterministic* slice is underway on [M1 PR #14](https://github.com/HRP-Transfer-Lab/research-platform/pull/14). Source-level reading, Zotero/OSF connections and actual A02/A03/A04 agent execution remain proposed, not implemented. See [M1 technical instructions](M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md).
+
 ## 7. M1 Evidence Bridge — exact first delivery
 
 **First paper:** `TG-COMP-001` (Homeostatic Adaptive Intelligence). M1 creates a *reviewable evidence dossier*, **not** a claim that the cusp mechanism has been demonstrated.

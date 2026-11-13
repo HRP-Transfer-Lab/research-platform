@@ -1,6 +1,13 @@
-name: Research factory M0 validation
+name: Research factory M0 + M1 evidence validation
 
 on:
+  push:
+    branches:
+      - "feature/hrp-factory-m1-evidence-bridge"
+    paths:
+      - "components/research-factory/**"
+      - "docs/M1_RESEARCH_FACTORY_EVIDENCE_BRIDGE_V0_1.md"
+      - ".github/workflows/research-factory-validate.yml"
   pull_request:
     types: [opened, synchronize, reopened, edited]
     paths:
@@ -29,6 +36,18 @@ jobs:
         run: hrp-factory validate configs/TG-COMP-001.json
       - name: Run offline tests
         run: python -m pytest -q
+      - name: Generate TG-COMP-001 public/synthetic evidence candidate packet
+        run: |
+          hrp-factory evidence-dossier configs/TG-COMP-001.json \
+            --candidates configs/TG-COMP-001-evidence-candidates.json \
+            --out runs
+      - name: Upload candidate-only dossier for human review
+        uses: actions/upload-artifact@v4
+        with:
+          name: TG-COMP-001-M1a-unverified-evidence-packet
+          path: components/research-factory/runs/TG-COMP-001/
+          if-no-files-found: error
+          retention-days: 7
 
   agno-sdk-construction-smoke:
     runs-on: ubuntu-latest
