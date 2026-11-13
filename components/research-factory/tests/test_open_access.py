@@ -94,7 +94,7 @@ def test_rejects_wrong_xml_article_doi(tmp_path, monkeypatch):
 
 
 def test_disallows_doctype_and_external_hosts():
-    with pytest.raises(OpenAccessError, match="host"):
+    with pytest.raises(OpenAccessError, match="fixed Europe PMC"):
         _fetch("https://example.com/articles/fullTextXML")
     from hrp_research_factory.open_access import _jats_article
     with pytest.raises(OpenAccessError, match="DOCTYPE"):
